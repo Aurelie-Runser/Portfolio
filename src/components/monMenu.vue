@@ -7,16 +7,39 @@
             <div class="menu_barre barre_b" :class="{ 'menu_ouvert-barre menu_ouvert-barre_b': menuOuvert }"></div>
         </div>
 
-        <div class="w-screen h-screen bg-mon-black-dd translate-x-full z-40"
-            :class="{ 'translate-x-0': menuOuvert }">
-            <ul class="w-full h-full flex flex-col justify-evenly items-center
-            text-center font-oswald font-semibold italic text-teal-300 text-2xl">
-                <li class="menu_item item_acc after:content-['Accueil']">Accueil</li>
-                <li class="menu_item item_pro after:content-['Mes_Projets']">Mes Projets</li>
-                <li class="menu_item item_comp after:content-['Mes_Compétences']">Mes Compétences</li>
-                <li class="menu_item item_perso after:content-['Ma_Personne']">Ma Personne</li>
-                <li class="menu_item item_cont after:content-['Me_Contactez']">Me Contactez</li>
+        <div class="fixed top-0 left-0 w-screen h-screen translate-y-full bg-mon-black overflow-hidden z-40 duration-300"
+            :class="{ 'translate-y-0': menuOuvert }">
+
+            <ul class="relative w-full h-full flex flex-col justify-evenly items-center
+                text-center font-oswald font-semibold italic text-transparent text-2xl md:text-3xl">
+
+                <li class="menu_item item_acc"
+                    data-text="Hello World">
+                    Hello World
+                </li>
+
+                <li class="menu_item item_pro"
+                    data-text="Mes Projets">
+                    Mes Projets
+                </li>
+
+                <li class="menu_item item_comp"
+                    data-text="Mes Compétences">
+                    Mes Compétences
+                </li>
+
+                <li class="menu_item item_perso"
+                    data-text="Ma Personne">
+                    Ma Personne
+                </li>
+
+                <li class="menu_item item_cont"
+                    data-text="Me Contactez">
+                    Me Contactez
+                </li>
+
             </ul>
+
         </div>
     </div>
 </template>
@@ -138,25 +161,165 @@
 
 
 
-.menu_item{
-    position: relative;
-}
+
 
 .menu_item::after{
-    display: block;
-    width: max-content  ;
+    content: attr(data-text);
     position: absolute;
-    color: #F1E9DA;
-    left: 3px;
+    display: block;
     top: 0;
+    left: 0;
+    width: 100%;
+    color: #ffedd5;
+    text-shadow: -3px 0 #22d3ee;
+    background: #1f1f1f;
+    overflow: hidden;
+    clip-path: inset(59% 0% 0% 0%);
+}
+
+.menu_item:hover::after{
+    animation: glitch 3s linear infinite alternate-reverse;
 }
 .menu_item::before{
+    content: attr(data-text);
     display: block;
-    
     position: absolute;
-    color: #D912D7;
-    right: 0;
     top: 0;
+    left: -2px;
+    width: 100%;
+    color: #ffedd5;
+    text-shadow: -3px 0 #d946ef;
+    background: #1f1f1f;
+    overflow: hidden;
+}
+
+.item_acc,
+.item_pro,
+.item_comp,
+.item_perso,
+.item_cont{
+    position: relative;
+    top: 0;
+}
+
+@keyframes glitch {
+    5%{
+        clip-path: inset(48% 0 0 0);
+    } 
+    7.5%{
+        clip-path: inset(70% 0 0 0);
+    }
+    10%{
+        clip-path: inset(60% 0 0 0);
+    }
+    12.5%{
+        clip-path: inset(37% 0 0 0);
+    }
+    15%{
+        clip-path: inset(0 0 0 0);
+    }
+    17.5%{
+        clip-path: inset(0 0 40% 0);
+    }
+    20%{
+        clip-path: inset(0 0 40% 0);
+    }
+    22.5%{
+        clip-path: inset(0 0 60% 0);
+    }
+    25%{
+        clip-path: inset(0 0 30% 0);
+    }
+    27.5%{
+        clip-path: inset(0 0 50% 0);
+    }
+    30%{
+        clip-path: inset(40% 0 0 0);
+    }
+    32.5%{
+        clip-path: inset(33% 0 0 0);
+    } 
+    35%{
+        clip-path: inset(48% 0 0 0);
+    } 
+    37.5%{
+        clip-path: inset(70% 0 0 0);
+    }
+    40%{
+        clip-path: inset(60% 0 0 0);
+    }
+    42.5%{
+        clip-path: inset(37% 0 0 0);
+    }
+    45%{
+        clip-path: inset(0 0 0 0);
+    }
+    47.2%{
+        clip-path: inset(0 0 40% 0);
+    }
+    50%{
+        clip-path: inset(0 0 40% 0);
+    }
+    52.%{
+        clip-path: inset(33% 0 0 0);
+    } 
+    55%{
+        clip-path: inset(48% 0 0 0);
+    } 
+    57.5%{
+        clip-path: inset(70% 0 0 0);
+    }
+    60%{
+        clip-path: inset(60% 0 0 0);
+    }
+    62.5%{
+        clip-path: inset(37% 0 0 0);
+    }
+    65%{
+        clip-path: inset(0 0 0 0);
+    }
+    67.5%{
+        clip-path: inset(0 0 40% 0);
+    }
+    70%{
+        clip-path: inset(0 0 40% 0);
+    }
+    72.5%{
+        clip-path: inset(0 0 60% 0);
+    }
+    75%{
+        clip-path: inset(0 0 30% 0);
+    }
+    77.5%{
+        clip-path: inset(0 0 50% 0);
+    }
+    80%{
+        clip-path: inset(40% 0 0 0);
+    }
+    82.5%{
+        clip-path: inset(33% 0 0 0);
+    } 
+    85%{
+        clip-path: inset(48% 0 0 0);
+    } 
+    87.5%{
+        clip-path: inset(70% 0 0 0);
+    }
+    90%{
+        clip-path: inset(60% 0 0 0);
+    }
+    92.5%{
+        clip-path: inset(37% 0 0 0);
+    }
+    95%{
+        clip-path: inset(0 0 0 0);
+    }
+    97.5%{
+        clip-path: inset(0 0 40% 0);
+    }
+    100%{
+        clip-path: inset(0 0 40% 0);
+    }
 }
 
 </style>

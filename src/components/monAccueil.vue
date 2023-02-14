@@ -4,11 +4,7 @@
             <span class="mon-title absolute top-0 left-0">Hello Wolrd, <br/>I'm</span>
 
             <span class="absolute top-28 left-0 w-full animate-skew">
-                <span class="big-title-glitch btg-haut absolute top-0 left-0 my-8 text-center"
-                    data-text="Aurélie Runser">
-                    Aurélie Runser
-                </span>
-                <span class="big-title-glitch btg-bas absolute top-0 left-0 my-8 text-center"
+                <span class="big-title-glitch btg-anim absolute top-0 left-0 my-8 text-center"
                     data-text="Aurélie Runser">
                     Aurélie Runser
                 </span>
@@ -18,8 +14,7 @@
                 <span class="mon-title mt-5">a new</span>
     
                 <span class="relative my-4">
-                    <span class="big-title-glitch title-glitch tg-haut" data-text="Développeuse Front-End">Développeuse Front-End</span>
-                    <span class="big-title-glitch title-glitch tg-bas absolute top-0 left-0" data-text="Développeuse Front-End">Développeuse Front-End</span>
+                    <span class="big-title-glitch title-glitch tg-anim" data-text="Développeuse Front-End">Développeuse Front-End</span>
                 </span>
             </span>
         </h1>
@@ -30,19 +25,19 @@
 
 <style scoped>
 
-.btg-haut::before, .btg-bas::before{
+.btg-anim::before{
     content: attr(data-text);
     display: block;
     position: absolute;
     top: 0;
-    left: -2px;
+    left: -3px;
     color: #ffedd5;
     text-shadow: -5px 0 #d946ef;
     background: #1f1f1f;
     overflow: hidden;
 }
 
-.btg-haut::after, .btg-bas::after{
+.btg-anim::after{
     content: attr(data-text);
     display: block;
     position: absolute;
@@ -55,7 +50,7 @@
     animation: glitch 3s linear infinite alternate-reverse;
 }
 
-.tg-haut::before{
+.tg-anim::before{
     content: attr(data-text);
     display: block;
     position: absolute;
@@ -67,7 +62,7 @@
     overflow: hidden;
 }
 
-.tg-bas::after{
+.tg-anim::after{
     content: attr(data-text);
     display: block;
     position: absolute;
