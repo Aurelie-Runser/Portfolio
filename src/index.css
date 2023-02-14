@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@500&family=Oswald:wght@200;500;700&display=swap');
+
+@layer base{
+
+    .big-title-glitch{
+        @apply inline-block font-oswald font-bold italic text-4xl text-transparent tracking-widest;
+        @apply md:text-6xl;
+        @apply xl:text-7xl;
+    }
+
+    .title-glitch{
+        @apply text-2xl text-transparent;
+        @apply md:text-3xl;
+        @apply xl:text-4xl
+    }
+
+    .mon-title{
+        @apply font-oswald font-extralight text-lg text-stone-300 tracking-widest;
+        @apply md:text-xl;
+        @apply xl:text-2xl
+    };
+}
