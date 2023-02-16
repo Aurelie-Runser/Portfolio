@@ -6,6 +6,10 @@
 
 @layer base{
 
+    section{
+        @apply px-7 md:px-10 w-screen
+    }
+
     .big-title-glitch{
         @apply inline-block font-oswald font-bold italic text-4xl text-transparent tracking-widest;
         @apply md:text-6xl;
@@ -18,9 +22,14 @@
         @apply xl:text-4xl
     }
 
-    .mon-title{
+    .mon-title,
+    h2{
         @apply font-oswald font-extralight text-lg text-stone-300 tracking-widest;
         @apply md:text-xl;
         @apply xl:text-2xl
     };
+
+    h2{
+        @apply mx-5 md:mx-14 xl:mx-28
+    }
 }
