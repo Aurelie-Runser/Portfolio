@@ -1,10 +1,10 @@
 <template>
-    <div class="px-7 md:px-10 pt-24 w-screen min-h-screen">
+    <section class="pt-24 min-h-screen">
         <h1 class="relative block w-full h-[90%] lg:max-w-screen-xl mx-auto">
             <span class="mon-title absolute top-0 left-0">Hello Wolrd, <br/>I'm</span>
 
             <span class="absolute top-28 left-0 w-full animate-skew">
-                <span class="big-title-glitch btg-anim absolute top-0 left-0 my-8 text-center"
+                <span class="big-title-glitch btg-anim absolute top-0 left-0 text-center"
                     data-text="Aurélie Runser">
                     Aurélie Runser
                 </span>
@@ -20,7 +20,7 @@
         </h1>
 
         <!-- <div class="mon-cube"></div> -->
-    </div>
+    </section>
 </template>
 
 <style scoped>
@@ -73,6 +73,10 @@
     background: #1f1f1f;
     overflow: hidden;
     clip-path: inset(61% 0% 0% 0%);
+}
+
+.tg-anim:hover::after{
+    animation: glitch 3s linear infinite alternate-reverse;
 }
 
 @keyframes glitch {
