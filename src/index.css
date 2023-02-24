@@ -6,8 +6,8 @@
 
 @layer base{
 
-    section{
-        @apply px-7 md:px-10 w-screen
+    .section{
+        @apply px-7 md:px-10
     }
 
     .big-title-glitch{
@@ -24,7 +24,7 @@
 
     .mon-title,
     h2{
-        @apply font-oswald font-extralight text-lg text-stone-300 tracking-widest;
+        @apply inline font-oswald font-extralight text-lg text-stone-300 tracking-widest;
         @apply md:text-xl;
         @apply xl:text-2xl
     };

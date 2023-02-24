@@ -4,8 +4,8 @@ import monMenu from "./components/monMenu.vue";
 </script>
 
 <template>
-  <div class="bg-mon-black overflow-x-hidden">
+  <main class=" bg-mon-black max-w-full">
     <monMenu class="!z-50"/>
       <RouterView />
-  </div>
+  </main>
 </template>
