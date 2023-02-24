@@ -1,6 +1,6 @@
 <template>
     <section class="pt-24 min-h-screen">
-        <h1 class="relative block w-full h-[90%] lg:max-w-screen-xl mx-auto">
+        <h1 class="relative block w-full h-[90%] px-7 md:px-10 lg:max-w-screen-xl lg:mx-auto">
             <span class="mon-title absolute top-0 left-0">Hello Wolrd, <br/>I'm</span>
 
             <span class="absolute top-28 left-0 w-full animate-skew">

@@ -6,7 +6,7 @@
 
 @layer base{
 
-    .section{
+    section{
         @apply px-7 md:px-10
     }
 
