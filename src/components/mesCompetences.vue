@@ -1,6 +1,6 @@
 <template>
     <section>
-        <h2>Mes Competences</h2>
+        <h2>Mes Compétences</h2>
 
     </section>
 </template>

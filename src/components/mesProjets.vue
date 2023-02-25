@@ -1,46 +1,101 @@
 <template>
-    <section class="">
-        <h2 class="">Mes Projets</h2>
+    <section class="my-28">
+        <h2>Mes Projets</h2>
 
-        <div class="-mx-7 md:-mx-10 my-16 md:grid grid-flow-row-dense grid-cols-[repeat(auto-fit,minmax(22rem,1fr))]">
-            <div v-for="p in listeProjet" :key="p.id"
-                class="projet_card relative my-1 md:mx-1 basis-96 grow">
+        <!-- grille de projets -->
+        <ul id="ma-liste" class="-mx-7 md:-mx-10 my-16 md:grid grid-flow-row-dense grid-cols-[repeat(auto-fit,minmax(20rem,1fr))] gap-y-1 md:gap-1">
 
-                <!-- Les images-->
-                <div class="card_img md:hidden w-full aspect-video">
+            <!-- card des projets -->
+            <li v-for="p in listeProjet" :key="p.id"
+                class="projet_card relative grid content-center justify-items-center basis-96 grow aspect-video md:aspect-square">
+
+                <!-- Les images -->
+                <div class="card_img relative block md:hidden aspect-video">
                     <img class="object-cover h-full"
                          :src="p.image_rect" :alt="'Image de mon projet '+p.titre">
                 </div>
 
-                <div class="card_img hidden md:block aspect-square">
+                <div class="card_img relative hidden md:block aspect-square">
                     <img class="object-cover"
                          :src="p.image_card" :alt="'Image de mon projet '+p.titre">
                 </div>
 
-                <!--Le texte-->
-                <p class="absolute top-0 hidden">{{ p.titre }}</p>
+                <!-- les decos -->
+                <div class="card_deco deco_b absolute bottom-0 right-0 w-5 h-5 md:w-8 md:h-8 bg-fuchsia-500 duration-500"></div>
+                <div class="card_deco deco_t absolute top-0 left-0 w-5 h-5 md:w-8 md:h-8 bg-cyan-400 duration-500"></div>
 
-                <!--les decos-->
-                <div class="card_deco deco_b absolute bottom-0 right-4 w-5 h-5 md:w-8 md:h-8 bg-fuchsia-500"></div>
-                <div class="card_deco deco_t absolute top-0 left-0 w-5 h-5 md:w-8 md:h-8 bg-cyan-400"></div>
-            </div>
-        </div>
+                <!-- Les textes (qui n'apparraissent qu'au survole) -->
+                <div class="card_text absolute top-0 bottom-0 left-[8%] right-[8%] flex flex-col justify-around opacity-0 delay-200 duration-500">
+                    
+                    <p class="font-oswald
+                            text-base sm:text-lg xl:text-xl
+                            tracking-wider text-slate-300">
+                        Contexte :
+                        <span class="font-oswald font-extralight">{{ p.contexte_resume }}</span>
+                    </p>
+
+                    <p class="font-oswald
+                            text-base sm:text-lg xl:text-xl
+                            tracking-wider text-slate-300">
+                        Type :
+                        <span class="font-oswald font-extralight">{{ p.type }}</span>
+                    </p>
+
+                    <p class="font-oswald
+                            text-base sm:text-lg xl:text-xl
+                            tracking-wider text-slate-300">
+                        Annee :
+                        <span class="font-oswald font-extralight">{{ p.annee_resume }}</span>
+                    </p>
+
+                </div>
+
+                <button id="voir"
+                    class="card_button absolute bottom-[5%] right-[5%] px-6 py-3 min-w-min w-[25%] h-16 md:h-20 bg-mon-black opacity-0 delay-200 duration-500
+                            font-oswald text-base md:text-xl tracking-wider text-center text-stone-300">
+                    Voir
+                </button>
+
+            </li>
+
+        </ul>
 
     </section>
 </template>
 
 <style scoped>
 
-/* .projet_card:hover .card_img{
+/* carre noir qui s'affiche seulement lors du survole de la card, pour ameliorer le contraste */
+.card_img::after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
     width: 90%;
     height: 90%;
-    margin: 0 auto;
+    background: #1f1f1fAA;
+    opacity: 0;
 }
+
+/* transition du carre noir au survole */
+.projet_card:hover .card_img::after{
+    opacity: 100;
+    transition-delay: 200ms;
+    transition-duration: 500ms;
+}
+
+/* modification des elements au survole de la card */
 .projet_card:hover .card_deco{
-    width: 90%;
-    height: 90%;
-    opacity: 70%;
-} */
+    width: 95%;
+    height: 95%;
+    opacity: 50%;
+}
+.projet_card:hover .card_text,
+.projet_card:hover .card_button{
+    opacity: 100%;
+}
 
 </style>
 
