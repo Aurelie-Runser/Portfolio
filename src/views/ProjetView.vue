@@ -1,6 +1,8 @@
 <template>
-    <main>
-        <h1></h1>
+    <main class="px-7 md:px-10 pt-24">
+        <h1>{{ projet.titre }}</h1>
+
+        <img :src="img_rect" alt="image noon trouver">
     </main>
 </template>
 
@@ -45,12 +47,11 @@ export default {
             imgData: null,
             projet:{
                 titre: null,
-                image_card: null,
+                image_rect: null,
             },
 
             refProjet:null,
-            imgModifie:false,
-            imgActuelle:null 
+            img_rect:null 
         }
     },
 
@@ -66,21 +67,21 @@ export default {
             this.refProjet = await getDoc(docRef);
             if(this.refProjet.exists()){
                 this.projet = this.refProjet.data();
-                // this.imgActuelle = this.projet.image;
+                this.img_rect = this.projet.image_rect;
             }
             else{
                 this.console.log("Projet Inexistant");
             }
 
-            // const storage = getStorage();
-            // const spaceRef = ref(storage, 'projet/'+this.projet.image);
-            // getDownloadURL(spaceRef)
-            //     .then((url) => {
-            //         this.imgData = url;
-            // })
-            // .catch((error) =>{
-            //     console.log('erreur downloadUrl', error);
-            // })
+            const storage = getStorage();
+            const spaceRef = ref(storage, this.projet.image_rect);
+            getDownloadURL(spaceRef)
+                .then((url) => {
+                    this.img_rect = url;
+            })
+            .catch((error) =>{
+                console.log('erreur downloadUrl', error);
+            })
         },
     }
 }
