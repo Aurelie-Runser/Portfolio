@@ -38,4 +38,11 @@
     h2{
         @apply mx-5 md:mx-14 xl:mx-28
     }
+
+    .text_card{
+        @apply font-oswald text-base text-slate-300 tracking-wider;
+        @apply sm:text-lg;
+        @apply xl:text-xl
+        
+    }
 }

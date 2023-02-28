@@ -29,23 +29,17 @@
                 <!-- Les textes (qui n'apparraissent qu'au survole) -->
                 <div class="card_text absolute top-0 bottom-0 left-[8%] right-[8%] flex flex-col justify-around opacity-0 delay-200 duration-500">
                     
-                    <p class="font-oswald
-                            text-base sm:text-lg xl:text-xl
-                            tracking-wider text-slate-300">
+                    <p class="text_card">
                         Contexte :
                         <span class="font-oswald font-extralight">{{ p.contexte_resume }}</span>
                     </p>
 
-                    <p class="font-oswald
-                            text-base sm:text-lg xl:text-xl
-                            tracking-wider text-slate-300">
+                    <p class="text_card">
                         Type :
                         <span class="font-oswald font-extralight">{{ p.type }}</span>
                     </p>
 
-                    <p class="font-oswald
-                            text-base sm:text-lg xl:text-xl
-                            tracking-wider text-slate-300">
+                    <p class="text_card">
                         Année :
                         <span class="font-oswald font-extralight">{{ p.annee_resume }}</span>
                     </p>
