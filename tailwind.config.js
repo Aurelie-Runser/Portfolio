@@ -16,7 +16,7 @@ module.exports = withAnimations({
         //   -> stone-300
         // "claire": "#ffedd5",
         //  -> orange-100
-        // "glitch_1": "#ffedd5",
+        // "glitch_1": "#d946ef",
         //     -> fuchsia-500
         // "glitch_2": "#22d3ee"
         //   -> cyan-400
