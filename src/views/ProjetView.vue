@@ -24,7 +24,7 @@ import {
     onSnapshot, 
     query,
     orderBy
-    } from 'https://www.gstatic.com/firebasejs/9.7.0/firebase-firestore.js'
+    } from 'https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js'
 
 import { 
     getStorage, 
@@ -33,7 +33,7 @@ import {
     uploadBytes,
     uploadString,
     deleteObject,
-    listAll } from 'https://www.gstatic.com/firebasejs/9.7.0/firebase-storage.js'
+    listAll } from 'https://www.gstatic.com/firebasejs/9.17.1/firebase-storage.js'
 
 
 export default {
