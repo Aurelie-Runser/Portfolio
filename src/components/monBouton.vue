@@ -7,7 +7,7 @@
             pour que la couleur du bouton soit au-dessus des pseudo-element before et after
         -->
         <p class="bouton_text w-full h-full px-6 py-3 md:px-10 md:py-5 bg-orange-100 duration-200
-                font-oswald text-base md:text-xl tracking-wider text-center text-mon-black">
+                font-oswald text-base sm:text-lg xl:text-xl tracking-wider text-center text-mon-black">
             <slot/>
         </p>
 
@@ -15,10 +15,6 @@
 </template>
 
 <style>
-
-.mon_bouton:hover .bouton_text{
-    font-weight: bold;
-}
 
 .mon_bouton::before,
 .mon_bouton::after{
