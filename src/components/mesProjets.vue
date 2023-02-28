@@ -10,12 +10,14 @@
                 class="projet_card relative grid content-center justify-items-center basis-96 grow aspect-video md:aspect-square">
 
                 <!-- Les images -->
-                <div class="card_img relative block md:hidden aspect-video">
+                <!--image en mobile-->
+                <div class="card_img relative block md:hidden aspect-video delay-200 duration-500">
                     <img class="object-cover h-full"
                          :src="p.image_rect" :alt="'Image de mon projet '+p.titre">
                 </div>
 
-                <div class="card_img relative hidden md:block aspect-square">
+                <!--image en pc-->
+                <div class="card_img relative hidden md:block aspect-square delay-200 duration-500">
                     <img class="object-cover"
                          :src="p.image_card" :alt="'Image de mon projet '+p.titre">
                 </div>
@@ -44,7 +46,7 @@
                     <p class="font-oswald
                             text-base sm:text-lg xl:text-xl
                             tracking-wider text-slate-300">
-                        Annee :
+                        Année :
                         <span class="font-oswald font-extralight">{{ p.annee_resume }}</span>
                     </p>
 
@@ -60,44 +62,33 @@
 
         </ul>
 
+        <button></button>
+
     </section>
 </template>
 
 <style scoped>
 
-/* carre noir qui s'affiche seulement lors du survole de la card, pour ameliorer le contraste */
-.card_img::after{
-    content: "";
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    width: 90%;
-    height: 90%;
-    background: #1f1f1fAA;
-    opacity: 0;
+/* assombrissement de l'image survole de la card */
+.projet_card:hover .card_img{
+    filter: brightness(0.5);
 }
 
-/* transition du carre noir au survole */
-.projet_card:hover .card_img::after{
-    opacity: 100;
-    transition-delay: 200ms;
-    transition-duration: 500ms;
-}
-
-/* modification des elements au survole de la card */
+/* modification des décos au survole de la card */
 .projet_card:hover .card_deco{
     width: 95%;
     height: 95%;
     opacity: 50%;
 }
+
+/* affichage des texte et du bouton au survole de la card */
 .projet_card:hover .card_text,
 .projet_card:hover .card_button{
     opacity: 100%;
 }
 
 </style>
+
 
 <script>
 
