@@ -52,12 +52,13 @@
 
                 </div>
 
-                <button
-                    class="card_button absolute bottom-[5%] right-[5%] px-6 py-3 min-w-min w-[25%] h-16 md:h-20 bg-mon-black opacity-0 delay-200 duration-500
-                            font-oswald text-base md:text-xl tracking-wider text-center text-stone-300">
-                    Voir
-                </button>
-
+                <RouterLink :to="`/ProjetView/${p.id}`">
+                    <button
+                        class="card_button absolute bottom-[5%] right-[5%] px-6 py-3 min-w-min w-[25%] h-16 md:h-20 bg-mon-black opacity-0 delay-200 duration-500
+                                font-oswald text-base md:text-xl tracking-wider text-center text-stone-300">
+                        Voir
+                    </button>
+                </RouterLink>
 
             </li>
 
