@@ -52,11 +52,12 @@
 
                 </div>
 
-                <button id="voir"
+                <button
                     class="card_button absolute bottom-[5%] right-[5%] px-6 py-3 min-w-min w-[25%] h-16 md:h-20 bg-mon-black opacity-0 delay-200 duration-500
                             font-oswald text-base md:text-xl tracking-wider text-center text-stone-300">
                     Voir
                 </button>
+
 
             </li>
 
@@ -71,7 +72,7 @@
 
 /* assombrissement de l'image survole de la card */
 .projet_card:hover .card_img{
-    filter: brightness(0.5);
+    filter: brightness(0.25);
 }
 
 /* modification des décos au survole de la card */

@@ -6,7 +6,7 @@
             le style du bouton est mis sur le p et non directement sur le bouton
             pour que la couleur du bouton soit au-dessus des pseudo-element before et after
         -->
-        <p class="bouton_text w-full h-full px-6 py-3 md:px-12 md:py-6 bg-orange-100 duration-200
+        <p class="bouton_text w-full h-full px-6 py-3 md:px-10 md:py-5 bg-orange-100 duration-200
                 font-oswald text-base md:text-xl tracking-wider text-center text-mon-black">
             <slot/>
         </p>
