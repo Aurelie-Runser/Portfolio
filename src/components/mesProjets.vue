@@ -62,7 +62,7 @@
 
         </ul>
 
-        <button></button>
+        <monBouton class="mx-auto">Voir +</monBouton>
 
     </section>
 </template>
@@ -92,6 +92,9 @@
 
 <script>
 
+// import des composants
+import monBouton from "./monBouton.vue"
+
 import { 
     getFirestore,   // Obtenir le Firestore
     collection,     // Utiliser une collection de documents
@@ -112,6 +115,8 @@ import {
 
 export default {
     name : "ProjetView",
+    components: {monBouton},
+
     data(){
         return{
             listeProjet:[]
