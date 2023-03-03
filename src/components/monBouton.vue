@@ -26,11 +26,13 @@
     height: 100%;
     top: 0;
     left: 0;
+    transform: translate(-3%, -3%);
     background-color: #22d3ee;
     transition: all 200ms;
 }
 
 .mon_bouton::after{
+    transform: translate(3%, 3%);
     background-color: #d946ef;
 }
 
