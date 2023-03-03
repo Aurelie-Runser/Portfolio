@@ -10,7 +10,7 @@
                 </span>
             </span>
 
-            <span class="absolute bottom-12 sm:bottom-32 md:bottom-0 lg:bottom-32 xl:bottom-20 right-0 flex flex-wrap justify-end align-bottom w-auto text-right gap-x-10 gap-y-5">
+            <span class="absolute bottom-24 sm:bottom-32 md:bottom-52 lg:bottom-32 xl:bottom-20 right-0 flex flex-wrap justify-end align-bottom w-auto text-right gap-x-10 gap-y-5">
                 <span class="mon-title mt-5">a new</span>
     
                 <span class="relative my-4">
