@@ -1,6 +1,6 @@
 <template>
-    <section class="pt-24 min-h-screen">
-        <h1 class="relative block w-full h-[90%] px-7 md:px-10 lg:max-w-screen-xl lg:mx-auto">
+    <section class="pt-24 h-screen">
+        <h1 class="relative block w-full h-full px-7 md:px-10 lg:max-w-screen-xl lg:mx-auto">
             <span class="mon-title absolute top-0 left-0">Hello Wolrd, <br/>I'm</span>
 
             <span class="absolute top-28 left-0 w-full animate-skew">
@@ -10,7 +10,7 @@
                 </span>
             </span>
 
-            <span class="absolute top-96 sm:top-80 md:top-[60vh] right-0 flex flex-wrap justify-end align-bottom w-auto text-right gap-x-10 gap-y-5">
+            <span class="absolute bottom-12 sm:bottom-32 md:bottom-0 lg:bottom-32 xl:bottom-20 right-0 flex flex-wrap justify-end align-bottom w-auto text-right gap-x-10 gap-y-5">
                 <span class="mon-title mt-5">a new</span>
     
                 <span class="relative my-4">
