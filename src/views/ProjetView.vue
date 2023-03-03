@@ -1,12 +1,12 @@
 <template>
-    <main class="pt-24">
+    <main class="pt-24  overflow-x-hidden">
         <h1 class="big-title-glitch title-glitch tg-anim relative
                     mx-7 md:mx-14 xl:mx-28"
             :data-text="projet.titre">
             {{ projet.titre }}
         </h1>
 
-        <div class="my-16 w-full md:absolute md:right-0 md:m-0 md:w-1/2">
+        <div class="my-16 w-full md:absolute md:right-0 md:m-0 md:w-1/2 ">
             <div class="projet_img relative z-10">
                 <img :src="img_rect" alt="image non trouver">
             </div>
@@ -60,6 +60,8 @@
             
         </div>
 
+        <div class="h-8"></div>
+
 
     </main>
 </template>
@@ -82,7 +84,7 @@
     position: absolute;
     z-index: -1;
     display: block;
-    width: 100%;
+    width: 98%;
     height: 100%;
     top: 4%;
     left: 2%;
