@@ -1,13 +1,13 @@
 <template>
     <div class="fixed">
-        <div class="menu fixed top-10 right-10 z-50 cursor-pointer"
+        <div class="menu fixed top-10 right-10 md:right-16 z-50 cursor-pointer"
             :aria-expanded="menuOuvert" @click="menuOuvert = !menuOuvert">
             <div class="menu_barre barre_h" :class="{ 'menu_ouvert-barre menu_ouvert-barre_h': menuOuvert }"></div>
             <div class="menu_barre barre_m" :class="{ 'menu_ouvert-barre menu_ouvert-barre_m': menuOuvert }"></div>
             <div class="menu_barre barre_b" :class="{ 'menu_ouvert-barre menu_ouvert-barre_b': menuOuvert }"></div>
         </div>
 
-        <div class="fixed top-0 left-0 w-screen h-screen translate-y-full bg-mon-black overflow-hidden z-40 duration-300"
+        <div class="fixed top-0 left-0 w-screen h-screen translate-y-full bg-mon-black z-40 duration-300"
             :class="{ 'translate-y-0': menuOuvert }">
 
             <div class="relative w-full h-full flex flex-col justify-evenly items-center
