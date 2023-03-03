@@ -10,7 +10,7 @@ import meContacte from "@/components/meContacte.vue";
 <template>
     <main>
         <monAccueil id="id_accueil"/>
-        <mesProjets id="id_projets"/>
+        <mesProjets id="id_projets">Mes Projets</mesProjets>
         <mesCompetences id="id_competences"/>
         <maPersonne id="id_personne"/>
         <meContacte id="id_contact"/>

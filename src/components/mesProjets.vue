@@ -1,9 +1,9 @@
 <template>
     <section class="my-28">
-        <h2>Mes Projets</h2>
+        <h2><slot/></h2>
 
         <!-- grille de projets -->
-        <ul id="ma-liste" class="-mx-7 md:-mx-10 my-16 md:grid grid-flow-row-dense grid-cols-[repeat(auto-fit,minmax(20rem,1fr))] gap-y-1 md:gap-1">
+        <ul id="ma-liste" class="overflow-hidden -mx-7 md:-mx-10 my-16 md:grid grid-flow-row-dense grid-cols-[repeat(auto-fit,minmax(20rem,1fr))] gap-y-1 md:gap-1">
 
             <!-- card des projets -->
             <li v-for="p in listeProjet" :key="p.id"
@@ -48,7 +48,7 @@
 
                 <RouterLink :to="`/projet/${p.id}`">
                     <button
-                        class="card_button absolute bottom-[5%] right-[5%] px-6 py-3 min-w-min w-[25%] h-16 md:h-20 bg-mon-black opacity-0 delay-200 duration-500
+                        class="card_button translate-x-[120%] translate-y-[120%] absolute bottom-[5%] right-[5%] px-6 py-3 min-w-min w-[25%] h-16 md:h-20 bg-mon-black opacity-0 delay-200 duration-500
                                 font-oswald text-base md:text-xl tracking-wider text-center text-stone-300">
                         Voir
                     </button>
@@ -81,6 +81,7 @@
 .projet_card:hover .card_text,
 .projet_card:hover .card_button{
     opacity: 100%;
+    transform: translate(0);
 }
 
 </style>
@@ -129,7 +130,6 @@ export default {
             const firestore = getFirestore();
             const dbProjet = collection(firestore, "projet");           
             const query = await onSnapshot(dbProjet, (snapshot) => {
-                console.log("query", query);
                 this.listeProjet = snapshot.docs.map((doc) => (
                     {id: doc.id,...doc.data()}
                 ));
@@ -153,7 +153,6 @@ export default {
                         console.log("erreur downloadUrl", error);
                     });
                 });
-                console.log("listeProjet", this.listeProjet);
             });
         },
     },
