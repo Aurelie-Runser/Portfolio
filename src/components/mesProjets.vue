@@ -1,12 +1,12 @@
 <template>
     <section class="my-28">
-        <h2><slot/></h2>
+        <h2>Mes Projets</h2>
 
         <!-- grille de projets -->
         <ul id="ma-liste" class="overflow-hidden -mx-7 md:-mx-10 my-16 md:grid grid-flow-row-dense grid-cols-[repeat(auto-fit,minmax(20rem,1fr))] gap-y-1 md:gap-1">
 
             <!-- card des projets -->
-            <li v-for="p in listeProjet" :key="p.id"
+            <li v-for="p in listeProjets" :key="p.id"
                 class="projet_card relative grid content-center justify-items-center basis-96 grow aspect-video md:aspect-square">
 
                 <!-- Les images -->
@@ -46,6 +46,7 @@
 
                 </div>
 
+                <!-- le bouton pour aller sur le projet-->
                 <RouterLink :to="`/projet/${p.id}`">
                     <button
                         class="card_button translate-x-[120%] translate-y-[120%] absolute bottom-[5%] right-[5%] px-6 py-3 min-w-min w-[25%] h-16 md:h-20 bg-mon-black opacity-0 delay-200 duration-500
@@ -57,8 +58,6 @@
             </li>
 
         </ul>
-
-        <monBouton class="mx-auto">Voir +</monBouton>
 
     </section>
 </template>
@@ -89,9 +88,6 @@
 
 <script>
 
-// import des composants
-import monBouton from "./monBouton.vue"
-
 import { 
     getFirestore,   // Obtenir le Firestore
     collection,     // Utiliser une collection de documents
@@ -100,7 +96,8 @@ import {
     addDoc,         // Ajouter un document à une collection
     onSnapshot,     // Demander une liste de documents d'une collection, en les synchronisant
     query,          // Permet d'effectuer des requêtes sur Firestore
-    orderBy         // Permet de demander le tri d'une requête query
+    orderBy,        // Permet de demander le tri d'une requête query
+    limit
     } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js"
 
 import { 
@@ -112,13 +109,25 @@ import {
 
 export default {
     name : "ProjetView",
-    components: {monBouton},
-
     data(){
         return{
             listeProjet:[]
         }
     },
+
+    computed:{
+        orderByDate:function(){
+            return this.listeProjet.sort(function(a,b){
+                if(a.date_ajout < b.date_ajout) return 1;
+                if(a.date_ajout > b.date_ajout) return -1;
+                return 0;
+            });
+        },
+        listeProjets:function(){
+            return this.orderByDate;
+        }
+    },
+    
 
     mounted(){
         this.getProjets();
@@ -136,24 +145,26 @@ export default {
 
                 this.listeProjet.forEach(function (projet) {
                     const storage = getStorage();
-
+    
                     const spaceRef_rect = ref(storage, projet.image_rect);
                     getDownloadURL(spaceRef_rect)
                     .then((url) => {
                         projet.image_rect = url;
                     })
-
+    
                     const spaceRef_card = ref(storage, projet.image_card);
                     getDownloadURL(spaceRef_card)
                     .then((url) => {
                         projet.image_card = url;
                     })
-
+    
                     .catch((error) => {
                         console.log("erreur downloadUrl", error);
                     });
                 });
             });
+
+            
         },
     },
 }
