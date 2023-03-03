@@ -1,5 +1,5 @@
 <template>
-    <main class="pt-24  overflow-x-hidden">
+    <main class="pt-24 overflow-x-hidden">
         <h1 class="big-title-glitch title-glitch tg-anim relative
                     mx-7 md:mx-14 xl:mx-28"
             :data-text="projet.titre">
@@ -10,7 +10,7 @@
             <div class="projet_img relative z-10">
                 <img :src="img_rect" alt="image non trouver">
             </div>
-    
+
             <a target="_blank" :href="projet.lien">
                 <monBouton class="mx-auto my-16">
                     Voir le Projet
@@ -60,8 +60,9 @@
             
         </div>
 
-        <div class="h-8"></div>
-
+        <a href="/#id_projets">
+            <monBouton class="mx-auto my-32 md:my-52">Autres Projets</monBouton>
+        </a>
 
     </main>
 </template>
@@ -249,6 +250,7 @@
 
 // import des composants
 import monBouton from "../components/monBouton.vue"
+import mesProjets from "../components/mesProjets.vue"
 
 // import des fonctions firebases
 import { 
@@ -278,7 +280,7 @@ import {
 
 export default {
     name:'ProjetView',
-    components: {monBouton},
+    components: {monBouton, mesProjets},
 
     data() {
         return {
