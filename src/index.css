@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@500&family=Oswald:wght@200;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@500;700&family=Oswald:wght@200;500;700&display=swap');
 
 @layer base{
 
@@ -30,12 +30,23 @@
 
     .mon-title,
     h2{
-        @apply inline font-oswald font-extralight text-lg text-stone-300 tracking-widest;
-        @apply md:text-xl;
-        @apply xl:text-2xl
+        @apply inline font-oswald font-extralight text-xl text-stone-300 tracking-widest;
+        @apply md:text-2xl;
+        @apply xl:text-3xl
     };
 
-    h2{
+    h3{
+        @apply mt-20 mb-8 font-darker-grotesque font-bold text-xl text-stone-300 ;
+        @apply xl:text-2xl
+    }
+
+    h4{
+        @apply my-3 font-oswald font-bold text-xl tracking-widest text-orange-100;
+        @apply md:text-2xl;
+        @apply xl:text-3xl
+    }
+
+    h2, h3{
         @apply mx-5 md:mx-14 xl:mx-28
     }
 
