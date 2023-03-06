@@ -3,7 +3,7 @@
         <h1 class="relative block w-full h-full px-7 md:px-10 lg:max-w-screen-xl lg:mx-auto">
             <span class="mon-title absolute top-0 left-0">Hello Wolrd, <br/>I'm</span>
 
-            <span class="absolute top-36 left-0 w-full animate-skew">
+            <span class="absolute top-28 md:top-36 left-0 w-full animate-skew">
                 <span class="big-title-glitch btg-anim absolute top-0 left-0 text-center"
                     data-text="Aurélie Runser">
                     Aurélie Runser
@@ -19,7 +19,7 @@
             </span>
         </h1>
 
-        <!-- <div class="mon-cube"></div> -->
+        <div class="mon-cube"></div>
     </section>
 </template>
 
@@ -199,25 +199,40 @@
     }
 }
 
-/* .mon-cube{
+/* mise en place d'un carre d'animation */
+.mon-cube{
     position: absolute;
-    bottom: 0;
+    bottom: -60px;
     left: 10%;
     width: 30px;
     height: 30px;
-    background: #ffedd5;
-    animation: anim_translate 3s 0s ease-in-out infinite alternate, anim_rotate 3s 0s ease-in-out infinite normal;
-} */
-
-
-/* @keyframes anim_translate {
-    from {transform: translate(0, 0)}
-    to {transform: translate(0, -60px)}  
+    animation: anim_translate 2s ease-in-out infinite normal, anim_bg 8s infinite;   
 }
 
-@keyframes anim_rotate {
-    from {transform: rotate(0deg)}
-    to {transform: rotate(180deg)}  
-} */
+/* animation de déplacement du carre */
+@keyframes anim_translate {
+    0% { opacity: 0;
+        transform: translate(0, -120px)}
+    25% { transform: translate(0, -120px)}
+
+    25% { opacity: 1}
+
+    75% { opacity: 1}
+    
+    75% {transform: translate(0, -30px)}
+    100% {opacity: 0;
+        transform: translate(0, -30px)}  
+}
+
+/* animation de couleur du carre */
+@keyframes anim_bg {
+    17% { background: #ffedd5;}
+
+    42% { background: #22d3ee;}
+    
+    67% { background: #dddddd;}  
+    
+    92% { background: #d946ef;}  
+}
 
 </style>
