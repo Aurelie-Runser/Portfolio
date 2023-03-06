@@ -1,6 +1,6 @@
 <template>
     <main class="pt-24 overflow-x-hidden">
-        <h1 class="big-title-glitch title-glitch tg-anim relative
+        <h1 class="big-title-glitch title-glitch tg-anim-projet relative
                     mx-7 md:mx-14 xl:mx-28"
             :data-text="projet.titre">
             {{ projet.titre }}
@@ -94,7 +94,7 @@
 
 
 /* animation de l'effet gltich du titre */
-.tg-anim::before{
+.tg-anim-projet::before{
     content: attr(data-text);
     display: block;
     position: absolute;
@@ -106,7 +106,7 @@
     overflow: hidden;
 }
 
-.tg-anim::after{
+.tg-anim-projet::after{
     content: attr(data-text);
     display: block;
     position: absolute;
@@ -117,11 +117,10 @@
     background: #1f1f1f;
     overflow: hidden;
     clip-path: inset(61% 0% 0% 0%);
-}
-
-.tg-anim:hover::after{
     animation: glitch 3s linear infinite alternate-reverse;
 }
+
+
 
 @keyframes glitch {
     5%{
