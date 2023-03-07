@@ -1,6 +1,55 @@
 <template>
     <section class="py-28">
         <h2>Me Contacter</h2>
+
+        <div class="mx-5 my-8 md:mx-14 md:my-16 xl:mx-28 flex md:block flex-wrap justify-between gap-5">
+
+            <div class="md:my-8 w-full max-w-2xl flex flex-wrap flex-row justify-between gap-5 md:gap-8 ">
+                <a href="https://www.linkedin.com/in/aurélie-runser-10a763224">
+    
+                    <linkedinIcon class="inline-block w-7 h-7 md:w-10 md:h-10"/>
+                    <p class="sr-only">Mon compte Linkedin</p>
+                    <p class="inline-block ml-3 w-auto font-darker-grotesque font-bold text-base md:text-lg text-orange-100 hover:text-cyan-400">
+                        /in/aurélie-runser-10a763224
+                    </p>
+    
+                </a>
+    
+                <a href="https://www.instagram.com/aurelie.projetmmi/">
+    
+                    <instagramIcon class="inline-block w-7 h-7 md:w-10 md:h-10"/>
+                    <p class="sr-only">Mon compte Instagram</p>
+                    <p class="inline-block ml-3 w-auto font-darker-grotesque font-bold text-base md:text-lg text-orange-100 hover:text-fuchsia-500">
+                        @aurelie.projetmmi
+                    </p>
+    
+                </a>
+            </div>
+
+
+            <div class="md:my-8 w-full max-w-2xl flex flex-wrap flex-row justify-between gap-5 md:gap-8 ">
+                <a href="mailto:aurelie.runser25@gmail.com">
+    
+                    <mailIcon class="inline-block w-9 h-9 md:w-12 md:h-12"/>
+                    <p class="sr-only">Mon Adresse Mail</p>
+                    <p class="inline-block ml-3 w-auto font-darker-grotesque font-bold text-base md:text-lg text-orange-100 hover:text-cyan-400">
+                        aurelie.runser25@gmail.com
+                    </p>
+    
+                </a>
+    
+                <a href="tel:+33771722003">
+    
+                    <phonIcon class="inline-block w-9 h-9 md:w-12 md:h-12"/>
+                    <p class="sr-only">Mon Numéro de Téléphone</p>
+                    <p class="inline-block ml-3 w-auto font-darker-grotesque font-bold text-base md:text-lg text-orange-100 hover:text-fuchsia-500">
+                        +33 7 71 72 20 03
+                    </p>
+    
+                </a>
+            </div>
+
+        </div>
         
         <form action="https://api.web3forms.com/submit" method="POST" ref="contactForm"
             class="mx-5 my-14 md:mx-14 md:my-20 md:max-w-2xl xl:mx-28">
@@ -190,11 +239,15 @@ textarea:invalid ~ .form_obligatoire{
 
 
 <script>
-import monBouton from "../components/monBouton.vue"
+import monBouton from "@/components/monBouton.vue"
+import linkedinIcon from "@/components/icons/linkedinIcon.vue"
+import instagramIcon from "@/components/icons/instagramIcon.vue"
+import mailIcon from "@/components/icons/mailIcon.vue"
+import phonIcon from "@/components/icons/phonIcon.vue"
 
 export default {
   name: 'ContactForm',
-  components: {monBouton},
+  components: {monBouton, linkedinIcon, instagramIcon, mailIcon, phonIcon},
 
   data() {
     return {
