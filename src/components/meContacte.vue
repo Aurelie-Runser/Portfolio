@@ -73,10 +73,14 @@
 
         </form>
 
-        <p v-if="messageSent" class="text-white">Votre message a été envoyé !</p>
+        <p v-if="messageSent"
+            class="form_messageSent relative mx-auto w-fit font-oswald font-bold text-lg xl:text-xl text-center text-stone-300">
+            Merci beaucoup, votre message a bien été envoyé !
+        </p>
 
     </section>
 </template>
+
 
 <style>
 
@@ -157,10 +161,33 @@ input:invalid ~ .form_obligatoire,
 textarea:invalid ~ .form_obligatoire{
     opacity: 1;
     transition: opacity 0.1s ease-in-out;
+}
 
+
+/* style autour du message de confirmation de l'envoie du formulaire */
+.form_messageSent::before{
+    content: "";
+    position: absolute;
+    top: -15%;
+    left: -3%;
+    display: block;
+    width: 104%;
+    height: 120%;
+    border: 2px solid #22d3ee;
+}
+.form_messageSent::after{
+    content: "";
+    position: absolute;
+    bottom: -15%;
+    right : -3%;
+    display: block;
+    width: 104%;
+    height: 120%;
+    border: 2px solid #d946ef;
 }
 
 </style>
+
 
 <script>
 import monBouton from "../components/monBouton.vue"
