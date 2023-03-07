@@ -2,8 +2,9 @@
     <section class="py-28">
         <h2>Me Contacter</h2>
         
-        <form action="https://api.web3forms.com/submit" method="POST"
-            class="mx-5 my-14 md:mx-14 md:max-w-2xl xl:mx-28 xl:my-16">
+        <form action="https://api.web3forms.com/submit" method="POST" ref="contactForm"
+            class="mx-5 my-14 md:mx-14 md:my-20 md:max-w-2xl xl:mx-28">
+
 
             <input type="hidden" name="access_key" value="b3a5c0b1-dcc2-48e8-90e1-8ce766ba6253">
 
@@ -22,11 +23,11 @@
             </div>
 
             <div class="relative my-16">
-                <input type="text" name="sujet" placeholder=" " required
+                <input type="email" name="email" placeholder=" " required
                         class="border-2 border-orange-100 p-2 md:p-5">
                 <p class="form_text absolute top-1/2 left-3 -translate-y-1/2
                         font-darker-grotesque font-medium  text-orange-100 opacity-70">
-                    Sujet
+                    Adresse Mail
                 </p>
 
                 <div class="form_obligatoire p-3 md:p-5">
@@ -34,13 +35,13 @@
                                 md:text-base">* Obligatoire</p>
                 </div>
             </div>
-
+            
             <div class="relative my-16">
-                <input type="email" name="email" placeholder=" " required
+                <input type="text" name="sujet" placeholder=" " required
                         class="border-2 border-orange-100 p-2 md:p-5">
                 <p class="form_text absolute top-1/2 left-3 -translate-y-1/2
                         font-darker-grotesque font-medium  text-orange-100 opacity-70">
-                    Adresse Mail
+                    Sujet
                 </p>
 
                 <div class="form_obligatoire p-3 md:p-5">
@@ -64,11 +65,15 @@
                 </div>
             </div>
 
-            <input type="hidden" name="redirect" value="https://web3forms.com/success">
+            <!-- <input type="hidden" name="redirect" value="https://web3forms.com/success"> -->
 
-            <monBouton type="submit" class="mx-auto">Envoyer</monBouton>
+            <monBouton type="submit" class="mx-auto">
+                Envoyer
+            </monBouton>
 
         </form>
+
+        <p v-if="messageSent" class="text-white">Votre message a été envoyé !</p>
 
     </section>
 </template>
@@ -161,7 +166,35 @@ textarea:invalid ~ .form_obligatoire{
 import monBouton from "../components/monBouton.vue"
 
 export default {
-    name:'ProjetView',
-    components: {monBouton},
+  name: 'ContactForm',
+  components: {monBouton},
+
+  data() {
+    return {
+      messageSent: false
+    }
+  },
+
+  mounted(){
+        this.$refs.contactForm.addEventListener('submit', this.submitForm)
+  },
+
+  methods: {
+    async submitForm(event) {
+      event.preventDefault()
+      const formData = new FormData(event.target)
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+      })
+      if (response.ok) {
+        this.messageSent = true
+        // Réinitialiser les champs du formulaire
+        const inputs = event.target.querySelectorAll('input, textarea')
+        inputs.forEach(input => input.value = '')
+      }
+    }
+  }
 }
+
 </script>
