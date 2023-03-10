@@ -3,7 +3,7 @@
         <h1 class="relative block w-full h-full px-7 md:px-10 lg:max-w-screen-xl lg:mx-auto">
             <span class="mon-title absolute top-0 left-0">Hello World, <br/>I'm</span>
 
-            <span class="absolute top-28 md:top-36 left-0 w-full animate-skew">
+            <span class="absolute top-24 md:top-36 left-0 w-full animate-skew">
                 <span class="big-title-glitch btg-anim absolute top-0 left-0 text-center"
                     data-text="Aurélie Runser">
                     Aurélie Runser

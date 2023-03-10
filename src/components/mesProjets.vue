@@ -3,7 +3,7 @@
         <h2>Mes Projets</h2>
 
         <!-- grille de projets -->
-        <ul id="ma-liste" class="overflow-hidden -mx-7 md:-mx-10 my-16 md:grid grid-flow-row-dense grid-cols-[repeat(auto-fit,minmax(20rem,1fr))] gap-y-1 md:gap-1">
+        <ul id="ma-liste" class="overflow-hidden -mx-7 md:-mx-10 my-16 md:grid grid-flow-row-dense grid-cols-[repeat(auto-fit,minmax(20rem,1fr))]">
 
             <!-- card des projets -->
             <li v-for="p in listeProjets" :key="p.id"
