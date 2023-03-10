@@ -56,6 +56,10 @@
         @apply xl:text-xl   
     }
 
+    .perso_text{
+        @apply my-3 md:my-5 inline-block font-darker-grotesque text-base md:text-lg text-stone-300;
+    }
+
     input, textarea{
         @apply p-2 w-full bg-mon-black border-2 border-orange-100 font-darker-grotesque font-medium text-base text-orange-100
     }
