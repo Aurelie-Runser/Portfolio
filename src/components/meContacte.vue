@@ -1,11 +1,11 @@
 <template>
-    <section class="py-28">
+    <section class="my-28">
         <h2>Me Contacter</h2>
 
         <div class="mx-5 my-8 md:mx-14 md:my-16 xl:mx-28 flex md:block flex-wrap justify-between gap-5">
 
             <div class="md:my-8 w-full max-w-2xl flex flex-wrap flex-row justify-between gap-5 md:gap-8 ">
-                <a href="https://www.linkedin.com/in/aurélie-runser-10a763224">
+                <a target="_blank" href="https://www.linkedin.com/in/aurélie-runser-10a763224">
     
                     <linkedinIcon class="inline-block w-7 h-7 md:w-10 md:h-10"/>
                     <p class="sr-only">Mon compte Linkedin</p>
@@ -15,7 +15,7 @@
     
                 </a>
     
-                <a href="https://www.instagram.com/aurelie.projetmmi/">
+                <a target="_blank" href="https://www.instagram.com/aurelie.projetmmi/">
     
                     <instagramIcon class="inline-block w-7 h-7 md:w-10 md:h-10"/>
                     <p class="sr-only">Mon compte Instagram</p>
