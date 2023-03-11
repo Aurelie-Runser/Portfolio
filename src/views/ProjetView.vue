@@ -6,9 +6,10 @@
             {{ projet.titre }}
         </h1>
 
+        <!-- image + nouton "voir"-->
         <div class="my-16 w-full md:absolute md:right-0 md:m-0 md:w-1/2 ">
             <div class="projet_img relative z-10">
-                <img :src="img_rect" alt="image non trouver">
+                <img :src="img_rect" alt="image non trouvée">
             </div>
 
             <a target="_blank" :href="projet.lien">
@@ -19,6 +20,8 @@
         </div>
 
         <div class="px-7 md:px-10">
+
+            <!-- infos rapides -->
             <p class="mx-5 my-8 md:mx-14 md:my-10 xl:mx-28 xl:my-16
                     font-oswald font-bold text-lg md:text-xl xl:text-2xl text-orange-100">
                 Année : 
@@ -50,9 +53,26 @@
             <div>
                 <p class="mx-5 my-8 md:mx-14 md:my-10 xl:mx-28 xl:my-16
                         font-oswald font-bold text-lg md:text-xl xl:text-2xl text-orange-100">
-                    Contexte :
+                    Création :
                 </p>
+
                 <p v-for="text in projet.contexte_all" class="mx-5 my-7 md:mx-14 md:my-9 xl:mx-28 xl:my-12
+                                                            font-darker-grotesque text-base md:text-lg xl:text-xl text-stone-300">
+                    {{ text }}
+                </p>
+
+                <!-- 2eme image -->
+                <!-- <div class="projet_img projet_img-2 relative z-10 -mx-7 my-16 w-screen md:right-0 md:m-0 md:w-1/2 ">
+                    <img :src="img_rect2" :alt="img_rect2">
+                </div> -->
+
+
+                <p v-for="text in projet.contexte_all_2" class="mx-5 my-7 md:mx-14 md:my-9 xl:mx-28 xl:my-12
+                                                            font-darker-grotesque text-base md:text-lg xl:text-xl text-stone-300">
+                    {{ text }}
+                </p>
+
+                <p v-for="text in projet.contexte_all_3" class="mx-5 my-7 md:mx-14 md:my-9 xl:mx-28 xl:my-12
                                                             font-darker-grotesque text-base md:text-lg xl:text-xl text-stone-300">
                     {{ text }}
                 </p>
@@ -66,6 +86,7 @@
 
     </main>
 </template>
+
 
 <style>
 
@@ -90,6 +111,13 @@
     top: 4%;
     left: 2%;
     background-color: #d946ef;
+}
+
+.projet_img-2::before{
+    left: 2%;
+}
+.projet_img-2::after{
+    left: -2%;
 }
 
 
@@ -288,6 +316,7 @@ export default {
                 anne: null,
                 contexte_all: null,
                 image_rect: null,
+                image_rect2: null,
                 lien: null,
                 titre: null,
                 type: null, 
@@ -312,17 +341,27 @@ export default {
             if(this.refProjet.exists()){
                 this.projet = this.refProjet.data();
                 this.img_rect = this.projet.image_rect;
+                this.img_rect2 = this.projet.image_rect2;
             }
             else{
                 this.console.log("Projet Inexistant");
             }
 
             const storage = getStorage();
-            const spaceRef = ref(storage, this.projet.image_rect);
-            getDownloadURL(spaceRef)
+
+            const spaceRef_rect = ref(storage, this.projet.image_rect);
+            getDownloadURL(spaceRef_rect)
                 .then((url) => {
                     this.img_rect = url;
             })
+
+            const spaceRef_rect2 = ref(storage, this.projet.image_rect2);
+            getDownloadURL(spaceRef_rect2)
+                .then((url) => {
+                    this.img_rect2 = url;
+            })
+
+
             .catch((error) =>{
                 console.log('erreur downloadUrl', error);
             })
