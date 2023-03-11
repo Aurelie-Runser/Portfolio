@@ -1,5 +1,5 @@
 <template>
-    <section class="my-28">
+    <section class="my-32">
         <h2>Mes Projets</h2>
 
         <!-- grille de projets -->

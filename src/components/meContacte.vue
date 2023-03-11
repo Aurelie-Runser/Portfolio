@@ -1,5 +1,5 @@
 <template>
-    <section class="py-28">
+    <section class="my-32">
         <h2>Me Contacter</h2>
 
         <!--mise en ligne des élements (formulaire + réseaux) en ligne-->

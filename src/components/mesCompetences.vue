@@ -1,5 +1,5 @@
 <template>
-    <section class="my-28">
+    <section class="my-32">
         <h2>Mes Compétences</h2>
 
         <div v-for="c in listeCompetence" :key="c.id">
