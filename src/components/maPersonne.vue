@@ -2,9 +2,9 @@
     <section class="my-32">
         <h2>Ma Personne</h2>
 
-        <div class="guillement relative mx-5 md:mx-14 xl:mx-28 my-8">
+        <div class="mx-5 md:mx-14 xl:mx-28 my-8">
 
-            <p class="perso_text pl-16 ">
+            <p class="perso_text guillement_1 relative pl-16 ">
                 Perfectionniste et sérieuse, je m'épanouis dans la formation
                 <a target="_blank" href="http://mmimontbeliard.com/"
                     class="perso_link font-darker-grotesque text-base md:text-lg
@@ -32,8 +32,8 @@
                 pour être fière de mon travail, mais surtout satisfaire mes commanditaires.
             </p>
     
-            <p class="perso_text">
-                La volonté de rendre service et d'aider avec mes (encore, mais pas pour longtemps) petites connaissances sont ce qui me fond avancer pour
+            <p class="perso_text guillement_2 relative pr-16">
+                La volonté de rendre service et d'aider avec mes (encore, mais pas pour longtemps) petites connaissances sont ce qui me font avancer pour
                 <strong class="font-darker-grotesque font-medium text-base md:text-lg text-cyan-400">
                     participer à la construction du web de demain</strong>.
             </p>
@@ -45,10 +45,10 @@
 <style scoped>
 
 /* quillement en début de texte */
-.guillement::before{
+.guillement_1::before{
     content: '"';
     position: absolute;
-    top: -2rem;
+    top: -3rem;
     left: 0;
     display: inline-block;
     font-family: Oswald;
@@ -56,6 +56,18 @@
     color: #ffedd5;
 
     text-shadow: 3px 3px #22d3ee;
+}
+.guillement_2::after{
+    content: '"';
+    position: absolute;
+    bottom: -4rem;
+    right: 0;
+    display: inline-block;
+    font-family: Oswald;
+    font-size: 8rem;
+    color: #ffedd5;
+
+    text-shadow: 3px 3px #d946ef;
 }
 
 /* taille du guillement sur moyen net grand écran */
