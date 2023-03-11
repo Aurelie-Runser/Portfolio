@@ -17,7 +17,7 @@
                         <a target="_blank" href="https://www.linkedin.com/in/aurélie-runser-10a763224">
             
                             <linkedinIcon class="inline-block w-7 h-7 md:w-10 md:h-10"/>
-                            <p class="sr-only">Mon compte Linkedin</p>
+                            <p class="sr-only">Mon compte Linkedin : </p>
                             <p class="inline-block ml-3 w-auto font-darker-grotesque font-bold text-base md:text-lg text-orange-100 hover:text-cyan-400">
                                 /in/aurélie-runser-10a763224
                             </p>
@@ -27,7 +27,7 @@
                         <a target="_blank" href="https://www.instagram.com/aurelie.projetmmi/">
             
                             <instagramIcon class="inline-block w-7 h-7 md:w-10 md:h-10"/>
-                            <p class="sr-only">Mon compte Instagram</p>
+                            <p class="sr-only">Mon compte Instagram : </p>
                             <p class="inline-block ml-3 w-auto font-darker-grotesque font-bold text-base md:text-lg text-orange-100 hover:text-cyan-400">
                                 @aurelie.projetmmi
                             </p>
@@ -41,7 +41,7 @@
                         <a href="mailto:aurelie.runser25@gmail.com">
             
                             <mailIcon class="inline-block w-9 h-9 md:w-12 md:h-12"/>
-                            <p class="sr-only">Mon Adresse Mail</p>
+                            <p class="sr-only">Mon Adresse Mail : </p>
                             <p class="inline-block ml-3 w-auto font-darker-grotesque font-bold text-base md:text-lg text-orange-100 hover:text-fuchsia-500">
                                 aurelie.runser25@gmail.com
                             </p>
@@ -51,7 +51,7 @@
                         <a href="tel:+33771722003">
             
                             <phonIcon class="inline-block w-9 h-9 md:w-12 md:h-12"/>
-                            <p class="sr-only">Mon Numéro de Téléphone</p>
+                            <p class="sr-only">Mon Numéro de Téléphone : </p>
                             <p class="inline-block ml-3 w-auto font-darker-grotesque font-bold text-base md:text-lg text-orange-100 hover:text-fuchsia-500">
                                 +33 7 71 72 20 03
                             </p>
