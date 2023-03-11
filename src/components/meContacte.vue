@@ -18,7 +18,7 @@
             
                             <linkedinIcon class="inline-block w-7 h-7 md:w-10 md:h-10"/>
                             <p class="sr-only">Mon compte Linkedin : </p>
-                            <p class="inline-block ml-3 w-auto font-darker-grotesque font-bold text-base md:text-lg text-orange-100 hover:text-cyan-400">
+                            <p class="contact_link inline-block ml-3 w-auto font-darker-grotesque font-bold text-base md:text-lg text-orange-100 underline decoration-fuchsia-500">
                                 /in/aurélie-runser-10a763224
                             </p>
             
@@ -28,7 +28,7 @@
             
                             <instagramIcon class="inline-block w-7 h-7 md:w-10 md:h-10"/>
                             <p class="sr-only">Mon compte Instagram : </p>
-                            <p class="inline-block ml-3 w-auto font-darker-grotesque font-bold text-base md:text-lg text-orange-100 hover:text-cyan-400">
+                            <p class="contact_link inline-block ml-3 w-auto font-darker-grotesque font-bold text-base md:text-lg text-orange-100 underline decoration-fuchsia-500">
                                 @aurelie.projetmmi
                             </p>
             
@@ -42,7 +42,7 @@
             
                             <mailIcon class="inline-block w-9 h-9 md:w-12 md:h-12"/>
                             <p class="sr-only">Mon Adresse Mail : </p>
-                            <p class="inline-block ml-3 w-auto font-darker-grotesque font-bold text-base md:text-lg text-orange-100 hover:text-fuchsia-500">
+                            <p class="contact_link inline-block ml-3 w-auto font-darker-grotesque font-bold text-base md:text-lg text-orange-100 underline decoration-fuchsia-500">
                                 aurelie.runser25@gmail.com
                             </p>
             
@@ -52,7 +52,7 @@
             
                             <phonIcon class="inline-block w-9 h-9 md:w-12 md:h-12"/>
                             <p class="sr-only">Mon Numéro de Téléphone : </p>
-                            <p class="inline-block ml-3 w-auto font-darker-grotesque font-bold text-base md:text-lg text-orange-100 hover:text-fuchsia-500">
+                            <p class="contact_link inline-block ml-3 w-auto font-darker-grotesque font-bold text-base md:text-lg text-orange-100 underline decoration-fuchsia-500">
                                 +33 7 71 72 20 03
                             </p>
             
@@ -147,6 +147,16 @@
 
 
 <style>
+
+/* animation du underline */
+.contact_link:hover{
+    animation: underline_color 0.5s linear infinite;
+}
+
+@keyframes underline_color {
+    from{text-decoration-color: #22d3ee;}
+    to{text-decoration-color: #d946ef;}
+}
 
 /* nécessaire pour que l'utilisateur puisse pas cliquer sur les textes en absolute */
 .form_text,
