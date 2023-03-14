@@ -47,16 +47,6 @@
                             </p>
             
                         </a>
-            
-                        <a href="tel:+33771722003">
-            
-                            <phonIcon class="inline-block w-9 h-9 md:w-12 md:h-12"/>
-                            <p class="sr-only">Mon Numéro de Téléphone : </p>
-                            <p class="contact_link inline-block ml-3 w-auto font-darker-grotesque font-bold text-base md:text-lg text-orange-100 underline decoration-fuchsia-500">
-                                +33 7 71 72 20 03
-                            </p>
-            
-                        </a>
                     </div>
         
                 </div>
@@ -268,11 +258,10 @@ import monBouton from "@/components/monBouton.vue"
 import linkedinIcon from "@/components/icons/linkedinIcon.vue"
 import instagramIcon from "@/components/icons/instagramIcon.vue"
 import mailIcon from "@/components/icons/mailIcon.vue"
-import phonIcon from "@/components/icons/phonIcon.vue"
 
 export default {
   name: 'ContactForm',
-  components: {monBouton, linkedinIcon, instagramIcon, mailIcon, phonIcon},
+  components: {monBouton, linkedinIcon, instagramIcon, mailIcon},
 
   data() {
     return {
