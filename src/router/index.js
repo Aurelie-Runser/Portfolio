@@ -9,7 +9,7 @@ const router = createRouter({
   routes: [
     { path: '/', name: 'home', component: HomeView },
     { path: '/projet/:id', name: 'projet', component: ProjetView },
-    { path: "/:catchAll(.*)", name: "Page404View", component: Page404View,}, 
+    { path: "/:catchAll(.*)", name: "Page404View", component: Page404View}, 
   ],
 
   scrollBehavior() {
