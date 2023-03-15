@@ -17,7 +17,9 @@
             </p>
         </div>
 
-        <monBouton class="mx-auto my-20">Retourner à l'Accueil</monBouton>
+        <RouterLink to="/">
+            <monBouton class="mx-auto my-20">Retourner à l'Accueil</monBouton>
+        </RouterLink>
 
 
 
