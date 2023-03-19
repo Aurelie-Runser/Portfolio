@@ -1,5 +1,5 @@
 <template>
-    <main class="min-h-screen px-7 md:px-10 pt-24">
+    <main class="min-h-screen px-7 md:px-10 pt-24 overflow-hidden">
 
         <h1 class="relative top-0 left-1/2 w-full animate-skew">
             <span class="big-title-glitch btg-anim top-0 -translate-x-1/2 text-center text-5xl md:text-7xl"
@@ -18,9 +18,8 @@
         </div>
 
         <RouterLink to="/">
-            <monBouton class="mx-auto my-20">Retourner à l'Accueil</monBouton>
+            <monBouton class="mx-auto my-20">Retourner à Hello World</monBouton>
         </RouterLink>
-
 
 
     </main>
