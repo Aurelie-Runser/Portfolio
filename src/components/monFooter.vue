@@ -1,10 +1,15 @@
 <template>
     <div class="flex flex-wrap justify-evenly gap-x-10 gap-y-5
                 w-full h-auto p-7 bg-neutral-800">
-        <RouterLink to="/id_contact"
+
+        <RouterLink to="/"
             class="footer_link font-darker-grotesque font-bold text-sm md:text-base text-neutral-400 underline decoration-fuchsia-500">
-            Contactez-Moi !
+            Hello World
         </RouterLink>
+
+        <a href="/#id_contact" class="footer_link font-darker-grotesque font-bold text-sm md:text-base text-neutral-400 underline decoration-fuchsia-500">
+            Me Contacter
+        </a>
 
         <div class="flex gap-5">
             <a target="_blank" href="https://www.linkedin.com/in/aurélie-runser-10a763224"> 
