@@ -1,7 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
+
 import HomeView from '../views/HomeView.vue'
 import ProjetView from '../views/ProjetView.vue'
-import Page404View from '../views/404.vue'
+import Page404 from '../views/404.vue'
 
 
 const router = createRouter({
@@ -9,7 +10,7 @@ const router = createRouter({
   routes: [
     { path: '/', name: 'home', component: HomeView },
     { path: '/projet/:id', name: 'projet', component: ProjetView },
-    { path: "/:catchAll(.*)", name: "Page404View", component: Page404View}, 
+    { path: '/:pathMatch(.*)*',    name: 'Page404', component: Page404 },
   ],
 
   scrollBehavior() {
