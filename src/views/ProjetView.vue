@@ -57,32 +57,57 @@
                 </p>
 
                 <p v-for="text in projet.contexte_all" class="mx-5 my-7 md:mx-14 md:my-9 xl:mx-28 xl:my-12
-                                                            font-darker-grotesque text-base md:text-lg xl:text-xl text-stone-300">
+                                                            font-darker-grotesque text-base md:text-lg text-stone-300">
                     {{ text }}
                 </p>
 
-                <!-- 2eme image -->
-                <!-- <div class="projet_img projet_img-2 relative z-10 -mx-7 my-16 w-screen md:right-0 md:m-0 md:w-1/2 ">
-                    <img :src="img_rect2" :alt="img_rect2">
-                </div> -->
+                <div class="lg:flex flex-wrap">
 
+                    <!-- 2eme image -->
+                    <div class="projet_img projet_img-2 relative z-10 -ml-7 my-16 w-screen sm:mx-auto sm:w-2/3 h-fit lg:-ml-10 lg:w-1/2">
+                        <img class="w-full" :src="img_rect2" :alt="img_rect2">
+                    </div>
+    
+    
+                    <div class="inline-block basis-1/3 grow">
 
-                <p v-for="text in projet.contexte_all_2" class="mx-5 my-7 md:mx-14 md:my-9 xl:mx-28 xl:my-12
-                                                            font-darker-grotesque text-base md:text-lg xl:text-xl text-stone-300">
-                    {{ text }}
-                </p>
+                        <p v-for="text in projet.contexte_all_2" class="mx-5 my-7 md:mx-14 md:my-9 xl:my-12
+                                                                    font-darker-grotesque text-base md:text-lg text-stone-300
+                                                                     ">
+                            {{ text }}
+                        </p>
+                    </div>
+                </div>
 
                 <p v-for="text in projet.contexte_all_3" class="mx-5 my-7 md:mx-14 md:my-9 xl:mx-28 xl:my-12
-                                                            font-darker-grotesque text-base md:text-lg xl:text-xl text-stone-300">
+                                                            font-darker-grotesque text-base md:text-lg text-stone-300">
                     {{ text }}
                 </p>
             </div>
             
         </div>
 
-        <a href="/#id_projets">
-            <monBouton class="mx-auto my-32 md:my-52">Autres Projets</monBouton>
+
+        <a target="_blank" :href="projet.lien">
+            <monBouton class="mx-auto my-20 md:my-40">
+                Voir le Projet
+            </monBouton>
         </a>
+        
+
+        <hr class="test mx-auto border-none w-5/6 h-1"/>
+
+
+        <div class="flex flex-wrap justify-evenly gap-20 mx-auto my-32 md:my-52 w-5/6">
+            <RouterLink to="/">
+                <monBouton>Hello World</monBouton>
+            </RouterLink>
+    
+            <a href="/#id_projets">
+                <monBouton>Autres Projets</monBouton>
+            </a>
+        </div>
+
 
     </main>
 </template>
@@ -90,6 +115,18 @@
 
 <style>
 
+.test{
+    animation: hr_color 3s linear infinite;
+}
+
+@keyframes hr_color {
+    0%{background-color: #22d3ee;}
+    50%{background-color: #d946ef;}
+    100%{background-color: #22d3ee;}
+}
+
+
+/* style des images */
 .projet_img::before{
     content: "";
     position: absolute;
