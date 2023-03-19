@@ -3,16 +3,16 @@
         <h2>Me Contacter</h2>
 
         <!--mise en ligne des élements (formulaire + réseaux) en ligne-->
-        <div class="lg:flex flex-row-reverse">
+        <div class="xl:flex flex-row-reverse">
 
             <!-- comportement des 2 bloques des réseaux -->
-            <div class="mx-5 my-8 md:mx-14 md:my-16 xl:mx-28 flex md:block flex-wrap justify-between gap-5">
+            <div class="mx-5 my-8 md:mr-14 md:my-16  xl:mr-28 flex md:block flex-wrap justify-between gap-5">
     
                 <!-- sticky -->
                 <div class="sticky top-1/3">
 
                     <!-- bloque linkedin + insta-->
-                    <div class=" my-8 w-full max-w-2xl flex flex-wrap flex-row justify-between lg:flex-col gap-5 md:gap-8 ">
+                    <div class="my-8 w-full flex flex-wrap flex-row justify-between xl:flex-col gap-5 md:gap-8 ">
 
                         <a target="_blank" href="https://www.linkedin.com/in/aurélie-runser-10a763224">
             
@@ -34,10 +34,6 @@
             
                         </a>
 
-                    </div>
-        
-                    <!-- bloque mail + phone -->
-                    <div class=" md:my-8 w-full max-w-2xl flex flex-wrap flex-row justify-between lg:flex-col gap-5 md:gap-8 ">
                         <a href="mailto:aurelie.runser25@gmail.com">
             
                             <mailIcon class="inline-block w-9 h-9 md:w-12 md:h-12"/>
@@ -47,7 +43,13 @@
                             </p>
             
                         </a>
+
+                        <p v-if="messageSent"
+                            class="form_messageSent hidden xl:block relative mx-auto my-20 w-96 font-oswald font-bold text-lg xl:text-xl text-center text-stone-300">
+                            Merci beaucoup, votre message a bien été envoyé !
+                        </p>
                     </div>
+
         
                 </div>
             </div>
@@ -55,7 +57,7 @@
             <!-- formulaire-->
             <div class="grow">
                 <form action="https://api.web3forms.com/submit" method="POST" ref="contactForm"
-                    class="mx-5 my-14 md:mx-14 md:my-20 md:max-w-2xl xl:mx-28">
+                    class="mx-5 my-14 md:ml-14 md:my-20 md:max-w-2xl xl:ml-28">
         
         
                     <input type="hidden" name="access_key" value="b3a5c0b1-dcc2-48e8-90e1-8ce766ba6253">
@@ -126,9 +128,10 @@
                 </form>
         
                 <p v-if="messageSent"
-                    class="form_messageSent relative mx-auto w-fit font-oswald font-bold text-lg xl:text-xl text-center text-stone-300">
+                    class="form_messageSent xl:hidden relative mx-auto my-20 w-fit font-oswald font-bold text-lg xl:text-xl text-center text-stone-300">
                     Merci beaucoup, votre message a bien été envoyé !
                 </p>
+                
             </div>
         </div>
 
