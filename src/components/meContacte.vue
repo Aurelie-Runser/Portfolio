@@ -24,12 +24,12 @@
             
                         </a>
             
-                        <a target="_blank" href="https://www.instagram.com/aurelie.projetmmi/">
+                        <a target="_blank" href="https://www.instagram.com/aurelie.runser_pro/">
             
                             <instagramIcon class="inline-block w-7 h-7 md:w-10 md:h-10"/>
                             <p class="sr-only">Mon compte Instagram : </p>
                             <p class="contact_link inline-block ml-3 w-auto font-darker-grotesque font-bold text-base md:text-lg text-orange-100 underline decoration-fuchsia-500">
-                                @aurelie.projetmmi
+                                @aurelie.runser_pro/
                             </p>
             
                         </a>

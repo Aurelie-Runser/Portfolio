@@ -17,7 +17,7 @@
                 <p class="sr-only">Lien vers mon compte Linkedin</p>
             </a>
     
-            <a target="_blank" href="https://www.instagram.com/aurelie.projetmmi/">
+            <a target="_blank" href="https://www.instagram.com/aurelie.runser_pro/">
                 <instagramIconGray class="inline-block w-5 h-5 md:w-8 md:h-8"/>
                 <p class="sr-only">Lien vers mon compte Instagram : </p>
             </a>
