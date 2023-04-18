@@ -6,8 +6,8 @@
 
             <h3>{{c.titre}}</h3>
 
-            <div class="flex flex-wrap gap-x-8 gap-y-8 justify-around
-                         md:justify-start md:gap-x-32
+            <div class="flex flex-wrap gap-x-10 gap-y-10 justify-start
+                         md:gap-x-32
                          mx-5 md:mx-14 xl:mx-28">
 
                 <div v-for="(point, key) in c.competences" :key="key">
