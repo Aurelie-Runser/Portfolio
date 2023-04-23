@@ -12,13 +12,13 @@
                 <!-- Les images -->
                 <!--image en mobile-->
                 <div class="card_img relative block md:hidden aspect-video delay-200 duration-500">
-                    <img class="object-cover h-full"
+                    <img class="object-cover w-full h-full"
                          :src="p.image_rect" :alt="'Image de mon projet '+p.titre">
                 </div>
 
                 <!--image en pc-->
                 <div class="card_img relative hidden md:block aspect-square delay-200 duration-500">
-                    <img class="object-cover"
+                    <img class="object-cover w-full h-full"
                          :src="p.image_card" :alt="'Image de mon projet '+p.titre">
                 </div>
 
