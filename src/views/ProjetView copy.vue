@@ -6,93 +6,86 @@
             {{ projet.titre }}
         </h1>
 
-
-        <div class="flex flex-col lg:flex-row-reverse">
-            <!-- image + nouton "voir"-->
-            <div class="mt-10 place-items-end">
-                <div class="projet_img relative z-10">
-                    <img :src="img_rect" alt="image non trouvée">
-                </div>
-    
-                <a target="_blank" :href="projet.lien">
-                    <monBouton class="mx-auto mt-16">
-                        Voir le Projet
-                    </monBouton>
-                </a>
+        <!-- image + nouton "voir"-->
+        <div class="my-16 w-full md:absolute md:right-0 md:m-0 md:w-1/2 ">
+            <div class="projet_img relative z-10">
+                <img :src="img_rect" alt="image non trouvée">
             </div>
 
-            <div class="flex-none w-full lg:w-1/2">
-    
-                <!-- infos rapides -->
-                <p class="mx-5 my-8 md:mx-14 md:my-10 xl:mx-28 xl:my-16
-                        font-oswald font-bold text-lg md:text-xl xl:text-2xl text-orange-100">
-                    Année : 
-                    <span class="ml-5 font-darker-grotesque text-base md:text-lg xl:text-xl text-stone-300">
-                        {{ projet.annee }}
-                    </span>
-                </p>
-        
-                <p class="mx-5 my-8 md:mx-14 md:my-10 xl:mx-28 xl:my-16
-                        font-oswald font-bold text-lg md:text-xl xl:text-2xl text-orange-100">
-                    Type : 
-                    <span class="ml-5 font-darker-grotesque text-base md:text-lg xl:text-xl text-stone-300">
-                        {{ projet.type }}
-                    </span>
-                </p>
-        
-        
-                <div>
-                    <p class="mx-5 mt-8 mb-0 md:mx-14 md:mt-10 xl:mx-28 xl:mt-16
-                            font-oswald font-bold text-lg md:text-xl xl:text-2xl text-orange-100">
-                        Outils :
-                    </p>
-                    <p v-for="(text, key) in projet.outils" :key="key" 
-                        class="mx-5 mt-2 mb-3 md:mx-14 md:mt-5 md:mb-5 xl:mx-28 sm:indent-5 md:indent-10 xl:inset-16
-                                font-darker-grotesque text-base md:text-lg xl:text-xl font-light text-stone-300">
-                        - {{key}} : <span class="font-darker-grotesque text-base md:text-lg xl:text-xl font-extrabold text-orange-100">{{ text }}</span>
-                    </p>
-                </div>
-        
-    
-            </div>
+            <a target="_blank" :href="projet.lien">
+                <monBouton class="mx-auto my-16">
+                    Voir le Projet
+                </monBouton>
+            </a>
         </div>
-        
-        <div>
-            <p class="mx-5 my-8 md:mx-14 md:my-10 xl:mx-28
+
+        <div class="px-7 md:px-10">
+
+            <!-- infos rapides -->
+            <p class="mx-5 my-8 md:mx-14 md:my-10 xl:mx-28 xl:my-16
                     font-oswald font-bold text-lg md:text-xl xl:text-2xl text-orange-100">
-                Création :
+                Année : 
+                <span class="ml-5 font-darker-grotesque text-base md:text-lg xl:text-xl text-stone-300">
+                    {{ projet.annee }}
+                </span>
             </p>
-
-            <p v-for="text in projet.contexte_all" class="mx-5 my-7 md:mx-14 md:my-9 xl:mx-28 xl:my-12
-                                                        font-darker-grotesque text-base md:text-lg text-stone-300">
-                {{ text }}
+    
+            <p class="mx-5 my-8 md:mx-14 md:my-10 xl:mx-28 xl:my-16
+                    font-oswald font-bold text-lg md:text-xl xl:text-2xl text-orange-100">
+                Type : 
+                <span class="ml-5 font-darker-grotesque text-base md:text-lg xl:text-xl text-stone-300">
+                    {{ projet.type }}
+                </span>
             </p>
-
-            <div class="lg:flex flex-wrap">
-
-                <!-- 2eme image -->
-                <div class="projet_img projet_img-2 relative z-10 -ml-7 my-16 w-screen sm:mx-auto sm:w-2/3 h-fit lg:-ml-10 lg:w-1/2">
-                    <img class="w-full" :src="img_rect2" :alt="img_rect2">
-                </div>
-
-
-                <div class="inline-block basis-1/3 grow">
-
-                    <p v-for="text in projet.contexte_all_2" class="mx-5 my-7 md:mx-14 md:my-9 xl:my-12
-                                                                font-darker-grotesque text-base md:text-lg text-stone-300
-                                                                 ">
-                        {{ text }}
-                    </p>
-                </div>
+    
+    
+            <div>
+                <p class="mx-5 mt-8 mb-0 md:mx-14 md:mt-10 xl:mx-28 xl:mt-16
+                        font-oswald font-bold text-lg md:text-xl xl:text-2xl text-orange-100">
+                    Outils :
+                </p>
+                <p v-for="(text, key) in projet.outils" :key="key" class="mx-5 mt-2 mb-3 md:mx-14 md:mt-5 md:mb-5 xl:mx-28 sm:indent-5 md:indent-10 xl:inset-16
+                                                                        font-darker-grotesque text-base md:text-lg xl:text-xl text-stone-300">
+                    - {{key}} : <span class="font-bold">{{ text }}</span>
+                </p>
             </div>
+    
+            <div>
+                <p class="mx-5 my-8 md:mx-14 md:my-10 xl:mx-28 xl:my-16
+                        font-oswald font-bold text-lg md:text-xl xl:text-2xl text-orange-100">
+                    Création :
+                </p>
 
-            <p v-for="text in projet.contexte_all_3" class="mx-5 my-7 md:mx-14 md:my-9 xl:mx-28 xl:my-12
-                                                        font-darker-grotesque text-base md:text-lg text-stone-300">
-                {{ text }}
-            </p>
-        </div>
+                <p v-for="text in projet.contexte_all" class="mx-5 my-7 md:mx-14 md:my-9 xl:mx-28 xl:my-12
+                                                            font-darker-grotesque text-base md:text-lg text-stone-300">
+                    {{ text }}
+                </p>
+
+                <div class="lg:flex flex-wrap">
+
+                    <!-- 2eme image -->
+                    <div class="projet_img projet_img-2 relative z-10 -ml-7 my-16 w-screen sm:mx-auto sm:w-2/3 h-fit lg:-ml-10 lg:w-1/2">
+                        <img class="w-full" :src="img_rect2" :alt="img_rect2">
+                    </div>
+    
+    
+                    <div class="inline-block basis-1/3 grow">
+
+                        <p v-for="text in projet.contexte_all_2" class="mx-5 my-7 md:mx-14 md:my-9 xl:my-12
+                                                                    font-darker-grotesque text-base md:text-lg text-stone-300
+                                                                     ">
+                            {{ text }}
+                        </p>
+                    </div>
+                </div>
+
+                <p v-for="text in projet.contexte_all_3" class="mx-5 my-7 md:mx-14 md:my-9 xl:mx-28 xl:my-12
+                                                            font-darker-grotesque text-base md:text-lg text-stone-300">
+                    {{ text }}
+                </p>
+            </div>
             
-        
+        </div>
 
 
         <a target="_blank" :href="projet.lien">
