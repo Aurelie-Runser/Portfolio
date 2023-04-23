@@ -7,7 +7,7 @@
 
             <!-- card des projets -->
             <li v-for="p in listeProjets" :key="p.id"
-                class="projet_card relative grid content-center justify-items-center basis-96 grow aspect-video md:aspect-square">
+                class="projet_card relative grid content-center justify-items-center basis-96 grow aspect-video md:aspect-square overflow-hidden">
 
                 <!-- Les images -->
                 <!--image en mobile-->
@@ -49,7 +49,7 @@
                 <!-- le bouton pour aller sur le projet-->
                 <RouterLink :to="`/projet/${p.id}`">
                     <button
-                        class="card_button translate-x-[120%] translate-y-[120%] absolute bottom-[5%] right-[5%] px-6 py-3 min-w-min w-[25%] h-16 md:h-20 bg-mon-black opacity-0
+                        class="card_button translate-x-[120%] translate-y-[120%] absolute bottom-[5%] right-[5%] px-6 py-3 min-w-min w-[25%] h-16 md:h-20 bg-mon-black transition-opacity opacity-0 delay-200 duration-500
                                 font-oswald text-base md:text-xl tracking-wider text-center text-stone-300">
                         Voir
                     </button>
@@ -69,7 +69,7 @@
     filter: brightness(0.25);
 }
 
-/* modification des carrés au survole de la card */
+/* modification des décos au survole de la card */
 .projet_card:hover .card_deco{
     width: 95%;
     height: 95%;
@@ -81,8 +81,6 @@
 .projet_card:hover .card_button{
     opacity: 100%;
     transform: translate(0);
-    transition: opacity 200ms 500ms;
-    
 }
 
 </style>
