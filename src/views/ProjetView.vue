@@ -1,14 +1,18 @@
 <template>
     <main class="pt-24 overflow-x-hidden">
-        <div v-if="dataLoaded">
+
+        <div v-if="dataLoaded == 2">
+
             <h1 class="big-title-glitch title-glitch tg-anim-projet relative
                         mx-7 md:mx-14 xl:mx-28"
                 :data-text="projet.titre">
                 {{ projet.titre }}
             </h1>
     
+            <!--image + infos rapide-->
             <div class="flex flex-col lg:flex-row-reverse">
-                <!-- image + nouton "voir"-->
+
+                <!-- image + Bouton "voir"-->
                 <div class="mt-10 place-items-end">
                     <div class="projet_img relative z-10">
                         <img :src="img_rect" alt="image non trouvée">
@@ -21,9 +25,9 @@
                     </a>
                 </div>
     
+                <!-- infos rapides -->
                 <div class="flex-none w-full lg:w-1/2">
         
-                    <!-- infos rapides -->
                     <p class="mx-5 my-8 md:mx-14 md:my-10 xl:mx-28 xl:my-16
                             font-oswald font-bold text-lg md:text-xl xl:text-2xl text-orange-100">
                         Année : 
@@ -55,8 +59,10 @@
             
         
                 </div>
+
             </div>
-            
+
+            <!-- long texte-->            
             <div>
                 <p class="mx-5 my-8 md:mx-14 md:my-10 xl:mx-28
                         font-oswald font-bold text-lg md:text-xl xl:text-2xl text-orange-100">
@@ -97,6 +103,23 @@
                     Voir le Projet
                 </monBouton>
             </a>
+        
+        
+
+            <hr class="separateur mx-auto border-none w-5/6 h-1"/>
+
+
+            <div class="flex flex-wrap justify-evenly gap-20 mx-auto my-32 md:my-52 w-5/6">
+                <RouterLink to="/">
+                    <monBouton>Hello World</monBouton>
+                </RouterLink>
+        
+                <a href="/#id_projets">
+                    <monBouton>Autres Projets</monBouton>
+                </a>
+
+            </div>
+
         </div>
 
         <div v-else class="w-full h-screen relative">
@@ -104,20 +127,6 @@
             <div class="log log_3 absolute top-1/3 left-1/2 w-10 h-10 -translate-x-1/2 -translate-y-1/2 bg-stone-300"></div>
             <div class="log log_2 absolute top-1/3 left-1/2 w-10 h-10 -translate-x-1/2 -translate-y-1/2 bg-cyan-400"></div>
             <div class="log log_1 absolute top-1/3 left-1/2 w-10 h-10 -translate-x-1/2 -translate-y-1/2 bg-orange-100"></div>
-        </div>
-        
-
-        <hr class="separateur mx-auto border-none w-5/6 h-1"/>
-
-
-        <div class="flex flex-wrap justify-evenly gap-20 mx-auto my-32 md:my-52 w-5/6">
-            <RouterLink to="/">
-                <monBouton>Hello World</monBouton>
-            </RouterLink>
-    
-            <a href="/#id_projets">
-                <monBouton>Autres Projets</monBouton>
-            </a>
         </div>
 
 
@@ -456,7 +465,6 @@
     }
 }
 
-
 </style>
 
 
@@ -510,16 +518,16 @@ export default {
                 contexte_all_test: [],
             },
             
+            //recupere l'id du projet
             refProjet:null,
-            img_rect:null,
 
-            dataLoaded: false,
-
+            // pour s'assurer que toutes les images sont chargees
+            dataLoaded: 0,
         }
     },
 
     mounted(){
-        this.getProjet(this.$route.params.id)
+        this.getProjet(this.$route.params.id);
     },
 
     methods :{
@@ -543,19 +551,21 @@ export default {
             getDownloadURL(spaceRef_rect)
                 .then((url) => {
                     this.img_rect = url;
+                this.dataLoaded += 1
             })
 
             const spaceRef_rect2 = ref(storage, this.projet.image_rect2);
             getDownloadURL(spaceRef_rect2)
                 .then((url) => {
                     this.img_rect2 = url;
-                this.dataLoaded = true;
+                this.dataLoaded += 1;
             })
 
             .catch((error) =>{
                 console.log('erreur downloadUrl', error);
             })
         },
+
     }
 }
 
