@@ -1,108 +1,113 @@
 <template>
     <main class="pt-24 overflow-x-hidden">
-        <h1 class="big-title-glitch title-glitch tg-anim-projet relative
-                    mx-7 md:mx-14 xl:mx-28"
-            :data-text="projet.titre">
-            {{ projet.titre }}
-        </h1>
-
-
-        <div class="flex flex-col lg:flex-row-reverse">
-            <!-- image + nouton "voir"-->
-            <div class="mt-10 place-items-end">
-                <div class="projet_img relative z-10">
-                    <img :src="img_rect" alt="image non trouvée">
+        <div v-if="dataLoaded">
+            <h1 class="big-title-glitch title-glitch tg-anim-projet relative
+                        mx-7 md:mx-14 xl:mx-28"
+                :data-text="projet.titre">
+                {{ projet.titre }}
+            </h1>
+    
+            <div class="flex flex-col lg:flex-row-reverse">
+                <!-- image + nouton "voir"-->
+                <div class="mt-10 place-items-end">
+                    <div class="projet_img relative z-10">
+                        <img :src="img_rect" alt="image non trouvée">
+                    </div>
+        
+                    <a target="_blank" :href="projet.lien">
+                        <monBouton class="mx-auto mt-16">
+                            Voir le Projet
+                        </monBouton>
+                    </a>
                 </div>
     
-                <a target="_blank" :href="projet.lien">
-                    <monBouton class="mx-auto mt-16">
-                        Voir le Projet
-                    </monBouton>
-                </a>
-            </div>
-
-            <div class="flex-none w-full lg:w-1/2">
-    
-                <!-- infos rapides -->
-                <p class="mx-5 my-8 md:mx-14 md:my-10 xl:mx-28 xl:my-16
-                        font-oswald font-bold text-lg md:text-xl xl:text-2xl text-orange-100">
-                    Année : 
-                    <span class="ml-5 font-darker-grotesque text-base md:text-lg xl:text-xl text-stone-300">
-                        {{ projet.annee }}
-                    </span>
-                </p>
+                <div class="flex-none w-full lg:w-1/2">
         
-                <p class="mx-5 my-8 md:mx-14 md:my-10 xl:mx-28 xl:my-16
-                        font-oswald font-bold text-lg md:text-xl xl:text-2xl text-orange-100">
-                    Type : 
-                    <span class="ml-5 font-darker-grotesque text-base md:text-lg xl:text-xl text-stone-300">
-                        {{ projet.type }}
-                    </span>
-                </p>
-        
-        
-                <div>
-                    <p class="mx-5 mt-8 mb-0 md:mx-14 md:mt-10 xl:mx-28 xl:mt-16
+                    <!-- infos rapides -->
+                    <p class="mx-5 my-8 md:mx-14 md:my-10 xl:mx-28 xl:my-16
                             font-oswald font-bold text-lg md:text-xl xl:text-2xl text-orange-100">
-                        Outils :
+                        Année : 
+                        <span class="ml-5 font-darker-grotesque text-base md:text-lg xl:text-xl text-stone-300">
+                            {{ projet.annee }}
+                        </span>
                     </p>
-                    <p v-for="(text, key) in projet.outils" :key="key" 
-                        class="mx-5 mt-2 mb-3 md:mx-14 md:mt-5 md:mb-5 xl:mx-28 sm:indent-5 md:indent-10 xl:inset-16
-                                font-darker-grotesque text-base md:text-lg xl:text-xl font-light text-stone-300">
-                        - {{key}} : <span class="font-darker-grotesque text-base md:text-lg xl:text-xl font-extrabold text-orange-100">{{ text }}</span>
+            
+                    <p class="mx-5 my-8 md:mx-14 md:my-10 xl:mx-28 xl:my-16
+                            font-oswald font-bold text-lg md:text-xl xl:text-2xl text-orange-100">
+                        Type : 
+                        <span class="ml-5 font-darker-grotesque text-base md:text-lg xl:text-xl text-stone-300">
+                            {{ projet.type }}
+                        </span>
                     </p>
-                </div>
-        
-    
-            </div>
-        </div>
-        
-        <div>
-            <p class="mx-5 my-8 md:mx-14 md:my-10 xl:mx-28
-                    font-oswald font-bold text-lg md:text-xl xl:text-2xl text-orange-100">
-                Création :
-            </p>
-
-            <p v-for="text in projet.contexte_all" class="mx-5 my-7 md:mx-14 md:my-9 xl:mx-28 xl:my-12
-                                                        font-darker-grotesque text-base md:text-lg text-stone-300">
-                {{ text }}
-            </p>
-
-            <div class="lg:flex flex-wrap">
-
-                <!-- 2eme image -->
-                <div class="projet_img projet_img-2 relative z-10 -ml-7 my-16 w-screen sm:mx-auto sm:w-2/3 h-fit lg:-ml-10 lg:w-1/2">
-                    <img class="w-full" :src="img_rect2" :alt="img_rect2">
-                </div>
-
-
-                <div class="inline-block basis-1/3 grow">
-
-                    <p v-for="text in projet.contexte_all_2" class="mx-5 my-7 md:mx-14 md:my-9 xl:my-12
-                                                                font-darker-grotesque text-base md:text-lg text-stone-300
-                                                                 ">
-                        {{ text }}
-                    </p>
-                </div>
-            </div>
-
-            <p v-for="text in projet.contexte_all_3" class="mx-5 my-7 md:mx-14 md:my-9 xl:mx-28 xl:my-12
-                                                        font-darker-grotesque text-base md:text-lg text-stone-300">
-                {{ text }}
-            </p>
-        </div>
+            
+            
+                    <div>
+                        <p class="mx-5 mt-8 mb-0 md:mx-14 md:mt-10 xl:mx-28 xl:mt-16
+                                font-oswald font-bold text-lg md:text-xl xl:text-2xl text-orange-100">
+                            Outils :
+                        </p>
+                        <p v-for="(text, key) in projet.outils" :key="key" 
+                            class="mx-5 mt-2 mb-3 md:mx-14 md:mt-5 md:mb-5 xl:mx-28 sm:indent-5 md:indent-10 xl:inset-16
+                                    font-darker-grotesque text-base md:text-lg xl:text-xl font-light text-stone-300">
+                            - {{key}} : <span class="font-darker-grotesque text-base md:text-lg xl:text-xl font-extrabold text-orange-100">{{ text }}</span>
+                        </p>
+                    </div>
             
         
+                </div>
+            </div>
+            
+            <div>
+                <p class="mx-5 my-8 md:mx-14 md:my-10 xl:mx-28
+                        font-oswald font-bold text-lg md:text-xl xl:text-2xl text-orange-100">
+                    Création :
+                </p>
+    
+                <p v-for="text in projet.contexte_all" class="mx-5 my-7 md:mx-14 md:my-9 xl:mx-28 xl:my-12
+                                                            font-darker-grotesque text-base md:text-lg text-stone-300">
+                    {{ text }}
+                </p>
+    
+                <div class="lg:flex flex-wrap">
+    
+                    <!-- 2eme image -->
+                    <div class="projet_img projet_img-2 relative z-10 -ml-7 my-16 w-screen sm:mx-auto sm:w-2/3 h-fit lg:-ml-10 lg:w-1/2">
+                        <img class="w-full" :src="img_rect2" :alt="img_rect2">
+                    </div>
+    
+    
+                    <div class="inline-block basis-1/3 grow">
+    
+                        <p v-for="text in projet.contexte_all_2" class="mx-5 my-7 md:mx-14 md:my-9 xl:my-12
+                                                                    font-darker-grotesque text-base md:text-lg text-stone-300
+                                                                     ">
+                            {{ text }}
+                        </p>
+                    </div>
+                </div>
+    
+                <p v-for="text in projet.contexte_all_3" class="mx-5 my-7 md:mx-14 md:my-9 xl:mx-28 xl:my-12
+                                                            font-darker-grotesque text-base md:text-lg text-stone-300">
+                    {{ text }}
+                </p>
+            </div>
+    
+            <a target="_blank" :href="projet.lien">
+                <monBouton class="mx-auto my-20 md:my-40">
+                    Voir le Projet
+                </monBouton>
+            </a>
+        </div>
 
-
-        <a target="_blank" :href="projet.lien">
-            <monBouton class="mx-auto my-20 md:my-40">
-                Voir le Projet
-            </monBouton>
-        </a>
+        <div v-else class="w-full h-screen relative">
+            <div class="log log_4 absolute top-1/3 left-1/2 w-10 h-10 -translate-x-1/2 -translate-y-1/2 bg-fuchsia-500"></div>
+            <div class="log log_3 absolute top-1/3 left-1/2 w-10 h-10 -translate-x-1/2 -translate-y-1/2 bg-stone-300"></div>
+            <div class="log log_2 absolute top-1/3 left-1/2 w-10 h-10 -translate-x-1/2 -translate-y-1/2 bg-cyan-400"></div>
+            <div class="log log_1 absolute top-1/3 left-1/2 w-10 h-10 -translate-x-1/2 -translate-y-1/2 bg-orange-100"></div>
+        </div>
         
 
-        <hr class="test mx-auto border-none w-5/6 h-1"/>
+        <hr class="separateur mx-auto border-none w-5/6 h-1"/>
 
 
         <div class="flex flex-wrap justify-evenly gap-20 mx-auto my-32 md:my-52 w-5/6">
@@ -122,7 +127,8 @@
 
 <style>
 
-.test{
+/* style du separateur */
+.separateur{
     animation: hr_color 3s linear infinite;
 }
 
@@ -131,7 +137,6 @@
     50%{background-color: #d946ef;}
     100%{background-color: #22d3ee;}
 }
-
 
 /* style des images */
 .projet_img::before{
@@ -191,8 +196,6 @@
     clip-path: inset(61% 0% 0% 0%);
     animation: glitch 3s linear infinite alternate-reverse;
 }
-
-
 
 @keyframes glitch {
     5%{
@@ -314,6 +317,146 @@
     }
 }
 
+
+/* chargement */
+
+/* animation chargement carree beige */
+.log_1{
+    animation: log_1 5s ease-in-out infinite;
+}
+@keyframes log_1{
+    0%{
+        translate : -45px -45px
+    }
+    12.5%{
+        translate : 0
+    }
+    25%{
+        translate : 45px -45px
+    }
+    37.5%{
+        translate : 0
+    }
+    50%{
+        translate : 45px 45px
+    }
+    62.5%{
+        translate : 0
+    }
+    75%{
+        translate : -45px 45px
+    }
+    87.5%{
+        translate : 0
+    }
+    100%{
+        translate : -45px -45px
+    }
+}
+
+/* animation chargement carree bleu */
+.log_2{
+    animation: log_2 5s ease-in-out infinite;
+}
+@keyframes log_2{
+    0%{
+        translate : 45px -45px
+    }
+    12.5%{
+        translate : 0
+    }
+    25%{
+        translate : 45px 45px
+    }
+    37.5%{
+        translate : 0
+    }
+    50%{
+        translate : -45px 45px
+    }
+    62.5%{
+        translate : 0
+    }
+    75%{
+        translate : -45px -45px
+    }
+    87.5%{
+        translate : 0
+    }
+    100%{
+        translate : 45px -45px
+    }
+}
+
+/* animation chargement carree blanc */
+.log_3{
+    animation: log_3 5s ease-in-out infinite;
+}
+@keyframes log_3{
+    0%{
+        translate : 45px 45px
+    }
+    12.5%{
+        translate : 0
+    }
+    25%{
+        translate : -45px 45px
+    }
+    37.5%{
+        translate : 0
+    }
+    50%{
+        translate : -45px -45px
+    }
+    62.5%{
+        translate : 0
+    }
+    75%{
+        translate : 45px -45px
+    }
+    87.5%{
+        translate : 0
+    }
+    100%{
+        translate : 45px 45px
+    }
+}
+
+/* animation chargement carree rose */
+.log_4{
+    animation: log_4 5s ease-in-out infinite;
+}
+@keyframes log_4{
+    0%{
+        translate : -45px 45px
+    }
+    12.5%{
+        translate : 0
+    }
+    25%{
+        translate : -45px -45px
+    }
+    37.5%{
+        translate : 0
+    }
+    50%{
+        translate : 45px -45px
+    }
+    62.5%{
+        translate : 0
+    }
+    75%{
+        translate : 45px 45px
+    }
+    87.5%{
+        translate : 0
+    }
+    100%{
+        translate : -45px 45px
+    }
+}
+
+
 </style>
 
 
@@ -368,7 +511,10 @@ export default {
             },
             
             refProjet:null,
-            img_rect:null 
+            img_rect:null,
+
+            dataLoaded: false,
+
         }
     },
 
@@ -403,13 +549,12 @@ export default {
             getDownloadURL(spaceRef_rect2)
                 .then((url) => {
                     this.img_rect2 = url;
+                this.dataLoaded = true;
             })
-
 
             .catch((error) =>{
                 console.log('erreur downloadUrl', error);
             })
-
         },
     }
 }
