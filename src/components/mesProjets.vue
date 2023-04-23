@@ -49,7 +49,7 @@
                 <!-- le bouton pour aller sur le projet-->
                 <RouterLink :to="`/projet/${p.id}`">
                     <button
-                        class="card_button translate-x-[120%] translate-y-[120%] absolute bottom-[5%] right-[5%] px-6 py-3 min-w-min w-[25%] h-16 md:h-20 bg-mon-black transition-opacity opacity-0 delay-200 duration-500
+                        class="card_button translate-x-[120%] translate-y-[120%] absolute bottom-[5%] right-[5%] px-6 py-3 min-w-min w-[25%] h-16 md:h-20 bg-mon-black opacity-0 delay-200 duration-500
                                 font-oswald text-base md:text-xl tracking-wider text-center text-stone-300">
                         Voir
                     </button>
