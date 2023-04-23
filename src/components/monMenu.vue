@@ -1,188 +1,104 @@
 <template>
-    <div class="fixed">
-        <div class="menu fixed top-10 right-10 md:right-16 z-50 cursor-pointer"
-            :aria-expanded="menuOuvert" @click="menuOuvert = !menuOuvert">
-            <div class="menu_barre barre_h" :class="{ 'menu_ouvert-barre menu_ouvert-barre_h': menuOuvert }"></div>
-            <div class="menu_barre barre_m" :class="{ 'menu_ouvert-barre menu_ouvert-barre_m': menuOuvert }"></div>
-            <div class="menu_barre barre_b" :class="{ 'menu_ouvert-barre menu_ouvert-barre_b': menuOuvert }"></div>
+    <div class="fixed top-0 right-0 w-content h-screen translate-x-full bg-mon-black z-40 duration-300 menu_border"
+        :class="{ '-translate-x-0': menuOuvert }"
+        :aria-expanded="menuOuvert" @mouseover="menuOuvert = true" @mouseleave="menuOuvert = false">
+
+        <!-- bouton Menu-->
+        <div class="absolute bottom-14 sm:top-10 left-0 z-50 cursor-pointer">
+            <p class="-translate-x-[60%] sm:-translate-x-1/2 bg-mon-black-dd py-5
+                    font-poppins font-bold text-2xl sm:text-4xl text-orange-100 text_vertical">
+                MENU
+            </p>
         </div>
 
-        <div class="fixed top-0 left-0 w-screen h-screen translate-y-full bg-mon-black z-40 duration-300"
-            :class="{ 'translate-y-0': menuOuvert }">
+        <!-- bouton femrer Menu en mobil-->
+        <div class="absolute cursor-pointer
+                    bottom-7 left-8 z-50 w-12 h-12 
+                    sm:top-20 sm:left-10 sm:w-20 sm:h-20
+                    md:hidden"
+            @click="menuOuvert = false">
+            <flecheIcon/>
+        </div>
+        
 
-            <div class="relative w-full h-full flex flex-col justify-evenly items-center
-                text-center font-oswald font-semibold italic text-transparent text-2xl md:text-3xl">
+        <!--les liens-->
+        <div class="relative w-full h-full flex flex-col justify-end gap-16 py-28 sm:justify-evenly items-right px-[10vw] md:px-[5vw]
+            text-right font-oswald font-semibold italic text-transparent text-lg sm:text-xl md:text-3xl">
 
-                <!-- <RouterLink to="/"  @click="menuOuvert = !menuOuvert"> -->
-                    <a href="/#id_accueil" @click="menuOuvert = !menuOuvert">
-                        <p class="menu_item item_acc"
-                            data-text="Hello World">
-                            Hello World
-                        </p>
-                    </a>
-                    <!-- </RouterLink> -->
+            <!-- <RouterLink to="/"  @click="menuOuvert = !menuOuvert"> -->
+            <a href="/#id_accueil" @click="menuOuvert = !menuOuvert">
+                <p class="menu_item item_acc"
+                    data-text="Hello World">
+                    Hello World
+                </p>
+            </a>
+            <!-- </RouterLink> -->
 
-                <!-- <RouterLink to="/"  @click="menuOuvert = !menuOuvert"> -->
-                    <a href="/#id_projets" @click="menuOuvert = !menuOuvert">
-                        <p class="menu_item item_pro"
-                            data-text="Mes projets">
-                            Mes Projets
-                        </p>
-                    </a>
-                <!-- </RouterLink> -->
-
-                <!-- <RouterLink :to="{ path: '/', hash: '#id_competences' }"  @click="menuOuvert = !menuOuvert"> -->
-                    <a href="/#id_competences" @click="menuOuvert = !menuOuvert">
-                        <p class="menu_item item_comp"
-                            data-text="Mes Compétences">
-                            Mes Compétences
-                        </p>
-                    </a>
-                <!-- </RouterLink> -->
-
-                <!-- <RouterLink :to="{ path: '/', hash: '#id_competences' }"  @click="menuOuvert = !menuOuvert"> -->
-                    <a href="/#id_personne" @click="menuOuvert = !menuOuvert">
-                        <p class="menu_item item_perso"
-                            data-text="Ma Personne">
-                            Ma Personne
-                        </p>
-                    </a>
-                <!-- </RouterLink> -->
-
-                <!-- <RouterLink :to="{ path: '/', hash: '#id_competences' }"  @click="menuOuvert = !menuOuvert"> -->
-                    <a href="/#id_contact" @click="menuOuvert = !menuOuvert">
-                    <p class="menu_item item_cont"
-                        data-text="Me Contactez">
-                        Me Contactez
+            <!-- <RouterLink to="/"  @click="menuOuvert = !menuOuvert"> -->
+                <a href="/#id_projets" @click="menuOuvert = !menuOuvert">
+                    <p class="menu_item item_pro"
+                        data-text="Mes projets">
+                        Mes Projets
                     </p>
-                    </a>
-                <!-- </RouterLink> -->
+                </a>
+            <!-- </RouterLink> -->
 
-            </div>
+            <!-- <RouterLink :to="{ path: '/', hash: '#id_competences' }"  @click="menuOuvert = !menuOuvert"> -->
+                <a href="/#id_competences" @click="menuOuvert = !menuOuvert">
+                    <p class="menu_item item_comp"
+                        data-text="Mes Compétences">
+                        Mes Compétences
+                    </p>
+                </a>
+            <!-- </RouterLink> -->
+
+            <!-- <RouterLink :to="{ path: '/', hash: '#id_competences' }"  @click="menuOuvert = !menuOuvert"> -->
+                <a href="/#id_personne" @click="menuOuvert = !menuOuvert">
+                    <p class="menu_item item_perso"
+                        data-text="Ma Personne">
+                        Ma Personne
+                    </p>
+                </a>
+            <!-- </RouterLink> -->
+
+            <!-- <RouterLink :to="{ path: '/', hash: '#id_competences' }"  @click="menuOuvert = !menuOuvert"> -->
+                <a href="/#id_contact" @click="menuOuvert = !menuOuvert">
+                <p class="menu_item item_cont"
+                    data-text="Me Contactez">
+                    Me Contactez
+                </p>
+                </a>
+            <!-- </RouterLink> -->
 
         </div>
+
     </div>
 </template>
 
 <style scoped>
 
-/*icon du menu-------------------------------------------------------- */
-
-/* style commun a toutes les barres
-    ! attention ! barre bleu */
-.menu_barre{
-    position: relative;
-    width: 45px;
-    height: 8px;
-    background-color: #5eead400;
-    margin: 8px 0;
-}
-/* affichage de la barre bleu au survole */
-.menu:hover .menu_barre{
-    background-color: #22d3ee;
+/* texte du bouton "Menu" */
+.text_vertical{
+    writing-mode: vertical-lr; 
+    text-orientation: upright;    
 }
 
-
-/* style commun a toutes les barres ::before
-    barre rose */
-.menu_barre::before{
-    position: absolute;
-    display: block;
-    content: " ";
-    width: 45px;
-    height: 8px;
-    background-color: #D912D700;
-    top: 4px;
-    left: 4px;
+/* animation de la couleur de la bordure du menu */
+.menu_border{
+    border-left-width: 2px;
+    border-left-style: solid;
+    animation: border_color 3s linear infinite;
 }
 
-/* affichage de la barre rose au survole */
-.menu:hover .menu_barre::before{
-    background-color: #D912D7;
-}
-
-
-/* style commun a toutes les barres ::after
-    barre beige */
-.menu_barre::after{
-    position: absolute;
-    display: block;
-    content: " ";
-    width: 45px;
-    height: 8px;
-    background-color: #F1E9DA;
-    top: 2px;
-    left: 2px;
-}
-
-
-/* animation du menu */
-
-/* animation de la barre du haut */
-.barre_h,
-.barre_h::after,
-.barre_h::before{
-    transform-origin: top right;
-    transition: rotate 0.2s ease-in 0.5s, width 0.2s ease-in 1s;
-}
-
-/* rotation de la barre du haut apres animation */
-.menu_ouvert-barre_h{
-    rotate: -45deg;
-}
-
-/* taille de la barre du haut apres animation */
-.menu_ouvert-barre_h,
-.menu_ouvert-barre_h::after,
-.menu_ouvert-barre_h::before{
-    width: 52px;
-}
-
-
-/* animation de la barre du milieu */
-.barre_m,
-.barre_m::after,
-.barre_m::before{
-    transform-origin: center;
-    transition: width 0.1s ease-in 0.1s, margin-left 0.1s ease-in 0.1s;
-}
-
-/* taille de la barre du milieu apres animation */
-.menu_ouvert-barre_m,
-.menu_ouvert-barre_m::after,
-.menu_ouvert-barre_m::before{
-    margin-left: 50%;
-    width: 0;
-}
-
-
-/* animation de la barre du bas */
-.barre_b,
-.barre_b::after,
-.barre_b::before{
-    transform-origin: bottom right;
-    transition: rotate 0.2s ease-in 1.5s, width 0.2s ease-in 2s;
-}
-
-/* rotation de la barre du bas apres animation */
-.menu_ouvert-barre_b{
-    rotate: 45deg;
-}
-
-/* taille de la barre du bas apres animation */
-.menu_ouvert-barre_b,
-.menu_ouvert-barre_b::after,
-.menu_ouvert-barre_b::before{
-    width: 52px;
+@keyframes border_color {
+    0%{border-color: #22d3ee;}
+    50%{border-color: #d946ef;}
+    100%{border-color: #22d3ee;}
 }
 
 
 
-
-
-
-
-
+/* animation des liens */
 .menu_item::after{
     content: attr(data-text);
     position: absolute;
@@ -345,8 +261,11 @@
 </style>
 
 <script>
+import flecheIcon from "@/components/icons/flecheIcon.vue"
+
 export default {
   name: "monMenu",
+  components: {flecheIcon},
   data() {
     return {
       menuOuvert: false,
