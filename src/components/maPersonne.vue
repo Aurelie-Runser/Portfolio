@@ -80,13 +80,12 @@
 
 /* animation du underline */
 .perso_link:hover{
-    animation: underline_color 1s linear infinite;
+    animation: underline_color 0.5s linear infinite;
 }
 
 @keyframes underline_color {
-    0%{text-decoration-color: #d946ef;}
-    50%{text-decoration-color: #22d3ee;}
-    100%{text-decoration-color: #d946ef;}
+    from{text-decoration-color: #22d3ee;}
+    to{text-decoration-color: #d946ef;}
 }
 
 </style>

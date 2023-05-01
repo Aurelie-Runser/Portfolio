@@ -19,7 +19,7 @@
                             <linkedinIcon class="inline-block w-7 h-7 md:w-10 md:h-10"/>
                             <p class="sr-only">Mon compte Linkedin : </p>
                             <p class="contact_link inline-block ml-3 w-auto font-darker-grotesque font-bold text-base md:text-lg text-orange-100 underline decoration-fuchsia-500">
-                                in/aurélie-runser-10a763224
+                                /in/aurélie-runser-10a763224
                             </p>
             
                         </a>
@@ -29,16 +29,7 @@
                             <instagramIcon class="inline-block w-7 h-7 md:w-10 md:h-10"/>
                             <p class="sr-only">Mon compte Instagram : </p>
                             <p class="contact_link inline-block ml-3 w-auto font-darker-grotesque font-bold text-base md:text-lg text-orange-100 underline decoration-fuchsia-500">
-                                @aurelie.runser_pro
-                            </p>
-            
-                        </a>
-                        <a target="_blank" href="https://github.com/Aurelie-Runser">
-            
-                            <githubIcon class="inline-block w-7 h-7 md:w-10 md:h-10"/>
-                            <p class="sr-only">Mon compte Github : </p>
-                            <p class="contact_link inline-block ml-3 w-auto font-darker-grotesque font-bold text-base md:text-lg text-orange-100 underline decoration-fuchsia-500">
-                                Aurelie-Runser
+                                @aurelie.runser_pro/
                             </p>
             
                         </a>
@@ -152,13 +143,12 @@
 
 /* animation du underline */
 .contact_link:hover{
-    animation: underline_color 1s linear infinite;
+    animation: underline_color 0.5s linear infinite;
 }
 
 @keyframes underline_color {
-    0%{text-decoration-color: #d946ef;}
-    50%{text-decoration-color: #22d3ee;}
-    100%{text-decoration-color: #d946ef;}
+    from{text-decoration-color: #22d3ee;}
+    to{text-decoration-color: #d946ef;}
 }
 
 /* nécessaire pour que l'utilisateur puisse pas cliquer sur les textes en absolute */
@@ -270,12 +260,11 @@ textarea:invalid ~ .form_obligatoire{
 import monBouton from "@/components/monBouton.vue"
 import linkedinIcon from "@/components/icons/linkedinIcon.vue"
 import instagramIcon from "@/components/icons/instagramIcon.vue"
-import githubIcon from "@/components/icons/githubIcon.vue"
 import mailIcon from "@/components/icons/mailIcon.vue"
 
 export default {
   name: 'ContactForm',
-  components: {monBouton, linkedinIcon, instagramIcon, githubIcon, mailIcon},
+  components: {monBouton, linkedinIcon, instagramIcon, mailIcon},
 
   data() {
     return {
