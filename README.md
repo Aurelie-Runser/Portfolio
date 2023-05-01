@@ -1,29 +1,11 @@
-# Menu
+# Mon Portfolio
 
-This template should help get you started developing with Vue 3 in Vite.
+Voici mon portfolio ! Ce qui à l'heure actuelle démontre le mieux mes capacités de design et développement.
 
-## Recommended IDE Setup
+Pour l'intégrer, j'ai utilisé Vue.js, Tailwind et CSS de base pour des classes et animations plus poussées.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+Pour ne pas juste faire "un site vitrine" (et ne pas à avoir à rouvrir VSCode dès que j'ai un nouveau projet), je me suis servi de Firebase pour stocker toutes les données en rapport avec mes projets (images, textes) ainsi que pour mes compétences (nom, niveau).
 
-## Customize configuration
+Mon portfolio dispose également d'un formulaire de contact fonctionnel.
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+Voici le lien direct pour le voir : https://portfolio.aurelierunser.fr/
