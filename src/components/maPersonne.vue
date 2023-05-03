@@ -37,6 +37,19 @@
                 <strong class="font-darker-grotesque font-medium text-base md:text-lg text-cyan-400">
                     participer à la construction du web de demain</strong>.
             </p>
+
+            <!-- Bouton pour télécharger mon CV-->
+            <div class="mt-5">
+                <p class="perso_text">
+                    Si vous voulez en être, n'hésitez à ma contacter ou à télécharger mon CV.
+                </p>
+
+                <a href="src/cv/CV_Aurelie_Runser.pdf" download="CV_Aurelie_Runser.pdf">
+                    <monBouton class="mx-auto mt-5">
+                        Télécharger mon CV
+                    </monBouton>
+                </a>
+            </div>
         </div>
 
     </section>
@@ -90,3 +103,13 @@
 }
 
 </style>
+
+<script>
+// import des composants
+import monBouton from "../components/monBouton.vue"
+
+export default {
+    name:'ProjetView',
+    components: {monBouton},
+}
+</script>
