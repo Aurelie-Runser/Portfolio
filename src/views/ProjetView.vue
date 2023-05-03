@@ -77,7 +77,7 @@
                 <div class="lg:flex flex-wrap">
     
                     <!-- 2eme image -->
-                    <div class="projet_img projet_img-2 relative z-10 -ml-7 my-16 w-screen sm:mx-auto sm:w-2/3 h-fit lg:-ml-10 lg:w-1/2">
+                    <div class="projet_img relative z-10 -ml-7 my-16 w-screen sm:mx-auto sm:w-2/3 h-fit lg:-ml-10 lg:w-1/2">
                         <img class="w-full" :src="img_rect2" :alt="img_rect2">
                     </div>
     
@@ -164,18 +164,11 @@
     position: absolute;
     z-index: -1;
     display: block;
-    width: 98%;
+    width: 100%;
     height: 100%;
     top: 4%;
     left: 2%;
     background-color: #d946ef;
-}
-
-.projet_img-2::before{
-    left: 2%;
-}
-.projet_img-2::after{
-    left: -2%;
 }
 
 
