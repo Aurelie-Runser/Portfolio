@@ -153,7 +153,7 @@
     position: absolute;
     z-index: -1;
     display: block;
-    width: 100%;
+    width: 98%;
     height: 100%;
     top: -4%;
     left: -2%;
@@ -164,11 +164,19 @@
     position: absolute;
     z-index: -1;
     display: block;
-    width: 100%;
+    width: 98%;
     height: 100%;
     top: 4%;
     left: 2%;
     background-color: #d946ef;
+}
+
+/* taille du guillement sur moyen net grand écran */
+@media screen and (min-width: 768px) {
+    .projet_img::before,
+    .projet_img::after{
+        width: 100%;
+    }
 }
 
 
