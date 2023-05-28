@@ -1,4 +1,8 @@
 <template>
+    <head>
+        <meta name="robots" content="noindex"/>
+    </head>
+    
     <main class="pt-24 overflow-x-hidden">
 
         <div v-if="dataLoaded == 2">
