@@ -36,6 +36,7 @@
             </p>
         </a>
         
+        <p class="w-full mt-3 text-center font-darker-grotesque font-bold text-sm md:text-base text-neutral-400">© 2023 Aurélie Runser</p>
 
     </div>
 </template>
