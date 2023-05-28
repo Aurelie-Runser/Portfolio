@@ -12,7 +12,7 @@
         </a>
 
         <div class="flex gap-5">
-            <a target="_blank" href="https://www.linkedin.com/in/aurélie-runser-10a763224"> 
+            <a target="_blank" href="https://www.linkedin.com/in/aurélie-runser"> 
                 <linkedinIconGray class="inline-block w-5 h-5 md:w-8 md:h-8"/>
                 <p class="sr-only">Lien vers mon compte Linkedin</p>
             </a>
