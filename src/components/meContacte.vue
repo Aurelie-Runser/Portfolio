@@ -167,7 +167,7 @@
                         <label class="inline-block font-darker-grotesque text-sm md:text-base text-stone-300"
                                 for="consentementRGPD">
                             J'accepte que ces données personnelles soient collectées et utilisées par Aurélie Runser dans le but de répondre à mon message.
-                            <br/>Pour en savoir plus sur les condition d'utilisation de mes données,
+                            <br/>Pour en savoir plus sur les conditions d'utilisation de mes données,
                             <button @click="RGPD = true"
                                     class="contact_link inline-block font-darker-grotesque text-sm md:text-base text-orange-100 underline decoration-fuchsia-500">
                                 cliquez ici</button>.
