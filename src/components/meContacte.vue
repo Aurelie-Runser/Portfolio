@@ -348,6 +348,14 @@ textarea:invalid ~ .form_obligatoire{
     border: 2px solid #d946ef;
 }
 
+/* suppression des marges du message RGPD sur mobile */
+@media screen and (max-width: 768px) {
+    .RGPDcomplet::before,
+    .RGPDcomplet::after{
+        display: none;
+    }
+}
+
 </style>
 
 
