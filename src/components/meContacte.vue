@@ -175,18 +175,18 @@
 
 
                         <!-- Texte de consentement RGPD complet -->
-                        <div class="RGPDcomplet fixed z-50 p-5 md:p-10 bg-mon-black w-full md:w-3/4 top-1/2 left-1/2 -translate-x-1/2 translate-y-full"
+                        <div class="RGPDcomplet fixed z-50 p-7 md:p-10 bg-mon-black w-full h-full md:w-3/4 md:h-auto overflow-scroll md:overflow-visible top-1/2 left-1/2 -translate-x-1/2 translate-y-full"
                             :aria-expanded="RGPD" :class="{ '-translate-y-[50%]': RGPD }">
                         
                             <p class="mx-auto w-fit font-darker-grotesque text-base xl:text-lg text-stone-300">
-                                En soumettant ce formulaire, vous consentez à ce que vos données personnelles, telles que votre prénom, votre nom, votre adresse e-mail et le contenu de votre message, soient collectées et utilisées par moi-même dans le but de répondre à votre demande de contact. Ces informations seront stockées en toute sécurité et ne seront pas partagées avec des tiers sans votre consentement préalable.
+                                En soumettant ce formulaire, vous consentez à ce que vos données personnelles, telles que votre prénom, votre nom, votre adresse e-mail et le contenu de votre message, soient collectées et utilisées par Aurélie Runser dans le but de répondre à votre demande de contact. Ces informations seront stockées en toute sécurité et ne seront pas partagées avec des tiers sans votre consentement préalable.
     
                                 <br/>Vous pouvez à tout moment me demander de supprimer vos données personnelles de mes archives en m'envoyant un e-mail à aurelie.runser25@gmail.com.
     
                                 <br/>En soumettant ce formulaire, vous donnez votre consentement libre, spécifique, éclairé et univoque au traitement de vos données personnelles conformément aux dispositions du Règlement Général sur la Protection des Données (RGPD).
                             </p>   
 
-                            <monBouton class="mx-auto mt-5 " @click="RGPD = false">Fermer</monBouton>
+                            <monBouton class="mx-auto mt-10" @click="RGPD = false">Fermer</monBouton>
                         </div>
 
                     </div>
@@ -326,7 +326,7 @@ textarea:invalid ~ .form_obligatoire{
 
 
 
-/* style autour du message RGPD de l'envoie du formulaire */
+/* style autour du message RGPD */
 .RGPDcomplet::before{
     content: "";
     position: absolute;
