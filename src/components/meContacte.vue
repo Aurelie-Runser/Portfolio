@@ -66,7 +66,8 @@
             <!-- formulaire-->
             <div class="grow">
                 <form action="https://api.web3forms.com/submit" method="POST" ref="contactForm"
-                    class="mx-5 my-14 md:ml-14 md:my-20 md:max-w-2xl xl:ml-28">
+                    class="mx-5 my-14 md:ml-14 md:my-20 md:max-w-2xl xl:ml-28"
+                    @submit.prevent="submitForm">
         
                     <input type="hidden" name="access_key" value="b3a5c0b1-dcc2-48e8-90e1-8ce766ba6253" autocomplete="off">
 
@@ -153,8 +154,6 @@
                         </div>
                     </div>
         
-                    <!-- <input type="hidden" name="redirect" value="https://web3forms.com/success"> -->
-
                     <div class="g-recaptcha" :data-sitekey="recaptchaSiteKey"></div>
 
                     <!-- consentement RGPD -->
@@ -198,6 +197,11 @@
                 </div>
         
                 <p v-if="messageSent"
+                    class="form_messageSent xl:hidden relative mx-auto my-20 w-fit font-oswald font-bold text-lg xl:text-xl text-center text-stone-300">
+                    Merci beaucoup, votre message a bien été envoyé !
+                </p>
+
+                <p v-if="messageError"
                     class="form_messageSent xl:hidden relative mx-auto my-20 w-fit font-oswald font-bold text-lg xl:text-xl text-center text-stone-300">
                     Merci beaucoup, votre message a bien été envoyé !
                 </p>
