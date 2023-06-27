@@ -153,7 +153,6 @@
                         </div>
                     </div>
         
-                    <div id="recaptcha" :data-sitekey="recaptchaSiteKey"></div>
 
                     <!-- consentement RGPD -->
                     <div class="relative my-16 flex items-start gap-5">
@@ -196,11 +195,6 @@
                 </div>
         
                 <p v-if="messageSent"
-                    class="form_messageSent xl:hidden relative mx-auto my-20 w-fit font-oswald font-bold text-lg xl:text-xl text-center text-stone-300">
-                    Merci beaucoup, votre message a bien été envoyé !
-                </p>
-
-                <p v-if="messageError"
                     class="form_messageSent xl:hidden relative mx-auto my-20 w-fit font-oswald font-bold text-lg xl:text-xl text-center text-stone-300">
                     Merci beaucoup, votre message a bien été envoyé !
                 </p>
@@ -377,58 +371,32 @@ export default {
     return {
       messageSent: false,
       RGPD: false,
-      recaptchaSiteKey: '6Lf-K9YmAAAAABCmdlDzjkcWSoAlRcmg5xwQFRU6'
     }
   },
 
-  mounted(){
-    const script = document.createElement('script');
-    script.src = 'https://www.google.com/recaptcha/api.js';
-    script.async = true;
-    script.defer = true;
-    script.onload = this.initializeRecaptcha;
-    document.head.appendChild(script);
-    
+  mounted(){  
     this.$refs.contactForm.addEventListener('submit', this.submitForm)
   },
 
-  methods: {
+    methods: {
+        async submitForm(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
 
-    initializeRecaptcha() {
-        grecaptcha.ready(() => {
-            grecaptcha.render('recaptcha', {
-                sitekey: this.recaptchaSiteKey,
-                callback: (token) => {
-                    this.recaptchaToken = token;
-                }
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: formData
             });
-        });
-    },
-
-
-
-
-    async submitForm(event) {
-      event.preventDefault();
-      const token = await grecaptcha.execute(this.recaptchaSiteKey);
-      const formData = new FormData(event.target);
-      formData.append('recaptchaToken', token);
-
-      if (grecaptcha.getResponse().length !== 0) {
-        const response = await fetch('https://api.web3forms.com/submit', {
-            method: 'POST',
-            body: formData
-        });
-        
-        if (response.ok) {
-            this.messageSent = true;
-            // Réinitialiser les champs du formulaire
-            const inputs = event.target.querySelectorAll('input, textarea');
-            inputs.forEach(input => (input.value = ''));
+            
+            if (response.ok) {
+                this.messageSent = true;
+                // Réinitialiser les champs du formulaire
+                const inputs = event.target.querySelectorAll('input, textarea');
+                inputs.forEach(input => (input.value = ''));
+            }
         }
-      }
     }
-  }
+  
 }
 
 </script>
