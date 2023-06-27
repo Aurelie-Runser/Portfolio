@@ -384,7 +384,7 @@ export default {
 
   mounted(){
     const script = document.createElement('script');
-    script.src = 'https://www.google.com/recaptcha/api.js';
+    script.src = 'https://www.google.com/recaptcha/api.js?render=' + this.recaptchaSiteKey;
     script.async = true;
     script.defer = true;
     document.head.appendChild(script);
