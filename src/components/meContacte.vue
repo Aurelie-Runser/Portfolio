@@ -384,7 +384,7 @@ export default {
 
   mounted(){
     const script = document.createElement('script');
-    script.src = 'https://www.google.com/recaptcha/api.js?render=' + this.recaptchaSiteKey;
+    script.src = 'https://www.google.com/recaptcha/api.js';
     script.async = true;
     script.defer = true;
     document.head.appendChild(script);
@@ -399,17 +399,18 @@ export default {
       const formData = new FormData(event.target);
       formData.append('recaptchaToken', token);
 
-        // if (grecaptcha.getResponse().length !== 0) {
-      const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        body: formData
-      });
-
-      if (response.ok) {
-        this.messageSent = true;
-        // Réinitialiser les champs du formulaire
-        const inputs = event.target.querySelectorAll('input, textarea');
-        inputs.forEach(input => (input.value = ''));
+      if (grecaptcha.getResponse().length !== 0) {
+        const response = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            body: formData
+        });
+        
+        if (response.ok) {
+            this.messageSent = true;
+            // Réinitialiser les champs du formulaire
+            const inputs = event.target.querySelectorAll('input, textarea');
+            inputs.forEach(input => (input.value = ''));
+        }
       }
     }
   }
