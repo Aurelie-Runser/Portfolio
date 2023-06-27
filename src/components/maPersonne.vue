@@ -44,7 +44,7 @@
                     Si vous voulez en être, n'hésitez à ma contacter ou à télécharger mon CV.
                 </p>
 
-                <a target="_blank" href="src/cv/CV_Aurelie_Runser.pdf">
+                <a target="_blank" href="https://drive.google.com/drive/folders/1wbf5tLZU1f4blTsYob3HGBV2Mzv_Z10V?usp=sharing">
                     <monBouton class="mx-auto mt-5">
                         Télécharger mon CV
                     </monBouton>
