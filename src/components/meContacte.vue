@@ -66,8 +66,7 @@
             <!-- formulaire-->
             <div class="grow">
                 <form action="https://api.web3forms.com/submit" method="POST" ref="contactForm"
-                    class="mx-5 my-14 md:ml-14 md:my-20 md:max-w-2xl xl:ml-28"
-                    @submit.prevent="submitForm">
+                    class="mx-5 my-14 md:ml-14 md:my-20 md:max-w-2xl xl:ml-28">
         
                     <input type="hidden" name="access_key" value="b3a5c0b1-dcc2-48e8-90e1-8ce766ba6253" autocomplete="off">
 
@@ -394,22 +393,23 @@ export default {
   },
 
   methods: {
-    
     async submitForm(event) {
-        if (grecaptcha && grecaptcha.getResponse().length !== 0) {
-            event.preventDefault()
-            const formData = new FormData(event.target)
-            const response = await fetch('https://api.web3forms.com/submit', {
-                method: 'POST',
-                body: formData
-            })
-            if (response.ok) {
-                this.messageSent = true
-                // Réinitialiser les champs du formulaire
-                const inputs = event.target.querySelectorAll('input, textarea')
-                inputs.forEach(input => input.value = '')
-            }
-        }
+      event.preventDefault();
+      const token = await grecaptcha.execute(this.recaptchaSiteKey);
+      const formData = new FormData(event.target);
+      formData.append('recaptchaToken', token);
+
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+      });
+
+      if (response.ok) {
+        this.messageSent = true;
+        // Réinitialiser les champs du formulaire
+        const inputs = event.target.querySelectorAll('input, textarea');
+        inputs.forEach(input => (input.value = ''));
+      }
     }
   }
 }
