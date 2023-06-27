@@ -87,10 +87,11 @@
         
                         <div class="form_obligatoire p-3 md:p-5">
                             <p class="font-darker-grotesque font-bold text-sm 
-                                        md:text-base">* Obligatoire</p>
+                                        md:text-base">Obligatoire</p>
                         </div>
                     </div>
         
+                    
                     <div class="relative my-16">
                         <input
                             type="email"
@@ -107,10 +108,11 @@
         
                         <div class="form_obligatoire p-3 md:p-5">
                             <p class="font-darker-grotesque font-bold text-sm 
-                                        md:text-base">* Obligatoire</p>
+                                        md:text-base">Obligatoire</p>
                         </div>
                     </div>
                     
+
                     <div class="relative my-16">
                         <input
                             type="text"
@@ -127,10 +129,11 @@
         
                         <div class="form_obligatoire p-3 md:p-5">
                             <p class="font-darker-grotesque font-bold text-sm 
-                                        md:text-base">* Obligatoire</p>
+                                        md:text-base">Obligatoire</p>
                         </div>
                     </div>
         
+
                     <div class="relative my-16">
                         <textarea
                             name="message"
@@ -138,14 +141,12 @@
                             rows="5"
                             placeholder=" "
                             required
-                            class="border-2 border-orange-100 p-2 md:p-5">
-                        </textarea>
+                            class="border-2 border-orange-100 p-2 md:p-5"></textarea>
+
                         <label for="message"
                                 class="form_text absolute top-2 left-3
                                 font-darker-grotesque font-medium text-lg text-orange-100 opacity-70
-                                md:text-xl">
-                            Message
-                        </label>
+                                md:text-xl">Message</label>
         
                         <div class="form_obligatoire p-3 md:p-5">
                             <p class="font-darker-grotesque font-bold text-sm 
