@@ -153,7 +153,7 @@
                         </div>
                     </div>
         
-                    <div id="recaptcha" data-sitekey="6Lf-K9YmAAAAABCmdlDzjkcWSoAlRcmg5xwQFRU6"></div>
+                    <div id="recaptcha" :data-sitekey="recaptchaSiteKey"></div>
 
                     <!-- consentement RGPD -->
                     <div class="relative my-16 flex items-start gap-5">
