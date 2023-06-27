@@ -153,7 +153,7 @@
                         </div>
                     </div>
         
-                    <div class="g-recaptcha" :data-sitekey="recaptchaSiteKey"></div>
+                    <div id="recaptcha" :data-sitekey="recaptchaSiteKey"></div>
 
                     <!-- consentement RGPD -->
                     <div class="relative my-16 flex items-start gap-5">
@@ -378,7 +378,6 @@ export default {
       messageSent: false,
       RGPD: false,
       recaptchaSiteKey: '6Lf-K9YmAAAAABCmdlDzjkcWSoAlRcmg5xwQFRU6'
-
     }
   },
 
@@ -387,12 +386,28 @@ export default {
     script.src = 'https://www.google.com/recaptcha/api.js';
     script.async = true;
     script.defer = true;
+    script.onload = this.initializeRecaptcha;
     document.head.appendChild(script);
     
     this.$refs.contactForm.addEventListener('submit', this.submitForm)
   },
 
   methods: {
+
+    initializeRecaptcha() {
+        grecaptcha.ready(() => {
+            grecaptcha.render('recaptcha', {
+                sitekey: this.recaptchaSiteKey,
+                callback: (token) => {
+                    this.recaptchaToken = token;
+                }
+            });
+        });
+    },
+
+
+
+
     async submitForm(event) {
       event.preventDefault();
       const token = await grecaptcha.execute(this.recaptchaSiteKey);
