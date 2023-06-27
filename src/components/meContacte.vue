@@ -155,6 +155,7 @@
         
                     <!-- <input type="hidden" name="redirect" value="https://web3forms.com/success"> -->
 
+                    <div class="g-recaptcha" :data-sitekey="recaptchaSiteKey"></div>
 
                     <!-- consentement RGPD -->
                     <div class="relative my-16 flex items-start gap-5">
@@ -373,27 +374,38 @@ export default {
     return {
       messageSent: false,
       RGPD: false,
+      recaptchaSiteKey: '6Ld9ItYmAAAAAE5XkKCK1sWZRrNt3w6C2WLI825i'
+
     }
   },
 
   mounted(){
-        this.$refs.contactForm.addEventListener('submit', this.submitForm)
+    const script = document.createElement('script');
+    script.src = 'https://www.google.com/recaptcha/api.js';
+    script.async = true;
+    script.defer = true;
+    document.head.appendChild(script);
+    
+    this.$refs.contactForm.addEventListener('submit', this.submitForm)
   },
 
   methods: {
+    
     async submitForm(event) {
-      event.preventDefault()
-      const formData = new FormData(event.target)
-      const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        body: formData
-      })
-      if (response.ok) {
-        this.messageSent = true
-        // Réinitialiser les champs du formulaire
-        const inputs = event.target.querySelectorAll('input, textarea')
-        inputs.forEach(input => input.value = '')
-      }
+        if (grecaptcha && grecaptcha.getResponse().length !== 0) {
+            event.preventDefault()
+            const formData = new FormData(event.target)
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: formData
+            })
+            if (response.ok) {
+                this.messageSent = true
+                // Réinitialiser les champs du formulaire
+                const inputs = event.target.querySelectorAll('input, textarea')
+                inputs.forEach(input => input.value = '')
+            }
+        }
     }
   }
 }
