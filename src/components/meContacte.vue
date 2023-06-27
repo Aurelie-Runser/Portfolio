@@ -374,7 +374,7 @@ export default {
     return {
       messageSent: false,
       RGPD: false,
-      recaptchaSiteKey: '6Ld9ItYmAAAAAE5XkKCK1sWZRrNt3w6C2WLI825i'
+      recaptchaSiteKey: '6Lf-K9YmAAAAABCmdlDzjkcWSoAlRcmg5xwQFRU6'
 
     }
   },
