@@ -44,7 +44,7 @@
                     Si vous voulez en être, n'hésitez à ma contacter ou à télécharger mon CV.
                 </p>
 
-                <a href="src/cv/CV_Aurelie_Runser.pdf" download="CV_Aurelie_Runser.pdf">
+                <a target="_blank" href="src/cv/CV_Aurelie_Runser.pdf">
                     <monBouton class="mx-auto mt-5">
                         Télécharger mon CV
                     </monBouton>
