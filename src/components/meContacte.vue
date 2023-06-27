@@ -6,7 +6,7 @@
         <div class="xl:flex flex-row-reverse">
 
             <!-- comportement des 2 bloques des réseaux -->
-            <div class="mx-5 my-8 md:mr-14 md:my-16  xl:mr-28 flex md:block flex-wrap justify-between gap-5">
+            <div class="mx-5 my-8 md:mr-14 md:my-16 xl:mr-28 flex md:block flex-wrap justify-between gap-5">
     
                 <!-- sticky -->
                 <div class="sticky top-1/3">
@@ -71,15 +71,14 @@
                     <input type="hidden" name="access_key" value="b3a5c0b1-dcc2-48e8-90e1-8ce766ba6253" autocomplete="off">
 
                     <div class="relative my-16">
-
                         <input
                             type="text"
-                            name="prenom et nom"
-                            id="prenom et nom"
+                            name="prenom_nom"
+                            id="prenom_nom"
                             placeholder=" "
                             required
                             class="border-2 border-orange-100 p-2 md:p-5">
-                        <label for="prenom et nom" 
+                        <label for="prenom_nom" 
                                 class="form_text absolute top-1/2 left-3 -translate-y-1/2
                                 font-darker-grotesque font-medium  text-orange-100 opacity-70">
                             Prénom & Nom
@@ -150,7 +149,7 @@
         
                         <div class="form_obligatoire p-3 md:p-5">
                             <p class="font-darker-grotesque font-bold text-sm 
-                                        md:text-base">* Obligatoire</p>
+                                        md:text-base">Obligatoire</p>
                         </div>
                     </div>
         
@@ -174,22 +173,6 @@
                                 cliquez ici</button>.
                         </label>
 
-
-                        <!-- Texte de consentement RGPD complet -->
-                        <div class="RGPDcomplet fixed z-50 p-7 md:p-10 bg-mon-black w-full h-full md:w-3/4 md:h-auto overflow-scroll md:overflow-visible top-1/2 left-1/2 -translate-x-1/2 translate-y-full"
-                            :aria-expanded="RGPD" :class="{ '-translate-y-[50%]': RGPD }">
-                        
-                            <p class="mx-auto w-fit font-darker-grotesque text-base xl:text-lg text-stone-300">
-                                En soumettant ce formulaire, vous consentez à ce que vos données personnelles, telles que votre prénom, votre nom, votre adresse e-mail et le contenu de votre message, soient collectées et utilisées par Aurélie Runser dans le but de répondre à votre demande de contact. Ces informations seront stockées en toute sécurité et ne seront pas partagées avec des tiers sans votre consentement préalable.
-    
-                                <br/>Vous pouvez à tout moment me demander de supprimer vos données personnelles de mes archives en m'envoyant un e-mail à aurelie.runser25@gmail.com.
-    
-                                <br/>En soumettant ce formulaire, vous donnez votre consentement libre, spécifique, éclairé et univoque au traitement de vos données personnelles conformément aux dispositions du Règlement Général sur la Protection des Données (RGPD).
-                            </p>   
-
-                            <monBouton class="mx-auto mt-10" @click="RGPD = false">Fermer</monBouton>
-                        </div>
-
                     </div>
         
                     <monBouton type="submit" class="mx-auto">
@@ -197,6 +180,21 @@
                     </monBouton>
         
                 </form>
+
+                <!-- Texte de consentement RGPD complet -->
+                <div class="RGPDcomplet fixed z-50 p-7 md:p-10 bg-mon-black w-full h-full md:w-3/4 md:h-auto overflow-scroll md:overflow-visible top-1/2 left-1/2 -translate-x-1/2 translate-y-full"
+                    :aria-expanded="RGPD" :class="{ '-translate-y-[50%]': RGPD }">
+                      
+                    <p class="mx-auto w-fit font-darker-grotesque text-base xl:text-lg text-stone-300">
+                        En soumettant ce formulaire, vous consentez à ce que vos données personnelles, telles que votre prénom, votre nom, votre adresse e-mail et le contenu de votre message, soient collectées et utilisées par Aurélie Runser dans le but de répondre à votre demande de contact. Ces informations seront stockées en toute sécurité et ne seront pas partagées avec des tiers sans votre consentement préalable.
+    
+                        <br/>Vous pouvez à tout moment me demander de supprimer vos données personnelles de mes archives en m'envoyant un e-mail à aurelie.runser25@gmail.com.
+    
+                        <br/>En soumettant ce formulaire, vous donnez votre consentement libre, spécifique, éclairé et univoque au traitement de vos données personnelles conformément aux dispositions du Règlement Général sur la Protection des Données (RGPD).
+                    </p>   
+
+                    <monBouton class="mx-auto mt-10" @click="RGPD = false">Fermer</monBouton>
+                </div>
         
                 <p v-if="messageSent"
                     class="form_messageSent xl:hidden relative mx-auto my-20 w-fit font-oswald font-bold text-lg xl:text-xl text-center text-stone-300">
