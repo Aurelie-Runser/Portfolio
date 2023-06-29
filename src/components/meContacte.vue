@@ -8,7 +8,7 @@
             <!-- comportement des 2 bloques des réseaux -->
             <div class="mx-5 my-8 md:mr-14 md:my-16 xl:mr-28 flex md:block flex-wrap justify-between gap-5">
     
-                <!-- sticky -->
+                <!-- réseaux sociaux sticky -->
                 <div class="sticky top-1/3">
 
                     <!-- bloque linkedin + insta-->
@@ -152,6 +152,8 @@
                                         md:text-base">Obligatoire</p>
                         </div>
                     </div>
+
+                    <div id="recaptcha" :data-sitekey="recaptchaSiteKey"></div>
         
 
                     <!-- consentement RGPD -->
@@ -371,28 +373,41 @@ export default {
     return {
       messageSent: false,
       RGPD: false,
+      recaptchaSiteKey: '6Lf-K9YmAAAAABCmdlDzjkcWSoAlRcmg5xwQFRU6'
     }
   },
 
   mounted(){  
+    const script = document.createElement('script');
+    script.src = 'https://www.google.com/recaptcha/api.js';
+    script.async = true;
+    script.defer = true;
+    script.onload = this.initializeRecaptcha;
+    document.head.appendChild(script);
+
     this.$refs.contactForm.addEventListener('submit', this.submitForm)
   },
 
     methods: {
-        async submitForm(event) {
+        
+        submitForm(event) {
             event.preventDefault();
+            const token = grecaptcha.execute(this.recaptchaSiteKey);
             const formData = new FormData(event.target);
+            formData.append('recaptchaToken', token);
 
-            const response = await fetch('https://api.web3forms.com/submit', {
-                method: 'POST',
-                body: formData
-            });
-            
-            if (response.ok) {
-                this.messageSent = true;
-                // Réinitialiser les champs du formulaire
-                const inputs = event.target.querySelectorAll('input, textarea');
-                inputs.forEach(input => (input.value = ''));
+            if (grecaptcha.getResponse().length !== 0) {
+                const response = fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                if (response.ok) {
+                    this.messageSent = true;
+                    // Réinitialiser les champs du formulaire
+                    const inputs = event.target.querySelectorAll('input, textarea');
+                    inputs.forEach(input => (input.value = ''));
+                }
             }
         }
     }
