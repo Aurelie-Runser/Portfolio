@@ -64,8 +64,8 @@
             <!-- <RouterLink :to="{ path: '/', hash: '#id_competences' }"  @click="menuOuvert = !menuOuvert"> -->
                 <a href="/#id_contact" @click="menuOuvert = !menuOuvert">
                 <p class="menu_item item_cont"
-                    data-text="Me Contactez">
-                    Me Contactez
+                    data-text="Me Contacter">
+                    Me Contacter
                 </p>
                 </a>
             <!-- </RouterLink> -->
