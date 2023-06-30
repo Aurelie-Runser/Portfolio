@@ -153,6 +153,30 @@
                         </div>
                     </div>
         
+                    
+
+                    <div class="relative my-16 text_complement">
+                        <input
+                            type="text"
+                            name="complement"
+                            id="complement"
+                            placeholder=" "
+                            class="border-2 border-orange-100 p-2 md:p-5">
+                        <label for="complement"
+                                class="form_text absolute top-1/2 left-3 -translate-y-1/2
+                                font-darker-grotesque font-medium  text-orange-100 opacity-70">
+                            Complément
+                        </label>
+        
+                        <div class="form_obligatoire p-3 md:p-5">
+                            <p class="font-darker-grotesque font-bold text-sm 
+                                        md:text-base">Obligatoire</p>
+                        </div>
+                    </div>
+        
+
+
+        
 
                     <!-- consentement RGPD -->
                     <div class="relative my-16 flex items-start gap-5">
@@ -172,6 +196,7 @@
                         </label>
 
                     </div>
+
         
                     <monBouton type="submit" class="mx-auto">
                         Envoyer
@@ -353,6 +378,11 @@ textarea:invalid ~ .form_obligatoire{
     }
 }
 
+/* cache du champs anti-spam */
+.text_complement{
+    display: none;
+}
+
 </style>
 
 
@@ -381,12 +411,25 @@ export default {
     methods: {
         async submitForm(event) {
             event.preventDefault();
+
+            // récupère les valeurs des champs du formulaire
             const formData = new FormData(event.target);
+
+             // Vérifier si le champ "complement" est rempli
+            const complementValue = formData.get('complement');
+            if (complementValue && complementValue.trim() !== '') {
+                // Si le champ "complement" est rempli, ne pas envoyer le mail
+                // Vous pouvez afficher un message d'erreur ou simplement sortir de la fonction
+                return;
+            }
+
+            // envoie les valeurs à web3form qui m'envoie le mail
             const response = await fetch('https://api.web3forms.com/submit', {
                 method: 'POST',
                 body: formData
             });
             
+            // si le message est envoyé, écrire un message et effacer les champs
             if (response.ok) {
                 this.messageSent = true;
                 // Réinitialiser les champs du formulaire
