@@ -152,8 +152,7 @@
                                         md:text-base">Obligatoire</p>
                         </div>
                     </div>
-        
-                    
+          
 
                     <div class="relative my-16 text_complement">
                         <input
@@ -173,9 +172,6 @@
                                         md:text-base">Obligatoire</p>
                         </div>
                     </div>
-        
-
-
         
 
                     <!-- consentement RGPD -->
