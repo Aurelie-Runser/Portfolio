@@ -477,7 +477,6 @@
 
 // import des composants
 import monBouton from "../components/monBouton.vue"
-import mesProjets from "../components/mesProjets.vue"
 
 // import des fonctions firebases
 import { 
@@ -507,7 +506,7 @@ import {
 
 export default {
     name:'ProjetView',
-    components: {monBouton, mesProjets},
+    components: {monBouton},
 
     data() {
         return {

@@ -26,13 +26,12 @@
             text-right font-oswald font-semibold italic text-transparent text-lg sm:text-xl md:text-3xl">
 
             <!-- <RouterLink to="/"  @click="menuOuvert = !menuOuvert"> -->
-            <a href="/#id_accueil" @click="menuOuvert = !menuOuvert">
+                <RouterLink to="/" @click="menuOuvert = !menuOuvert">
                 <p class="menu_item item_acc"
                     data-text="Hello World">
                     Hello World
                 </p>
-            </a>
-            <!-- </RouterLink> -->
+            </RouterLink>
 
             <!-- <RouterLink to="/"  @click="menuOuvert = !menuOuvert"> -->
                 <a href="/#id_projets" @click="menuOuvert = !menuOuvert">

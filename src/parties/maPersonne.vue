@@ -41,7 +41,7 @@
             <!-- Bouton pour télécharger mon CV-->
             <div class="mt-5">
                 <p class="perso_text">
-                    Si vous voulez en être, n'hésitez à ma contacter ou à télécharger mon CV.
+                    Si vous voulez en être, n'hésitez à me contacter et à consulter mon CV.
                 </p>
 
                 <a target="_blank" href="https://drive.google.com/drive/folders/1wbf5tLZU1f4blTsYob3HGBV2Mzv_Z10V?usp=sharing">
