@@ -26,12 +26,12 @@ export default {
           "Esprit d'apprentissage",
           "Autonomie",
           "Gestion du temps",
+          "Persévérance",
           "Indiviualisme",
-          "Patience",
         ],
 
         datasets: [{
-          data: [4, 3, 4, 0, 5],
+          data: [4, 3, 4, 5, 0],
           label: "Soft Skills", 
           borderColor: '#22d3ee',
           pointBackgroundColor: '#22d3ee',
@@ -73,7 +73,7 @@ export default {
               color: '#ffedd5',
               font:{
                 family: "Darker Grotesque",
-                size: 16
+                size: 20
               }
             }
           },

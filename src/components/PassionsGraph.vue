@@ -73,7 +73,7 @@ export default {
               color: '#ffedd5',
               font:{
                 family: "Darker Grotesque",
-                size: 16
+                size: 20
               }
             }
           },
