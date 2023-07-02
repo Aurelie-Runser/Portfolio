@@ -232,7 +232,7 @@ export default {
 
             // Vérifiez si le haut de l'élément est au-dessus de 70% de l'écran et si le bas de l'élément est en dessous du haut de l'écran
             // Si c'est le cas, alors l'élément est actuellement visible à l'écran
-            return rect.top >= 0 && rect.bottom <= window.innerHeight*0.7;
+            return rect.top >= 0 && rect.bottom <= window.innerHeight*0.8;
         }
     }
 }
