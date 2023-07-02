@@ -1,0 +1,85 @@
+<template>
+  <div class="w-full max-w-md h-auto">
+    <h3 class="m-0">Passions</h3>
+
+    <Radar
+      id="my-chart-id"
+      :options="chartOptions"
+      :data="chartData"
+    />
+  </div>
+</template>
+
+<script>
+import { Radar } from 'vue-chartjs'
+import { Chart as ChartJS, Title, Tooltip, Legend, RadialLinearScale, PointElement, LineElement } from 'chart.js';
+
+ChartJS.register(Title, Tooltip, Legend, RadialLinearScale, PointElement, LineElement)
+
+export default {
+  name: 'RadarChart',
+  components: { Radar },
+  data() {
+    return {
+      chartData: {
+        labels: [
+          "Développement",
+          "Café",
+          "Chemises",
+          "Animés",
+          "Rock",
+        ],
+
+        datasets: [{
+          data: [5, 3, 1, 4, 2],
+          label: "Passions", 
+          borderColor: '#d946ef',
+          pointBackgroundColor: '#d946ef',
+          pointBorderColor: '#ffedd5',
+          pointHoverBackgroundColor: '#ffedd5',
+          pointHoverBorderColor: '#d946ef',
+          pointHoverRadius: "5",
+          pointHoverBorderWidth: "2"
+        }]
+      },
+
+      chartOptions: {
+        responsive: true,
+
+        scales: {
+          r: {
+            // echelle, nombre min et max
+            stepSize: 1,
+            suggestedMin: 0,
+            suggestedMax: 6, 
+
+            // traits "horizontaux"
+            grid: {
+              color: '#dddddd70'
+            },
+            
+            // traits "verticaux"
+            angleLines: {
+              color: '#dddddd50' 
+            },
+            
+            // nombre des niveaux
+            ticks: {
+              display: false,
+            },
+
+            // légende
+            pointLabels: {
+              color: '#ffedd5',
+              font:{
+                family: "Darker Grotesque",
+                size: 16
+              }
+            }
+          },
+        }
+      }
+    }
+  }
+}
+</script>

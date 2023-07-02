@@ -1,8 +1,13 @@
 <template>
     <section class="my-32">
         <h2>Ma Personne</h2>
-
+        
         <div class="mx-5 md:mx-14 xl:mx-28 my-8">
+
+            <div class="my-10 flex flex-col items-center gap-5 md:flex-row flex-wrap justify-between">
+                <SoftSkillsGraph/>
+                <PassionsGraph/>
+            </div>
 
             <p class="perso_text guillement_1 relative pl-16 ">
                 Perfectionniste et sérieuse, je m'épanouis dans la formation
@@ -50,7 +55,9 @@
                     </monBouton>
                 </a>
             </div>
+            
         </div>
+
 
     </section>
 </template>
@@ -105,11 +112,12 @@
 </style>
 
 <script>
-// import des composants
 import monBouton from "../components/monBouton.vue"
+import SoftSkillsGraph from "@/components/SoftSkillsGraph.vue"
+import PassionsGraph from "@/components/PassionsGraph.vue"
 
 export default {
     name:'ProjetView',
-    components: {monBouton},
+    components: {monBouton, SoftSkillsGraph, PassionsGraph},
 }
 </script>
