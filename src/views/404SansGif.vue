@@ -1,38 +1,28 @@
 <template>
-    <div class="min-h-screen pt-24 overflow-hidden
-    flex justify-between flex-col xl:flex-row">
+    <main class="min-h-screen px-7 md:px-10 pt-24 overflow-hidden">
 
-        <div>
-            <h1 class="relative top-0 left-1/2 w-full animate-skew">
-                <span class="big-title-glitch btg-anim top-0 -translate-x-1/2 text-center text-5xl md:text-7xl"
-                    data-text="Erreur 404">
-                    Erreur 404
-                </span>
-            </h1>
+        <h1 class="relative top-0 left-1/2 w-full animate-skew">
+            <span class="big-title-glitch btg-anim top-0 -translate-x-1/2 text-center text-5xl md:text-7xl"
+                data-text="Erreur 404">
+                Erreur 404
+            </span>
+        </h1>
 
-            <div class="flex justify-between gap-5 ml-5">
-                <div class="flex flex-col justify-center w-full">
-                    <div class="flex flex-wrap justify-between gap-5 mx-auto my-10 max-w-4xl">
-                        <p class="mx-auto inline-block font-oswald font-extralight text-base md:text-xl text-center text-stone-300">
-                            La page que vous recherchez ne semble pas exister.
-                        </p>
-                    </div>
-                    
-                    <RouterLink to="/">
-                        <monBouton class="mx-auto my-10">Retourner à Hello World</monBouton>
-                    </RouterLink>
-                </div>
-
-                <img class="hidden sm:block w-full max-w-md xl:hidden" src="/error.gif" alt="GIF où je cherche votre page dans le code">
-                
-            </div>
-        </div>
-        
-        <div class="w-full hidden xl:flex xl:w-1/3 justify-end items-center my-10">
-            <img class="w-full max-w-md xl:max-w-full" src="/error.gif" alt="GIF où je cherche votre page dans le code">
+        <div class="flex flex-wrap justify-between gap-5 mx-auto my-10 max-w-4xl">
+            <p class="mx-auto inline-block font-oswald font-extralight text-base md:text-xl text-center text-stone-300">
+                La page que vous recherchez a été perdue.
+            </p>
+            <p class="mx-auto inline-block font-oswald font-extralight text-base md:text-xl text-center text-stone-300">
+                Je me demande bien où elle a pue allée...
+            </p>
         </div>
 
-    </div>
+        <RouterLink to="/">
+            <monBouton class="mx-auto my-20">Retourner à Hello World</monBouton>
+        </RouterLink>
+
+
+    </main>
 </template>
 
 
