@@ -1,5 +1,5 @@
 <template>
-    <div class="fixed top-0 right-0 w-content h-screen translate-x-full bg-mon-black z-40 duration-300 menu_border"
+    <header class="fixed top-0 right-0 w-content h-screen translate-x-full bg-mon-black z-40 duration-300 menu_border"
         :class="{ '-translate-x-0': menuOuvert }"
         :aria-expanded="menuOuvert" @mouseover="menuOuvert = true" @mouseleave="menuOuvert = false">
 
@@ -22,7 +22,7 @@
         
 
         <!--les liens-->
-        <div class="relative w-full h-full flex flex-col justify-end gap-16 py-28 sm:justify-evenly items-right px-[10vw] md:px-[5vw]
+        <nav class="relative w-full h-full flex flex-col justify-end gap-16 py-28 sm:justify-evenly items-right px-[10vw] md:px-[5vw]
             text-right font-oswald font-semibold italic text-transparent text-lg sm:text-xl md:text-3xl">
 
             <!-- <RouterLink to="/"  @click="menuOuvert = !menuOuvert"> -->
@@ -69,9 +69,9 @@
                 </a>
             <!-- </RouterLink> -->
 
-        </div>
+        </nav>
 
-    </div>
+    </header>
 </template>
 
 <style scoped>

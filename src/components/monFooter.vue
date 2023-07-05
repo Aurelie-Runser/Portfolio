@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-wrap justify-evenly gap-x-10 gap-y-5
+    <footer class="flex flex-wrap justify-evenly gap-x-10 gap-y-5
                 w-full h-auto p-7 bg-neutral-800">
 
         <RouterLink to="/"
@@ -38,7 +38,7 @@
         
         <p class="w-full mt-3 text-center font-darker-grotesque font-bold text-sm md:text-base text-neutral-400">© 2023 Aurélie Runser</p>
 
-    </div>
+    </footer>
 </template>
 
 <style scoped>
