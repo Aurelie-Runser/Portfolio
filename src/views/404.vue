@@ -19,7 +19,7 @@
                     </div>
                     
                     <RouterLink to="/">
-                        <monBouton class="mx-auto">Retourner à Hello World</monBouton>
+                        <monBouton class="mx-auto my-10">Retourner à Hello World</monBouton>
                     </RouterLink>
                 </div>
 
@@ -28,7 +28,7 @@
             </div>
         </div>
         
-        <div class="flex w-full sm:hidden xl:flex xl:w-1/3 justify-end items-center my-10">
+        <div class="w-full hidden xl:flex xl:w-1/3 justify-end items-center my-10">
             <img class="w-full max-w-md xl:max-w-full" src="/error.gif" alt="GIF où je cherche votre page dans le code">
         </div>
 
