@@ -188,7 +188,7 @@
 import monBouton from "@/components/monBouton.vue"
 
 export default {
-  name: 'ContactForm',
+  name: '404',
   components: {monBouton},
 }
 
