@@ -3,13 +3,14 @@
         <h2>Mes Projets</h2>
 
         <!-- grille de projets -->
-        <ul id="ma-liste" class="overflow-hidden -mx-7 md:-mx-10 my-16 md:grid grid-flow-row-dense grid-cols-[repeat(auto-fit,minmax(20rem,1fr))]">
+        <ul id="ma-liste" class="overflow-hidden -mx-7 md:-mx-10 my-16 md:grid grid-flow-row-dense grid-cols-[repeat(auto-fit,minmax(20rem,1fr))] gap-1">
 
             <!-- card des projets -->
             <li v-for="p in listeProjets" :key="p.id"
-                class="projet_card relative grid content-center justify-items-center basis-96 grow aspect-video md:aspect-square overflow-hidden">
+                class="projet_card relative basis-96 grow aspect-video md:aspect-square overflow-hidden">
 
                 <!-- Les images -->
+
                 <!--image en mobile-->
                 <div class="card_img relative block md:hidden aspect-video delay-200 duration-500">
                     <img class="object-cover w-full h-full"
@@ -22,12 +23,12 @@
                          :src="p.image_card" :alt="'Image de mon projet '+p.titre">
                 </div>
 
-                <!-- les decos -->
-                <div class="card_deco deco_b absolute bottom-0 right-0 w-5 h-5 md:w-8 md:h-8 bg-fuchsia-500 duration-500"></div>
-                <div class="card_deco deco_t absolute top-0 left-0 w-5 h-5 md:w-8 md:h-8 bg-cyan-400 duration-500"></div>
-
+                
+                <!-- deco -->
+                <div class="card_deco deco_t absolute -top-full left-0 w-full h-full bg-mon-black border-b-4 border-cyan-400 duration-500"></div>
+                
                 <!-- Les textes (qui n'apparraissent qu'au survole) -->
-                <div class="card_text absolute top-0 bottom-0 left-[8%] right-[8%] flex flex-col justify-around opacity-0 delay-200 duration-500">
+                    <div class="card_deco deco_b absolute flex flex-col justify-between top-full left-0 w-full h-full p-[5%] border-t-4 border-fuchsia-500 duration-500 delay-200">
                     
                     <p class="text_card">
                         Contexte :
@@ -44,16 +45,17 @@
                         <span class="font-oswald font-extralight">{{ p.annee_resume }}</span>
                     </p>
 
+                    <!-- le bouton pour aller sur le projet-->
+                        <RouterLink :to="`/projet/${p.id}`">
+                            <button
+                                class="card_button absolute bottom-1 right-0 px-6 py-3 min-w-min w-[25%] h-16 md:h-20 bg-orange-100
+                                        font-oswald text-base md:text-xl tracking-wider text-center text-mon-black
+                                        transition-all duration-75">
+                                Voir
+                            </button>
+                        </RouterLink>
                 </div>
 
-                <!-- le bouton pour aller sur le projet-->
-                <RouterLink :to="`/projet/${p.id}`">
-                    <button
-                        class="card_button translate-x-[120%] translate-y-[120%] absolute bottom-[5%] right-[5%] px-6 py-3 min-w-min w-[25%] h-16 md:h-20 bg-mon-black opacity-0 delay-200 duration-500
-                                font-oswald text-base md:text-xl tracking-wider text-center text-stone-300">
-                        Voir
-                    </button>
-                </RouterLink>
 
             </li>
 
@@ -64,25 +66,20 @@
 
 <style scoped>
 
-/* assombrissement de l'image survole de la card */
-.projet_card:hover .card_img{
-    filter: brightness(0.25);
+/* animation du fond noir au survole de la card */
+.projet_card:hover .deco_t{
+    transform: translateY(100%);
+}
+/* animation du texte au survole de la card */
+.projet_card:hover .deco_b{
+    transform: translateY(-100%);
 }
 
-/* modification des décos au survole de la card */
-.projet_card:hover .card_deco{
-    width: 95%;
-    height: 95%;
-    opacity: 50%;
+/* animation lors du survole du bouton */
+.card_button:hover{
+    transform-origin: bottom right;
+    transform: scale(1.1);
 }
-
-/* affichage des texte et du bouton au survole de la card */
-.projet_card:hover .card_text,
-.projet_card:hover .card_button{
-    opacity: 100%;
-    transform: translate(0);
-}
-
 </style>
 
 
