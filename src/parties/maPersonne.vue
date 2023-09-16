@@ -15,7 +15,7 @@
                     class="perso_link font-darker-grotesque text-base md:text-lg
                             underline decoration-fuchsia-500">
                     MMI, Métiers du Multimédia et de l'Internet, à l'IUT de Montbéliard</a>,
-                depuis maintenant 2 ans.
+                depuis maintenant 3 ans.
             </p>
             
             <p class="perso_text">
