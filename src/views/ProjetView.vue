@@ -81,7 +81,7 @@
                 <div class="lg:flex flex-wrap">
     
                     <!-- 2eme image -->
-                    <div class="projet_img relative z-10 -ml-7 my-16 w-screen sm:mx-auto sm:w-2/3 h-fit lg:-ml-10 lg:w-1/2">
+                    <div class="projet_img relative z-10 my-16 w-screen sm:mx-auto sm:w-2/3 h-fit lg:w-1/2">
                         <img class="w-full" :src="img_rect2" :alt="img_rect2">
                     </div>
     
@@ -118,7 +118,7 @@
                     <monBouton>Hello World</monBouton>
                 </RouterLink>
         
-                <a href="/#id_projets">
+                <a href="/projets">
                     <monBouton>Autres Projets</monBouton>
                 </a>
 

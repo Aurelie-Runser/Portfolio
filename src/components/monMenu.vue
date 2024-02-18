@@ -34,7 +34,7 @@
             </RouterLink>
 
             <!-- <RouterLink to="/"  @click="menuOuvert = !menuOuvert"> -->
-                <a href="/#id_projets" @click="menuOuvert = !menuOuvert">
+                <a href="/projets" @click="menuOuvert = !menuOuvert">
                     <p class="menu_item item_pro"
                         data-text="Mes projets">
                         Mes Projets

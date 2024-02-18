@@ -1,9 +1,13 @@
 <template>
-    <section class="my-32">
-        <h2>Mes Projets</h2>
+    <main class="pt-24">
+        <h1 class="big-title-glitch title-glitch tg-anim-projet relative
+                    mx-7 md:mx-14 xl:mx-28"
+            data-text="Tous Mes Projets">
+            Tous Mes Projets
+        </h1>
 
         <!-- grille de projets -->
-        <ul id="ma-liste" class="overflow-hidden -mx-7 md:-mx-10 my-16 md:grid grid-flow-row-dense grid-cols-[repeat(auto-fit,minmax(20rem,1fr))] gap-1">
+        <ul id="ma-liste" class="overflow-hidden my-16 md:grid grid-flow-row-dense grid-cols-[repeat(auto-fit,minmax(20rem,1fr))] gap-1">
 
             <!-- card des projets -->
             <li v-for="p in listeProjets" :key="p.id"
@@ -14,13 +18,13 @@
                 <!--image en mobile-->
                 <div class="card_img relative block md:hidden aspect-video delay-200 duration-500">
                     <img class="object-cover w-full h-full"
-                         :src="p.image_rect" :alt="'Image de mon projet '+p.titre">
+                        :src="p.image_rect" :alt="'Image de mon projet '+p.titre">
                 </div>
 
                 <!--image en pc-->
                 <div class="card_img relative hidden md:block aspect-square delay-200 duration-500">
                     <img class="object-cover w-full h-full"
-                         :src="p.image_card" :alt="'Image de mon projet '+p.titre">
+                        :src="p.image_card" :alt="'Image de mon projet '+p.titre">
                 </div>
 
                 
@@ -58,31 +62,12 @@
             </li>
         </ul>
 
-        <RouterLink to="/projets">
-            <monBouton class="mx-auto">Voir tous les Projets</monBouton>
+        <RouterLink to="/">
+            <monBouton class="mx-auto my-32 md:my-52">Hello World</monBouton>
         </RouterLink>
 
-    </section>
+    </main>
 </template>
-
-<style>
-
-/* animation du fond noir au survole de la card */
-.projet_card:hover .deco_t{
-    transform: translateY(100%);
-}
-/* animation du texte au survole de la card */
-.projet_card:hover .deco_b{
-    transform: translateY(-100%);
-}
-
-/* animation lors du survole du bouton */
-.card_button:hover{
-    transform-origin: bottom right;
-    transform: scale(1.1);
-}
-</style>
-
 
 <script>
 import monBouton from "../components/monBouton.vue"
@@ -125,7 +110,7 @@ export default {
             });
         },
         listeProjets:function(){
-            return this.orderByDate.slice(0, 8);
+            return this.orderByDate;
         }
     },
     
@@ -169,6 +154,4 @@ export default {
         },
     },
 }
-
-
 </script>

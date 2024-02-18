@@ -14,6 +14,5 @@ import meContacte from "@/parties/meContacte.vue";
         <mesCompetences id="id_competences"/>
         <maPersonne id="id_personne"/>
         <meContacte id="id_contact"/>
-    
     </main>
 </template>
