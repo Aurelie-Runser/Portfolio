@@ -2,7 +2,7 @@
     <section class="my-32">
         <h2>Ma Personne</h2>
         
-        <div class="mx-5 md:mx-14 xl:mx-28 my-8">
+        <div class="sm:mx-5 md:mx-14 xl:mx-28 2xl:mx-auto my-8 2xl:max-w-7xl">
 
             <div class="my-10 flex flex-col items-center gap-5 md:flex-row flex-wrap justify-between">
                 <SoftSkillsGraph/>
