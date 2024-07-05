@@ -3,11 +3,11 @@
         <h2>Mes Projets</h2>
 
         <!-- grille de projets -->
-        <ul id="ma-liste" class="overflow-hidden -mx-7 md:-mx-10 my-16 md:grid grid-flow-row-dense grid-cols-[repeat(auto-fit,minmax(20rem,1fr))] gap-1">
+        <ul id="ma-liste" class="overflow-hidden -mx-7 md:-mx-10 my-16 md:grid grid-flow-row-dense grid-cols-[repeat(auto-fit,minmax(320px,1fr))] gap-1">
 
             <!-- card des projets -->
             <li v-for="p in listeProjets" :key="p.id"
-                class="projet_card relative basis-96 grow aspect-video md:aspect-square overflow-hidden">
+                class="projet_card relative aspect-video md:aspect-square overflow-hidden">
 
                 <!-- Les images -->
 
@@ -124,11 +124,24 @@ export default {
                 return 0;
             });
         },
-        listeProjets:function(){
-            return this.orderByDate.slice(0, 8);
+        listeProjets: function(){
+            const screenWidth = window.innerWidth;
+            const gap = 4; // Gap entre les cartes
+            const minCardWidth = 320; // Largeur minimale de chaque carte
+            let cardsPerRow;
+
+            if (screenWidth <= 767) {
+                // Mobile view
+                return this.orderByDate.slice(0, 4);
+            } else {
+                // Desktop view
+                // Calculer le nombre de cartes qui peuvent tenir dans une ligne
+                cardsPerRow = Math.floor((screenWidth + gap) / (minCardWidth + gap));
+                // Limiter le nombre de cartes à 2 lignes
+                return this.orderByDate.slice(0, cardsPerRow * 2);
+            }
         }
     },
-    
 
     mounted(){
         this.getProjets();
