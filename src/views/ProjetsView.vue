@@ -6,23 +6,30 @@
             Tous Mes Projets
         </h1>
 
+        <select v-model="genreSelect" name="genreProjet" id="genreProjet">
+            <option value="">Tous les projets</option>
+            <option value="scolaire">Projets Scolaire</option>
+            <option value="pro">Projets Professionnel</option>
+            <option value="perso">Projets Personnel</option>
+        </select>
+
         <!-- grille de projets -->
-        <ul id="ma-liste" class="overflow-hidden my-16 md:grid grid-flow-row-dense grid-cols-[repeat(auto-fit,minmax(20rem,1fr))] gap-1">
+        <ul id="ma-liste" class="overflow-hidden my-16 md:grid grid-flow-row-dense grid-cols-[repeat(auto-fit,minmax(20rem,1fr))] gap-1 place-items-center">
 
             <!-- card des projets -->
             <li v-for="p in listeProjets" :key="p.id"
-                class="projet_card relative basis-96 grow aspect-video md:aspect-square overflow-hidden">
+                class="projet_card relative max-w-lg aspect-video md:aspect-square overflow-hidden">
 
                 <!-- Les images -->
 
                 <!--image en mobile-->
-                <div class="card_img relative block md:hidden aspect-video delay-200 duration-500">
-                    <img class="object-cover w-full h-full"
+                <div class="w-full h-full relative block md:hidden aspect-video delay-200 duration-500">
+                    <img class="object-cover w-full h-ful"
                         :src="p.image_rect" :alt="'Image de mon projet '+p.titre">
                 </div>
 
                 <!--image en pc-->
-                <div class="card_img relative hidden md:block aspect-square delay-200 duration-500">
+                <div class="w-full h-full relative hidden md:block aspect-square delay-200 duration-500">
                     <img class="object-cover w-full h-full"
                         :src="p.image_card" :alt="'Image de mon projet '+p.titre">
                 </div>
@@ -97,19 +104,28 @@ export default {
 
     data(){
         return{
-            listeProjet:[]
+            genreSelect: '',
+            listeProjet:[],
+            projetsAffichees:[],
         }
     },
 
     computed:{
-        orderByDate:function(){
-            return this.listeProjet.sort(function(a,b){
+        orderByDate() {
+            return this.projetsAffichees.sort(function(a,b){
                 if(a.date_ajout < b.date_ajout) return 1;
                 if(a.date_ajout > b.date_ajout) return -1;
                 return 0;
             });
         },
-        listeProjets:function(){
+
+        listeProjets() {
+            console.log(this.genreSelect)
+            if (this.genreSelect != ''){
+                this.projetsAffichees = this.listeProjet.filter(projet => projet.genre == this.genreSelect);
+            } else {
+                this.projetsAffichees = this.listeProjet;
+            }
             return this.orderByDate;
         }
     },
