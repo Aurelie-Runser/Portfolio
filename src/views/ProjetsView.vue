@@ -10,16 +10,26 @@
             <div class="mon_select">
                 <select class="w-fit h-fit border-orange-100 border-2 border-solid bg-mon-black p-4 text-stone-300 cursor-pointer hover:bg-orange-100 hover:text-mon-black transition-all"
                         v-model="genreSelect" name="genreProjet" id="genreProjet">
-                    <option value="">Tous les Projets</option>
+                    <option value="">Tous les Genres</option>
                     <option value="scolaire">Projets Scolaires</option>
                     <option value="pro">Projets Professionnels</option>
                     <option value="perso">Projets Personnels</option>
                 </select>
             </div>
+
+            <div class="mon_select">
+                <select class="w-fit h-fit border-orange-100 border-2 border-solid bg-mon-black p-4 text-stone-300 cursor-pointer hover:bg-orange-100 hover:text-mon-black transition-all"
+                        v-model="catSelect" name="categorieProjet" id="categorieProjet">
+                    <option value="">Toutes les Catégories</option>
+                    <option value="fs">Full Stack</option>
+                    <option value="fe">Site vitrine</option>
+                    <option value="dv">Dataviz</option>
+                </select>
+            </div>
         </div>
 
         <!-- grille de projets -->
-        <ul id="ma-liste" class="overflow-hidden my-16 md:grid grid-flow-row-dense grid-cols-[repeat(auto-fit,minmax(20rem,1fr))] gap-1 place-items-center">
+        <ul v-if="listeProjets.length > 0" id="ma-liste" class="overflow-hidden my-16 md:grid grid-flow-row-dense grid-cols-[repeat(auto-fit,minmax(20rem,1fr))] gap-1 place-items-center">
 
             <!-- card des projets -->
             <li v-for="p in listeProjets" :key="p.id"
@@ -73,6 +83,10 @@
                 </div>
             </li>
         </ul>
+
+        <div v-else>
+            <p class="text-stone-300 text-center" >Aucun projet ne correspond à votre recherche.</p>
+        </div>
 
         <RouterLink to="/">
             <monBouton class="mx-auto my-32 md:my-52">Hello World</monBouton>
@@ -147,15 +161,16 @@ export default {
 
     data(){
         return{
-            genreSelect: '',
             listeProjet:[],
             projetsAffichees:[],
+            catSelect: '',
+            genreSelect: '',
         }
     },
 
     computed:{
         orderByDate() {
-            return this.projetsAffichees.sort(function(a,b){
+            return this.projetsAffichees.sort((a,b) => {
                 if(a.date_ajout < b.date_ajout) return 1;
                 if(a.date_ajout > b.date_ajout) return -1;
                 return 0;
@@ -163,11 +178,13 @@ export default {
         },
 
         listeProjets() {
-            console.log(this.genreSelect)
+            this.projetsAffichees = this.listeProjet;
             if (this.genreSelect != ''){
                 this.projetsAffichees = this.listeProjet.filter(projet => projet.genre == this.genreSelect);
-            } else {
-                this.projetsAffichees = this.listeProjet;
+            }
+            
+            if(this.catSelect != ''){
+                this.projetsAffichees = this.projetsAffichees.filter(projet => projet.categorie == this.catSelect);
             }
             return this.orderByDate;
         }
@@ -183,13 +200,14 @@ export default {
         async getProjets() {
             const firestore = getFirestore();
             const dbProjet = collection(firestore, "projet");           
-            const query = await onSnapshot(dbProjet, (snapshot) => {
+
+            await onSnapshot(dbProjet, (snapshot) => {
                 this.listeProjet = snapshot.docs.map((doc) => (
                     {id: doc.id,...doc.data()}
                 ));
 
-                this.listeProjet.forEach(function (projet) {
-                    const storage = getStorage();
+                const storage = getStorage();
+                this.listeProjet.forEach((projet) => {
     
                     const spaceRef_rect = ref(storage, projet.image_rect);
                     getDownloadURL(spaceRef_rect)
@@ -208,8 +226,6 @@ export default {
                     });
                 });
             });
-
-            
         },
     },
 }
