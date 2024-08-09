@@ -6,7 +6,7 @@
             Tous Mes Projets
         </h1>
 
-        <div class="my-16 flex justify-start gap-32 mx-7 md:mx-14 xl:mx-28">
+        <div class="my-16 flex flex-wrap justify-start gap-x-32 gap-y-4 mx-7 md:mx-14 xl:mx-28">
             <div class="mon_select">
                 <select class="w-fit h-fit border-orange-100 border-2 border-solid bg-mon-black p-4 text-stone-300 cursor-pointer hover:bg-orange-100 hover:text-mon-black transition-all"
                         v-model="genreSelect" name="genreProjet" id="genreProjet">
