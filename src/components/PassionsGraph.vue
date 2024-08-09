@@ -25,13 +25,13 @@ export default {
         labels: [
           "Développement",
           "Café",
-          "Chemises",
           "Animés",
+          "Chemises",
           "Rock",
         ],
 
         datasets: [{
-          data: [5, 3, 1, 4, 2],
+          data: [5, 4, 5, 2, 3],
           label: "Passions", 
           borderColor: '#d946ef',
           pointBackgroundColor: '#d946ef',

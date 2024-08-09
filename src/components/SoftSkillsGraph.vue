@@ -27,11 +27,11 @@ export default {
           "Autonomie",
           "Gestion du temps",
           "Persévérance",
-          "Indiviualisme",
+          "Esprit d'équipe",
         ],
 
         datasets: [{
-          data: [4, 3, 4, 5, 0],
+          data: [5, 4, 3, 5, 4],
           label: "Soft Skills", 
           borderColor: '#22d3ee',
           pointBackgroundColor: '#22d3ee',

@@ -14,7 +14,7 @@
                 <span class="mon-title mt-5">a new</span>
     
                 <span class="relative">
-                    <span class="big-title-glitch title-glitch tg-anim" data-text="Développeuse Front-End">Développeuse Front-End</span>
+                    <span class="big-title-glitch title-glitch tg-anim" data-text="Développeuse Web">Développeuse Web</span>
                 </span>
             </span>
         </h1>
