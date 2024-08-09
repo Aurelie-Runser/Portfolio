@@ -26,22 +26,22 @@
     height: 100%;
     top: 0;
     left: 0;
-    transform: translate(-3%, -3%);
+    transform: translate(-4px, -4px);
     background-color: #22d3ee;
     transition: all 200ms;
 }
 
 .mon_bouton::after{
-    transform: translate(3%, 3%);
+    transform: translate(4px, 4px);
     background-color: #d946ef;
 }
 
 .mon_bouton:hover::before{
-    transform: translate(-5%, -10%);
+    transform: translate(-8px, -8px);
 }
 
 .mon_bouton:hover::after{
-    transform: translate(5%, 10%);
+    transform: translate(8px, 8px);
 }
 
 </style>
