@@ -6,12 +6,17 @@
             Tous Mes Projets
         </h1>
 
-        <select v-model="genreSelect" name="genreProjet" id="genreProjet">
-            <option value="">Tous les projets</option>
-            <option value="scolaire">Projets Scolaire</option>
-            <option value="pro">Projets Professionnel</option>
-            <option value="perso">Projets Personnel</option>
-        </select>
+        <div class="my-16 flex justify-start gap-32 mx-7 md:mx-14 xl:mx-28">
+            <div class="mon_select">
+                <select class="w-fit h-fit border-orange-100 border-2 border-solid bg-mon-black p-4 text-stone-300 cursor-pointer hover:bg-orange-100 hover:text-mon-black transition-all"
+                        v-model="genreSelect" name="genreProjet" id="genreProjet">
+                    <option value="">Tous les Projets</option>
+                    <option value="scolaire">Projets Scolaires</option>
+                    <option value="pro">Projets Professionnels</option>
+                    <option value="perso">Projets Personnels</option>
+                </select>
+            </div>
+        </div>
 
         <!-- grille de projets -->
         <ul id="ma-liste" class="overflow-hidden my-16 md:grid grid-flow-row-dense grid-cols-[repeat(auto-fit,minmax(20rem,1fr))] gap-1 place-items-center">
@@ -75,6 +80,44 @@
 
     </main>
 </template>
+
+<style>
+.mon_select{
+    display: block;
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    z-index: 1;
+}
+
+.mon_select::before,
+.mon_select::after{
+    content: "";
+    position: absolute;
+    display: block;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform: translate(-2%, -4%);
+    background-color: #22d3ee;
+    transition: all 200ms;
+}
+
+.mon_select::after{
+    transform: translate(2%, 4%);
+    background-color: #d946ef;
+}
+
+.mon_select:hover::before{
+    transform: translate(-5%, -10%);
+}
+
+.mon_select:hover::after{
+    transform: translate(5%, 10%);
+}
+</style>
 
 <script>
 import monBouton from "../components/monBouton.vue"
