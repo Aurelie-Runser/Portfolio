@@ -132,7 +132,7 @@ export default {
 
             if (screenWidth <= 767) {
                 // Mobile view
-                return this.orderByDate.slice(0, 4);
+                return this.orderByDate.slice(0, 3);
             } else {
                 // Desktop view
                 // Calculer le nombre de cartes qui peuvent tenir dans une ligne
