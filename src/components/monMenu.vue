@@ -25,49 +25,40 @@
         <nav class="relative w-full h-full flex flex-col justify-end gap-16 py-28 sm:justify-evenly items-right px-[10vw] md:px-[5vw]
             text-right font-oswald font-semibold italic text-transparent text-lg sm:text-xl md:text-3xl">
 
-            <!-- <RouterLink to="/"  @click="menuOuvert = !menuOuvert"> -->
-                <RouterLink to="/" @click="menuOuvert = !menuOuvert">
+            <RouterLink @click="menuOuvert = false" to="/">
                 <p class="menu_item item_acc"
                     data-text="Hello World">
                     Hello World
                 </p>
             </RouterLink>
+            
+            <RouterLink @click="menuOuvert = false" to="/projets">
+                <p class="menu_item item_acc"
+                    data-text="Mes projets">
+                    Mes projets
+                </p>
+            </RouterLink>
 
-            <!-- <RouterLink to="/"  @click="menuOuvert = !menuOuvert"> -->
-                <a href="/projets" @click="menuOuvert = !menuOuvert">
-                    <p class="menu_item item_pro"
-                        data-text="Mes projets">
-                        Mes Projets
-                    </p>
-                </a>
-            <!-- </RouterLink> -->
+            <RouterLink @click="menuOuvert = false" :to="{ path: '/', hash: '#id_competences' }">
+                <p class="menu_item item_comp"
+                    data-text="Mes Compétences">
+                    Mes Compétences
+                </p>
+            </RouterLink>
 
-            <!-- <RouterLink :to="{ path: '/', hash: '#id_competences' }"  @click="menuOuvert = !menuOuvert"> -->
-                <a href="/#id_competences" @click="menuOuvert = !menuOuvert">
-                    <p class="menu_item item_comp"
-                        data-text="Mes Compétences">
-                        Mes Compétences
-                    </p>
-                </a>
-            <!-- </RouterLink> -->
+            <RouterLink @click="menuOuvert = false" :to="{ path: '/', hash: '#id_personne' }">
+                <p class="menu_item item_perso"
+                    data-text="Ma Personne">
+                    Ma Personne
+                </p>
+            </RouterLink>
 
-            <!-- <RouterLink :to="{ path: '/', hash: '#id_competences' }"  @click="menuOuvert = !menuOuvert"> -->
-                <a href="/#id_personne" @click="menuOuvert = !menuOuvert">
-                    <p class="menu_item item_perso"
-                        data-text="Ma Personne">
-                        Ma Personne
-                    </p>
-                </a>
-            <!-- </RouterLink> -->
-
-            <!-- <RouterLink :to="{ path: '/', hash: '#id_competences' }"  @click="menuOuvert = !menuOuvert"> -->
-                <a href="/#id_contact" @click="menuOuvert = !menuOuvert">
+            <RouterLink @click="menuOuvert = false" :to="{ path: '/', hash: '#id_contact' }">
                 <p class="menu_item item_cont"
                     data-text="Me Contacter">
                     Me Contacter
                 </p>
-                </a>
-            <!-- </RouterLink> -->
+            </RouterLink>
 
         </nav>
 

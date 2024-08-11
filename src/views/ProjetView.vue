@@ -22,7 +22,7 @@
                         <img :src="img_rect" alt="image non trouvée">
                     </div>
         
-                    <a target="_blank" :href="projet.lien">
+                    <a target="_blank" :href="projet.lien" rel="noopener noreferrer">
                         <monBouton class="mx-auto mt-16">
                             Voir le Projet
                         </monBouton>
@@ -102,7 +102,7 @@
                 </p>
             </div>
     
-            <a target="_blank" :href="projet.lien">
+            <a target="_blank" :href="projet.lien" rel="noopener noreferrer">
                 <monBouton class="mx-auto my-20 md:my-40">
                     Voir le Projet
                 </monBouton>

@@ -7,27 +7,26 @@
             Hello World
         </RouterLink>
 
-        <a href="/#id_contact" class="footer_link font-darker-grotesque font-bold text-sm md:text-base text-neutral-400 underline decoration-fuchsia-500">
+        <RouterLink :to="{ path: '/', hash: '#id_contact' }" class="footer_link font-darker-grotesque font-bold text-sm md:text-base text-neutral-400 underline decoration-fuchsia-500">
             Me Contacter
-        </a>
+        </RouterLink>
 
         <div class="flex gap-5">
-            <a target="_blank" href="https://www.linkedin.com/in/aurélie-runser"> 
+            <a target="_blank" href="https://www.linkedin.com/in/aurélie-runser" rel="noopener noreferrer"> 
                 <linkedinIconGray class="inline-block w-5 h-5 md:w-8 md:h-8"/>
                 <p class="sr-only">Lien vers mon compte Linkedin</p>
             </a>
     
-            <a target="_blank" href="https://www.instagram.com/aurelie.runser_pro/">
+            <a target="_blank" href="https://www.instagram.com/aurelie.runser_pro/" rel="noopener noreferrer">
                 <instagramIconGray class="inline-block w-5 h-5 md:w-8 md:h-8"/>
                 <p class="sr-only">Lien vers mon compte Instagram</p>
             </a>
             
-            <a target="_blank" href="https://github.com/Aurelie-Runser">
+            <a target="_blank" href="https://github.com/Aurelie-Runser" rel="noopener noreferrer">
                 <githubIconGray class="inline-block w-5 h-5 md:w-8 md:h-8"/>
                 <p class="sr-only">Lien vers mon compte Github</p>
             </a>
         </div>
-
 
         <a href="mailto:aurelie.runser25@gmail.com">
             <p class="sr-only">Mon Adresse Mail : </p>
@@ -37,7 +36,6 @@
         </a>
         
         <p class="w-full mt-3 text-center font-darker-grotesque font-bold text-sm md:text-base text-neutral-400">© 2023 Aurélie Runser</p>
-
     </footer>
 </template>
 
