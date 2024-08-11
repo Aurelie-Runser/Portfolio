@@ -33,7 +33,7 @@
             <monChargement/>
          </div>
          
-        <ul v-else-if="projetsAffichees.length > 0" id="ma-liste" class="overflow-hidden my-16 md:grid grid-flow-row-dense grid-cols-[repeat(auto-fit,minmax(20rem,1fr))] gap-1 place-items-center">
+        <ul v-else-if="projetsAfficheesFonction.length > 0" id="ma-liste" class="overflow-hidden my-16 md:grid grid-flow-row-dense grid-cols-[repeat(auto-fit,minmax(20rem,1fr))] gap-1 place-items-center">
 
             <!-- card des projets -->
             <li v-for="p in projetsAfficheesFonction" :key="p.id"
