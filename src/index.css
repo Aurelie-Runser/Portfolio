@@ -63,6 +63,6 @@
     }
 
     input:focus, textarea:focus{
-        @apply border-2 border-cyan-400
+        @apply outline-none border-cyan-400
     }
 }
