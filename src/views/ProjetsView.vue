@@ -1,5 +1,5 @@
 <template>
-    <main class="pt-24">
+    <div class="pt-24">
         <h1 class="big-title-glitch title-glitch tg-anim-projet relative
                     mx-7 md:mx-14 xl:mx-28"
             data-text="Tous Mes Projets">
@@ -96,7 +96,7 @@
             <monBouton class="mx-auto my-32 md:my-52">Hello World</monBouton>
         </RouterLink>
 
-    </main>
+    </div>
 </template>
 
 <style scoped>
