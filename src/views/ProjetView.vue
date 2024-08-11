@@ -398,36 +398,37 @@ export default {
             const firestore = getFirestore();
             const docRef = doc(firestore, "projet", id);
             this.refProjet = await getDoc(docRef);
+
             if(this.refProjet.exists()){
                 this.projet = this.refProjet.data();
                 this.img_rect = this.projet.image_rect;
                 this.img_rect2 = this.projet.image_rect2;
+
+                const storage = getStorage();
+
+                const spaceRef_rect = ref(storage, this.projet.image_rect);
+                getDownloadURL(spaceRef_rect)
+                    .then((url) => {
+                        this.img_rect = url;
+                    this.dataLoaded += 1
+                })
+
+                const spaceRef_rect2 = ref(storage, this.projet.image_rect2);
+                getDownloadURL(spaceRef_rect2)
+                    .then((url) => {
+                        this.img_rect2 = url;
+                    this.dataLoaded += 1;
+                })
+
+                .catch((error) =>{
+                    console.log('erreur downloadUrl', error);
+                })
             }
             else{
-                this.console.log("Projet Inexistant");
+                console.log("Projet Inexistant");
+                this.$router.go(-1); 
             }
-
-            const storage = getStorage();
-
-            const spaceRef_rect = ref(storage, this.projet.image_rect);
-            getDownloadURL(spaceRef_rect)
-                .then((url) => {
-                    this.img_rect = url;
-                this.dataLoaded += 1
-            })
-
-            const spaceRef_rect2 = ref(storage, this.projet.image_rect2);
-            getDownloadURL(spaceRef_rect2)
-                .then((url) => {
-                    this.img_rect2 = url;
-                this.dataLoaded += 1;
-            })
-
-            .catch((error) =>{
-                console.log('erreur downloadUrl', error);
-            })
         },
-
     }
 }
 
