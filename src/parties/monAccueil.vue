@@ -75,10 +75,6 @@
     clip-path: inset(61% 0% 0% 0%);
 }
 
-.tg-anim:hover::after{
-    animation: glitch 3s linear infinite alternate-reverse;
-}
-
 @keyframes glitch {
     5%{
         clip-path: inset(48% 0 0 0);

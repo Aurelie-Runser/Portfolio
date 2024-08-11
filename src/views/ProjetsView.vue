@@ -88,8 +88,8 @@
             </li>
         </ul>
 
-        <div v-else>
-            <p class="text-stone-300 text-center" >Aucun projet ne correspond à votre recherche.</p>
+        <div v-else class="px-4 sm:px-20">
+            <p class="big-title-glitch title-glitch tg relative block w-fit mx-auto text-center text-xl" data-text="Aucun projet ne correspond à votre recherche." >Aucun projet ne correspond à votre recherche.</p>
         </div>
 
         <RouterLink to="/">
@@ -99,7 +99,7 @@
     </main>
 </template>
 
-<style>
+<style scoped>
 .mon_select{
     display: block;
     position: relative;
@@ -134,6 +134,31 @@
 
 .mon_select:hover::after{
     transform: translate(5%, 10%);
+}
+
+.tg::before{
+    content: attr(data-text);
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -1px;
+    color: #ffedd5;
+    text-shadow: -3px 0 #d946ef;
+    background: #1f1f1f;
+    overflow: hidden;
+}
+
+.tg::after{
+    content: attr(data-text);
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0px;
+    color: #ffedd5;
+    text-shadow: -3px 0 #22d3ee;
+    background: #1f1f1f;
+    overflow: hidden;
+    clip-path: inset(61% 0% 0% 0%);
 }
 </style>
 
