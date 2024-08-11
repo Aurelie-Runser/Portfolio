@@ -26,13 +26,17 @@
                     <option value="dv">Dataviz</option>
                 </select>
             </div>
-        </div>
+        </div> 
 
         <!-- grille de projets -->
-        <ul v-if="listeProjets.length > 0" id="ma-liste" class="overflow-hidden my-16 md:grid grid-flow-row-dense grid-cols-[repeat(auto-fit,minmax(20rem,1fr))] gap-1 place-items-center">
+         <div v-if="listeProjet.length == 0" class="w-full h-screen relative">
+            <monChargement/>
+         </div>
+         
+        <ul v-else-if="projetsAffichees.length > 0" id="ma-liste" class="overflow-hidden my-16 md:grid grid-flow-row-dense grid-cols-[repeat(auto-fit,minmax(20rem,1fr))] gap-1 place-items-center">
 
             <!-- card des projets -->
-            <li v-for="p in listeProjets" :key="p.id"
+            <li v-for="p in projetsAfficheesFonction" :key="p.id"
                 class="projet_card relative max-w-lg aspect-video md:aspect-square overflow-hidden">
 
                 <!-- Les images -->
@@ -135,6 +139,7 @@
 
 <script>
 import monBouton from "../components/monBouton.vue"
+import monChargement from "../components/monChargement.vue"
 
 import { 
     getFirestore,   // Obtenir le Firestore
@@ -156,8 +161,8 @@ import {
 } from 'https://www.gstatic.com/firebasejs/9.17.1/firebase-storage.js'
 
 export default {
-    name : "ProjetView",
-    components: {monBouton},
+    name : "ProjetsView",
+    components: {monBouton, monChargement},
 
     data(){
         return{
@@ -177,8 +182,9 @@ export default {
             });
         },
 
-        listeProjets() {
+        projetsAfficheesFonction() {
             this.projetsAffichees = this.listeProjet;
+
             if (this.genreSelect != ''){
                 this.projetsAffichees = this.listeProjet.filter(projet => projet.genre == this.genreSelect);
             }
@@ -186,6 +192,7 @@ export default {
             if(this.catSelect != ''){
                 this.projetsAffichees = this.projetsAffichees.filter(projet => projet.categorie == this.catSelect);
             }
+
             return this.orderByDate;
         }
     },
@@ -225,6 +232,8 @@ export default {
                         console.log("erreur downloadUrl", error);
                     });
                 });
+
+                this.projetsAffichees = this.listeProjet;
             });
         },
     },
