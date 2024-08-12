@@ -2,18 +2,24 @@
     <section class="my-32">
         <h2>Mes Projets</h2>
 
-        <!-- grille de projets -->
-        <ul id="ma-liste" class="overflow-hidden -mx-7 md:-mx-10 my-16 md:grid grid-flow-row-dense grid-cols-[repeat(auto-fit,minmax(320px,1fr))] gap-1">
+        <div v-if="projetsAffiches.length > 0">
+            <!-- grille de projets -->
+            <ul class="overflow-hidden -mx-7 md:-mx-10 my-16 md:grid grid-flow-row-dense grid-cols-[repeat(auto-fit,minmax(320px,1fr))] gap-1">
+    
+                <!-- card des projets -->
+                <li v-for="p in projetsAffiches" :key="p.id">
+                    <maCard v-bind="p"/>
+                </li>
+            </ul>
+    
+            <RouterLink to="/projets">
+                <monBouton class="mx-auto">Voir tous les Projets</monBouton>
+            </RouterLink>
+        </div>
 
-            <!-- card des projets -->
-            <li v-for="p in projetsAffiches" :key="p.id">
-                <maCard v-bind="p"/>
-            </li>
-        </ul>
-
-        <RouterLink to="/projets">
-            <monBouton class="mx-auto">Voir tous les Projets</monBouton>
-        </RouterLink>
+        <div v-else class="w-full h-[50vh] relative">
+            <monChargement/>
+         </div>
 
     </section>
 </template>
@@ -36,6 +42,7 @@
 </style>
 
 <script setup>
+import monChargement from "@/components/monChargement.vue";
 import maCard from "@/components/maCard.vue";
 import monBouton from "@/components/monBouton.vue";
 
