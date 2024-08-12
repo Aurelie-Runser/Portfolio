@@ -12,11 +12,15 @@
                 <div class="sticky top-1/3">
 
                     <!-- bloque linkedin + insta-->
-                    <div class="my-8 w-full flex flex-wrap flex-row justify-between xl:flex-col gap-5 md:gap-8 ">
+                    <div class="my-8 w-full flex flex-wrap flex-row justify-between items-start xl:flex-col gap-5 md:gap-8 ">
 
-                        <a target="_blank" href="https://www.linkedin.com/in/aurélie-runser">
+                        <a target="_blank" href="https://www.linkedin.com/in/aurélie-runser" 
+                            class="fill-orange-100"
+                            @mouseover="liHover = true" 
+                            @mouseleave="liHover = false"
+                        >
             
-                            <linkedinIcon class="inline-block w-7 h-7 md:w-10 md:h-10"/>
+                            <linkedinIcon :hover="liHover" class="inline-block w-7 h-7 md:w-10 md:h-10"/>
                             <p class="sr-only">Mon compte Linkedin : </p>
                             <p class="contact_link inline-block ml-3 w-auto font-darker-grotesque font-bold text-base md:text-lg text-orange-100 underline decoration-fuchsia-500">
                                 in/aurélie-runser
@@ -24,18 +28,26 @@
             
                         </a>
             
-                        <a target="_blank" href="https://www.instagram.com/aurelie.runser_pro/">
+                        <a target="_blank" href="https://www.instagram.com/aurelie.runser_pro/"
+                            class="fill-orange-100"
+                            @mouseover="instaHover = true" 
+                            @mouseleave="instaHover = false"
+                        >
             
-                            <instagramIcon class="inline-block w-7 h-7 md:w-10 md:h-10"/>
+                            <instagramIcon :hover="instaHover" class="inline-block w-7 h-7 md:w-10 md:h-10"/>
                             <p class="sr-only">Mon compte Instagram : </p>
                             <p class="contact_link inline-block ml-3 w-auto font-darker-grotesque font-bold text-base md:text-lg text-orange-100 underline decoration-fuchsia-500">
                                 @aurelie.runser_pro
                             </p>
             
                         </a>
-                        <a target="_blank" href="https://github.com/Aurelie-Runser">
+                        <a target="_blank" href="https://github.com/Aurelie-Runser"
+                            class="fill-orange-100"
+                            @mouseover="gitHover = true" 
+                            @mouseleave="gitHover = false"
+                        >
             
-                            <githubIcon class="inline-block w-7 h-7 md:w-10 md:h-10"/>
+                            <githubIcon :hover="gitHover" class="inline-block w-7 h-7 md:w-10 md:h-10"/>
                             <p class="sr-only">Mon compte Github : </p>
                             <p class="contact_link inline-block ml-3 w-auto font-darker-grotesque font-bold text-base md:text-lg text-orange-100 underline decoration-fuchsia-500">
                                 Aurelie-Runser
@@ -43,9 +55,13 @@
             
                         </a>
 
-                        <a href="mailto:aurelie.runser25@gmail.com">
+                        <a href="mailto:aurelie.runser25@gmail.com"
+                            class="fill-orange-100"
+                            @mouseover="mailHover = true" 
+                            @mouseleave="mailHover = false"
+                        >
             
-                            <mailIcon class="inline-block w-9 h-9 md:w-12 md:h-12"/>
+                            <mailIcon :hover="mailHover" class="inline-block w-9 h-9 md:w-12 md:h-12"/>
                             <p class="sr-only">Mon Adresse Mail : </p>
                             <p class="contact_link inline-block ml-3 w-auto font-darker-grotesque font-bold text-base md:text-lg text-orange-100 underline decoration-fuchsia-500">
                                 aurelie.runser25@gmail.com
@@ -230,7 +246,7 @@
 <style>
 
 /* animation du underline */
-.contact_link:hover{
+a:hover .contact_link{
     animation: underline_color 1s linear infinite;
 }
 
@@ -397,6 +413,10 @@ export default {
     return {
       messageSent: false,
       RGPD: false,
+      liHover: false,
+      instaHover: false,
+      gitHover: false,
+      mailHover: false,
     }
   },
 

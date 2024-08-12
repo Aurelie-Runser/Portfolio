@@ -11,19 +11,19 @@
             Me Contacter
         </RouterLink>
 
-        <div class="flex gap-5">
+        <div class="flex gap-5 fill-neutral-400">
             <a target="_blank" href="https://www.linkedin.com/in/aurélie-runser" rel="noopener noreferrer"> 
-                <linkedinIconGray class="inline-block w-5 h-5 md:w-8 md:h-8"/>
+                <linkedinIcon class="inline-block w-5 h-5 md:w-8 md:h-8"/>
                 <p class="sr-only">Lien vers mon compte Linkedin</p>
             </a>
     
             <a target="_blank" href="https://www.instagram.com/aurelie.runser_pro/" rel="noopener noreferrer">
-                <instagramIconGray class="inline-block w-5 h-5 md:w-8 md:h-8"/>
+                <instagramIcon class="inline-block w-5 h-5 md:w-8 md:h-8"/>
                 <p class="sr-only">Lien vers mon compte Instagram</p>
             </a>
             
             <a target="_blank" href="https://github.com/Aurelie-Runser" rel="noopener noreferrer">
-                <githubIconGray class="inline-block w-5 h-5 md:w-8 md:h-8"/>
+                <githubIcon class="inline-block w-5 h-5 md:w-8 md:h-8"/>
                 <p class="sr-only">Lien vers mon compte Github</p>
             </a>
         </div>
@@ -52,14 +52,8 @@
 }
 </style>
 
-<script>
-import linkedinIconGray from "@/components/icons/linkedinIconGray.vue"
-import instagramIconGray from "@/components/icons/instagramIconGray.vue"
-import githubIconGray from "@/components/icons/githubIconGray.vue"
-
-export default {
-  name: 'ContactForm',
-  components: {linkedinIconGray, instagramIconGray, githubIconGray},
-}
-
+<script setup>
+import linkedinIcon from "@/components/icons/linkedinIcon.vue"
+import instagramIcon from "@/components/icons/instagramIcon.vue"
+import githubIcon from "@/components/icons/githubIcon.vue"
 </script>
