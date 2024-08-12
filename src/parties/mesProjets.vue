@@ -4,57 +4,10 @@
 
         <!-- grille de projets -->
         <ul id="ma-liste" class="overflow-hidden -mx-7 md:-mx-10 my-16 md:grid grid-flow-row-dense grid-cols-[repeat(auto-fit,minmax(320px,1fr))] gap-1">
-            
+
             <!-- card des projets -->
-            <li v-for="p in projetsAffiches" :key="p.id"
-                class="projet_card relative aspect-video md:aspect-square overflow-hidden">
-
-                <!-- Les images -->
-
-                <!--image en mobile-->
-                <div class="card_img relative block md:hidden aspect-video delay-200 duration-500">
-                    <img class="object-cover w-full h-full"
-                         :src="p.image_rect" :alt="'Image de mon projet '+p.titre">
-                </div>
-
-                <!--image en pc-->
-                <div class="card_img relative hidden md:block aspect-square delay-200 duration-500">
-                    <img class="object-cover w-full h-full"
-                         :src="p.image_card" :alt="'Image de mon projet '+p.titre">
-                </div>
-
-                
-                <!-- deco -->
-                <div class="card_deco deco_t absolute -top-full left-0 w-full h-full bg-mon-black border-b-4 border-cyan-400 duration-500"></div>
-                
-                <!-- Les textes (qui n'apparraissent qu'au survole) -->
-                    <div class="card_deco deco_b absolute flex flex-col justify-between top-full left-0 w-full h-full p-[5%] border-t-4 border-fuchsia-500 duration-500 delay-200">
-                    
-                    <p>
-                        <span class="text_card text-orange-100">Contexte : </span>
-                        <span class="text_card font-oswald font-extralight">{{ p.contexte_resume }}</span>
-                    </p>
-
-                    <p>
-                        <span class="text_card text-orange-100">Type : </span>
-                        <span class="text_card font-oswald font-extralight">{{ p.type }}</span>
-                    </p>
-
-                    <p>
-                        <span class="text_card text-orange-100">Année : </span>
-                        <span class="text_card font-oswald font-extralight">{{ p.annee_resume }}</span>
-                    </p>
-
-                    <!-- le bouton pour aller sur le projet-->
-                        <RouterLink :to="`/projet/${p.id}`">
-                            <button
-                                class="card_button absolute bottom-1 right-0 px-6 py-3 min-w-min w-[25%] h-16 md:h-20 bg-orange-100
-                                        font-oswald text-base md:text-xl tracking-wider text-center text-mon-black
-                                        transition-all duration-75">
-                                Voir
-                            </button>
-                        </RouterLink>
-                </div>
+            <li v-for="p in projetsAffiches" :key="p.id">
+                <maCard v-bind="p"/>
             </li>
         </ul>
 
@@ -83,6 +36,7 @@
 </style>
 
 <script setup>
+import maCard from "@/components/maCard.vue";
 import monBouton from "@/components/monBouton.vue";
 
 import { ref, onMounted, watch } from 'vue';
