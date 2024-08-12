@@ -10,7 +10,7 @@ import meContacte from "@/parties/meContacte.vue";
     <div>
         <monAccueil id="id_accueil"/>
         <mesProjets id="id_projets"/>
-        <!-- <mesCompetences id="id_competences"/> -->
+        <mesCompetences id="id_competences"/>
         <maPersonne id="id_personne"/>
         <meContacte id="id_contact"/>
     </div>
