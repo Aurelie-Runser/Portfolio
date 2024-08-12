@@ -11,7 +11,6 @@
                 <!-- réseaux sociaux -->
                 <div class="sticky top-1/3">
 
-                    <!-- bloque linkedin + insta-->
                     <div class="my-8 w-full flex flex-wrap flex-row justify-between items-start xl:flex-col gap-5 md:gap-8 ">
 
                         <a target="_blank" href="https://www.linkedin.com/in/aurélie-runser" 
@@ -75,7 +74,6 @@
                         </p>
                     </div>
 
-        
                 </div>
             </div>
             
@@ -105,7 +103,6 @@
                                         md:text-base">Obligatoire</p>
                         </div>
                     </div>
-        
                     
                     <div class="relative my-16">
                         <input
@@ -204,7 +201,7 @@
                             <br/>Pour en savoir plus sur les conditions d'utilisation de mes données,
                             <button @click="RGPD = true"
                                     class="contact_link inline-block font-darker-grotesque text-sm md:text-base text-orange-100 underline decoration-fuchsia-500">
-                                cliquez ici</button>.
+                                cliquez ici</button>&nbsp;.
                         </label>
 
                     </div>
@@ -285,7 +282,7 @@ input:not(:placeholder-shown) ~ .form_text {
 
 textarea:focus + .form_text,
 textarea:valid + .form_text{
-    top: -20%;
+    top: -2rem;
     font-size: 1rem;
     transition: all 0.1s ease-in-out;
 }
@@ -294,16 +291,14 @@ textarea:valid + .form_text{
 @media screen and (min-width: 768px) {
     input:focus + .form_text,
     input:not(:placeholder-shown) ~ .form_text {
-        top: -40%;
+        top: -1.5rem;
         font-size: 1.5rem;
-        transition: all 0.1s ease-in-out;
     }
 
     textarea:focus + .form_text,
     textarea:valid + .form_text{
-        top: -20%;
+        top: -2.7rem;
         font-size: 1.5rem;
-        transition: all 0.1s ease-in-out;
     }
 }
 
