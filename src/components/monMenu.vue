@@ -1,12 +1,13 @@
 <template>
-    <header class="fixed top-0 right-0 w-content h-screen translate-x-full bg-mon-black z-40 duration-300 menu_border"
+    <header class="fixed top-0 right-0 w-content h-screen translate-x-full bg-mon-black z-40 duration-150 menu_border"
         :class="{ '-translate-x-0': menuOuvert }"
         :aria-expanded="menuOuvert" @mouseover="menuOuvert = true" @mouseleave="menuOuvert = false">
 
         <!-- bouton Menu-->
         <div class="absolute bottom-14 sm:top-10 left-0 z-50 cursor-pointer">
-            <p class="-translate-x-[60%] sm:-translate-x-1/2 bg-mon-black-dd py-5
-                    font-poppins font-bold text-2xl sm:text-4xl text-orange-100 text_vertical">
+            <p class="-translate-x-[55%] bg-mon-black-dd py-5
+                    font-poppins font-bold text-2xl sm:text-4xl text-orange-100 text_vertical"
+                :class="{ '-translate-x-[50%]': menuOuvert }">
                 MENU
             </p>
         </div>
@@ -23,7 +24,7 @@
 
         <!--les liens-->
         <nav class="relative w-full h-full flex flex-col justify-end gap-16 py-28 sm:justify-evenly items-right px-[10vw] md:px-[5vw]
-            text-right font-oswald font-semibold italic text-transparent text-lg sm:text-xl md:text-3xl">
+            text-right font-oswald font-semibold italic text-lg sm:text-xl md:text-3xl">
 
             <RouterLink @click="menuOuvert = false" to="/">
                 <p class="menu_item item_acc"
@@ -250,16 +251,10 @@
 
 </style>
 
-<script>
+<script setup>
 import flecheIcon from "@/components/icons/flecheIcon.vue"
 
-export default {
-  name: "monMenu",
-  components: {flecheIcon},
-  data() {
-    return {
-      menuOuvert: false,
-    };
-  },
-}
+import { ref } from "vue";
+
+const menuOuvert = ref(false)
 </script>
