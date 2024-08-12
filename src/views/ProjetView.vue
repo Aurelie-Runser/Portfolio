@@ -73,7 +73,7 @@
                     Création :
                 </p>
     
-                <p v-for="text in projet.contexte_all" class="mx-5 my-7 md:mx-14 md:my-9 xl:mx-28 xl:my-12
+                <p v-for="text in projet.contexte_all" class="mx-5 my-5 md:mx-14 xl:mx-28 leading-7
                                                             font-darker-grotesque text-base md:text-lg text-stone-300">
                     {{ text }}
                 </p>
@@ -88,7 +88,7 @@
     
                     <div class="inline-block basis-1/3 grow">
     
-                        <p v-for="text in projet.contexte_all_2" class="mx-5 my-7 md:mx-14 md:my-9 xl:my-12
+                        <p v-for="text in projet.contexte_all_2" class="mx-5 my-5 md:mx-14 leading-7
                                                                     font-darker-grotesque text-base md:text-lg text-stone-300
                                                                      ">
                             {{ text }}
@@ -96,7 +96,7 @@
                     </div>
                 </div>
     
-                <p v-for="text in projet.contexte_all_3" class="mx-5 my-7 md:mx-14 md:my-9 xl:mx-28 xl:my-12
+                <p v-for="text in projet.contexte_all_3" class="mx-5 my-5 md:mx-14 xl:mx-28 leading-7
                                                             font-darker-grotesque text-base md:text-lg text-stone-300">
                     {{ text }}
                 </p>
