@@ -55,7 +55,7 @@
     }
 
     .perso_text{
-        @apply my-3 md:my-5 inline-block font-darker-grotesque text-base md:text-lg text-stone-300;
+        @apply my-4 leading-6 md:leading-8 inline-block font-darker-grotesque text-base md:text-lg text-stone-300;
     }
 
     input, textarea{

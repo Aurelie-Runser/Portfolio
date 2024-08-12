@@ -9,8 +9,8 @@
                 <PassionsGraph/>
             </div>
 
-            <p class="perso_text guillement_1 relative pl-16 ">
-                Minutieuse et sérieuse, je me suis épanouie dans la formation
+            <p class="perso_text">
+                <span class="guillement_1">"</span>Minutieuse et sérieuse, je me suis épanouie dans la formation
                 <a target="_blank" href="http://mmimontbeliard.com/"
                     class="perso_link font-darker-grotesque text-base md:text-lg
                             underline decoration-fuchsia-500">
@@ -37,14 +37,15 @@
                 pour être fière de mon travail, mais surtout satisfaire les utilisateurs.
             </p>
     
-            <p class="perso_text guillement_2 relative pr-16">
+            <p class="perso_text">
                 La volonté de rendre service et d'aider avec mes connaissances sont ce qui me font avancer pour
                 <strong class="font-darker-grotesque font-medium text-base md:text-lg text-cyan-400">
                     participer à la construction du web de demain</strong>.
+                <span class="guillement_2">"</span>
             </p>
 
             <!-- Bouton pour télécharger mon CV-->
-            <div class="mt-5">
+            <div>
                 <p class="perso_text">
                     Si vous voulez en être, n'hésitez à me contacter et à consulter mon CV.
                 </p>
@@ -55,38 +56,28 @@
                     </monBouton>
                 </a>
             </div>
-            
         </div>
-
-
     </section>
 </template>
 
 <style scoped>
 
 /* quillement en début de texte */
-.guillement_1::before{
-    content: '"';
-    position: absolute;
-    top: -3rem;
-    left: 0;
+.guillement_1{
     display: inline-block;
     font-family: Oswald;
-    font-size: 8rem;
+    font-size: 10rem;
     color: #ffedd5;
-
     text-shadow: 3px 3px #22d3ee;
+    transform: translateY(3rem);
 }
-.guillement_2::after{
-    content: '"';
-    position: absolute;
-    bottom: -4rem;
-    right: 0;
-    display: inline-block;
+.guillement_2{
+    display: block;
     font-family: Oswald;
-    font-size: 8rem;
+    font-size: 10rem;
+    height: 0;
+    text-align: right;
     color: #ffedd5;
-
     text-shadow: 3px 3px #d946ef;
 }
 
