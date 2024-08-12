@@ -36,13 +36,15 @@
                     Je mets un point d'honneur à respecter au mieux les attentes qui me sont données</strong>,
                 pour être fière de mon travail, mais surtout satisfaire les utilisateurs.
             </p>
-    
-            <p class="perso_text">
-                La volonté de rendre service et d'aider avec mes connaissances sont ce qui me font avancer pour
-                <strong class="font-darker-grotesque font-medium text-base md:text-lg text-cyan-400">
-                    participer à la construction du web de demain</strong>.
+            
+            <div class="flex gap-3">
+                <p class="perso_text w-auto">
+                    La volonté de rendre service et d'aider avec mes connaissances sont ce qui me font avancer pour
+                    <strong class="font-darker-grotesque font-medium text-base md:text-lg text-cyan-400">
+                        participer à la construction du web de demain</strong>.
+                </p>
                 <span class="guillement_2">"</span>
-            </p>
+            </div>
 
             <!-- Bouton pour télécharger mon CV-->
             <div>
@@ -71,12 +73,12 @@
     text-shadow: 3px 3px #22d3ee;
     transform: translateY(3rem);
 }
+
 .guillement_2{
-    display: block;
+    transform: translateY(-2rem);
     font-family: Oswald;
     font-size: 10rem;
-    height: 0;
-    text-align: right;
+    height: 3rem;
     color: #ffedd5;
     text-shadow: 3px 3px #d946ef;
 }

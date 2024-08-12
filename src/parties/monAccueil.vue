@@ -3,7 +3,7 @@
         <h1 class="relative block w-full h-full px-7 md:px-10 lg:max-w-screen-xl lg:mx-auto">
             <span class="mon-title absolute top-[10vh] md:top-0 left-0">Hello World, <br/>I'm</span>
 
-            <span class="absolute top-[30vh] md:top-36 left-0 w-full animate-skew">
+            <span class="absolute top-[30vh] md:top-36 left-0 w-full">
                 <span class="big-title-glitch btg-anim absolute top-0 left-0 text-center"
                     data-text="Aurélie Runser">
                     Aurélie Runser
@@ -47,7 +47,7 @@
     text-shadow: -5px 0 #22d3ee;
     background: #1f1f1f;
     overflow: hidden;
-    animation: glitch 3s linear infinite alternate-reverse;
+    animation: glitch 2s linear infinite alternate-reverse;
 }
 
 .tg-anim::before{
@@ -76,6 +76,12 @@
 }
 
 @keyframes glitch {
+    0%{
+        transform: skewX(-90deg);
+    }
+    1.5%{
+        transform: skewX(0deg);
+    }
     5%{
         clip-path: inset(48% 0 0 0);
     } 
