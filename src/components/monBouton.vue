@@ -6,9 +6,10 @@
             le style du bouton est mis sur le p et non directement sur le bouton
             pour que la couleur du bouton soit au-dessus des pseudo-element before et after
         -->
-        <p class="bouton_text w-full h-full px-6 py-3 md:px-10 md:py-5 bg-orange-100 duration-200
-                font-oswald text-base sm:text-lg xl:text-xl tracking-wider text-center text-mon-black">
-            <slot/>
+        <p class="bouton_text relative w-full h-full px-6 py-3 md:px-10 md:py-5 bg-orange-100 duration-200">
+            <span class="font-oswald text-base sm:text-lg xl:text-xl tracking-wider text-center text-mon-black">
+                <slot/>
+            </span>
         </p>
 
     </button>
@@ -36,12 +37,41 @@
     background-color: #d946ef;
 }
 
+.mon_bouton:hover span {
+    display: inline-block;
+    animation: btnTxtAnim .3s linear infinite;
+}
+
 .mon_bouton:hover::before{
-    transform: translate(-8px, -8px);
+    animation: btnAfterAnim .3s linear infinite;
 }
 
 .mon_bouton:hover::after{
-    transform: translate(8px, 8px);
+    animation: btnBeforeAnim .3s linear infinite;
+}
+
+@keyframes btnTxtAnim {
+    0% { transform: translate(-1px, 0px) }
+    25% { transform: translate(-1px, -2px) }
+    50% { transform: translate(1px, 0px) }
+    75% { transform: translate(-3px, 0px) }
+    100% { transform: translate(-1px, -1px) }
+}
+
+@keyframes btnAfterAnim {
+    0% { transform: translate(-7px, 6px) }
+    25% { transform: translate(-7px, -8px) }
+    50% { transform: translate(7px, 6px) }
+    75% { transform: translate(-10px, -6px) }
+    100% { transform: translate(-7px, 2px) }
+}
+
+@keyframes btnBeforeAnim {
+    0% { transform: translate(7px, -8px) }
+    25% { transform: translate(7px, 6px) }
+    50% { transform: translate(-10px, -6px) }
+    75% { transform: translate(7px, 6px) }
+    100% { transform: translate(7px, -6px) }
 }
 
 </style>
