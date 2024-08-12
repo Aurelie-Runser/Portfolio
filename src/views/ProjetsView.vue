@@ -28,15 +28,11 @@
             </div>
         </div> 
 
-        <!-- grille de projets -->
-         <div v-if="listeProjet.length == 0" class="w-full h-screen relative">
-            <monChargement/>
-         </div>
-         
-        <ul v-else-if="projetsAfficheesFonction.length > 0" id="ma-liste" class="overflow-hidden my-16 md:grid grid-flow-row-dense grid-cols-[repeat(auto-fit,minmax(20rem,1fr))] gap-1 place-items-center">
+        <!-- grille de projets -->       
+        <ul v-if="projetsSelect.length > 0" id="ma-liste" class="overflow-hidden my-16 md:grid grid-flow-row-dense grid-cols-[repeat(auto-fit,minmax(20rem,1fr))] gap-1 place-items-center">
 
             <!-- card des projets -->
-            <li v-for="p in projetsAfficheesFonction" :key="p.id"
+            <li v-for="p in projetsSelect" :key="p.id"
                 class="projet_card relative max-w-lg aspect-video md:aspect-square overflow-hidden">
 
                 <!-- Les images -->
@@ -88,9 +84,13 @@
             </li>
         </ul>
 
-        <div v-else class="px-4 sm:px-20">
+        <div v-else-if="projetsSelect.length == 0 && (genreSelect != '' || catSelect != '')" class="px-4 sm:px-20">
             <p class="big-title-glitch title-glitch tg relative block w-fit mx-auto text-center text-xl" data-text="Aucun projet ne correspond à votre recherche." >Aucun projet ne correspond à votre recherche.</p>
         </div>
+
+        <div v-else class="w-full h-screen relative">
+            <monChargement/>
+         </div>
 
         <RouterLink to="/">
             <monBouton class="mx-auto my-32 md:my-52">Hello World</monBouton>
@@ -162,105 +162,58 @@
 }
 </style>
 
-<script>
-import monBouton from "../components/monBouton.vue"
-import monChargement from "../components/monChargement.vue"
+<script setup>
+import monChargement from "@/components/monChargement.vue";
+import monBouton from "@/components/monBouton.vue";
 
-import { 
-    getFirestore,   // Obtenir le Firestore
-    collection,     // Utiliser une collection de documents
-    doc,            // Obtenir un document par son id
-    getDocs,        // Obtenir la liste des documents d'une collection
-    addDoc,         // Ajouter un document à une collection
-    onSnapshot,     // Demander une liste de documents d'une collection, en les synchronisant
-    query,          // Permet d'effectuer des requêtes sur Firestore
-    orderBy,        // Permet de demander le tri d'une requête query
-    limit
-    } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js"
+import { ref, onMounted, onUnmounted, watch } from 'vue';
+import { useProjetsStore } from "@/stores/projetsStore.js";
 
-import { 
-    getStorage,             // Obtenir le Cloud Storage
-    ref,                    // Pour créer une référence à un fichier à uploader
-    getDownloadURL,         // Permet de récupérer l'adress complète d'un fichier du Storage
-    uploadString,           // Permet d'uploader sur le Cloud Storage une image en Base64
-} from 'https://www.gstatic.com/firebasejs/9.17.1/firebase-storage.js'
+const store = useProjetsStore()
+const projetsSelect = ref([]);
+const genreSelect = ref(""); // select
+const catSelect = ref(""); // select
 
-export default {
-    name : "ProjetsView",
-    components: {monBouton, monChargement},
+function projetsSelectFonction() {
+    projetsSelect.value = store.listeProjet;
 
-    data(){
-        return{
-            listeProjet:[],
-            projetsAffichees:[],
-            catSelect: '',
-            genreSelect: '',
-        }
-    },
-
-    computed:{
-        orderByDate() {
-            return this.projetsAffichees.sort((a,b) => {
-                if(a.date_ajout < b.date_ajout) return 1;
-                if(a.date_ajout > b.date_ajout) return -1;
-                return 0;
-            });
-        },
-
-        projetsAfficheesFonction() {
-            this.projetsAffichees = this.listeProjet;
-
-            if (this.genreSelect != ''){
-                this.projetsAffichees = this.listeProjet.filter(projet => projet.genre == this.genreSelect);
-            }
-            
-            if(this.catSelect != ''){
-                this.projetsAffichees = this.projetsAffichees.filter(projet => projet.categorie == this.catSelect);
-            }
-
-            return this.orderByDate;
-        }
-    },
+    if (genreSelect.value != ''){
+        projetsSelect.value = projetsSelect.value.filter(projet => projet.genre == genreSelect.value);
+    }
     
+    if(catSelect.value != ''){
+        projetsSelect.value = projetsSelect.value.filter(projet => projet.categorie == catSelect.value);
+    }
 
-    mounted(){
-        this.getProjets();
-    },
-
-    methods: {
-
-        async getProjets() {
-            const firestore = getFirestore();
-            const dbProjet = collection(firestore, "projet");           
-
-            await onSnapshot(dbProjet, (snapshot) => {
-                this.listeProjet = snapshot.docs.map((doc) => (
-                    {id: doc.id,...doc.data()}
-                ));
-
-                const storage = getStorage();
-                this.listeProjet.forEach((projet) => {
-    
-                    const spaceRef_rect = ref(storage, projet.image_rect);
-                    getDownloadURL(spaceRef_rect)
-                    .then((url) => {
-                        projet.image_rect = url;
-                    })
-    
-                    const spaceRef_card = ref(storage, projet.image_card);
-                    getDownloadURL(spaceRef_card)
-                    .then((url) => {
-                        projet.image_card = url;
-                    })
-    
-                    .catch((error) => {
-                        console.log("erreur downloadUrl", error);
-                    });
-                });
-
-                this.projetsAffichees = this.listeProjet;
-            });
-        },
-    },
+    return projetsSelect.value;
 }
+
+let stopWatcherSelect;
+
+onMounted(() => {
+    if(store.listeProjet.length > 0) {
+        projetsSelect.value = store.listeProjet;
+    }
+    else {
+        // on attend le chargement des projets
+        const stopWatcherListe = watch(
+            () => store.listeProjet.length,
+            () => {
+                projetsSelect.value = store.listeProjet;
+                stopWatcherListe(); // pour stoper le watcher (la liste à afficher à été chargé 1 foix, il n'y a plus de raison qu'elle change)
+            }
+        );
+    }
+    // si les projets sont chargés, observé les select
+    stopWatcherSelect = watch(
+        [() => genreSelect.value, () => catSelect.value],
+        () => {
+            projetsSelectFonction()
+        }
+    );
+});
+
+onUnmounted(() => {
+    stopWatcherSelect();
+});
 </script>

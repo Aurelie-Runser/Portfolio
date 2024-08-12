@@ -4,9 +4,9 @@
 
         <!-- grille de projets -->
         <ul id="ma-liste" class="overflow-hidden -mx-7 md:-mx-10 my-16 md:grid grid-flow-row-dense grid-cols-[repeat(auto-fit,minmax(320px,1fr))] gap-1">
-
+            
             <!-- card des projets -->
-            <li v-for="p in listeProjets" :key="p.id"
+            <li v-for="p in projetsAffiches" :key="p.id"
                 class="projet_card relative aspect-video md:aspect-square overflow-hidden">
 
                 <!-- Les images -->
@@ -66,7 +66,6 @@
 </template>
 
 <style>
-
 /* animation du fond noir au survole de la card */
 .projet_card:hover .deco_t{
     transform: translateY(100%);
@@ -83,105 +82,52 @@
 }
 </style>
 
+<script setup>
+import monBouton from "@/components/monBouton.vue";
 
-<script>
-import monBouton from "../components/monBouton.vue"
+import { ref, onMounted, watch } from 'vue';
+import { useProjetsStore } from "@/stores/projetsStore.js";
 
-import { 
-    getFirestore,   // Obtenir le Firestore
-    collection,     // Utiliser une collection de documents
-    doc,            // Obtenir un document par son id
-    getDocs,        // Obtenir la liste des documents d'une collection
-    addDoc,         // Ajouter un document à une collection
-    onSnapshot,     // Demander une liste de documents d'une collection, en les synchronisant
-    query,          // Permet d'effectuer des requêtes sur Firestore
-    orderBy,        // Permet de demander le tri d'une requête query
-    limit
-    } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js"
+const store = useProjetsStore()
+const projetsAffiches = ref([]);
 
-import { 
-    getStorage,             // Obtenir le Cloud Storage
-    ref,                    // Pour créer une référence à un fichier à uploader
-    getDownloadURL,         // Permet de récupérer l'adress complète d'un fichier du Storage
-    uploadString,           // Permet d'uploader sur le Cloud Storage une image en Base64
-} from 'https://www.gstatic.com/firebasejs/9.17.1/firebase-storage.js'
+// determine le nombre de projet à afficher en fonction d'écran (sur /#mes_projets)
+function projetsScreenFunction(){
+    const screenWidth = window.innerWidth;
+    const gap = 4; // Gap entre les card
+    const minCardWidth = 320; // Largeur minimale de chaque card
+    let cardsPerRow;
 
-export default {
-    name : "ProjetView",
-    components: {monBouton},
-
-    data(){
-        return{
-            listeProjet:[]
-        }
-    },
-
-    computed:{
-        orderByDate:function(){
-            return this.listeProjet.sort(function(a,b){
-                if(a.date_ajout < b.date_ajout) return 1;
-                if(a.date_ajout > b.date_ajout) return -1;
-                return 0;
-            });
-        },
-        listeProjets: function(){
-            const screenWidth = window.innerWidth;
-            const gap = 4; // Gap entre les cartes
-            const minCardWidth = 320; // Largeur minimale de chaque carte
-            let cardsPerRow;
-
-            if (screenWidth <= 767) {
-                // Mobile view
-                return this.orderByDate.slice(0, 3);
-            } else {
-                // Desktop view
-                // Calculer le nombre de cartes qui peuvent tenir dans une ligne
-                cardsPerRow = Math.floor((screenWidth + gap) / (minCardWidth + gap));
-                // Limiter le nombre de cartes à 2 lignes
-                return this.orderByDate.slice(0, cardsPerRow * 2);
-            }
-        }
-    },
-
-    mounted(){
-        this.getProjets();
-    },
-
-    methods: {
-
-        async getProjets() {
-            const firestore = getFirestore();
-            const dbProjet = collection(firestore, "projet");           
-            const query = await onSnapshot(dbProjet, (snapshot) => {
-                this.listeProjet = snapshot.docs.map((doc) => (
-                    {id: doc.id,...doc.data()}
-                ));
-
-                this.listeProjet.forEach(function (projet) {
-                    const storage = getStorage();
-    
-                    const spaceRef_rect = ref(storage, projet.image_rect);
-                    getDownloadURL(spaceRef_rect)
-                    .then((url) => {
-                        projet.image_rect = url;
-                    })
-    
-                    const spaceRef_card = ref(storage, projet.image_card);
-                    getDownloadURL(spaceRef_card)
-                    .then((url) => {
-                        projet.image_card = url;
-                    })
-    
-                    .catch((error) => {
-                        console.log("erreur downloadUrl", error);
-                    });
-                });
-            });
-
-            
-        },
-    },
+    if (screenWidth <= 767) {
+        // Mobile view
+        store.projetsScreen = store.orderByDate.slice(0, 3);
+    } else {
+        // Desktop view
+        // Calculer le nombre de cartes qui peuvent tenir dans une ligne
+        cardsPerRow = Math.floor((screenWidth + gap) / (minCardWidth + gap));
+        // Limiter le nombre de cartes à 2 lignes
+        store.projetsScreen = store.orderByDate.slice(0, cardsPerRow * 2);
+    }
+    return store.projetsScreen;
 }
 
-
+onMounted(() => {
+    if(store.projetsScreen.length > 0){ // si le nombre de projet est déjà défini
+        projetsAffiches.value = store.projetsScreen;
+        return
+    }
+    else if(store.listeProjet.length > 0){ // si le nombre de projet n'est pas encore défini
+        projetsAffiches.value = projetsScreenFunction();
+        return
+    }
+    else {  // si les projets n'ont pas encore été chargé
+        const stopWatcher = watch(
+            () => store.listeProjet.length,
+            () => {
+                projetsAffiches.value = projetsScreenFunction();
+                stopWatcher(); // pour stoper le watcher (la liste à afficher à été chargé 1 foix, il n'y a plus de raison qu'elle change)
+            }
+        );
+    };
+});
 </script>
