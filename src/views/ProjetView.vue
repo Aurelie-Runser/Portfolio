@@ -5,7 +5,7 @@
     
     <div class="pt-24 overflow-x-hidden">
 
-        <div v-if="dataLoaded == 2">
+        <div v-if="isLoading">
 
             <h1 class="big-title-glitch title-glitch tg-anim-projet relative
                         mx-7 md:mx-14 xl:mx-28"
@@ -19,7 +19,7 @@
                 <!-- image + Bouton "voir"-->
                 <div class="mt-10 place-items-end">
                     <div class="projet_img relative z-10">
-                        <img :src="img_rect" alt="image non trouvée">
+                        <img :src="projet.image_rect" :alt="'image de mon projet '+projet.titre">
                     </div>
         
                     <a target="_blank" :href="projet.lien" rel="noopener noreferrer">
@@ -82,7 +82,7 @@
     
                     <!-- 2eme image -->
                     <div class="projet_img relative z-10 my-16 w-screen sm:mx-auto sm:w-2/3 h-fit lg:w-1/2">
-                        <img class="w-full" :src="img_rect2" :alt="img_rect2">
+                        <img class="w-full" :src="projet.image_rect2" :alt="'image de mon projet '+ projet.titre">
                     </div>
     
     
@@ -118,9 +118,9 @@
                     <monBouton>Hello World</monBouton>
                 </RouterLink>
         
-                <a href="/projets">
+                <RouterLink @click="menuOuvert = false" to="/projets">
                     <monBouton>Autres Projets</monBouton>
-                </a>
+                </RouterLink>
 
             </div>
 
@@ -330,106 +330,37 @@
 </style>
 
 
-<script>
+<script setup>
+import monBouton from "@/components/monBouton.vue"
+import monChargement from "@/components/monChargement.vue"
 
-// import des composants
-import monBouton from "../components/monBouton.vue"
-import monChargement from "../components/monChargement.vue"
+import { ref, onMounted, onUnmounted, watch } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
+import { useProjetsStore } from "@/stores/projetsStore.js";
 
-// import des fonctions firebases
-import { 
-    getFirestore, 
-    collection, 
-    doc, 
-    getDoc,
-    getDocs, 
-    addDoc, 
-    updateDoc, 
-    setDoc,
-    deleteDoc, 
-    onSnapshot, 
-    query,
-    orderBy
-    } from 'https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js'
+const route = useRoute()
+const router = useRouter()
+const store = useProjetsStore();
 
-import { 
-    getStorage, 
-    ref, 
-    getDownloadURL, 
-    uploadBytes,
-    uploadString,
-    deleteObject,
-    listAll } from 'https://www.gstatic.com/firebasejs/9.17.1/firebase-storage.js'
+const projet = ref({});
+const isLoading = ref(false)
 
-
-export default {
-    name:'ProjetView',
-    components: {monBouton, monChargement},
-
-    data() {
-        return {
-            imgData: null,
-            projet:{
-                anne: null,
-                contexte_all: null,
-                image_rect: null,
-                image_rect2: null,
-                lien: null,
-                titre: null,
-                type: null, 
-                contexte_all_test: [],
-            },
-            
-            //recupere l'id du projet
-            refProjet:null,
-
-            // pour s'assurer que toutes les images sont chargees
-            dataLoaded: 0,
-        }
-    },
-
-    mounted(){
-        this.getProjet(this.$route.params.id);
-    },
-
-    methods :{
-
-        async getProjet(id){
-            const firestore = getFirestore();
-            const docRef = doc(firestore, "projet", id);
-            this.refProjet = await getDoc(docRef);
-
-            if(this.refProjet.exists()){
-                this.projet = this.refProjet.data();
-                this.img_rect = this.projet.image_rect;
-                this.img_rect2 = this.projet.image_rect2;
-
-                const storage = getStorage();
-
-                const spaceRef_rect = ref(storage, this.projet.image_rect);
-                getDownloadURL(spaceRef_rect)
-                    .then((url) => {
-                        this.img_rect = url;
-                    this.dataLoaded += 1
-                })
-
-                const spaceRef_rect2 = ref(storage, this.projet.image_rect2);
-                getDownloadURL(spaceRef_rect2)
-                    .then((url) => {
-                        this.img_rect2 = url;
-                    this.dataLoaded += 1;
-                })
-
-                .catch((error) =>{
-                    console.log('erreur downloadUrl', error);
-                })
-            }
-            else{
-                console.log("Projet Inexistant");
-                this.$router.go(-1); 
-            }
-        },
+onMounted(() => {
+    if(store.listeProjet.length > 0) {
+        projet.value = store.listeProjet.find((p) => p.id == route.params.id);
     }
-}
+    else {
+        // on attend le chargement des projets
+        const stopWatcher = watch(
+            () => store.listeProjet.length,
+            () => {
+                projet.value = store.listeProjet.find((p) => p.id == route.params.id);
+                stopWatcher(); // pour stoper le watcher (le projet à afficher a été chargé 1 foix, il n'y a plus de raison qu'il change)
+            }
+        );
+    }
 
+    if (Object.keys(projet.value).length == 0) router.push('/');
+    else isLoading.value = true;
+});
 </script>

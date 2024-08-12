@@ -53,6 +53,12 @@ export const useProjetsStore = defineStore('projetsStore', {
                     .then((url) => {
                         projet.image_card = url;
                     })
+
+                    const spaceRef_rect2 = ref(storage, projet.image_rect2);
+                    getDownloadURL(spaceRef_rect2)
+                    .then((url) => {
+                        projet.image_rect2 = url;
+                    })
     
                     .catch((error) => {
                         console.log("erreur lors du chargement des images depuis firebase", error);
