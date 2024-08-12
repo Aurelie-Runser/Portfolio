@@ -1,5 +1,5 @@
 {
-  "name": "menuphone",
+  "name": "Aurélie Runser - Portfolio",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "chart.js": "^4.3.0",
+    "pinia": "^2.2.1",
     "tailwindcss-animation": "^0.1.2",
     "vue": "^3.2.37",
     "vue-chartjs": "^5.2.0",
