@@ -13,26 +13,29 @@ export const useProjetsStore = defineStore('projetsStore', {
         listeProjet:[], // liste de tous les projets
         projetsScreen: [], // liste réduite pour la page d'accueil, pour évité de refaire le calcul
     }),
-
+    getters: {
+        // afficher les projets du plus récent au plus ancien
+        orderByDate() {
+            return this.listeProjet.sort((a,b) => {
+                if(a.date_ajout < b.date_ajout) return 1;
+                if(a.date_ajout > b.date_ajout) return -1;
+                return 0;
+            });
+        },
+    },
     actions: {
         async getProjetsListe() {
             const firestore = getFirestore();
             const dbProjet = collection(firestore, "projet");           
 
             await onSnapshot(dbProjet, (snapshot) => {
-                this.listeProjet = snapshot.docs
-                    .map((doc) => (
-                        {id: doc.id,...doc.data()}
-                    ))
-                    .sort((a,b) => {
-                        if(a.date_ajout < b.date_ajout) return 1;
-                        if(a.date_ajout > b.date_ajout) return -1;
-                        return 0;
-                    });
+                this.listeProjet = snapshot.docs.map((doc) => (
+                    {id: doc.id,...doc.data()}
+                ));
 
                 const storage = getStorage();
-                
                 this.listeProjet.forEach((projet) => {
+    
                     const spaceRef_rect = ref(storage, projet.image_rect);
                     getDownloadURL(spaceRef_rect)
                     .then((url) => {
@@ -55,6 +58,8 @@ export const useProjetsStore = defineStore('projetsStore', {
                         console.log("erreur lors du chargement des images depuis firebase", error);
                     });
                 });
+
+                this.listeProjet = this.orderByDate;
             });
         },
     },
