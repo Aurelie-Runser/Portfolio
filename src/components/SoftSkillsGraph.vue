@@ -1,6 +1,6 @@
 <template>
-  <div class="w-full max-w-md h-auto">
-    <h3 class="m-0">Soft Skills</h3>
+  <div class="w-full max-w-md h-auto overflow-visible">
+    <h3 class="px-7 md:px-10">Soft Skills</h3>
 
     <Radar
       id="my-chart-id"
@@ -24,14 +24,14 @@ export default {
       chartData: {
         labels: [
           "Esprit d'apprentissage",
-          "Autonomie",
-          "Gestion du temps",
-          "Persévérance",
+          "Minusieuse",
           "Esprit d'équipe",
+          "Autonomie",
+          "Persévérance",
         ],
 
         datasets: [{
-          data: [5, 4, 3, 5, 4],
+          data: [4, 6, 4, 5, 4],
           label: "Soft Skills", 
           borderColor: '#22d3ee',
           pointBackgroundColor: '#22d3ee',

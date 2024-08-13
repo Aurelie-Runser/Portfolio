@@ -1,8 +1,8 @@
 <template>
-  <div class="w-full max-w-md h-auto">
-    <h3 class="m-0">Passions</h3>
+  <div class="w-full max-w-md h-auto overflow-visible">
+    <h3 class="px-7 md:px-10">Passions</h3>
 
-    <Radar
+    <Radar class="scale-75"
       id="my-chart-id"
       :options="chartOptions"
       :data="chartData"
@@ -73,7 +73,7 @@ export default {
               color: '#ffedd5',
               font:{
                 family: "Darker Grotesque",
-                size: 20
+                size: 26
               }
             }
           },
