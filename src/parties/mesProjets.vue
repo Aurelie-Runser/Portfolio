@@ -24,23 +24,6 @@
     </section>
 </template>
 
-<style>
-/* animation du fond noir au survole de la card */
-.projet_card:hover .deco_t{
-    transform: translateY(100%);
-}
-/* animation du texte au survole de la card */
-.projet_card:hover .deco_b{
-    transform: translateY(-100%);
-}
-
-/* animation lors du survole du bouton */
-.card_button:hover{
-    transform-origin: bottom right;
-    transform: scale(1.1);
-}
-</style>
-
 <script setup>
 import monChargement from "@/components/monChargement.vue";
 import maCard from "@/components/maCard.vue";

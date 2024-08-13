@@ -29,7 +29,7 @@
         </div> 
 
         <!-- grille de projets -->       
-        <ul v-if="projetsSelect.length > 0" id="ma-liste" class="overflow-hidden my-16 md:grid grid-flow-row-dense grid-cols-[repeat(auto-fit,minmax(20rem,1fr))] gap-1 place-items-center">
+        <ul v-if="projetsSelect.length > 0" class="overflow-hidden my-16 md:grid grid-flow-row-dense grid-cols-[repeat(auto-fit,minmax(20rem,1fr))] gap-1 place-items-center">
 
             <!-- card des projets -->
             <li v-for="p in projetsSelect" :key="p.id">
