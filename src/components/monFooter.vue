@@ -35,7 +35,7 @@
             </p>
         </a>
         
-        <p class="w-full mt-3 text-center font-darker-grotesque font-bold text-sm md:text-base text-neutral-400">© 2023 Aurélie Runser</p>
+        <p class="w-full mt-3 text-center font-darker-grotesque font-bold text-sm md:text-base text-neutral-400">© {{annee}} Aurélie Runser</p>
     </footer>
 </template>
 
@@ -53,7 +53,11 @@
 </style>
 
 <script setup>
-import linkedinIcon from "@/components/icons/linkedinIcon.vue"
-import instagramIcon from "@/components/icons/instagramIcon.vue"
-import githubIcon from "@/components/icons/githubIcon.vue"
+import linkedinIcon from "@/components/icons/linkedinIcon.vue";
+import instagramIcon from "@/components/icons/instagramIcon.vue";
+import githubIcon from "@/components/icons/githubIcon.vue";
+
+import { ref } from 'vue';
+
+const annee = ref(new Date().getFullYear())
 </script>
