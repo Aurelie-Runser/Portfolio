@@ -20,8 +20,15 @@ h2{
 }
 
 h2.animated {
-    text-shadow: -1.5px -1.5px #22d3ee, 1.5px 1.5px #d946ef;
+    color: #ffedd5 !important;
+    text-shadow: -1px -1px #22d3ee, 1px 1px #d946ef;
     animation: smallGlitchAnim .1s 0s linear;
+}
+
+@media (min-width: 768px) {
+    h2.animated {
+        text-shadow: -1.5px -1.5px #22d3ee, 1.5px 1.5px #d946ef;
+    }
 }
 
 @keyframes smallGlitchAnim{
