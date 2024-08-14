@@ -104,18 +104,12 @@
 }
 
 .technoAnim:hover{
-    animation: technoAnim 0.1s 0s linear;
+    animation: smallGlitchAnim .1s 0s linear;
     text-shadow: -1.5px -1.5px #22d3ee, 1.5px 1.5px #d946ef;
 }
 
 .technoAnim:hover img{
     filter: drop-shadow(-1.5px -1.5px #22d3ee) drop-shadow(1.5px 1.5px #d946ef);
-}
-
-@keyframes technoAnim{
-    0% { transform: skewX(0deg); }
-    50% { transform: skewX(-90deg); }
-    100% { transform: skewX(0deg); }
 }
 
 .colorAnim{

@@ -8,8 +8,24 @@
 *::selection{
     color: #1f1f1f;
     background-color: #22d3ee;
+    text-shadow: none;
 }
 
 html{
     background-color: #1f1f1f;
+}
+
+h2{
+    display: inline-block;
+}
+
+h2.animated {
+    text-shadow: -1.5px -1.5px #22d3ee, 1.5px 1.5px #d946ef;
+    animation: smallGlitchAnim .1s 0s linear;
+}
+
+@keyframes smallGlitchAnim{
+    0% { transform: skewX(0deg); }
+    50% { transform: skewX(-90deg); }
+    100% { transform: skewX(0deg); }
 }
