@@ -24,7 +24,7 @@ export default {
       chartData: {
         labels: [
           "Esprit d'apprentissage",
-          "Minusieuse",
+          "Minutieuse",
           "Esprit d'équipe",
           "Autonomie",
           "Persévérance",
