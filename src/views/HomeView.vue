@@ -11,7 +11,7 @@ import meContacte from "@/parties/meContacte.vue";
         <monAccueil id="id_accueil"/>
         <mesProjets id="id_projets"/>
         <mesCompetences id="id_competences"/>
-        <maPersonne id="id_personne"/>
+        <maPersonne id="id_apropos"/>
         <meContacte id="id_contact"/>
     </div>
 </template>

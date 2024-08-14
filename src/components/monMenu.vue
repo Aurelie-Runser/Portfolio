@@ -47,7 +47,7 @@
                 </p>
             </RouterLink>
 
-            <RouterLink @click="menuOuvert = false" :to="{ path: '/', hash: '#id_personne' }">
+            <RouterLink @click="menuOuvert = false" :to="{ path: '/', hash: '#id_apropos' }">
                 <p class="menu_item item_perso"
                     data-text="À Propos">
                     À Propos
