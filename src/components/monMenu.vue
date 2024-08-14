@@ -35,29 +35,29 @@
             
             <RouterLink @click="menuOuvert = false" to="/projets">
                 <p class="menu_item item_acc"
-                    data-text="Mes projets">
-                    Mes projets
+                    data-text="Projets">
+                    Projets
                 </p>
             </RouterLink>
 
             <RouterLink @click="menuOuvert = false" :to="{ path: '/', hash: '#id_competences' }">
                 <p class="menu_item item_comp"
-                    data-text="Mes Compétences">
-                    Mes Compétences
+                    data-text="Compétences">
+                    Compétences
                 </p>
             </RouterLink>
 
             <RouterLink @click="menuOuvert = false" :to="{ path: '/', hash: '#id_personne' }">
                 <p class="menu_item item_perso"
-                    data-text="Ma Personne">
-                    Ma Personne
+                    data-text="À Propos">
+                    À Propos
                 </p>
             </RouterLink>
 
             <RouterLink @click="menuOuvert = false" :to="{ path: '/', hash: '#id_contact' }">
                 <p class="menu_item item_cont"
-                    data-text="Me Contacter">
-                    Me Contacter
+                    data-text="Contacter">
+                    Contact
                 </p>
             </RouterLink>
 

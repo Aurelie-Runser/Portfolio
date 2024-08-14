@@ -1,6 +1,6 @@
 <template>
     <section class="my-32">
-        <h2>Me Contacter</h2>
+        <h2>Contact</h2>
 
         <!--mise en ligne des élements (formulaire + réseaux) en ligne-->
         <div class="xl:flex flex-row-reverse max-w-screen-2xl mx-auto">

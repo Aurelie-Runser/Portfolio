@@ -1,6 +1,6 @@
 <template>
     <section class="my-32 px-0">
-        <h2 class="px-7 md:px-10">Ma Personne</h2>
+        <h2 class="px-7 md:px-10">À Propos</h2>
         
         <div class="md:mx-14 xl:mx-28 2xl:mx-auto my-8 2xl:max-w-7xl">
 

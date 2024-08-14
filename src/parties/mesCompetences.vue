@@ -1,6 +1,6 @@
 <template>
     <section class="my-32 px-1 sm:px-7 md:px-10">
-        <h2>Mes Compétences</h2>
+        <h2>Compétences</h2>
 
         <ul class="comptGrid my-16 md:mx-14 xl:mx-28 2xl:mx-auto p-1 gap-2 sm:gap-5 max-w-screen-xl">
             <li v-for="c in listeCompetence" :key="c.id" :class="'item-'+c.num" class="colorAnim">

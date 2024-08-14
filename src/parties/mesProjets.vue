@@ -1,6 +1,6 @@
 <template>
     <section class="my-32">
-        <h2>Mes Projets</h2>
+        <h2>Projets</h2>
 
         <div v-if="projetsAffiches.length > 0">
             <!-- grille de projets -->

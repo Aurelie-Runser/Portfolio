@@ -8,7 +8,7 @@
         </RouterLink>
 
         <RouterLink :to="{ path: '/', hash: '#id_contact' }" class="footer_link font-darker-grotesque font-bold text-sm md:text-base text-neutral-400 underline decoration-fuchsia-500">
-            Me Contacter
+            Contact
         </RouterLink>
 
         <div class="flex gap-5 fill-neutral-400">
