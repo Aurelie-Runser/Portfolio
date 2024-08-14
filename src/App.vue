@@ -7,11 +7,14 @@ import { useProjetsStore } from "@/stores/projetsStore.js";
 
 useProjetsStore().getProjetsListe();
 
+
 // Fonction pour lancer l'animation aléatoirement sur un h2
 function startRandomGlitch() {
+    // Sélectionner tous les éléments h2 avec la classe .glitch-text
     const glitchElements = document.querySelectorAll('h2');
 
     if(glitchElements.length > 0){
+        // Supprime l'animation de tous les éléments
         glitchElements.forEach(el => el.classList.remove('animated'));
     
         // Sélectionne un h2 aléatoire
@@ -21,9 +24,10 @@ function startRandomGlitch() {
         // Ajoute la classe .animated pour démarrer l'animation
         randomElement.classList.add('animated');
     
-        const randomInterval = Math.random() * 1000 + 1000;
-        setTimeout(startRandomGlitch, randomInterval);
     }
+    // Répète l'animation après un intervalle aléatoire entre 1 et 3 secondes
+    const randomInterval = Math.random() * 1000 + 1000;
+    setTimeout(startRandomGlitch, randomInterval);
 }
 
 // Démarre la première animation

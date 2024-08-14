@@ -105,7 +105,7 @@
 
 .technoAnim:hover{
     animation: smallGlitchAnim .1s 0s linear;
-    text-shadow: -1.5px -1.5px #22d3ee, 1.5px 1.5px #d946ef;
+    text-shadow: -1.2px -1.2px #22d3ee, 1.2px 1.2px #d946ef;
 }
 
 .technoAnim:hover img{
