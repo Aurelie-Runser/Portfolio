@@ -37,17 +37,21 @@
     background-color: #d946ef;
 }
 
+.mon_bouton:hover p {
+    background-color: #ffedd5ee;
+}
+
 .mon_bouton:hover span {
     display: inline-block;
-    animation: btnTxtAnim .3s linear infinite;
+    animation: btnTxtAnim .4s linear infinite;
 }
 
 .mon_bouton:hover::before{
-    animation: btnAfterAnim .3s linear infinite;
+    animation: btnAfterAnim .4s linear infinite;
 }
 
 .mon_bouton:hover::after{
-    animation: btnBeforeAnim .3s linear infinite;
+    animation: btnBeforeAnim .4s linear infinite;
 }
 
 @keyframes btnTxtAnim {
@@ -60,18 +64,18 @@
 
 @keyframes btnAfterAnim {
     0% { transform: translate(-7px, 6px) }
-    25% { transform: translate(-7px, -8px) }
+    25% { transform: translate(-2px, -8px) }
     50% { transform: translate(7px, 6px) }
     75% { transform: translate(-10px, -6px) }
-    100% { transform: translate(-7px, 2px) }
+    100% { transform: translate(-4px, 2px) }
 }
 
 @keyframes btnBeforeAnim {
-    0% { transform: translate(7px, -8px) }
-    25% { transform: translate(7px, 6px) }
-    50% { transform: translate(-10px, -6px) }
-    75% { transform: translate(7px, 6px) }
-    100% { transform: translate(7px, -6px) }
+    0% { transform: translate(7px, -6px) }
+    25% { transform: translate(2px, 8px) }
+    50% { transform: translate(-7px, -6px) }
+    75% { transform: translate(10px, 6px) }
+    100% { transform: translate(4px, -2px) }
 }
 
 </style>
