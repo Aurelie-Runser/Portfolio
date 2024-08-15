@@ -6,7 +6,7 @@
         <div class="lg:flex flex-row-reverse gap-5 mx-auto my-8 md:my-10 h-fit">
     
                 <!-- réseaux sociaux -->
-                <div class="grow lg:sticky top-1/3 flex-none flex flex-wrap sm:justify-center lg:flex-col mx-auto w-fit h-fit gap-x-8 gap-y-3 fill-orange-100 mb-8 lg:mb-0 ">
+                <div class="grow lg:sticky top-1/3 flex-none flex flex-wrap sm:justify-center lg:flex-col mx-auto w-fit h-fit gap-x-8 gap-y-4 fill-orange-100 mb-8 lg:mb-0 ">
 
                         <a target="_blank" href="https://www.linkedin.com/in/aurélie-runser" class="block w-max"
                                 @mouseover="liHover = true" 

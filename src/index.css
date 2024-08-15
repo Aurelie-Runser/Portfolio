@@ -5,17 +5,19 @@
 @layer base{
 
     .ma-section{
-        @apply px-1 md:px-10 mx-auto my-24 md:my-40 max-w-screen-2xl w-11/12
+        @apply px-1 md:px-10 mx-auto my-24 md:my-40 max-w-screen-2xl w-11/12    
     }
 
     .big-title-glitch{
-        @apply inline-block font-oswald font-bold italic text-4xl text-transparent tracking-widest;
+        @apply inline-block font-oswald font-bold italic text-5xl text-transparent tracking-widest;
         @apply md:text-6xl;
-        @apply xl:text-7xl;
+        @apply lg:text-7xl;
+        @apply xl:text-8xl;
+        @apply 2xl:text-9xl;
     }
 
     .title-glitch{
-        @apply text-2xl text-transparent font-semibold;
+        @apply text-2xl text-transparent font-medium;
         @apply md:text-3xl;
         @apply xl:text-4xl
     }

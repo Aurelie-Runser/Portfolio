@@ -1,18 +1,16 @@
 <template>
-    <section class="ma-section my-0 h-screen grid">
+    <section class="ma-section my-0 h-screen grid relative">
         <div class="self-center h-screen max-h-[900px]">
-            <h1 class="relative block w-full h-full lg:max-w-screen-xl mx-auto">
-                <span class="mon-title absolute top-[10vh] left-0">Hello World, <br/>I'm</span>
-    
-                <span class="absolute top-[30vh] md:top-1/2 -translate-y-[32px] md:-translate-y-[66px] xl:-translate-y-[80px] left-0 w-full">
-                    <span class="big-title-glitch btg-anim absolute top-0 left-0 text-center"
+            <h1 class="flex flex-col justify-between w-full h-full mx-auto py-[10vh] md:py-[5vh] lg:py-[10vh]">
+                <span class="mon-title ">Hello World,<br/>I'm</span>
+
+                <span class="big-title-glitch btg-anim relative selft-center text-center w-fit mx-auto !overflow-hidden"
                         data-text="Aurélie Runser">
                         Aurélie Runser
                     </span>
-                </span>
-    
-                <span class="absolute bottom-[10vh] right-0 flex flex-wrap justify-end align-bottom w-auto h-fit text-right gap-x-10 gap-y-5">
-                    <span class="mon-title mt-5">a new</span>
+
+                <span class="self-end flex flex-wrap content-end justify-end align-bottom w-full text-right gap-x-[2%]">
+                    <span class="mon-title mt-[1%] w-fit h-fit">a junior</span>
         
                     <span class="relative">
                         <span class="big-title-glitch title-glitch tg-anim" data-text="Développeuse Web">Développeuse Web</span>
@@ -21,7 +19,7 @@
             </h1>
         </div>
 
-        <div class="mon-cube absolute -bottom-16 left-[10%] w-5 md:w-7 h-5 md:h-7"></div>
+        <div class="mon-cube absolute left-1 md:left-10 -bottom-16 w-5 h-5 md:w-7 md:h-7"></div>
     </section>
 </template>
 
@@ -35,7 +33,6 @@
     left: -3px;
     color: #ffedd5;
     text-shadow: -5px 0 #d946ef;
-    background: #1f1f1f;
     overflow: hidden;
 }
 
@@ -44,7 +41,7 @@
     display: block;
     position: absolute;
     top: 0;
-    left: 0;
+    left: 0 ;
     color: #ffedd5;
     text-shadow: -5px 0 #22d3ee;
     background: #1f1f1f;
@@ -57,11 +54,9 @@
     display: block;
     position: absolute;
     top: 0;
-    left: -1px;
+    left: -1.3px;
     color: #ffedd5;
-    text-shadow: -3px 0 #d946ef;
-    background: #1f1f1f;
-    overflow: hidden;
+    text-shadow: -2.5px 0 #d946ef;
 }
 
 .tg-anim::after{
@@ -71,10 +66,10 @@
     top: 0;
     left: 0px;
     color: #ffedd5;
-    text-shadow: -3px 0 #22d3ee;
+    text-shadow: -2.5px 0 #22d3ee;
     background: #1f1f1f;
     overflow: hidden;
-    clip-path: inset(61% 0% 0% 0%);
+    clip-path: inset(62% 0% 0% 0%);
 }
 
 @keyframes glitch {

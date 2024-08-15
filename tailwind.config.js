@@ -31,25 +31,14 @@ module.exports = withAnimations({
         "4xl": "4rem",
         "5xl": "5.5rem",
         "6xl": "7rem",
-        "7xl": "10rem"
+        "7xl": "8rem",
+        "8xl": "9rem",
+        "9xl": "11rem",
       },
       fontFamily: {
         "oswald": "Oswald",
         "darker-grotesque": "Darker Grotesque"
       },
-      keyframes: {
-        skew: {
-          "0%" : {transform: "skewX(90deg)"},
-          "1%" : {transform: "skewX(0deg)"}
-        },
-        
-    },
-      animation: {
-        skew: "skew 5s 5s infinite",
-      }
     },
   },
-
-  plugins: [],
-}
-);
+});

@@ -1,6 +1,6 @@
 <template>
     <section class="my-20">
-        <h2 class="mx-auto px-7 md:px-10 max-w-screen-2xl w-11/12">Projets</h2>
+        <h2 class="mx-auto px-1 md:px-10 max-w-screen-2xl w-11/12">Projets</h2>
 
         <div v-if="projetsAffiches.length > 0">
             <!-- grille de projets -->
