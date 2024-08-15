@@ -17,7 +17,7 @@
             </RouterLink>
         </div>
 
-        <div v-else class="w-full h-[50vh] relative">
+        <div v-else class="h-[50vh]">
             <monChargement/>
          </div>
 

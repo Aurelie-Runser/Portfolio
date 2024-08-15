@@ -2,7 +2,7 @@
     <section class="ma-section">
         <h2>Compétences</h2>
 
-        <ul class="comptGrid my-8 md:my-16 p-1 gap-2 sm:gap-5">
+        <ul v-if="listeCompetence.length > 0" class="comptGrid my-8 md:my-16 p-1 gap-2 sm:gap-5">
             <li v-for="c in listeCompetence" :key="c.id" :class="'item-'+c.num" class="colorAnim">
                 <div class="w-full h-full p-3 sm:p-4 bg-mon-black">
         
@@ -21,6 +21,10 @@
                 </div>
             </li>
         </ul>
+
+        <div v-else class="h-[50vh]">
+            <monChargement />
+        </div>
 
     </section>
 </template>
@@ -112,11 +116,11 @@
     filter: drop-shadow(-1.5px -1.5px #22d3ee) drop-shadow(1.5px 1.5px #d946ef);
 }
 
-@property --angle{
+/* @property --angle{
     syntax: "<angle>";
     initial-value: 0deg;
     inherits: false;
-}
+} */
 
 .colorAnim{
     box-sizing: content-box;
@@ -135,47 +139,24 @@
 
 
 <script setup>
-import { 
-    getFirestore, 
-    collection, 
-    onSnapshot, 
-    getStorage, 
-    ref, 
-    getDownloadURL
-} from "@/stores/firebase.js";
+import monChargement from "@/components/monChargement.vue";
 
-import { ref as refVue, onMounted } from "vue";
+import { ref, onMounted } from 'vue';
+import { useCompetencesStore } from "@/stores/competencesStore.js";
 
-const listeCompetence = refVue([]);
+const store = useCompetencesStore();
 
-async function getCompetences(){
-    const firestore = getFirestore();
-    const dbComptences = collection(firestore, "competences");
-    
-    await onSnapshot(dbComptences, (snapshot) =>{
-        listeCompetence.value = snapshot.docs.map(doc => (
-            {id:doc.id, ...doc.data()}
-        ))
-        .sort((a, b) => a.num - b.num);
+const listeCompetence = ref([]);
 
-        const storage = getStorage();
-                
-        listeCompetence.value.forEach((c) => {
-            c.techno.forEach((t) => {
-                const svgRef = ref(storage, `icons/${t.svg}.svg`);
-                getDownloadURL(svgRef)
-                .then((url) => {
-                    t.svg = url;
-                })    
-                .catch((error) => {
-                    console.log("erreur lors du chargement des images depuis firebase", error);
-                });
-            });
-        });
-    })            
-}
+onMounted(async() => {
+    if(store.listeCompetence.length > 0){ // si les compétences ont été chargés
+        listeCompetence.value = store.listeCompetence;
+        return
+    }
+    else {  // si les compétences n'ont pas encore été chargé
 
-onMounted(() => {
-    getCompetences()
-})
+        await store.getCompetencesListe()
+        listeCompetence.value = store.listeCompetence;
+    };
+});
 </script>
