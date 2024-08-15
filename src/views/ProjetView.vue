@@ -82,7 +82,11 @@
     
                     <!-- 2eme image -->
                     <div class="projet_img relative z-10 my-16 w-screen sm:mx-auto sm:w-2/3 h-fit lg:w-1/2">
-                        <img class="w-full" :src="projet.image_rect2" :alt="'image de mon projet '+ projet.titre">
+                        <!-- <img class="w-full" :src="projet.image_rect2" :alt="'image de mon projet '+ projet.titre"> -->
+                        <video controls width="full">
+                        <source :src="projet.image_rect" type="video/webm" />
+
+                        </video>
                     </div>
     
     
@@ -346,8 +350,12 @@ const projet = ref({});
 const isLoading = ref(false)
 
 onMounted(() => {
+
     if(store.listeProjet.length > 0) {
         projet.value = store.listeProjet.find((p) => p.id == route.params.id);
+
+        if (!projet.value || Object.keys(projet.value).length == 0) router.push('/');
+        else isLoading.value = true;
     }
     else {
         // on attend le chargement des projets
@@ -355,12 +363,13 @@ onMounted(() => {
             () => store.listeProjet.length,
             () => {
                 projet.value = store.listeProjet.find((p) => p.id == route.params.id);
+
+                if (!projet.value || Object.keys(projet.value).length == 0) router.push('/');
+                else isLoading.value = true;
+
                 stopWatcher(); // pour stoper le watcher (le projet à afficher a été chargé 1 foix, il n'y a plus de raison qu'il change)
             }
         );
     }
-
-    if (Object.keys(projet.value).length == 0) router.push('/');
-    else isLoading.value = true;
 });
 </script>
