@@ -116,11 +116,11 @@
     filter: drop-shadow(-1.5px -1.5px #22d3ee) drop-shadow(1.5px 1.5px #d946ef);
 }
 
-/* @property --angle{
+@property --angle{
     syntax: "<angle>";
     initial-value: 0deg;
     inherits: false;
-} */
+}
 
 .colorAnim{
     box-sizing: content-box;
