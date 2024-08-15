@@ -16,9 +16,9 @@ const router = createRouter({
   ],
 
   scrollBehavior(to) {
-    if (to.hash) { // si la route contient une ancre, aller sur celle si
+    if (to.hash) { // si la route contient une ancre, aller sur celle-ci
       return { el: to.hash }
-    } else { // sinon aller en haut de la page souhaité
+    } else { // sinon aller en haut de la page souhaitée
       return { top: 0 }
     }
   },
