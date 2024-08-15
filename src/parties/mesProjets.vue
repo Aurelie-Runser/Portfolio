@@ -1,10 +1,10 @@
 <template>
-    <section class="my-32">
-        <h2>Projets</h2>
+    <section class="my-20">
+        <h2 class="mx-auto px-7 md:px-10 max-w-screen-2xl w-11/12">Projets</h2>
 
         <div v-if="projetsAffiches.length > 0">
             <!-- grille de projets -->
-            <ul class="overflow-hidden -mx-7 md:-mx-10 my-16 md:grid grid-flow-row-dense grid-cols-[repeat(auto-fit,minmax(320px,1fr))] gap-1">
+            <ul class="overflow-hidden my-10 md:my-16 md:grid grid-flow-row-dense grid-cols-[repeat(auto-fit,minmax(320px,1fr))] gap-1">
     
                 <!-- card des projets -->
                 <li v-for="p in projetsAffiches" :key="p.id">

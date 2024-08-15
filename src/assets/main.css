@@ -15,14 +15,10 @@ html{
     background-color: #1f1f1f;
 }
 
-h2{
-    display: inline-block;
-}
-
 h2.animated {
     color: #ffedd5 !important;
     text-shadow: -1px -1px #22d3ee, 1px 1px #d946ef;
-    animation: smallGlitchAnim .1s 0s linear;
+    /* animation: smallGlitchAnim .1s 0s linear; */
 }
 
 @media (min-width: 768px) {
@@ -35,4 +31,9 @@ h2.animated {
     0% { transform: skewX(0deg); }
     50% { transform: skewX(-90deg); }
     100% { transform: skewX(0deg); }
+}
+
+a, span, strong{
+    font: inherit;
+    color: inherit;
 }

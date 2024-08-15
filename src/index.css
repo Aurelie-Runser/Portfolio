@@ -4,8 +4,8 @@
 
 @layer base{
 
-    section{
-        @apply px-7 md:px-10
+    .ma-section{
+        @apply px-1 md:px-10 mx-auto my-24 md:my-40 max-w-screen-2xl w-11/12
     }
 
     .big-title-glitch{
@@ -15,7 +15,7 @@
     }
 
     .title-glitch{
-        @apply text-2xl text-transparent;
+        @apply text-2xl text-transparent font-semibold;
         @apply md:text-3xl;
         @apply xl:text-4xl
     }
@@ -28,14 +28,11 @@
 
     .mon-title,
     h2{
-        @apply inline font-oswald font-extralight text-xl text-stone-300 tracking-widest;
+        @apply block font-oswald font-extralight text-xl text-stone-300 tracking-widest w-full overflow-hidden;
         @apply md:text-2xl;
         @apply xl:text-3xl
     };
-    
-    h2{
-        @apply mx-5 md:mx-14 xl:mx-28
-    }
+
 
     h3{
         @apply font-darker-grotesque font-bold text-xl text-stone-300 ;
@@ -59,10 +56,23 @@
     }
 
     input, textarea{
-        @apply p-2 w-full bg-mon-black border-2 border-orange-100 font-darker-grotesque font-medium text-base text-orange-100
+        @apply p-2 md:p-3 w-full bg-mon-black border-2 border-orange-100 font-darker-grotesque font-medium text-base md:text-lg text-cyan-400;
     }
 
     input:focus, textarea:focus{
-        @apply outline-none border-cyan-400
+        @apply outline-none border-cyan-400 text-stone-300
+    }
+
+    :is(input:not(input[type="checkbox"]), textarea) + label {
+        @apply absolute left-4 -translate-y-1/2;
+        @apply font-darker-grotesque font-medium text-orange-100 bg-mon-black text-opacity-70;
+    }
+
+    input:not(input[type="checkbox"]) + label {
+        @apply top-1/2
+    }
+
+    textarea + label{
+        @apply top-5 md:top-6;
     }
 }

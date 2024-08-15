@@ -1,24 +1,16 @@
 <template>
-    <section class="my-32">
+    <section class="ma-section">
         <h2>Contact</h2>
 
         <!--mise en ligne des élements (formulaire + réseaux) en ligne-->
-        <div class="xl:flex flex-row-reverse max-w-screen-2xl mx-auto">
-
-            <!-- comportement des 2 bloques des réseaux -->
-            <div class="mx-5 my-8 md:mr-14 md:my-16 xl:mr-28 flex md:block flex-wrap justify-between gap-5">
+        <div class="lg:flex flex-row-reverse gap-5 mx-auto my-8 md:my-10 h-fit">
     
                 <!-- réseaux sociaux -->
-                <div class="sticky top-1/3">
+                <div class="grow lg:sticky top-1/3 flex-none flex flex-wrap sm:justify-center lg:flex-col mx-auto w-fit h-fit gap-x-8 gap-y-3 fill-orange-100 mb-8 lg:mb-0 ">
 
-                    <div class="my-8 w-full flex flex-wrap flex-row justify-between items-start xl:flex-col gap-5 md:gap-8 ">
-
-                        <a target="_blank" href="https://www.linkedin.com/in/aurélie-runser" 
-                            class="fill-orange-100"
-                            @mouseover="liHover = true" 
-                            @mouseleave="liHover = false"
-                        >
-            
+                        <a target="_blank" href="https://www.linkedin.com/in/aurélie-runser" class="block w-max"
+                                @mouseover="liHover = true" 
+                                @mouseleave="liHover = false">
                             <linkedinIcon :hover="liHover" class="inline-block w-7 h-7 md:w-10 md:h-10"/>
                             <p class="sr-only">Mon compte Linkedin : </p>
                             <p class="contact_link inline-block ml-3 w-auto font-darker-grotesque font-bold text-base md:text-lg text-orange-100 underline decoration-fuchsia-500">
@@ -27,12 +19,9 @@
             
                         </a>
             
-                        <a target="_blank" href="https://www.instagram.com/aurelie.runser_pro/"
-                            class="fill-orange-100"
-                            @mouseover="instaHover = true" 
-                            @mouseleave="instaHover = false"
-                        >
-            
+                        <a target="_blank" href="https://www.instagram.com/aurelie.runser_pro/" class="block w-max"
+                                @mouseover="instaHover = true" 
+                                @mouseleave="instaHover = false">
                             <instagramIcon :hover="instaHover" class="inline-block w-7 h-7 md:w-10 md:h-10"/>
                             <p class="sr-only">Mon compte Instagram : </p>
                             <p class="contact_link inline-block ml-3 w-auto font-darker-grotesque font-bold text-base md:text-lg text-orange-100 underline decoration-fuchsia-500">
@@ -40,12 +29,10 @@
                             </p>
             
                         </a>
-                        <a target="_blank" href="https://github.com/Aurelie-Runser"
-                            class="fill-orange-100"
-                            @mouseover="gitHover = true" 
-                            @mouseleave="gitHover = false"
-                        >
-            
+
+                        <a target="_blank" href="https://github.com/Aurelie-Runser" class="block w-max"
+                                @mouseover="gitHover = true" 
+                                @mouseleave="gitHover = false">
                             <githubIcon :hover="gitHover" class="inline-block w-7 h-7 md:w-10 md:h-10"/>
                             <p class="sr-only">Mon compte Github : </p>
                             <p class="contact_link inline-block ml-3 w-auto font-darker-grotesque font-bold text-base md:text-lg text-orange-100 underline decoration-fuchsia-500">
@@ -54,12 +41,9 @@
             
                         </a>
 
-                        <a href="mailto:aurelie.runser25@gmail.com"
-                            class="fill-orange-100"
-                            @mouseover="mailHover = true" 
-                            @mouseleave="mailHover = false"
-                        >
-            
+                        <a href="mailto:aurelie.runser25@gmail.com" class="block w-max"
+                                @mouseover="mailHover = true" 
+                                @mouseleave="mailHover = false">
                             <mailIcon :hover="mailHover" class="inline-block w-9 h-9 md:w-12 md:h-12"/>
                             <p class="sr-only">Mon Adresse Mail : </p>
                             <p class="contact_link inline-block ml-3 w-auto font-darker-grotesque font-bold text-base md:text-lg text-orange-100 underline decoration-fuchsia-500">
@@ -67,34 +51,24 @@
                             </p>
             
                         </a>
-
-                        <p v-if="messageSent"
-                            class="form_messageSent hidden xl:block relative mx-auto my-20 w-96 font-oswald font-bold text-lg xl:text-xl text-center text-stone-300">
-                            Merci beaucoup, votre message a bien été envoyé !
-                        </p>
-                    </div>
-
                 </div>
-            </div>
             
             <!-- formulaire-->
             <div class="grow">
                 <form action="https://api.web3forms.com/submit" method="POST" ref="contactForm"
-                    class="mx-5 my-14 md:ml-14 md:my-20 md:max-w-2xl xl:ml-28">
+                    class="mx-auto lg:mx-0 max-w-2xl">
         
                     <input type="hidden" name="access_key" value="b3a5c0b1-dcc2-48e8-90e1-8ce766ba6253" autocomplete="off">
 
-                    <div class="relative my-16">
+                    <div class="relative">
                         <input
                             type="text"
                             name="prenom_nom"
                             id="prenom_nom"
                             placeholder=" "
-                            required
-                            class="border-2 border-orange-100 p-2 md:p-5">
+                            required>
                         <label for="prenom_nom" 
-                                class="form_text absolute top-1/2 left-3 -translate-y-1/2
-                                font-darker-grotesque font-medium  text-orange-100 opacity-70">
+                                class="form_text">
                             Prénom & Nom
                         </label>
         
@@ -104,17 +78,15 @@
                         </div>
                     </div>
                     
-                    <div class="relative my-16">
+                    <div class="relative mt-6">
                         <input
                             type="email"
                             name="email"
                             id="email"
                             placeholder=" "
-                            required
-                            class="border-2 border-orange-100 p-2 md:p-5">
+                            required>
                         <label for="email"
-                               class="form_text absolute top-1/2 left-3 -translate-y-1/2
-                                font-darker-grotesque font-medium  text-orange-100 opacity-70">
+                               class="form_text">
                             Adresse Mail
                         </label>
         
@@ -125,17 +97,15 @@
                     </div>
                     
 
-                    <div class="relative my-16">
+                    <div class="relative mt-6">
                         <input
                             type="text"
                             name="sujet"
                             id="sujet"
                             placeholder=" "
-                            required
-                            class="border-2 border-orange-100 p-2 md:p-5">
+                            required>
                         <label for="sujet"
-                                class="form_text absolute top-1/2 left-3 -translate-y-1/2
-                                font-darker-grotesque font-medium  text-orange-100 opacity-70">
+                                class="form_text">
                             Sujet
                         </label>
         
@@ -146,19 +116,16 @@
                     </div>
         
 
-                    <div class="relative my-16">
+                    <div class="relative mt-6">
                         <textarea
                             name="message"
                             id="message"
                             rows="5"
                             placeholder=" "
-                            required
-                            class="border-2 border-orange-100 p-2 md:p-5"></textarea>
+                            required></textarea>
 
                         <label for="message"
-                                class="form_text absolute top-2 left-3
-                                font-darker-grotesque font-medium text-lg text-orange-100 opacity-70
-                                md:text-xl">Message</label>
+                                class="form_text">Message</label>
         
                         <div class="form_obligatoire p-3 md:p-5">
                             <p class="font-darker-grotesque font-bold text-sm 
@@ -167,15 +134,14 @@
                     </div>
           
 
-                    <div class="relative my-16 text_complement">
+                    <div class="relative mt-6 text_complement">
                         <input
                             type="text"
                             name="complement"
                             id="complement"
-                            placeholder=" "
-                            class="border-2 border-orange-100 p-2 md:p-5">
+                            placeholder=" ">
                         <label for="complement"
-                                class="form_text absolute top-1/2 left-3 -translate-y-1/2
+                                class="form_text
                                 font-darker-grotesque font-medium  text-orange-100 opacity-70">
                             Complément
                         </label>
@@ -188,7 +154,7 @@
         
 
                     <!-- consentement RGPD -->
-                    <div class="relative my-16 flex items-start gap-5">
+                    <div class="relative mt-6 flex items-start gap-5">
 
                         <!-- CheckBox-->
                         <input type="checkbox" name="consentementRGPD" required
@@ -207,9 +173,11 @@
                     </div>
 
         
-                    <monBouton type="submit" class="mx-auto">
+                    <monBouton v-if="!messageSent" type="submit" class="mx-auto mt-10">
                         Envoyer
                     </monBouton>
+                    <p v-else class="form_messageSent relative mx-auto my-20 w-fit font-oswald font-bold text-lg xl:text-xl text-center text-stone-300">
+                        Merci beaucoup, votre message a bien été envoyé !</p>
         
                 </form>
 
@@ -227,11 +195,6 @@
 
                     <monBouton class="mx-auto mt-10" @click="RGPD = false">Fermer</monBouton>
                 </div>
-        
-                <p v-if="messageSent"
-                    class="form_messageSent xl:hidden relative mx-auto my-20 w-fit font-oswald font-bold text-lg xl:text-xl text-center text-stone-300">
-                    Merci beaucoup, votre message a bien été envoyé !
-                </p>
                 
             </div>
         </div>
@@ -265,40 +228,20 @@ a:hover .contact_link{
     font-size: 1.5rem;
 }
 
-/* taille du texte mobile sur moyennet grand écran */
-@media screen and (min-width: 768px) {
-    .form_text {
-        font-size: 2rem;
-  }
-}
-
 /* style lorsque le texte mobile se déplace sur portable */
-input:focus + .form_text,
-input:not(:placeholder-shown) ~ .form_text {
-    top: -45%;
+:is(input, textarea):is(:focus, :not(:placeholder-shown)) + .form_text{
+    top: 0;
+    /* translate: 0 -25%; */
     font-size: 1rem;
-    transition: all 0.1s ease-in-out;
-}
-
-textarea:focus + .form_text,
-textarea:valid + .form_text{
-    top: -2rem;
-    font-size: 1rem;
+    padding: 0 0.5rem;
     transition: all 0.1s ease-in-out;
 }
 
 /* style lorsque le texte mobile se déplace sur moyen et grand écran */
 @media screen and (min-width: 768px) {
-    input:focus + .form_text,
-    input:not(:placeholder-shown) ~ .form_text {
-        top: -1.5rem;
-        font-size: 1.5rem;
-    }
-
-    textarea:focus + .form_text,
-    textarea:valid + .form_text{
-        top: -2.7rem;
-        font-size: 1.5rem;
+    :is(input, textarea):is(:focus, :not(:placeholder-shown)) + .form_text{
+        top: 0rem;
+        font-size: 1.25rem;
     }
 }
 
@@ -309,8 +252,7 @@ textarea:valid + .form_text{
     top: 0;
     right: 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    place-items: center;
     height: 100%;
     padding: 0 10px;
 

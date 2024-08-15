@@ -1,23 +1,25 @@
 <template>
-    <section class="md:pt-24 h-screen">
-        <h1 class="relative block w-full h-full px-7 md:px-10 lg:max-w-screen-xl lg:mx-auto">
-            <span class="mon-title absolute top-[10vh] md:top-0 left-0">Hello World, <br/>I'm</span>
-
-            <span class="absolute top-[30vh] md:top-36 left-0 w-full">
-                <span class="big-title-glitch btg-anim absolute top-0 left-0 text-center"
-                    data-text="Aurélie Runser">
-                    Aurélie Runser
-                </span>
-            </span>
-
-            <span class="absolute top-[60vh] md:bottom-52 lg:bottom-32 xl:bottom-20 right-0 flex flex-wrap justify-end align-bottom w-auto text-right gap-x-10 gap-y-5">
-                <span class="mon-title mt-5">a new</span>
+    <section class="ma-section my-0 h-screen grid">
+        <div class="self-center h-screen max-h-[900px]">
+            <h1 class="relative block w-full h-full lg:max-w-screen-xl mx-auto">
+                <span class="mon-title absolute top-[10vh] left-0">Hello World, <br/>I'm</span>
     
-                <span class="relative">
-                    <span class="big-title-glitch title-glitch tg-anim" data-text="Développeuse Web">Développeuse Web</span>
+                <span class="absolute top-[30vh] md:top-1/2 -translate-y-[32px] md:-translate-y-[66px] xl:-translate-y-[80px] left-0 w-full">
+                    <span class="big-title-glitch btg-anim absolute top-0 left-0 text-center"
+                        data-text="Aurélie Runser">
+                        Aurélie Runser
+                    </span>
                 </span>
-            </span>
-        </h1>
+    
+                <span class="absolute bottom-[10vh] right-0 flex flex-wrap justify-end align-bottom w-auto h-fit text-right gap-x-10 gap-y-5">
+                    <span class="mon-title mt-5">a new</span>
+        
+                    <span class="relative">
+                        <span class="big-title-glitch title-glitch tg-anim" data-text="Développeuse Web">Développeuse Web</span>
+                    </span>
+                </span>
+            </h1>
+        </div>
 
         <div class="mon-cube absolute -bottom-16 left-[10%] w-5 md:w-7 h-5 md:h-7"></div>
     </section>

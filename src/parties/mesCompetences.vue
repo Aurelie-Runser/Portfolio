@@ -1,8 +1,8 @@
 <template>
-    <section class="my-32 px-1 sm:px-7 md:px-10">
+    <section class="ma-section">
         <h2>Compétences</h2>
 
-        <ul class="comptGrid my-16 md:mx-14 xl:mx-28 2xl:mx-auto p-1 gap-2 sm:gap-5 max-w-screen-xl">
+        <ul class="comptGrid my-8 md:my-16 p-1 gap-2 sm:gap-5">
             <li v-for="c in listeCompetence" :key="c.id" :class="'item-'+c.num" class="colorAnim">
                 <div class="w-full h-full p-3 sm:p-4 bg-mon-black">
         
@@ -17,7 +17,7 @@
                             </div>
                         </li>
                     </ul>
-        
+                    
                 </div>
             </li>
         </ul>
@@ -112,29 +112,16 @@
     filter: drop-shadow(-1.5px -1.5px #22d3ee) drop-shadow(1.5px 1.5px #d946ef);
 }
 
-.colorAnim{
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-}
-
 @property --angle{
     syntax: "<angle>";
     initial-value: 0deg;
     inherits: false;
 }
 
-.colorAnim::before{
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
+.colorAnim{
+    box-sizing: content-box;
     width: 100%;
     height: 100%;
-    translate: -50% -50%;
-    z-index: -1;
-    box-sizing: content-box;
     padding: 1.5px;
     background-image: conic-gradient(from var(--angle), #22d3ee, #d946ef, #22d3ee);
     animation: borderAnim 4s linear infinite;
