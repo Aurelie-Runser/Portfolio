@@ -23,6 +23,7 @@
                     <option value="">Toutes les Catégories</option>
                     <option value="fs">Full Stack</option>
                     <option value="fe">Site vitrine</option>
+                    <option value="3d">3D</option>
                     <option value="dv">Dataviz</option>
                 </select>
             </div>
@@ -136,7 +137,7 @@ function projetsSelectFonction() {
     }
     
     if(catSelect.value != ''){
-        projetsSelect.value = projetsSelect.value.filter(projet => projet.categorie == catSelect.value);
+        projetsSelect.value = projetsSelect.value.filter(projet => projet.categorie.includes(catSelect.value));
     }
 
     return projetsSelect.value;
