@@ -82,11 +82,7 @@
     
                     <!-- 2eme image -->
                     <div class="projet_img relative z-10 my-16 w-screen sm:mx-auto sm:w-2/3 h-fit lg:w-1/2">
-                        <!-- <img class="w-full" :src="projet.image_rect2" :alt="'image de mon projet '+ projet.titre"> -->
-                        <video controls width="full">
-                        <source :src="projet.image_rect" type="video/webm" />
-
-                        </video>
+                        <img class="w-full" :src="projet.image_rect2" :alt="'image de mon projet '+ projet.titre">
                     </div>
     
     
