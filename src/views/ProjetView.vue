@@ -5,7 +5,7 @@
     
     <div class="pt-24 overflow-x-hidden">
 
-        <div v-if="isLoading">
+        <div v-if="isLoaded">
 
             <h1 class="big-title-glitch title-glitch tg-anim-projet relative
                         mx-7 md:mx-14 xl:mx-28"
@@ -82,7 +82,11 @@
     
                     <!-- 2eme image -->
                     <div class="projet_img relative z-10 my-16 w-screen sm:mx-auto sm:w-2/3 h-fit lg:w-1/2">
-                        <img class="w-full" :src="projet.image_rect2" :alt="'image de mon projet '+ projet.titre">
+                        <video v-if="projet.video"  muted autoplay loop class="w-full">
+                            <source :src="projet.video" type="video/mp4">
+                            Votre navigateur ne supporte pas la balise vidéo.
+                        </video>
+                        <img v-else class="w-full" :src="projet.image_rect2" :alt="'image de mon projet '+ projet.titre">
                     </div>
     
     
@@ -343,26 +347,27 @@ const router = useRouter()
 const store = useProjetsStore();
 
 const projet = ref({});
-const isLoading = ref(false)
+const isLoaded = ref(false)
+
+const verifProjetExiste = () => {
+    projet.value = store.listeProjet.find((p) => p.id == route.params.id);
+
+    if (!projet.value) router.push('/');
+    else {
+        isLoaded.value = true;
+    }
+}
 
 onMounted(() => {
-
     if(store.listeProjet.length > 0) {
-        projet.value = store.listeProjet.find((p) => p.id == route.params.id);
-
-        if (!projet.value || Object.keys(projet.value).length == 0) router.push('/');
-        else isLoading.value = true;
+        verifProjetExiste()
     }
     else {
         // on attend le chargement des projets
         const stopWatcher = watch(
             () => store.listeProjet.length,
             () => {
-                projet.value = store.listeProjet.find((p) => p.id == route.params.id);
-
-                if (!projet.value || Object.keys(projet.value).length == 0) router.push('/');
-                else isLoading.value = true;
-
+                verifProjetExiste()
                 stopWatcher(); // pour stoper le watcher (le projet à afficher a été chargé 1 foix, il n'y a plus de raison qu'il change)
             }
         );

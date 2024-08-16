@@ -2,11 +2,21 @@
 import monMenu from "./components/monMenu.vue";
 import monFooter from "./components/monFooter.vue";
 
+import { onMounted } from "vue";
 import { RouterView } from "vue-router";
 import { useProjetsStore } from "@/stores/projetsStore.js";
 
-useProjetsStore().getProjetsListe();
+const store = useProjetsStore();
 
+onMounted(() => {
+    store.getProjetsListe()
+        .then(() => {
+            console.log("Données des projets chargées");
+        })
+        .catch(error => {
+            console.error("Erreur lors du chargement des projets :", error);
+        });
+});
 
 // Fonction pour lancer l'animation aléatoirement sur un h2
 function startRandomGlitch() {

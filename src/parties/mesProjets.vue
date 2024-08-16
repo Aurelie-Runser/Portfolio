@@ -58,11 +58,9 @@ function projetsScreenFunction(){
 onMounted(() => {
     if(store.projetsScreen.length > 0){ // si le nombre de projet est déjà défini
         projetsAffiches.value = store.projetsScreen;
-        return
     }
-    else if(store.listeProjet.length > 0){ // si le nombre de projet n'est pas encore défini
+    else if(store.listeProjet.length > 0){ // si le nombre de projet n'est pas encore défini mais que tous les projets ont été chargé (si arrivé directement sur une fiche projet ou la page listant tous les projets)
         projetsAffiches.value = projetsScreenFunction();
-        return
     }
     else {  // si les projets n'ont pas encore été chargé
         const stopWatcher = watch(

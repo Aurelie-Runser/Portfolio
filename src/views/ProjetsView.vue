@@ -159,6 +159,7 @@ onMounted(() => {
             }
         );
     }
+    
     // si les projets sont chargés, observé les select
     stopWatcherSelect = watch(
         [() => genreSelect.value, () => catSelect.value],

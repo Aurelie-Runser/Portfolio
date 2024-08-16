@@ -28,39 +28,42 @@ export const useProjetsStore = defineStore('projetsStore', {
             const firestore = getFirestore();
             const dbProjet = collection(firestore, "projet");           
 
-            await onSnapshot(dbProjet, (snapshot) => {
-                this.listeProjet = snapshot.docs.map((doc) => (
-                    {id: doc.id,...doc.data()}
-                ));
+            // Création d'une promesse pour surveiller la fin du chargement des données
+            return new Promise((resolve, reject) => {
+                onSnapshot(dbProjet, async (snapshot) => {
+                    this.listeProjet = snapshot.docs.map((doc) => (
+                        {id: doc.id,...doc.data()}
+                    ));
 
-                const storage = getStorage();
-                this.listeProjet.forEach((projet) => {
-    
-                    const spaceRef_rect = ref(storage, projet.image_rect);
-                    getDownloadURL(spaceRef_rect)
-                    .then((url) => {
-                        projet.image_rect = url;
-                    })
-    
-                    const spaceRef_card = ref(storage, projet.image_card);
-                    getDownloadURL(spaceRef_card)
-                    .then((url) => {
-                        projet.image_card = url;
-                    })
+                    const storage = getStorage();
 
-                    const spaceRef_rect2 = ref(storage, projet.image_rect2);
-                    getDownloadURL(spaceRef_rect2)
-                    .then((url) => {
-                        projet.image_rect2 = url;
-                    })
-    
-                    .catch((error) => {
-                        console.log("erreur lors du chargement des images depuis firebase", error);
-                    });
+                    try{
+                        const imgPromise = this.listeProjet.map(async(projet) => {
+                            const svgRef = ref(storage, `projets/${projet.image_card}`);
+                            projet.image_card = await getDownloadURL(svgRef);
+            
+                            const img_rectRef = ref(storage, `projets/${projet.image_rect}`);
+                            projet.image_rect = await getDownloadURL(img_rectRef)
+            
+                            if(projet.video != undefined){
+                                const img_videoRef = ref(storage, `projets/${projet.video}`);
+                                projet.video = await getDownloadURL(img_videoRef)
+                            } else {
+                                const img_rect2Ref = ref(storage, `projets/${projet.image_rect2}`);
+                                projet.image_rect2 = await getDownloadURL(img_rect2Ref)
+                            }          
+                        });
+
+                        await Promise.all(imgPromise);
+                        resolve();
+                    } catch(error){
+                        console.log("erreur lors du chargement des images/vidéos depuis firebase :", error)
+                        reject(error)
+                    }
+
+                    this.listeProjet = this.orderByDate;
                 });
-
-                this.listeProjet = this.orderByDate;
-            });
+            })
         },
     },
 })
