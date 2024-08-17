@@ -54,15 +54,15 @@
 }
 
 .card:hover .card_img{
-    animation: cardGlitchAnim .15s 0s linear;
+    animation: cardGlitchAnim .2s 0s linear;
     transform: skewX(-90deg);
 }
 
 @keyframes cardGlitchAnim{
     0% { transform: skewX(0deg); }
-    50% { transform: skewX(-180deg); }
-    75% { transform: skewX(0deg); }
-    100% { transform: skewX(-180deg); }
+    50% { transform: skewX(-90deg); }
+    75% { transform: skewX(-10deg); }
+    100% { transform: skewX(-90deg); }
 }
 
 .card_bouton{

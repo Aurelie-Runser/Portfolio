@@ -18,8 +18,8 @@
 
                 <!-- image + Bouton "voir"-->
                 <div class="mt-10 place-items-end">
-                    <div class="projet_img relative z-10">
-                        <img :src="projet.image_rect" :alt="'image de mon projet '+projet.titre">
+                    <div class="relative">
+                        <img :src="projet.image_rect" :alt="'image de mon projet '+projet.titre" class="colorAnim">
                     </div>
         
                     <a target="_blank" :href="projet.lien" rel="noopener noreferrer">
@@ -81,12 +81,12 @@
                 <div class="lg:flex flex-wrap">
     
                     <!-- 2eme image -->
-                    <div class="projet_img relative z-10 my-16 w-screen sm:mx-auto sm:w-2/3 h-fit lg:w-1/2">
-                        <video v-if="projet.video" :poster="projet.image_rect" controls muted autoplay loop class="w-full h-full">
+                    <div class="aspect-video my-16 w-screen sm:mx-auto sm:w-2/3 lg:w-1/2">
+                        <video v-if="projet.video" :poster="projet.image_rect" controls muted autoplay loop class="colorAnim">
                             <source :src="projet.video" type="video/mp4">
                             Votre navigateur ne supporte pas la balise vidéo.
                         </video>
-                        <img v-else class="w-full" :src="projet.image_rect2" :alt="'image de mon projet '+ projet.titre">
+                        <img v-else class="colorAnim" :src="projet.image_rect2" :alt="'image de mon projet '+ projet.titre">
                     </div>
     
     
@@ -152,15 +152,15 @@
 }
 
 /* style des images */
-.projet_img::before{
+/* .projet_img::before{
     content: "";
     position: absolute;
     z-index: -1;
     display: block;
     width: 98%;
     height: 100%;
-    top: -4%;
-    left: -2%;
+    top: -1%;
+    left: -0.5%;
     background-color: #22d3ee;
 }
 .projet_img::after{
@@ -170,10 +170,10 @@
     display: block;
     width: 98%;
     height: 100%;
-    top: 4%;
-    left: 2%;
+    top: 1%;
+    left: 0.5%;
     background-color: #d946ef;
-}
+} */
 
 /* taille du guillement sur moyen net grand écran */
 @media screen and (min-width: 768px) {
@@ -192,9 +192,7 @@
     top: 0;
     left: -1px;
     color: #ffedd5;
-    text-shadow: -3px 0 #d946ef;
-    background: #1f1f1f;
-    overflow: hidden;
+    text-shadow: -2.5px 0 #d946ef;
 }
 
 .tg-anim-projet::after{
@@ -204,131 +202,10 @@
     top: 0;
     left: 0px;
     color: #ffedd5;
-    text-shadow: -3px 0 #22d3ee;
+    text-shadow: 2.5px 0 #22d3ee;
     background: #1f1f1f;
-    overflow: hidden;
     clip-path: inset(61% 0% 0% 0%);
-    animation: glitch 1.5s linear infinite alternate-reverse;
-}
-
-@keyframes glitch {
-    5%{
-        clip-path: inset(48% 0 0 0);
-    } 
-    7.5%{
-        clip-path: inset(70% 0 0 0);
-    }
-    10%{
-        clip-path: inset(60% 0 0 0);
-    }
-    12.5%{
-        clip-path: inset(37% 0 0 0);
-    }
-    15%{
-        clip-path: inset(0 0 0 0);
-    }
-    17.5%{
-        clip-path: inset(0 0 40% 0);
-    }
-    20%{
-        clip-path: inset(0 0 40% 0);
-    }
-    22.5%{
-        clip-path: inset(0 0 60% 0);
-    }
-    25%{
-        clip-path: inset(0 0 30% 0);
-    }
-    27.5%{
-        clip-path: inset(0 0 50% 0);
-    }
-    30%{
-        clip-path: inset(40% 0 0 0);
-    }
-    32.5%{
-        clip-path: inset(33% 0 0 0);
-    } 
-    35%{
-        clip-path: inset(48% 0 0 0);
-    } 
-    37.5%{
-        clip-path: inset(70% 0 0 0);
-    }
-    40%{
-        clip-path: inset(60% 0 0 0);
-    }
-    42.5%{
-        clip-path: inset(37% 0 0 0);
-    }
-    45%{
-        clip-path: inset(0 0 0 0);
-    }
-    47.2%{
-        clip-path: inset(0 0 40% 0);
-    }
-    50%{
-        clip-path: inset(0 0 40% 0);
-    }
-    52.%{
-        clip-path: inset(33% 0 0 0);
-    } 
-    55%{
-        clip-path: inset(48% 0 0 0);
-    } 
-    57.5%{
-        clip-path: inset(70% 0 0 0);
-    }
-    60%{
-        clip-path: inset(60% 0 0 0);
-    }
-    62.5%{
-        clip-path: inset(37% 0 0 0);
-    }
-    65%{
-        clip-path: inset(0 0 0 0);
-    }
-    67.5%{
-        clip-path: inset(0 0 40% 0);
-    }
-    70%{
-        clip-path: inset(0 0 40% 0);
-    }
-    72.5%{
-        clip-path: inset(0 0 60% 0);
-    }
-    75%{
-        clip-path: inset(0 0 30% 0);
-    }
-    77.5%{
-        clip-path: inset(0 0 50% 0);
-    }
-    80%{
-        clip-path: inset(40% 0 0 0);
-    }
-    82.5%{
-        clip-path: inset(33% 0 0 0);
-    } 
-    85%{
-        clip-path: inset(48% 0 0 0);
-    } 
-    87.5%{
-        clip-path: inset(70% 0 0 0);
-    }
-    90%{
-        clip-path: inset(60% 0 0 0);
-    }
-    92.5%{
-        clip-path: inset(37% 0 0 0);
-    }
-    95%{
-        clip-path: inset(0 0 0 0);
-    }
-    97.5%{
-        clip-path: inset(0 0 40% 0);
-    }
-    100%{
-        clip-path: inset(0 0 40% 0);
-    }
+    animation: glitch 2s linear infinite alternate;
 }
 
 </style>

@@ -28,13 +28,13 @@
     top: 0;
     left: 0;
     transform: translate(-4px, -4px);
-    background-color: #22d3ee;
+    background-color: #d946ef;
     transition: all 200ms;
 }
 
 .mon_bouton::after{
     transform: translate(4px, 4px);
-    background-color: #d946ef;
+    background-color: #22d3ee;
 }
 
 .mon_bouton:hover p {

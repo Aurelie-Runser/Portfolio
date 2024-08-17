@@ -73,13 +73,13 @@
     top: 0;
     left: 0;
     transform: translate(-2%, -4%);
-    background-color: #22d3ee;
+    background-color: #d946ef;
     transition: all 200ms;
 }
 
 .mon_select::after{
     transform: translate(2%, 4%);
-    background-color: #d946ef;
+    background-color: #22d3ee;
 }
 
 .mon_select:hover::before{
