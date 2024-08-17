@@ -33,7 +33,7 @@
         <ul v-if="projetsSelect.length > 0" class="my-16 md:grid grid-flow-row-dense grid-cols-[repeat(auto-fit,minmax(20rem,1fr))] gap-1 place-items-center">
 
             <!-- card des projets -->
-            <li v-for="p in projetsSelect" :key="p.id" class="overflow-hidden">
+            <li v-for="p in projetsSelect" :key="p.id" class="overflow-hidden w-full">
                 <maCard v-bind="p"/>
             </li>
         </ul>

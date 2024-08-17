@@ -4,10 +4,10 @@
 
         <div v-if="projetsAffiches.length > 0">
             <!-- grille de projets -->
-            <ul class="overflow-hidden my-10 md:my-16 md:grid grid-flow-row-dense grid-cols-[repeat(auto-fit,minmax(320px,1fr))] gap-1 place-items-center">
+            <ul class="my-10 md:my-16 md:grid grid-flow-row-dense grid-cols-[repeat(auto-fit,minmax(320px,1fr))] gap-1 place-items-center">
     
                 <!-- card des projets -->
-                <li v-for="p in projetsAffiches" :key="p.id">
+                <li v-for="p in projetsAffiches" :key="p.id" class="overflow-hidden w-full">
                     <maCard v-bind="p"/>
                 </li>
             </ul>

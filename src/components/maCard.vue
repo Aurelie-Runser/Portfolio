@@ -1,5 +1,5 @@
 <template>
-    <div class="card relative aspect-video md:aspect-square overflow-hidden" :class="{'colorAnim': isHover}"
+    <div class="card relative aspect-video md:aspect-square overflow-hidden max-w-md mx-auto" :class="{'colorAnim': isHover}"
         @mouseover="isHover = true" @mouseleave="isHover = false">
         <div class="card_img">
             <!--image en mobile-->
