@@ -54,9 +54,9 @@
     display: block;
     position: absolute;
     top: 0;
-    left: -1.3px;
+    left: -0.5px;
     color: #ffedd5;
-    text-shadow: -2.5px 0 #d946ef;
+    text-shadow: -2px 0 #d946ef;
 }
 
 .tg-anim::after{
@@ -64,11 +64,10 @@
     display: block;
     position: absolute;
     top: 0;
-    left: 0px;
+    left: 0;
     color: #ffedd5;
-    text-shadow: -2.5px 0 #22d3ee;
+    text-shadow: 2px 0 #22d3ee;
     background: #1f1f1f;
-    overflow: hidden;
     clip-path: inset(62% 0% 0% 0%);
 }
 
