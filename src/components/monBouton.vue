@@ -43,15 +43,15 @@
 
 .mon_bouton:hover span {
     display: inline-block;
-    animation: btnTxtAnim .4s linear infinite;
+    animation: btnTxtAnim .4s linear infinite alternate;
 }
 
 .mon_bouton:hover::before{
-    animation: btnAfterAnim .4s linear infinite;
+    animation: btnAfterAnim .4s linear infinite alternate;
 }
 
 .mon_bouton:hover::after{
-    animation: btnBeforeAnim .4s linear infinite;
+    animation: btnBeforeAnim .4s linear infinite alternate-reverse;
 }
 
 @keyframes btnTxtAnim {
