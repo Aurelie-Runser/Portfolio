@@ -121,20 +121,6 @@
     initial-value: 0deg;
     inherits: false;
 }
-
-.colorAnim{
-    box-sizing: content-box;
-    width: 100%;
-    height: 100%;
-    padding: 1.5px;
-    background-image: conic-gradient(from var(--angle), #22d3ee, #d946ef, #22d3ee);
-    animation: borderAnim 4s linear infinite;
-}
-
-@keyframes borderAnim {
-    from { --angle: 0deg }
-    to { --angle: 360deg }
-}
 </style>
 
 
