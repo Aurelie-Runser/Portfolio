@@ -1,5 +1,5 @@
 <template>
-    <div class="card aspect-video md:aspect-square" :class="{'colorAnim': isHover}"
+    <div class="card relative aspect-video md:aspect-square overflow-hidden" :class="{'colorAnim': isHover}"
         @mouseover="isHover = true" @mouseleave="isHover = false">
         <div class="card_img">
             <!--image en mobile-->
@@ -15,7 +15,7 @@
             </div>
         </div>
 
-        <div class="card_txt hidden relative w-full h-full p-[5%] bg-mon-black flex-col justify-between">
+        <div class="card_txt relative w-full h-full p-[5%] bg-mon-black flex flex-col justify-between">
 
             <p>
                 <span class="text_card text-orange-100">Contexte : </span>
@@ -45,11 +45,24 @@
 </template>
 
 <style scoped>
-.card:hover .card_img{
-    display: none;
+.card_img{
+    z-index: 6;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all .1s 0s linear;
 }
-.card:hover .card_txt{
-    display: flex;
+
+.card:hover .card_img{
+    animation: cardGlitchAnim .15s 0s linear;
+    transform: skewX(-90deg);
+}
+
+@keyframes cardGlitchAnim{
+    0% { transform: skewX(0deg); }
+    50% { transform: skewX(-180deg); }
+    75% { transform: skewX(0deg); }
+    100% { transform: skewX(-180deg); }
 }
 
 .card_bouton{
