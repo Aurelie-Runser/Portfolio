@@ -208,7 +208,7 @@
     background: #1f1f1f;
     overflow: hidden;
     clip-path: inset(61% 0% 0% 0%);
-    animation: glitch 3s linear infinite alternate-reverse;
+    animation: glitch 1.5s linear infinite alternate-reverse;
 }
 
 @keyframes glitch {

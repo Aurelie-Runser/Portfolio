@@ -46,7 +46,7 @@
     text-shadow: -5px 0 #22d3ee;
     background: #1f1f1f;
     overflow: hidden;
-    animation: glitch 2s linear infinite alternate-reverse;
+    animation: glitch 1.5s linear infinite alternate-reverse;
 }
 
 .tg-anim::before{

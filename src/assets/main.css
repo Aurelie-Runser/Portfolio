@@ -13,12 +13,14 @@
 
 html{
     background-color: #1f1f1f;
+    width: 100vw;
+    overflow-x: hidden;
 }
 
 h2.animated {
     color: #ffedd5 !important;
     text-shadow: -1px -1px #22d3ee, 1px 1px #d946ef;
-    /* animation: smallGlitchAnim .1s 0s linear; */
+    animation: smallGlitchAnim .1s 0s linear;
 }
 
 @media (min-width: 768px) {
