@@ -50,8 +50,7 @@
     .text_card{
         @apply font-oswald text-base text-slate-300 tracking-wider;
         @apply sm:text-lg;
-        @apply xl:text-xl   
-    }
+        }
 
     .perso_text{
         @apply my-4 leading-6 md:leading-8 inline-block font-darker-grotesque text-base md:text-lg text-stone-300;

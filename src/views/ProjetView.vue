@@ -82,7 +82,7 @@
     
                     <!-- 2eme image -->
                     <div class="projet_img relative z-10 my-16 w-screen sm:mx-auto sm:w-2/3 h-fit lg:w-1/2">
-                        <video v-if="projet.video"  muted autoplay loop class="w-full">
+                        <video v-if="projet.video" :poster="projet.image_rect" muted autoplay loop class="w-full h-full">
                             <source :src="projet.video" type="video/mp4">
                             Votre navigateur ne supporte pas la balise vidéo.
                         </video>
