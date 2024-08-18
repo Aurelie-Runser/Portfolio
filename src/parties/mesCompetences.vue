@@ -3,7 +3,7 @@
         <h2>Compétences</h2>
 
         <ul v-if="listeCompetence.length > 0" class="comptGrid my-8 md:my-16 p-1 gap-2 sm:gap-5">
-            <li v-for="c in listeCompetence" :key="c.id" :class="'item-'+c.num" class="colorAnim">
+            <li v-for="c in listeCompetence" :key="c.id" :class="'item-'+c.num" class="borderAnim">
                 <div class="w-full h-full p-3 sm:p-4 bg-mon-black">
         
                     <h3 class="text-xl leading-9 break-words">{{c.titre}}</h3>
@@ -114,12 +114,6 @@
 
 .technoAnim:hover img{
     filter: drop-shadow(-1.5px -1.5px #22d3ee) drop-shadow(1.5px 1.5px #d946ef);
-}
-
-@property --angle{
-    syntax: "<angle>";
-    initial-value: 0deg;
-    inherits: false;
 }
 </style>
 

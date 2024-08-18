@@ -19,7 +19,7 @@
                 <!-- image + Bouton "voir"-->
                 <div class="mt-10 place-items-end">
                     <div class="relative">
-                        <img :src="projet.image_rect" :alt="'image de mon projet '+projet.titre" class="colorAnim">
+                        <img :src="projet.image_rect" :alt="'image de mon projet '+projet.titre" class="borderAnim">
                     </div>
         
                     <a target="_blank" :href="projet.lien" rel="noopener noreferrer">
@@ -82,11 +82,11 @@
     
                     <!-- 2eme image -->
                     <div class="aspect-video my-16 w-screen sm:mx-auto sm:w-2/3 lg:w-1/2">
-                        <video v-if="projet.video" :poster="projet.image_rect" controls muted autoplay loop class="colorAnim">
+                        <video v-if="projet.video" :poster="projet.image_rect" controls muted autoplay loop class="borderAnim">
                             <source :src="projet.video" type="video/mp4">
                             Votre navigateur ne supporte pas la balise vidéo.
                         </video>
-                        <img v-else class="colorAnim" :src="projet.image_rect2" :alt="'image de mon projet '+ projet.titre">
+                        <img v-else class="borderAnim" :src="projet.image_rect2" :alt="'image de mon projet '+ projet.titre">
                     </div>
     
     
