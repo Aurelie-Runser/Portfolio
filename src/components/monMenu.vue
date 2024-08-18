@@ -23,7 +23,7 @@
         
 
         <!--les liens-->
-        <nav class="relative w-full h-full flex flex-col justify-end gap-16 py-28 sm:justify-evenly items-right px-[10vw] md:px-[5vw]
+        <nav class="relative w-full h-full flex flex-col justify-end gap-y-[7%] sm:justify-center items-right px-[10vw] md:px-[5vw]
             text-right font-oswald font-semibold italic text-lg sm:text-xl md:text-3xl">
 
             <RouterLink @click="menuOuvert = false" to="/">
@@ -34,7 +34,7 @@
             </RouterLink>
             
             <RouterLink @click="menuOuvert = false" to="/projets">
-                <p class="menu_item item_acc"
+                <p class="menu_item item_pro"
                     data-text="Projets">
                     Projets
                 </p>
@@ -56,7 +56,7 @@
 
             <RouterLink @click="menuOuvert = false" :to="{ path: '/', hash: '#id_contact' }">
                 <p class="menu_item item_cont"
-                    data-text="Contacter">
+                    data-text="Contact">
                     Contact
                 </p>
             </RouterLink>

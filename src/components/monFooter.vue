@@ -16,15 +16,15 @@
                 <linkedinIcon class="inline-block w-5 h-5 md:w-8 md:h-8"/>
                 <p class="sr-only">Lien vers mon compte Linkedin</p>
             </a>
-    
-            <a target="_blank" href="https://www.instagram.com/aurelie.runser_pro/" rel="noopener noreferrer">
-                <instagramIcon class="inline-block w-5 h-5 md:w-8 md:h-8"/>
-                <p class="sr-only">Lien vers mon compte Instagram</p>
-            </a>
             
             <a target="_blank" href="https://github.com/Aurelie-Runser" rel="noopener noreferrer">
                 <githubIcon class="inline-block w-5 h-5 md:w-8 md:h-8"/>
                 <p class="sr-only">Lien vers mon compte Github</p>
+            </a>
+
+            <a target="_blank" href="https://www.instagram.com/aurelie.runser_pro/" rel="noopener noreferrer">
+                <instagramIcon class="inline-block w-5 h-5 md:w-8 md:h-8"/>
+                <p class="sr-only">Lien vers mon compte Instagram</p>
             </a>
         </div>
 

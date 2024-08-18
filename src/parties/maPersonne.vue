@@ -13,7 +13,7 @@
                 <p class="perso_text">
                     <span class="guillement_1">"</span>Minutieuse et sérieuse, je me suis épanouie dans la formation MMI,
                     Métiers du Multimédia et de l'Internet, à l'IUT de Montbéliard, durant 3 ans.
-                    J'en suis sortie diplômée et majore de mon parcours, développement Web et dispositifs interactifs.
+                    <strong class="text-cyan-400">J'en suis sortie diplômée, 2<sup class="text-sm">ème</sup> de promo et majore de mon parcours</strong>, développement Web et dispositifs interactifs.
                 </p>
                 
                 <p class="perso_text">
@@ -23,14 +23,14 @@
         
                 <p class="perso_text">
                     Depuis, j'écris beaucoup de lignes de code, ai réalisé de nombreux projets, et cela ne cesse de me passionner, me donnant
-                    <strong class="text-cyan-400">
+                    <strong class="text-fuchsia-500">
                         l'envie de toujours découvrir de nouvelles façons de développer
                     </strong>
                     des sites web, de nouvelles fonctionnalités et animations.
                 </p>
         
                 <p class="perso_text">
-                    <strong class="text-fuchsia-500">
+                    <strong class="text-cyan-400">
                         Je mets un point d'honneur à respecter au mieux les attentes qui me sont données</strong>,
                     pour être fière de mon travail, mais surtout satisfaire les utilisateurs.
                 </p>
@@ -38,7 +38,7 @@
                 <div class="flex gap-3">
                     <p class="perso_text">
                         La volonté de rendre service et d'aider avec mes connaissances sont ce qui me font avancer pour
-                        <strong class="text-cyan-400">
+                        <strong class="text-fuchsia-500">
                             participer à la construction du web de demain</strong>.
                     </p>
                     <span class="guillement_2">"</span>
@@ -69,7 +69,7 @@
     font-family: Oswald;
     font-size: 10rem;
     color: #ffedd5;
-    text-shadow: 3px 3px #22d3ee;
+    text-shadow: -3px -3px #d946ef;
     transform: translateY(3rem);
 }
 
@@ -79,24 +79,12 @@
     font-size: 10rem;
     height: 3rem;
     color: #ffedd5;
-    text-shadow: 3px 3px #d946ef;
-}
-
-/* taille du guillement sur moyen net grand écran */
-@media screen and (min-width: 768px) {
-    .form_text {
-        font-size: 10rem;
-  }
+    text-shadow: 3px 3px #22d3ee;
 }
 </style>
 
-<script>
+<script setup>
 import monBouton from "../components/monBouton.vue"
 import SoftSkillsGraph from "@/components/SoftSkillsGraph.vue"
 import PassionsGraph from "@/components/PassionsGraph.vue"
-
-export default {
-    name:'ProjetView',
-    components: {monBouton, SoftSkillsGraph, PassionsGraph},
-}
 </script>
