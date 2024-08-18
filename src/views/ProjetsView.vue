@@ -33,7 +33,7 @@
         <ul v-if="projetsSelect.length > 0" class="my-16 md:grid grid-flow-row-dense grid-cols-[repeat(auto-fit,minmax(20rem,1fr))] gap-1 place-items-center">
 
             <!-- card des projets -->
-            <li v-for="p in projetsSelect" :key="p.id" class="overflow-hidden w-full">
+            <li v-for="p in projetsSelect" :key="p.id" class="overflow-hidden w-full card_item ">
                 <maCard v-bind="p"/>
             </li>
         </ul>
@@ -90,6 +90,16 @@
     transform: translate(5%, 10%);
 }
 
+.card_apear{
+    animation: cardGlitchAnim .15s forwards;
+}
+@keyframes cardGlitchAnim{
+    0% { transform: skewX(0deg); }
+    50% { transform: skewX(-90deg); }
+    100% { transform: skewX(0deg); }
+}
+
+
 .tg::before{
     content: attr(data-text);
     display: block;
@@ -121,7 +131,7 @@ import monChargement from "@/components/monChargement.vue";
 import maCard from "@/components/maCard.vue";
 import monBouton from "@/components/monBouton.vue";
 
-import { ref, onMounted, onUnmounted, watch } from 'vue';
+import { ref, onMounted, onUnmounted, watch, nextTick } from 'vue';
 import { useProjetsStore } from "@/stores/projetsStore.js";
 
 const store = useProjetsStore()
@@ -139,6 +149,18 @@ function projetsSelectFonction() {
     if(catSelect.value != ''){
         projetsSelect.value = projetsSelect.value.filter(projet => projet.categorie.includes(catSelect.value));
     }
+
+    // Assurez-vous que la liste des projets est mise à jour avant d'ajouter les classes
+    nextTick(() => {
+        // Appliquer l'animation à tous les éléments
+        document.querySelectorAll('.card_item').forEach(el => {
+            el.classList.add('card_apear');
+            // Retirer l'animation après qu'elle ait été jouée
+            el.addEventListener('animationend', () => {
+                el.classList.remove('card_apear');
+            }, { once: true });
+        });
+    });
 
     return projetsSelect.value;
 }
@@ -172,4 +194,7 @@ onMounted(() => {
 onUnmounted(() => {
     stopWatcherSelect();
 });
+
+
+
 </script>

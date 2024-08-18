@@ -7,7 +7,7 @@ import meContacte from "@/parties/meContacte.vue";
 </script>
 
 <template>
-    <div>
+    <div class="max-w-[100vw] overflow-hidden">
         <monAccueil id="id_accueil"/>
         <mesProjets id="id_projets"/>
         <mesCompetences id="id_competences"/>
