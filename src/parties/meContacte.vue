@@ -51,16 +51,14 @@
 
             <!-- formulaire-->
             <div>
-                <form action="https://api.web3forms.com/submit" method="POST" ref="contactForm"
+                <form @submit.prevent="submitForm"
                     class="mx-auto lg:mx-0 max-w-2xl">
-        
-                    <input type="hidden" name="access_key" value="b3a5c0b1-dcc2-48e8-90e1-8ce766ba6253" autocomplete="off">
 
                     <div class="relative">
                         <input
                             type="text"
                             name="prenom_nom"
-                            id="prenom_nom"
+                            v-model="prenom_nom"
                             placeholder=" "
                             required>
                         <label for="prenom_nom" 
@@ -78,7 +76,7 @@
                         <input
                             type="email"
                             name="email"
-                            id="email"
+                            v-model="email"
                             placeholder=" "
                             required>
                         <label for="email"
@@ -97,7 +95,7 @@
                         <input
                             type="text"
                             name="sujet"
-                            id="sujet"
+                            v-model="sujet"
                             placeholder=" "
                             required>
                         <label for="sujet"
@@ -115,7 +113,7 @@
                     <div class="relative mt-6">
                         <textarea
                             name="message"
-                            id="message"
+                            v-model="message"
                             rows="5"
                             placeholder=" "
                             required></textarea>
@@ -134,7 +132,7 @@
                         <input
                             type="text"
                             name="complement"
-                            id="complement"
+                            v-model="complement"
                             placeholder=" ">
                         <label for="complement"
                                 class="form_text
@@ -153,7 +151,7 @@
                     <div class="relative mt-6 flex items-start gap-5">
 
                         <!-- CheckBox-->
-                        <input type="checkbox" name="consentementRGPD" required
+                        <input type="checkbox" name="consentementRGPD" v-model="consentementRGPD" required
                                 class="w-20 h-20 sm:w-10 sm:h-10 accent-cyan-400">
 
                         <!-- Texte de consentement RGPD extrait -->
@@ -172,25 +170,30 @@
                     <monBouton v-if="!messageSent" type="submit" class="mx-auto mt-10">
                         Envoyer
                     </monBouton>
-                    <p v-else class="form_messageSent relative mx-auto my-20 w-fit font-oswald font-bold text-lg xl:text-xl text-center text-stone-300">
-                        Merci beaucoup, votre message a bien été envoyé !</p>
+                    <div v-else class="borderAnim mt-10">
+                        <p class="m-0.5 p-4 bg-mon-black font-oswald font-semibold italic text-lg xl:text-xl text-center text-orange-100">
+                            Merci beaucoup,<br class="hidden xl:inline"/> votre message a bien été envoyé&nbsp;!
+                        </p>
+                    </div>
         
                 </form>
 
                 <!-- Texte de consentement RGPD complet -->
-                <div class="RGPDcomplet fixed z-50 p-7 md:p-10 bg-mon-black w-full h-full md:w-3/4 md:h-auto overflow-scroll md:overflow-visible top-[200vh] left-1/2 -translate-x-1/2 -translate-y-1/2"
-                    :aria-expanded="RGPD" :class="{ 'top-[50vh]': RGPD }">
-                      
-                    <p class="mx-auto w-fit font-darker-grotesque text-base xl:text-lg text-stone-300">
-                        En soumettant ce formulaire, vous consentez à ce que vos données personnelles, telles que votre prénom, votre nom, votre adresse e-mail et le contenu de votre message, soient collectées et utilisées par Aurélie Runser dans le but de répondre à votre demande de contact. Ces informations seront stockées en toute sécurité et ne seront pas partagées avec des tiers sans votre consentement préalable.
-    
-                        <br/>Vous pouvez à tout moment me demander de supprimer vos données personnelles de mes archives en m'envoyant un e-mail à aurelie.runser25@gmail.com.
-    
-                        <br/>En soumettant ce formulaire, vous donnez votre consentement libre, spécifique, éclairé et univoque au traitement de vos données personnelles conformément aux dispositions du Règlement Général sur la Protection des Données (RGPD).
-                    </p>   
-
-                    <monBouton class="mx-auto mt-10" @click="RGPD = false">Fermer</monBouton>
-                </div>
+                <div :aria-expanded="RGPD" :class="{ 'block': RGPD, 'hidden': !RGPD }"
+                    class="borderAnim fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-full h-fit md:w-3/4">
+                     <div class="max-h-[100vh] p-5 md:p-10 bg-mon-black overflow-scroll">
+                           
+                         <p class="mx-auto w-fit font-darker-grotesque text-base xl:text-lg text-stone-300">
+                             En soumettant ce formulaire, vous consentez à ce que vos données personnelles, telles que votre prénom, votre nom, votre adresse e-mail et le contenu de votre message, soient collectées et utilisées par Aurélie Runser dans le but de répondre à votre demande de contact. Ces informations seront stockées en toute sécurité et ne seront pas partagées avec des tiers sans votre consentement préalable.
+         
+                             <br/>Vous pouvez à tout moment me demander de supprimer vos données personnelles de mes archives en m'envoyant un e-mail à aurelie.runser25@gmail.com.
+         
+                             <br/>En soumettant ce formulaire, vous donnez votre consentement libre, spécifique, éclairé et univoque au traitement de vos données personnelles conformément aux dispositions du Règlement Général sur la Protection des Données (RGPD).
+                         </p>   
+     
+                         <monBouton class="mx-auto mt-10" @click="RGPD = false">Fermer</monBouton>
+                     </div>
+                 </div>
                 
             </div>
         </div>
@@ -202,7 +205,8 @@
 <style>
 
 /* animation du underline */
-a:hover .contact_link{
+a:hover .contact_link,
+.contact_link:hover{
     animation: underline_color 1s linear infinite;
 }
 
@@ -262,61 +266,6 @@ textarea:invalid ~ .form_obligatoire{
     transition: opacity 0.1s ease-in-out;
 }
 
-
-/* style autour du message de confirmation de l'envoie du formulaire */
-.form_messageSent::before{
-    content: "";
-    position: absolute;
-    top: -15%;
-    left: -3%;
-    display: block;
-    width: 104%;
-    height: 120%;
-    border: 2px solid #22d3ee;
-}
-.form_messageSent::after{
-    content: "";
-    position: absolute;
-    bottom: -15%;
-    right : -3%;
-    display: block;
-    width: 104%;
-    height: 120%;
-    border: 2px solid #d946ef;
-}
-
-
-
-/* style autour du message RGPD */
-.RGPDcomplet::before{
-    content: "";
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    display: block;
-    width: 101%;
-    height: 101%;
-    border: 2px solid #22d3ee;
-}
-.RGPDcomplet::after{
-    content: "";
-    position: absolute;
-    top: 0;
-    left : 0;
-    display: block;
-    width: 101%;
-    height: 101%;
-    border: 2px solid #d946ef;
-}
-
-/* suppression des marges du message RGPD sur mobile */
-@media screen and (max-width: 768px) {
-    .RGPDcomplet::before,
-    .RGPDcomplet::after{
-        display: none;
-    }
-}
-
 /* cache du champs anti-spam */
 .text_complement{
     display: none;
@@ -325,63 +274,93 @@ textarea:invalid ~ .form_obligatoire{
 </style>
 
 
-<script>
-import monBouton from "@/components/monBouton.vue"
-import linkedinIcon from "@/components/icons/linkedinIcon.vue"
-import instagramIcon from "@/components/icons/instagramIcon.vue"
-import githubIcon from "@/components/icons/githubIcon.vue"
-import mailIcon from "@/components/icons/mailIcon.vue"
+<script setup>
+import { ref } from 'vue';
+import monBouton from '@/components/monBouton.vue';
+import linkedinIcon from '@/components/icons/linkedinIcon.vue';
+import instagramIcon from '@/components/icons/instagramIcon.vue';
+import githubIcon from '@/components/icons/githubIcon.vue';
+import mailIcon from '@/components/icons/mailIcon.vue';
 
-export default {
-  name: 'ContactForm',
-  components: {monBouton, linkedinIcon, instagramIcon, githubIcon, mailIcon},
+// Références réactives pour les états du composant
+const liHover = ref(false);
+const instaHover = ref(false);
+const gitHover = ref(false);
+const mailHover = ref(false);
 
-  data() {
-    return {
-      messageSent: false,
-      RGPD: false,
-      liHover: false,
-      instaHover: false,
-      gitHover: false,
-      mailHover: false,
+const WEB3FORMS_ACCESS_KEY = "b3a5c0b1-dcc2-48e8-90e1-8ce766ba6253"
+const prenom_nom = ref("");
+const email = ref("");
+const sujet = ref("");
+const message = ref("");
+const consentementRGPD = ref(false);
+
+const complement = ref("");
+const messageSent = ref(false);
+const RGPD = ref(false);
+
+const submitForm = async () => {
+    if (complement.value.length > 0 || consentementRGPD.value == false) {
+        // Si le champ "complement" est rempli, ne pas envoyer le mail
+        return;
     }
-  },
 
-  mounted(){  
-    this.$refs.contactForm.addEventListener('submit', this.submitForm)
-  },
+    const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+        },
+        body: JSON.stringify({
+            access_key: WEB3FORMS_ACCESS_KEY,
+            prenom_nom: prenom_nom.value,
+            email: email.value,
+            sujet: sujet.value,
+            message: message.value,
+        }),
+    });
 
-    methods: {
-        async submitForm(event) {
-            event.preventDefault();
+    const result = await response.json();
+    if (result.success) {
+        messageSent.value = true;
 
-            // récupère les valeurs des champs du formulaire
-            const formData = new FormData(event.target);
-
-             // Vérifier si le champ "complement" est rempli
-            const complementValue = formData.get('complement');
-            if (complementValue && complementValue.trim() !== '') {
-                // Si le champ "complement" est rempli, ne pas envoyer le mail
-                // Vous pouvez afficher un message d'erreur ou simplement sortir de la fonction
-                return;
-            }
-
-            // envoie les valeurs à web3form qui m'envoie le mail
-            const response = await fetch('https://api.web3forms.com/submit', {
-                method: 'POST',
-                body: formData
-            });
-            
-            // si le message est envoyé, écrire un message et effacer les champs
-            if (response.ok) {
-                this.messageSent = true;
-                // Réinitialiser les champs du formulaire
-                const inputs = event.target.querySelectorAll('input, textarea');
-                inputs.forEach(input => (input.value = ''));
-            }
-        }
+        prenom_nom.value = ""
+        email.value = ""   
+        sujet.value = ""   
+        message.value = "" 
+        consentementRGPD.value = false
     }
-  
 }
 
+// Fonction de soumission du formulaire
+// const submitForm = async (event) => {
+//   event.preventDefault();
+
+//   // Récupère les valeurs des champs du formulaire
+//   const formData = new FormData(event.target);
+
+//   // Vérifier si le champ "complement" est rempli
+//   const complementValue = formData.get('complement');
+//   if (complementValue && complementValue.trim() !== '') {
+//     // Si le champ "complement" est rempli, ne pas envoyer le mail
+//     return;
+//   }
+
+//   console.log(formData)
+// //   name="access_key" value="b3a5c0b1-dcc2-48e8-90e1-8ce766ba6253"
+
+//   // Envoie les valeurs à web3form qui envoie le mail
+// //   const response = await fetch('https://api.web3forms.com/submit', {
+// //     method: 'POST',
+// //     body: formData,
+// //   });
+
+//   // Si le message est envoyé, écrire un message et effacer les champs
+// //   if (response.ok) {
+// //     messageSent.value = true;
+// //     // Réinitialiser les champs du formulaire
+// //     const inputs = event.target.querySelectorAll('input, textarea');
+// //     inputs.forEach((input) => (input.value = ''));
+// //   }
+// };
 </script>
