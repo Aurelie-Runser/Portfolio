@@ -11,12 +11,9 @@
 
             <div>
                 <p class="perso_text">
-                    <span class="guillement_1">"</span>Minutieuse et sérieuse, je me suis épanouie dans la formation
-                    <a target="_blank" href="http://mmimontbeliard.com/"
-                        class="perso_link
-                                underline decoration-fuchsia-500">
-                        MMI, Métiers du Multimédia et de l'Internet, à l'IUT de Montbéliard</a>,
-                    durant 3 ans. J'en suis sortie diplômée et majore de mon parcours, développement Web et dispositifs interactifs.
+                    <span class="guillement_1">"</span>Minutieuse et sérieuse, je me suis épanouie dans la formation MMI,
+                    Métiers du Multimédia et de l'Internet, à l'IUT de Montbéliard, durant 3 ans.
+                    J'en suis sortie diplômée et majore de mon parcours, développement Web et dispositifs interactifs.
                 </p>
                 
                 <p class="perso_text">
@@ -91,19 +88,6 @@
         font-size: 10rem;
   }
 }
-
-
-/* animation du underline */
-.perso_link:hover{
-    animation: underline_color 1s linear infinite;
-}
-
-@keyframes underline_color {
-    0%{text-decoration-color: #d946ef;}
-    50%{text-decoration-color: #22d3ee;}
-    100%{text-decoration-color: #d946ef;}
-}
-
 </style>
 
 <script>
