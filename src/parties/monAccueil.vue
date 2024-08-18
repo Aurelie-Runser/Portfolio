@@ -1,8 +1,8 @@
 <template>
     <section class="ma-section my-0 h-screen grid relative">
         <div class="self-center h-screen max-h-[900px]">
-            <h1 class="flex flex-col justify-between w-full h-full mx-auto py-[10vh] md:py-[5vh] lg:py-[10vh]">
-                <span class="mon-title ">Hello World,<br/>I'm</span>
+            <h1 class="flex flex-col justify-around w-full h-full mx-auto">
+                <span class="mon-title">Hello World,<br/>I'm</span>
 
                 <span class="big-title-glitch btg-anim relative selft-center text-center w-fit mx-auto !overflow-hidden"
                         data-text="Aurélie Runser">
