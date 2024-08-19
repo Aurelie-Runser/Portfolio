@@ -41,7 +41,7 @@ export const useCompetencesStore = defineStore('competencesStore', {
                         });
 
                         this.listeCompetence.forEach(comp => {
-                            this.listeCompetenceGroup[comp.niv-1].techno.push(comp);
+                            if (comp.niv) this.listeCompetenceGroup[comp.niv-1].techno.push(comp);
                         });
 
                         await Promise.all(svgPromises);

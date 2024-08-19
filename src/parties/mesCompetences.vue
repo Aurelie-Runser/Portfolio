@@ -121,7 +121,7 @@
 <script setup>
 import monChargement from "@/components/monChargement.vue";
 
-import { ref, onMounted } from 'vue';
+import { ref, watch, onMounted } from 'vue';
 import { useCompetencesStore } from "@/stores/competencesStore.js";
 
 const store = useCompetencesStore();
@@ -131,11 +131,15 @@ const listeCompetenceGroup = ref([]);
 onMounted(async() => {
     if(store.listeCompetenceGroup[0].techno.length){ // si les compétences ont été chargés
         listeCompetenceGroup.value = store.listeCompetenceGroup;
-        return
     }
     else {  // si les compétences n'ont pas encore été chargé
-        await store.getCompetencesListe()
-        listeCompetenceGroup.value = store.listeCompetenceGroup;
+        const stopWatcher = watch(
+            () => store.listeCompetenceGroup[0].techno.length,
+            () => {
+                listeCompetenceGroup.value = store.listeCompetenceGroup;
+                stopWatcher(); // pour stoper le watcher (la liste à afficher à été chargé 1 foix, il n'y a plus de raison qu'elle change)
+            }
+        );
     };
 });
 </script>
