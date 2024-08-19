@@ -24,15 +24,18 @@ export const useCompetencesStore = defineStore('competencesStore', {
                         { id: doc.id, ...doc.data() }
                     ));
 
+                    this.listeCompetence = this.listeCompetence.filter(c => c.techno)
+
                     const storage = getStorage();
 
                     // Charger tous les SVGs avant de résoudre la promesse
                     try {
                         const svgPromises = this.listeCompetence.map(async (c) => {
-                            const technoPromises = c.techno.map(async (t) => {
-                                const svgRef = ref(storage, `icons/${t.svg}.svg`);
-                                t.svg = await getDownloadURL(svgRef);
-                            });
+                            let technoPromises
+                                technoPromises = c.techno.map(async (t) => {
+                                    const svgRef = ref(storage, `icons/${t.svg}.svg`);
+                                    t.svg = await getDownloadURL(svgRef);
+                                });
                             await Promise.all(technoPromises);
                         });
 
