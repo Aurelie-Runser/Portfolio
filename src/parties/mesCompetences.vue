@@ -2,8 +2,8 @@
     <section class="ma-section">
         <h2>Compétences</h2>
 
-        <ul v-if="listeCompetence.length > 0" class="comptGrid my-8 md:my-16 p-1 gap-2 sm:gap-5">
-            <li v-for="c in listeCompetence" :key="c.id" :class="'item-'+c.num" class="borderAnim">
+        <ul v-if="listeCompetenceGroup.length > 0" class="comptGrid my-8 md:my-16 p-1 gap-2 sm:gap-5">
+            <li v-for="c in listeCompetenceGroup" :key="c.id" :class="'item-'+c.niv" class="borderAnim">
                 <div class="w-full h-full p-3 sm:p-4 bg-mon-black">
         
                     <h3 class="text-xl leading-9 break-words">{{c.titre}}</h3>
@@ -126,17 +126,16 @@ import { useCompetencesStore } from "@/stores/competencesStore.js";
 
 const store = useCompetencesStore();
 
-const listeCompetence = ref([]);
+const listeCompetenceGroup = ref([]);
 
 onMounted(async() => {
-    if(store.listeCompetence.length > 0){ // si les compétences ont été chargés
-        listeCompetence.value = store.listeCompetence;
+    if(store.listeCompetenceGroup[0]){ // si les compétences ont été chargés
+        listeCompetenceGroup.value = store.listeCompetenceGroup;
         return
     }
     else {  // si les compétences n'ont pas encore été chargé
-
         await store.getCompetencesListe()
-        listeCompetence.value = store.listeCompetence;
+        listeCompetenceGroup.value = store.listeCompetenceGroup;
     };
 });
 </script>

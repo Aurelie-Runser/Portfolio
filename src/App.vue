@@ -11,7 +11,7 @@ const store = useProjetsStore();
 onMounted(() => {
     store.getProjetsListe()
         .then(() => {
-            console.log("Données des projets chargées");
+            return
         })
         .catch(error => {
             console.error("Erreur lors du chargement des projets :", error);
