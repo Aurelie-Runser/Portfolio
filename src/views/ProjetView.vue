@@ -217,7 +217,9 @@ const verifProjetExiste = () => {
 }
 
 const isFullWidth = computed(() => {
-    const screenWidth = window.innerWidth;
+    let screenWidth = window.innerWidth;
+    if (screenWidth > 1536) screenWidth = 1536;
+    
     const gap = 4; // Gap entre les card
     const minCardWidth = 320; // Largeur minimale de chaque card
     const cardsPerRow = Math.floor((screenWidth + gap) / (minCardWidth + gap));
