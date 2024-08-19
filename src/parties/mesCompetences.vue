@@ -129,7 +129,7 @@ const store = useCompetencesStore();
 const listeCompetenceGroup = ref([]);
 
 onMounted(async() => {
-    if(store.listeCompetenceGroup[0]){ // si les compétences ont été chargés
+    if(store.listeCompetenceGroup[0].techno.length){ // si les compétences ont été chargés
         listeCompetenceGroup.value = store.listeCompetenceGroup;
         return
     }
