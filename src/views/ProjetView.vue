@@ -228,13 +228,13 @@ const isFullWidth = computed(() => {
 });
 
 onMounted(() => {
-    if(store.projetDernier) {
+    if(store.projetDernier.titre) {
         verifProjetExiste()
     }
     else {
         // on attend le chargement des projets
         const stopWatcher = watch(
-            () => store.projetDernier,
+            () => store.projetDernier.titre,
             () => {
                 verifProjetExiste()
                 stopWatcher(); // pour stoper le watcher (le projet à afficher a été chargé 1 foix, il n'y a plus de raison qu'il change)
