@@ -12,6 +12,7 @@ export const useProjetsStore = defineStore('projetsStore', {
     state: () => ({ 
         listeProjet:[], // liste de tous les projets
         projetsScreen: [], // liste réduite pour la page d'accueil, pour évité de refaire le calcul
+        projetDernier: {}, // dernier projet réalisé
     }),
     getters: {
         // afficher les projets du plus récent au plus ancien
@@ -62,6 +63,7 @@ export const useProjetsStore = defineStore('projetsStore', {
                     }
 
                     this.listeProjet = this.orderByDate;
+                    this.projetDernier = this.listeProjet[0]
                 });
             })
         },

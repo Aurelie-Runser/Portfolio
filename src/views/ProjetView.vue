@@ -70,7 +70,7 @@
             <div>
                 <p class="mx-5 my-8 md:mx-14 md:my-10 xl:mx-28
                         font-oswald font-bold text-lg md:text-xl xl:text-2xl text-orange-100">
-                    Création :
+                    Description :
                 </p>
     
                 <p v-for="text in projet.contexte_all" class="mx-5 my-5 md:mx-14 xl:mx-28 leading-7
@@ -82,7 +82,7 @@
     
                     <!-- 2eme image -->
                     <div class="aspect-video my-16 w-screen sm:mx-auto sm:w-2/3 lg:w-1/2">
-                        <video v-if="projet.video" :poster="projet.image_rect" controls muted autoplay loop class="borderAnim">
+                        <video v-if="projet.video" :key="videoKey" :poster="projet.image_rect" controls muted autoplay loop class="borderAnim">
                             <source :src="projet.video" type="video/mp4">
                             Votre navigateur ne supporte pas la balise vidéo.
                         </video>
@@ -107,27 +107,35 @@
             </div>
     
             <a target="_blank" :href="projet.lien" rel="noopener noreferrer">
-                <monBouton class="mx-auto my-20 md:my-40">
+                <monBouton class="mx-auto my-10">
                     Voir le Projet
                 </monBouton>
             </a>
-        
-        
 
-            <hr class="separateur mx-auto border-none w-5/6 h-1"/>
+            <!-- liste d'autres projets -->
+            <ul class="max-w-screen-2xl mx-auto mt-28 md:mt-44 md:grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))] gap-1 place-items-center">
+    
+                <li v-if="projetDernier" class="overflow-hidden w-full">
+                    <maCard v-bind="projetDernier"/>
+                </li>
+                <li v-if="projetSuivant" class="overflow-hidden w-full">
+                    <maCard v-bind="projetSuivant"/>
+                </li>
+                <li v-if="projetPrecedent" class="overflow-hidden w-full">
+                    <maCard v-bind="projetPrecedent"/>
+                </li>
+                <li class="w-full" :class="{'col-span-full': !isFullWidth}">
+                    <div class="w-full flex flex-wrap justify-center gap-x-20 gap-y-5 mx-auto px-5 py-7">
+                        <RouterLink @click="menuOuvert = false" to="/projets">
+                            <monBouton class="scale-75">Plus de Projets</monBouton>
+                        </RouterLink>
 
-
-            <div class="flex flex-wrap justify-evenly gap-20 mx-auto my-32 md:my-52 w-5/6">
-                <RouterLink to="/">
-                    <monBouton>Hello World</monBouton>
-                </RouterLink>
-        
-                <RouterLink @click="menuOuvert = false" to="/projets">
-                    <monBouton>Autres Projets</monBouton>
-                </RouterLink>
-
-            </div>
-
+                        <RouterLink to="/">
+                            <monBouton class="scale-75">Hello World</monBouton>
+                        </RouterLink>
+                    </div>
+                </li>
+            </ul>
         </div>
 
         <div v-else class="w-full h-screen relative">
@@ -139,51 +147,6 @@
 
 
 <style>
-
-/* style du separateur */
-.separateur{
-    animation: hr_color 3s linear infinite;
-}
-
-@keyframes hr_color {
-    0%{background-color: #22d3ee;}
-    50%{background-color: #d946ef;}
-    100%{background-color: #22d3ee;}
-}
-
-/* style des images */
-/* .projet_img::before{
-    content: "";
-    position: absolute;
-    z-index: -1;
-    display: block;
-    width: 98%;
-    height: 100%;
-    top: -1%;
-    left: -0.5%;
-    background-color: #22d3ee;
-}
-.projet_img::after{
-    content: "";
-    position: absolute;
-    z-index: -1;
-    display: block;
-    width: 98%;
-    height: 100%;
-    top: 1%;
-    left: 0.5%;
-    background-color: #d946ef;
-} */
-
-/* taille du guillement sur moyen net grand écran */
-@media screen and (min-width: 768px) {
-    .projet_img::before,
-    .projet_img::after{
-        width: 100%;
-    }
-}
-
-
 /* animation de l'effet gltich du titre */
 .tg-anim-projet::before{
     content: attr(data-text);
@@ -207,15 +170,15 @@
     clip-path: inset(61% 0% 0% 0%);
     animation: glitch 2s linear infinite alternate;
 }
-
 </style>
 
 
 <script setup>
 import monBouton from "@/components/monBouton.vue"
+import maCard from "@/components/maCard.vue"
 import monChargement from "@/components/monChargement.vue"
 
-import { ref, onMounted, onUnmounted, watch } from 'vue';
+import { ref, computed, onMounted, watch } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { useProjetsStore } from "@/stores/projetsStore.js";
 
@@ -223,31 +186,65 @@ const route = useRoute()
 const router = useRouter()
 const store = useProjetsStore();
 
-const projet = ref({});
+const projet = ref();
+const projetDernier = ref();
+const projetPrecedent = ref();
+const projetSuivant = ref();
 const isLoaded = ref(false)
+const videoKey = ref();
 
 const verifProjetExiste = () => {
     projet.value = store.listeProjet.find((p) => p.id == route.params.id);
 
     if (!projet.value) router.push('/');
     else {
+        const projetId = store.listeProjet.findIndex((p) => p.id == route.params.id);
+        videoKey.value = projetId; 
+
+        // dernier projet
+        if (projetId != 0) projetDernier.value = store.projetDernier
+        else projetDernier.value = null
+
+        // projet précédent
+        if (projetId == store.listeProjet.length-1) projetPrecedent.value = store.listeProjet[projetId-2]
+        else projetPrecedent.value = store.listeProjet[projetId+1]
+
+        // projet suivant
+        if (projetId <= 1) projetSuivant.value = store.listeProjet[projetId+2]
+        else projetSuivant.value = store.listeProjet[projetId-1]
+
         isLoaded.value = true;
     }
 }
 
+const isFullWidth = computed(() => {
+    const screenWidth = window.innerWidth;
+    const gap = 4; // Gap entre les card
+    const minCardWidth = 320; // Largeur minimale de chaque card
+    const cardsPerRow = Math.floor((screenWidth + gap) / (minCardWidth + gap));
+
+    return 4 % cardsPerRow == 0;
+});
+
 onMounted(() => {
-    if(store.listeProjet.length > 0) {
+    if(store.projetDernier) {
         verifProjetExiste()
     }
     else {
         // on attend le chargement des projets
         const stopWatcher = watch(
-            () => store.listeProjet.length,
+            () => store.projetDernier,
             () => {
                 verifProjetExiste()
                 stopWatcher(); // pour stoper le watcher (le projet à afficher a été chargé 1 foix, il n'y a plus de raison qu'il change)
             }
         );
     }
+
+    // Watch pour les changements dans les paramètres de la route
+    watch(
+        () => route.params.id,
+        () => { verifProjetExiste() }
+    );
 });
 </script>
