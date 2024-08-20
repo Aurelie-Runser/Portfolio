@@ -106,15 +106,6 @@
         width: 30px;
     }
 }
-
-.technoAnim:hover{
-    animation: smallGlitchAnim .1s 0s linear;
-    text-shadow: -1.2px -1.2px #22d3ee, 1.2px 1.2px #d946ef;
-}
-
-.technoAnim:hover img{
-    filter: drop-shadow(-1.5px -1.5px #22d3ee) drop-shadow(1.5px 1.5px #d946ef);
-}
 </style>
 
 
