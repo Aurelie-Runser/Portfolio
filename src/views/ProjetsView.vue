@@ -22,7 +22,7 @@
                         v-model="catSelect" name="categorieProjet" id="categorieProjet">
                     <option value="">Toutes les Catégories</option>
                     <option value="fs">Full Stack</option>
-                    <option value="fe">Site Vitrine</option>
+                    <option value="fe">Front-End</option>
                     <option value="3d">3D</option>
                     <option value="dv">Dataviz</option>
                 </select>
