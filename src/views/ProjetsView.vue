@@ -1,10 +1,11 @@
 <template>
-    <div class="pt-24">
-        <h1 class="big-title-glitch title-glitch tg-anim-projet relative
-                    mx-7 md:mx-14 xl:mx-28"
-            data-text="Tous Mes Projets">
-            Tous Mes Projets
-        </h1>
+    <div class="mt-10 md:mt-20">
+        <div class="ma-section my-0">
+            <h1 class="big-title-glitch title-glitch tg-anim-projet relative"
+                data-text="Tous Mes Projets">
+                Tous Mes Projets
+            </h1>
+        </div>
 
         <div class="my-16 flex flex-wrap justify-start gap-x-32 gap-y-4 mx-7 md:mx-14 xl:mx-28">
             <div class="mon_select">

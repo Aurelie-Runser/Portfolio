@@ -3,118 +3,99 @@
         <meta name="robots" content="noindex"/>
     </head>
     
-    <div class="pt-24 overflow-x-hidden">
-
+    <div>
         <div v-if="isLoaded">
 
-            <h1 class="big-title-glitch title-glitch tg-anim-projet relative
-                        mx-7 md:mx-14 xl:mx-28"
-                :data-text="projet.titre">
-                {{ projet.titre }}
-            </h1>
+            <div class="ma-section my-0">
+                <h1 class="big-title-glitch title-glitch tg-anim-projet relative mt-10 md:mt-20"
+                    :data-text="projet.titre">
+                    {{ projet.titre }}
+                </h1>
     
             <!--image + infos rapide-->
-            <div class="flex flex-col lg:flex-row-reverse">
+            <div class="my-10 md:my-16 flex flex-col md:flex-row-reverse">
 
                 <!-- image + Bouton "voir"-->
-                <div class="mt-10 place-items-end">
+                <div class="place-items-end reltaive"> 
                     <div class="relative">
                         <img :src="projet.image_rect" :alt="'image de mon projet '+projet.titre" class="borderAnim">
                     </div>
         
                     <a target="_blank" :href="projet.lien" rel="noopener noreferrer">
-                        <monBouton class="mx-auto mt-16">
+                        <monBouton class="mx-auto mt-8 ">
                             Voir le Projet
                         </monBouton>
                     </a>
                 </div>
     
                 <!-- infos rapides -->
-                <div class="flex-none w-full lg:w-1/2">
+                <div class="flex-none w-full pr-3 mt-10 md:w-1/2 lg:mt-0 flex flex-col gap-5 xl:gap-8">
         
-                    <p class="mx-5 my-8 md:mx-14 md:my-10 xl:mx-28 xl:my-16
-                            font-oswald font-bold text-lg md:text-xl xl:text-2xl text-orange-100">
+                    <p class="font-oswald font-bold text-lg md:text-xl xl:text-2xl text-orange-100">
                         Année : 
-                        <span class="ml-5 font-darker-grotesque text-base md:text-lg xl:text-xl font-light text-stone-300">
+                        <span class="font-darker-grotesque text-base md:text-lg xl:text-xl font-light text-stone-300">
                             {{ projet.annee }}
                         </span>
                     </p>
             
-                    <p class="mx-5 my-8 md:mx-14 md:my-10 xl:mx-28 xl:my-16
-                            font-oswald font-bold text-lg md:text-xl xl:text-2xl text-orange-100">
+                    <p class="font-oswald font-bold text-lg md:text-xl xl:text-2xl text-orange-100">
                         Type : 
-                        <span class="ml-5 font-darker-grotesque text-base md:text-lg xl:text-xl font-light text-stone-300">
+                        <span class="font-darker-grotesque text-base md:text-lg xl:text-xl font-light text-stone-300">
                             {{ projet.type }}
                         </span>
                     </p>
 
                     <div>
-                        <p class="mx-5 mt-8 mb-0 md:mx-14 md:mt-10 xl:mx-28 xl:mt-16
-                                font-oswald font-bold text-lg md:text-xl xl:text-2xl text-orange-100">
+                        <p class="font-oswald font-bold text-lg md:text-xl xl:text-2xl text-orange-100">
                             Outils :
                         </p>
-                        <ul class=" flex flex-wrap items-center justify-start mt-4 gap-x-4 gap-y-2
-                                    mx-5 md:ml-14 xl:ml-28 ">
+                        <ul class="flex flex-wrap items-center justify-start mt-4 gap-x-4 gap-y-2">
                             <li v-for="techno in projet.technos" :key="techno"
                                 class="technoAnim flex flex-wrap items-center justify-center gap-0.5 sm:gap-1
                                         font-darker-grotesque text-base md:text-lg xl:text-xl text-stone-300">
-                                <img class="w-12 aspect-square object-contain" :src="techno.svg" :alt="`logo de ${techno.nom}`">
+                                <img class="w-8 sm:w-12 aspect-square object-contain" :src="techno.svg" :alt="`logo de ${techno.nom}`">
                                 <span class="font-darker-grotesque text-base md:text-lg xl:text-xl font-light text-stone-300">
                                     {{techno.nom}}
                                 </span>
                             </li>
                         </ul>
-                    </div>
-            
-        
+                    </div>        
                 </div>
 
             </div>
 
             <!-- long texte-->            
             <div>
-                <p class="mx-5 my-8 md:mx-14 xl:mx-28
-                        font-oswald font-bold text-lg md:text-xl xl:text-2xl text-orange-100">
+                <p class="mb-5 font-oswald font-bold text-lg md:text-xl xl:text-2xl text-orange-100">
                     Description :
                 </p>
     
-                <p v-for="text in projet.contexte_all" class="mx-5 my-5 md:mx-14 xl:mx-28 leading-7
-                                                            font-darker-grotesque text-base md:text-lg text-stone-300">
+                <p v-for="text in projet.contexte_all" class="mb-5 font-darker-grotesque text-base md:text-lg text-stone-300 leading-7">
                     {{ text }}
                 </p>
-    
-                <div class="lg:flex flex-wrap">
-    
+        
                     <!-- 2eme image -->
-                    <div class="h-fit my-16 w-screen sm:mx-auto sm:w-2/3 lg:w-1/2 borderAnim">
-                        <video v-if="projet.video" :key="videoKey" :poster="projet.image_rect" controls muted autoplay loop class="aspect-video">
-                            <source :src="projet.video" type="video/mp4">
-                            Votre navigateur ne supporte pas la balise vidéo.
-                        </video>
-                        <img v-else :src="projet.image_rect2" :alt="'image de mon projet '+ projet.titre">
-                    </div>
-
-                    <div class="inline-block basis-1/3 grow">
-    
-                        <p v-for="text in projet.contexte_all_2" class="mx-5 my-5 md:mx-14 leading-7
-                                                                    font-darker-grotesque text-base md:text-lg text-stone-300
-                                                                     ">
-                            {{ text }}
-                        </p>
-                    </div>
+                <div class="h-fit w-full xl:w-1/2 xl:mr-10 my-5 float-left borderAnim">
+                    <video v-if="projet.video" :key="videoKey" :poster="projet.image_rect" controls muted autoplay loop class="aspect-video">
+                        <source :src="projet.video" type="video/mp4">
+                        Votre navigateur ne supporte pas la balise vidéo.
+                    </video>
+                    <img v-else :src="projet.image_rect2" :alt="'image de mon projet '+ projet.titre">
                 </div>
     
-                <p v-for="text in projet.contexte_all_3" class="mx-5 my-5 md:mx-14 xl:mx-28 leading-7
-                                                            font-darker-grotesque text-base md:text-lg text-stone-300">
+                <p v-for="text in projet.contexte_all_2" class="mb-5 font-darker-grotesque text-base md:text-lg text-stone-300 leading-7">
                     {{ text }}
                 </p>
             </div>
     
             <a target="_blank" :href="projet.lien" rel="noopener noreferrer">
-                <monBouton class="mx-auto my-10">
+                <monBouton class="mx-auto my-10 md:my-16">
                     Voir le Projet
                 </monBouton>
             </a>
+
+        </div>
+
 
             <!-- liste d'autres projets -->
             <ul class="max-w-screen-2xl mx-auto mt-28 md:mt-44 md:grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))] gap-1 place-items-center">
@@ -145,7 +126,6 @@
         <div v-else class="w-full h-screen relative">
             <monChargement/>
         </div>
-
     </div>
 </template>
 
