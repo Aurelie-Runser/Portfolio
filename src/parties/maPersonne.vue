@@ -19,7 +19,7 @@
                     Métiers du Multimédia et de l'Internet, à l'IUT de Montbéliard, durant 3 ans.
                     <strong class="text-cyan-400">J'en suis sortie diplômée, 2<sup class="text-sm">ème</sup> de promo et majore de mon parcours</strong>, Développement Web et Dispositifs Interactifs.
     
-                    <br class="block my-2"/>
+                    <span class="block py-2"></span>
     
                     Je code beaucoup, ai réalisé de nombreux projets, et cela ne cesse de me passionner, me donnant
                     <strong class="text-fuchsia-500">
@@ -27,13 +27,13 @@
                     </strong>
                     des sites web, de nouvelles fonctionnalités et animations.
                 
-                    <br class="block my-2"/>
+                    <span class="block py-2"></span>
     
                     <strong class="text-cyan-400">
                         Je mets un point d'honneur à respecter au mieux les attentes qui me sont données</strong>,
                     pour être fière de mon travail, mais surtout satisfaire les utilisateurs.
     
-                    <br class="block my-2"/>
+                    <span class="block py-2"></span>
                 </p>
                 
                 <div class="flex gap-3">
@@ -93,7 +93,7 @@
     height: 100%;
     background: url("/Aurelie.png"), url("/Aurelie_pink.png");
     background-size: cover, cover;
-    background-position: top, top left -3px;
+    background-position: top, top -1.5px left -3px;
     background-repeat: no-repeat, no-repeat;
     animation: photoRight 7s infinite linear;
 }
