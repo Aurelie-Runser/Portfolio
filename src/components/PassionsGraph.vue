@@ -2,7 +2,7 @@
   <div class="w-full max-w-md h-auto overflow-visible">
     <h3 class="px-7 md:px-10">Passions</h3>
 
-    <Radar class="scale-75"
+    <Radar class="scale-90"
       id="my-chart-id"
       :options="chartOptions"
       :data="chartData"
@@ -73,7 +73,7 @@ export default {
               color: '#ffedd5',
               font:{
                 family: "Darker Grotesque",
-                size: 26
+                size: 22
               }
             }
           },

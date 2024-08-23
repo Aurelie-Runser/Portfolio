@@ -2,59 +2,61 @@
     <section class="ma-section">
         <h2>À Propos</h2>
         
-        <div class="my-8 md:my-16">
+        <div class="my-8 md:my-16 flex flex-col-reverse md:flex-col">
 
-            <div class="hidden md:flex md:flex-row flex-wrap justify-around gap-1">
+            <div class="flex flex-row flex-wrap justify-around gap-1 mt-8 md:mt-0 md:mb-8">
                 <SoftSkillsGraph/>
                 <PassionsGraph/>
             </div>
 
-            <div class="photo relative aspect-square object-cover object-top w-2/3 mx-auto sm:aspect-auto sm:w-1/4 sm:float-left sm:mr-10 mb-10 overflow-hidden">
-                <img src="/Aurelie.png" alt="photo d'Aurélie Runser" class="opacity-0">
-            </div>
-
-            <p class="perso_text">
-                <span class="guillement_1">"</span>Minutieuse et sérieuse, je me suis épanouie dans la formation MMI,
-                Métiers du Multimédia et de l'Internet, à l'IUT de Montbéliard, durant 3 ans.
-                <strong class="text-cyan-400">J'en suis sortie diplômée, 2<sup class="text-sm">ème</sup> de promo et majore de mon parcours</strong>, Développement Web et Dispositifs Interactifs.
-
-                <br class="block my-2"/>
-
-                Je code beaucoup, ai réalisé de nombreux projets, et cela ne cesse de me passionner, me donnant
-                <strong class="text-fuchsia-500">
-                    l'envie de toujours découvrir de nouvelles façons de développer
-                </strong>
-                des sites web, de nouvelles fonctionnalités et animations.
-            
-                <br class="block my-2"/>
-
-                <strong class="text-cyan-400">
-                    Je mets un point d'honneur à respecter au mieux les attentes qui me sont données</strong>,
-                pour être fière de mon travail, mais surtout satisfaire les utilisateurs.
-
-                <br class="block my-2"/>
-            </p>
-            
-            <div class="flex gap-3">
+            <div>
+                <div class="photo relative aspect-square object-cover object-top w-2/3 mx-auto sm:aspect-auto sm:w-1/4 sm:float-left sm:mr-10 mb-10 overflow-hidden">
+                    <img src="/Aurelie.png" alt="photo d'Aurélie Runser" class="opacity-0">
+                </div>
+    
                 <p class="perso_text">
-                    La volonté de rendre service et d'aider avec mes connaissances sont ce qui me font avancer pour
+                    <span class="guillement_1">"</span>Minutieuse et sérieuse, je me suis épanouie dans la formation MMI,
+                    Métiers du Multimédia et de l'Internet, à l'IUT de Montbéliard, durant 3 ans.
+                    <strong class="text-cyan-400">J'en suis sortie diplômée, 2<sup class="text-sm">ème</sup> de promo et majore de mon parcours</strong>, Développement Web et Dispositifs Interactifs.
+    
+                    <br class="block my-2"/>
+    
+                    Je code beaucoup, ai réalisé de nombreux projets, et cela ne cesse de me passionner, me donnant
                     <strong class="text-fuchsia-500">
-                        participer à la construction du web de demain</strong>.
-                </p>
-                <span class="guillement_2">"</span>
-            </div>
+                        l'envie de toujours découvrir de nouvelles façons de développer
+                    </strong>
+                    des sites web, de nouvelles fonctionnalités et animations.
+                
+                    <br class="block my-2"/>
     
-            <!-- Bouton pour télécharger mon CV-->
-            <div class="block mt-8 w-full">
-                <p class="perso_text block">
-                    Si vous voulez en être, n'hésitez à me contacter et à consulter mon CV.
-                </p>
+                    <strong class="text-cyan-400">
+                        Je mets un point d'honneur à respecter au mieux les attentes qui me sont données</strong>,
+                    pour être fière de mon travail, mais surtout satisfaire les utilisateurs.
     
-                <a target="_blank" href="https://drive.google.com/drive/folders/1wbf5tLZU1f4blTsYob3HGBV2Mzv_Z10V?usp=sharing">
-                    <monBouton class="mx-auto mt-10">
-                        Télécharger mon CV
-                    </monBouton>
-                </a>
+                    <br class="block my-2"/>
+                </p>
+                
+                <div class="flex gap-3">
+                    <p class="perso_text">
+                        La volonté de rendre service et d'aider avec mes connaissances sont ce qui me font avancer pour
+                        <strong class="text-fuchsia-500">
+                            participer à la construction du web de demain</strong>.
+                    </p>
+                    <span class="guillement_2">"</span>
+                </div>
+        
+                <!-- Bouton pour télécharger mon CV-->
+                <div class="block mt-8 w-full">
+                    <p class="perso_text block">
+                        Si vous voulez en être, n'hésitez à me contacter et à consulter mon CV.
+                    </p>
+        
+                    <a target="_blank" href="https://drive.google.com/drive/folders/1wbf5tLZU1f4blTsYob3HGBV2Mzv_Z10V?usp=sharing">
+                        <monBouton class="mx-auto mt-10">
+                            Télécharger mon CV
+                        </monBouton>
+                    </a>
+                </div>
             </div>
         </div>
     </section>

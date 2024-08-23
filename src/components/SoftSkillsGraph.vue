@@ -26,8 +26,8 @@ export default {
           "Esprit d'apprentissage",
           "Minutieuse",
           "Esprit d'équipe",
-          "Autonomie",
           "Persévérance",
+          "Autonomie",
         ],
 
         datasets: [{
