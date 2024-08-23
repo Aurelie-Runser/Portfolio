@@ -133,5 +133,5 @@ import flecheIcon from "@/components/icons/flecheIcon.vue"
 
 import { ref } from "vue";
 
-const menuOuvert = ref(true)
+const menuOuvert = ref(false)
 </script>
