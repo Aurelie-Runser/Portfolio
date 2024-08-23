@@ -1,9 +1,9 @@
 <template>
     <div class="w-full h-full relative">
-        <div class="log log_4 absolute top-1/3 left-1/2 w-10 h-10 -translate-x-1/2 -translate-y-1/2 bg-fuchsia-500"></div>
-        <div class="log log_3 absolute top-1/3 left-1/2 w-10 h-10 -translate-x-1/2 -translate-y-1/2 bg-stone-300"></div>
-        <div class="log log_2 absolute top-1/3 left-1/2 w-10 h-10 -translate-x-1/2 -translate-y-1/2 bg-cyan-400"></div>
-        <div class="log log_1 absolute top-1/3 left-1/2 w-10 h-10 -translate-x-1/2 -translate-y-1/2 bg-orange-100"></div>
+        <div class="log log_4 absolute top-1/2 left-1/2 w-10 h-10 -translate-x-1/2 -translate-y-1/2 bg-fuchsia-500"></div>
+        <div class="log log_3 absolute top-1/2 left-1/2 w-10 h-10 -translate-x-1/2 -translate-y-1/2 bg-stone-300"></div>
+        <div class="log log_2 absolute top-1/2 left-1/2 w-10 h-10 -translate-x-1/2 -translate-y-1/2 bg-cyan-400"></div>
+        <div class="log log_1 absolute top-1/2 left-1/2 w-10 h-10 -translate-x-1/2 -translate-y-1/2 bg-orange-100"></div>
     </div>
 </template>
 
