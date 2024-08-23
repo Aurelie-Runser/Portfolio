@@ -23,7 +23,7 @@
         
 
         <!--les liens-->
-        <nav class="relative w-full h-full flex flex-col justify-end gap-y-[7%] sm:justify-center items-right px-[10vw] md:px-[5vw]
+        <nav class="relative w-full h-full flex flex-col justify-end gap-y-7 sm:justify-evenly sm:gap-y-2 items-right px-[10vw] pb-[5vh] md:px-[5vw] md:pb-0
             text-right font-oswald font-semibold italic text-lg sm:text-xl md:text-3xl">
 
             <RouterLink @click="menuOuvert = false" to="/">
@@ -133,5 +133,5 @@ import flecheIcon from "@/components/icons/flecheIcon.vue"
 
 import { ref } from "vue";
 
-const menuOuvert = ref(false)
+const menuOuvert = ref(true)
 </script>
