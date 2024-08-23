@@ -71,15 +71,6 @@
     clip-path: inset(62% 0% 0% 0%);
 }
 
-@keyframes glitchPink {
-    0%{
-        transform: skewX(-90deg);
-    }
-    1.5%{
-        transform: skewX(0deg);
-    }
-}
-
 /* mise en place d'un carre d'animation */
 .mon-cube{
     animation: anim_translate 2s ease-in-out infinite normal, anim_bg 8s infinite;   

@@ -213,3 +213,12 @@ a:hover{
         clip-path: inset(0 0 40% 0);
     }
 }
+
+@keyframes glitchPink {
+    0%{
+        transform: skewX(-90deg);
+    }
+    1.5%{
+        transform: skewX(0deg);
+    }
+}
