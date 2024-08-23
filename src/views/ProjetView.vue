@@ -74,7 +74,7 @@
                     {{ text }}
                 </p>
         
-                    <!-- 2eme image -->
+                <!-- 2eme image -->
                 <div class="h-fit w-full xl:w-1/2 xl:mr-10 my-5 float-left borderAnim">
                     <video v-if="projet.video" :key="videoKey" :poster="projet.image_rect" controls muted autoplay loop class="aspect-video">
                         <source :src="projet.video" type="video/mp4">
@@ -88,8 +88,8 @@
                 </p>
             </div>
     
-            <a target="_blank" :href="projet.lien" rel="noopener noreferrer">
-                <monBouton class="mx-auto my-10 md:my-16">
+            <a target="_blank" :href="projet.lien" rel="noopener noreferrer" class="clear-both block w-fit mx-auto py-10 md:py-16">
+                <monBouton>
                     Voir le Projet
                 </monBouton>
             </a>
