@@ -53,7 +53,7 @@
         }
 
     .perso_text{
-        @apply my-4 leading-6 md:leading-8 inline-block font-darker-grotesque text-base md:text-lg text-stone-300;
+        @apply leading-6 md:leading-8 inline w-auto font-darker-grotesque text-base md:text-lg text-stone-300;
     }
 
     input, textarea{
