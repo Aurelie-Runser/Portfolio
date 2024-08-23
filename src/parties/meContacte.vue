@@ -8,45 +8,45 @@
                 <!-- réseaux sociaux -->
             <div class="sticky top-1/2 flex flex-wrap sm:justify-center lg:flex-col mx-auto w-fit h-fit gap-x-8 gap-y-5 fill-orange-100 mb-8 lg:mb-0 lg:mt-20">
 
-                    <a target="_blank" href="https://www.linkedin.com/in/aurélie-runser" rel="noopener noreferrer" class="block w-max"
-                            @mouseover="liHover = true" 
-                            @mouseleave="liHover = false">
-                        <linkedinIcon :hover="liHover" class="inline-block w-7 h-7 md:w-10 md:h-10"/>
-                        <p class="sr-only">Mon compte Linkedin : </p>
-                        <p class="contact_link inline-block ml-3 w-auto font-darker-grotesque font-bold text-base md:text-lg text-orange-100 underline decoration-fuchsia-500">
-                            in/aurélie-runser
-                        </p>
-                    </a>
+                <a target="_blank" href="https://www.linkedin.com/in/aurélie-runser" rel="noopener noreferrer" class="block w-max"
+                        @mouseover="liHover = true" 
+                        @mouseleave="liHover = false">
+                    <linkedinIcon :hover="liHover" class="inline-block w-7 h-7 md:w-10 md:h-10"/>
+                    <p class="sr-only">Mon compte Linkedin : </p>
+                    <p class="contact_link inline-block ml-3 w-auto font-darker-grotesque font-bold text-base md:text-lg text-orange-100 underline decoration-fuchsia-500">
+                        in/aurélie-runser
+                    </p>
+                </a>
 
-                    <a target="_blank" href="https://github.com/Aurelie-Runser" rel="noopener noreferrer" class="block w-max"
-                            @mouseover="gitHover = true" 
-                            @mouseleave="gitHover = false">
-                        <githubIcon :hover="gitHover" class="inline-block w-7 h-7 md:w-10 md:h-10"/>
-                        <p class="sr-only">Mon compte Github : </p>
-                        <p class="contact_link inline-block ml-3 w-auto font-darker-grotesque font-bold text-base md:text-lg text-orange-100 underline decoration-fuchsia-500">
-                            Aurelie-Runser
-                        </p>
-                    </a>
+                <a target="_blank" href="https://github.com/Aurelie-Runser" rel="noopener noreferrer" class="block w-max"
+                        @mouseover="gitHover = true" 
+                        @mouseleave="gitHover = false">
+                    <githubIcon :hover="gitHover" class="inline-block w-7 h-7 md:w-10 md:h-10"/>
+                    <p class="sr-only">Mon compte Github : </p>
+                    <p class="contact_link inline-block ml-3 w-auto font-darker-grotesque font-bold text-base md:text-lg text-orange-100 underline decoration-fuchsia-500">
+                        Aurelie-Runser
+                    </p>
+                </a>
         
-                    <a target="_blank" href="https://www.instagram.com/aurelie.runser_pro/" rel="noopener noreferrer" class="block w-max"
-                            @mouseover="instaHover = true" 
-                            @mouseleave="instaHover = false">
-                        <instagramIcon :hover="instaHover" class="inline-block w-7 h-7 md:w-10 md:h-10"/>
-                        <p class="sr-only">Mon compte Instagram : </p>
-                        <p class="contact_link inline-block ml-3 w-auto font-darker-grotesque font-bold text-base md:text-lg text-orange-100 underline decoration-fuchsia-500">
-                            @aurelie.runser_pro
-                        </p>
-                    </a>
+                <a target="_blank" href="https://www.instagram.com/aurelie.runser_pro/" rel="noopener noreferrer" class="block w-max"
+                        @mouseover="instaHover = true" 
+                        @mouseleave="instaHover = false">
+                    <instagramIcon :hover="instaHover" class="inline-block w-7 h-7 md:w-10 md:h-10"/>
+                    <p class="sr-only">Mon compte Instagram : </p>
+                    <p class="contact_link inline-block ml-3 w-auto font-darker-grotesque font-bold text-base md:text-lg text-orange-100 underline decoration-fuchsia-500">
+                        @aurelie.runser_pro
+                    </p>
+                </a>
 
-                    <a href="mailto:aurelie.runser25@gmail.com" class="block w-max"
-                            @mouseover="mailHover = true" 
-                            @mouseleave="mailHover = false">
-                        <mailIcon :hover="mailHover" class="inline-block w-9 h-9 md:w-12 md:h-12"/>
-                        <p class="sr-only">Mon Adresse Mail : </p>
-                        <p class="contact_link inline-block ml-3 w-auto font-darker-grotesque font-bold text-base md:text-lg text-orange-100 underline decoration-fuchsia-500">
-                            aurelie.runser25@gmail.com
-                        </p>
-                    </a>
+                <a href="mailto:aurelie.runser25@gmail.com" class="block w-max"
+                        @mouseover="mailHover = true" 
+                        @mouseleave="mailHover = false">
+                    <mailIcon :hover="mailHover" class="inline-block w-9 h-9 md:w-12 md:h-12"/>
+                    <p class="sr-only">Mon Adresse Mail : </p>
+                    <p class="contact_link inline-block ml-3 w-auto font-darker-grotesque font-bold text-base md:text-lg text-orange-100 underline decoration-fuchsia-500">
+                        aurelie.runser25@gmail.com
+                    </p>
+                </a>
             </div>
 
             <!-- formulaire-->
