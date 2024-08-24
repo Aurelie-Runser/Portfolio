@@ -1,2 +1,9 @@
 User-agent: *
-Allow: /
+Disallow: /
+
+Allow: /$
+Allow: /projets$
+
+User-agent: Googlebot-Image
+Disallow: /*_pink.*
+Disallow: /*_blue.*
