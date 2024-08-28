@@ -19,7 +19,7 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const appFirebase = initializeApp(firebaseConfig);
+initializeApp(firebaseConfig);
 
 const pinia = createPinia()
 const app = createApp(App)

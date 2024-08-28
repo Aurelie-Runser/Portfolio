@@ -13,7 +13,7 @@
         </div>
 
         <!-- bouton femrer Menu en mobil-->
-        <div class="absolute cursor-pointer
+        <div class="absolute cursor-pointer rotate-180
                     bottom-7 left-8 z-50 w-12 h-12 
                     sm:top-20 sm:left-10 sm:w-20 sm:h-20
                     md:hidden"
@@ -23,7 +23,7 @@
         
 
         <!--les liens-->
-        <nav class="relative w-full h-full flex flex-col justify-end gap-y-7 sm:justify-evenly sm:gap-y-2 items-right px-[10vw] pb-[5vh] md:px-[5vw] md:pb-0
+        <nav class="relative w-full h-full flex flex-col justify-end gap-y-7 sm:justify-evenly sm:gap-y-2 items-right px-[10vw] pb-[10vh] md:px-[5vw] md:pb-0
             text-right font-oswald font-semibold italic text-lg sm:text-xl md:text-3xl">
 
             <RouterLink @click="menuOuvert = false" to="/">

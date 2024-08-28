@@ -59,12 +59,12 @@ onMounted(() => {
     if(store.projetsScreen.length > 0){ // si le nombre de projet est déjà défini
         projetsAffiches.value = store.projetsScreen;
     }
-    else if(store.listeProjet.length > 0){ // si le nombre de projet n'est pas encore défini mais que tous les projets ont été chargé (si arrivé directement sur une fiche projet ou la page listant tous les projets)
+    else if(store.projetDernier.titre){ // si le nombre de projet n'est pas encore défini mais que tous les projets ont été chargé (si arrivé directement sur une fiche projet ou la page listant tous les projets)
         projetsAffiches.value = projetsScreenFunction();
     }
     else {  // si les projets n'ont pas encore été chargé
         const stopWatcher = watch(
-            () => store.listeProjet.length,
+            () => store.projetDernier.titre,
             () => {
                 projetsAffiches.value = projetsScreenFunction();
                 stopWatcher(); // pour stoper le watcher (la liste à afficher à été chargé 1 foix, il n'y a plus de raison qu'elle change)

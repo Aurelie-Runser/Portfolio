@@ -169,13 +169,13 @@ function projetsSelectFonction() {
 let stopWatcherSelect;
 
 onMounted(() => {
-    if(store.listeProjet.length > 0) {
+    if(store.projetDernier.titre) {
         projetsSelect.value = store.listeProjet;
     }
     else {
         // on attend le chargement des projets
         const stopWatcherListe = watch(
-            () => store.listeProjet.length,
+            () => store.projetDernier.titre,
             () => {
                 projetsSelect.value = store.listeProjet;
                 stopWatcherListe(); // pour stoper le watcher (la liste à afficher à été chargé 1 foix, il n'y a plus de raison qu'elle change)
