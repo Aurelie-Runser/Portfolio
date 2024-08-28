@@ -1,9 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-const HomeView = () => import('../views/HomeView.vue')
-const ProjetsView = () => import('../views/ProjetsView.vue')
-const ProjetView = () => import('../views/ProjetView.vue')
-const Page404 = () => import('../views/404.vue')
+import HomeView from '../views/HomeView.vue'
+import ProjetsView from '../views/ProjetsView.vue'
+import ProjetView from '../views/ProjetView.vue'
+import Page404 from '../views/404.vue'
 
 const router = createRouter({
   history: createWebHistory(),
