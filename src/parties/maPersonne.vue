@@ -11,7 +11,7 @@
 
             <div>
                 <div class="photo relative aspect-square object-cover object-top w-2/3 h-auto mx-auto sm:aspect-auto sm:w-1/4 sm:float-left sm:mr-10 mb-10 overflow-hidden">
-                    <img src="/aurelie.webp" alt="photo d'Aurélie Runser" class="opacity-0">
+                    <img src="/aurelie.webp" alt="photo d'Aurélie Runser" class="opacity-0 w-full h-full">
                 </div>
     
                 <p class="perso_text">
