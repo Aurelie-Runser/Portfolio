@@ -10,8 +10,8 @@
             </div>
 
             <div>
-                <div class="photo relative aspect-square object-cover object-top w-2/3 mx-auto sm:aspect-auto sm:w-1/4 sm:float-left sm:mr-10 mb-10 overflow-hidden">
-                    <img src="/Aurelie.png" alt="photo d'Aurélie Runser" class="opacity-0">
+                <div class="photo relative aspect-square object-cover object-top w-2/3 h-auto mx-auto sm:aspect-auto sm:w-1/4 sm:float-left sm:mr-10 mb-10 overflow-hidden">
+                    <img src="/aurelie.webp" alt="photo d'Aurélie Runser" class="opacity-0">
                 </div>
     
                 <p class="perso_text">
@@ -91,7 +91,7 @@
     display: block;
     width: 100%;
     height: 100%;
-    background: url("/Aurelie.png"), url("/Aurelie_pink.png");
+    background: url("/aurelie.webp"), url("/aurelie_pink.webp");
     background-size: cover, cover;
     background-position: top, top -1.5px left -3px;
     background-repeat: no-repeat, no-repeat;
@@ -106,7 +106,7 @@
     display: block;
     width: 100%;
     height: 100%;
-    background: url("/Aurelie.png"), url("/Aurelie_blue.png");
+    background: url("/aurelie.webp"), url("/aurelie_blue.webp");
     background-size: cover, cover;
     background-position: top, top left 3px;
     background-repeat: no-repeat, no-repeat;
