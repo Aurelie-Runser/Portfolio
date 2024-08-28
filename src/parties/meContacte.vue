@@ -57,14 +57,12 @@
                     <div class="relative">
                         <input
                             type="text"
+                            id="prenom_nom"
                             name="prenom_nom"
                             v-model="prenom_nom"
                             placeholder=" "
                             required>
-                        <label for="prenom_nom" 
-                                class="form_text">
-                            Prénom & Nom
-                        </label>
+                        <label for="prenom_nom" class="form_text">Prénom Nom</label>
         
                         <div class="form_obligatoire p-3 md:p-5">
                             <p class="font-darker-grotesque font-bold text-sm 
@@ -75,14 +73,12 @@
                     <div class="relative mt-6">
                         <input
                             type="email"
+                            id="email"
                             name="email"
                             v-model="email"
                             placeholder=" "
                             required>
-                        <label for="email"
-                               class="form_text">
-                            Adresse Mail
-                        </label>
+                        <label for="email" class="form_text">Adresse Mail</label>
         
                         <div class="form_obligatoire p-3 md:p-5">
                             <p class="font-darker-grotesque font-bold text-sm 
@@ -94,14 +90,12 @@
                     <div class="relative mt-6">
                         <input
                             type="text"
+                            id="sujet"
                             name="sujet"
                             v-model="sujet"
                             placeholder=" "
                             required>
-                        <label for="sujet"
-                                class="form_text">
-                            Sujet
-                        </label>
+                        <label for="sujet" class="form_text">Sujet</label>
         
                         <div class="form_obligatoire p-3 md:p-5">
                             <p class="font-darker-grotesque font-bold text-sm 
@@ -112,14 +106,14 @@
 
                     <div class="relative mt-6">
                         <textarea
+                            id="message"
                             name="message"
                             v-model="message"
                             rows="5"
                             placeholder=" "
                             required></textarea>
-
-                        <label for="message"
-                                class="form_text">Message</label>
+                        <label for="message" class="form_text">Message</label>
+                        
         
                         <div class="form_obligatoire p-3 md:p-5">
                             <p class="font-darker-grotesque font-bold text-sm 
@@ -131,6 +125,7 @@
                     <div class="relative mt-6 text_complement">
                         <input
                             type="text"
+                            id="complement"
                             name="complement"
                             v-model="complement"
                             placeholder=" ">
@@ -151,7 +146,7 @@
                     <div class="relative mt-6 flex items-start gap-5">
 
                         <!-- CheckBox-->
-                        <input type="checkbox" name="consentementRGPD" v-model="consentementRGPD" required
+                        <input type="checkbox" id="consentementRGPD" name="consentementRGPD" v-model="consentementRGPD" required
                                 class="w-20 h-20 sm:w-10 sm:h-10 accent-cyan-400">
 
                         <!-- Texte de consentement RGPD extrait -->
@@ -179,7 +174,7 @@
                 </form>
 
                 <!-- Texte de consentement RGPD complet -->
-                <div :aria-expanded="RGPD" :class="{ 'block': RGPD, 'hidden': !RGPD }"
+                <div :class="{ 'block': RGPD, 'hidden': !RGPD }"
                     class="borderAnim fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-full h-fit md:w-3/4">
                      <div class="max-h-[100vh] p-5 md:p-10 bg-mon-black overflow-scroll">
                            

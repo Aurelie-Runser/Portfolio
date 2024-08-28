@@ -1,7 +1,7 @@
 <template>
     <header class="fixed top-0 right-0 w-content h-screen translate-x-full bg-mon-black z-40 duration-150 menu_border"
         :class="{ '-translate-x-0': menuOuvert }"
-        :aria-expanded="menuOuvert" @mouseover="menuOuvert = true" @mouseleave="menuOuvert = false">
+        @mouseover="menuOuvert = true" @mouseleave="menuOuvert = false">
 
         <!-- bouton Menu-->
         <div class="absolute bottom-14 sm:top-10 left-0 z-50 cursor-pointer">
