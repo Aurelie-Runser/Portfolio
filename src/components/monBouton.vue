@@ -1,6 +1,6 @@
 <template>
     <!-- bouton -->
-    <button class="mon_bouton relative block z-10">
+    <button class="mon_bouton relative block z-10" :class="{'scale-75' : small}">
 
         <!-- texte du bouton
             le style du bouton est mis sur le p et non directement sur le bouton
@@ -79,3 +79,9 @@
 }
 
 </style>
+
+<script setup>
+defineProps({
+    small: true,
+});
+</script>
