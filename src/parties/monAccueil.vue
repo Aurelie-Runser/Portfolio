@@ -9,11 +9,11 @@
                         Aurélie Runser
                     </span>
 
-                <span class="self-end flex flex-wrap justify-end items-end w-full text-right gap-x-[2%] mr-3 sm:mr-0">
+                <span class="self-end flex flex-wrap justify-end items-end w-full text-right gap-x-[1rem] mr-5 mb-8 sm:mr-0 sm:mb-0">
                     <span class="w-fit h-fit">a junior </span>
         
                     <span class="relative">
-                        <span class="big-title-glitch title-glitch tg-anim" data-text="Développeuse Web">Développeuse Web</span>
+                        <span class="big-title-glitch title-glitch tg-anim" data-text="Web Developer">Web Developer</span>
                     </span>
                 </span>
             </h1>
