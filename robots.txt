@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /404
-Disallow: /projets/
 
 User-agent: Googlebot-Image
 Disallow: /*.webp
+Allow: /projet/*.webp

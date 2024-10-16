@@ -211,20 +211,25 @@ const verifProjetExiste = () => {
 
     if (!projet.value) router.push('/');
     else {
-        projet.value.technos = [];
+        // meta description de la page
+        document.title = `Aurélie Runser - ${projet.value.titre}`;
+        const description = `${projet.value.titre}, projet web réalisé en ${projet.value.annee_resume} par Aurélie Runser.`;
+        document.querySelector('meta[name="description"]')?.setAttribute("content", description);
 
+        projet.value.technos = [];
         projet.value.outils.forEach(techno => {
             projet.value.technos.push(storeCompetence.listeCompetence.find((comp) => techno == comp.nom));
         });
         
+        // key pour changer la vidéo lors d'un changement de projet
         const projetId = store.listeProjet.findIndex((p) => p.id == route.params.id);
         videoKey.value = projetId; 
 
-        // dernier projet ou 3ème si sur dernier
+        // dernier projet ou 3ème dernier si sur le plus recent
         if (projetId != 0) projetDernier.value = store.projetDernier
         else projetDernier.value = store.listeProjet[3]
 
-        // projet précédent ou 3ème réaliser si sur 1er projet
+        // projet précédent ou 3ème réaliser si sur le plus ancient
         if (projetId == store.listeProjet.length-1) projetPrecedent.value = store.listeProjet[projetId-2]
         else projetPrecedent.value = store.listeProjet[projetId+1]
 
@@ -240,8 +245,8 @@ const isFullWidth = computed(() => {
     let screenWidth = window.innerWidth;
     if (screenWidth > 1536) screenWidth = 1536;
     
-    const gap = 4; // Gap entre les card
-    const minCardWidth = 320; // Largeur minimale de chaque card
+    const gap = 4;
+    const minCardWidth = 320;
     const cardsPerRow = Math.floor((screenWidth + gap) / (minCardWidth + gap));
 
     return 4 % cardsPerRow == 0;
@@ -258,6 +263,7 @@ onMounted(() => {
             () => {
                 verifProjetExiste()
                 stopWatcher(); // pour stoper le watcher (le projet à afficher a été chargé 1 foix, il n'y a plus de raison qu'il change)
+
             }
         );
     }
