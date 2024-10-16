@@ -1,16 +1,16 @@
 <template>
-    <section class="ma-section my-0 h-screen grid relative">
+    <section id="hero" class="ma-section my-0 h-screen grid relative">
         <div class="self-center h-screen max-h-[900px]">
-            <h1 class="flex flex-col justify-around w-full h-full mx-auto">
-                <span class="mon-title">Hello World,<br/>I'm</span>
+            <h1 class="flex flex-col justify-around w-full h-full mx-auto mon-title">
+                <span>Hello World,<br/>I'm</span>
 
-                <span class="big-title-glitch btg-anim relative selft-center text-center w-fit mx-auto !overflow-hidden"
+                <span class="big-title-glitch btg-anim relative selft-center text-center w-fit mx-auto overflow-hidden"
                         data-text="Aurélie Runser">
                         Aurélie Runser
                     </span>
 
-                <span class="self-end flex flex-wrap content-end justify-end align-bottom w-full text-right gap-x-[2%]">
-                    <span class="mon-title mt-[1%] w-fit h-fit">a junior</span>
+                <span class="self-end flex flex-wrap justify-end items-end w-full text-right gap-x-[2%] mr-3 sm:mr-0">
+                    <span class="w-fit h-fit">a junior </span>
         
                     <span class="relative">
                         <span class="big-title-glitch title-glitch tg-anim" data-text="Développeuse Web">Développeuse Web</span>
