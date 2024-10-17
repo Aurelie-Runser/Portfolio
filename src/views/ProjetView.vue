@@ -45,14 +45,14 @@
         
                     <p class="font-oswald font-bold text-lg md:text-xl xl:text-2xl text-orange-100">
                         Année : 
-                        <span class="font-darker-grotesque text-base md:text-lg xl:text-xl font-light text-stone-300">
+                        <span class="font-darker-grotesque text-base md:text-lg xl:text-xl font-normal text-stone-300">
                             {{ projet.annee }}
                         </span>
                     </p>
             
                     <p class="font-oswald font-bold text-lg md:text-xl xl:text-2xl text-orange-100">
                         Type : 
-                        <span class="font-darker-grotesque text-base md:text-lg xl:text-xl font-light text-stone-300">
+                        <span class="font-darker-grotesque text-base md:text-lg xl:text-xl font-normal text-stone-300">
                             {{ projet.type }}
                         </span>
                     </p>
@@ -66,7 +66,7 @@
                                 class="technoAnim flex flex-wrap items-center justify-center gap-0.5 sm:gap-1
                                         font-darker-grotesque text-base md:text-lg xl:text-xl text-stone-300">
                                 <img class="w-8 sm:w-12 aspect-square object-contain" :src="techno.svg" :alt="`logo de ${techno.nom}`">
-                                <span class="font-darker-grotesque text-base md:text-lg xl:text-xl font-light text-stone-300">
+                                <span class="font-darker-grotesque text-base md:text-lg xl:text-xl font-normal text-stone-300">
                                     {{techno.nom}}
                                 </span>
                             </li>
