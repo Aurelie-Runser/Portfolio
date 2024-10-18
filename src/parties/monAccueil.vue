@@ -1,6 +1,6 @@
 <template>
-    <section id="hero" class="ma-section my-0 h-screen grid relative">
-        <div class="self-center h-screen max-h-[900px]">
+    <section id="hero" class="ma-section my-0 h-[100dvh] grid relative">
+        <div class="self-center h-[100dvh] max-h-[900px]">
             <h1 class="flex flex-col justify-around w-full h-full mx-auto mon-title">
                 <span>Hello World,<br/>I'm</span>
 

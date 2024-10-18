@@ -43,7 +43,7 @@
             <p class="big-title-glitch title-glitch tg relative block w-fit mx-auto text-center text-xl" data-text="Aucun projet ne correspond à votre recherche." >Aucun projet ne correspond à votre recherche.</p>
         </div>
 
-        <div v-else class="w-full h-screen relative">
+        <div v-else class="w-full h-[100dvh] relative">
             <monChargement/>
          </div>
 

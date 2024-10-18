@@ -1,6 +1,6 @@
 <template>
-    <section class="ma-section my-0 h-screen grid relative">
-        <div class="self-center h-screen max-h-[900px]">
+    <section class="ma-section my-0 h-[100dvh] grid relative">
+        <div class="self-center h-[100dvh] max-h-[900px]">
             <h1 id="title" class="w-full mx-auto mon-title absolute top-1/2 -translate-y-1/2">
                 <span id="hello" class="">{{ heroTexte[0] }} <br/> {{ heroTexte[1] }}</span>
 

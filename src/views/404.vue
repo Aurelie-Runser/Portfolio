@@ -1,5 +1,5 @@
 <template>
-    <div class="min-h-screen overflow-hidden
+    <div class="min-h-[100dvh]
                 flex flex-col items-center justify-center">
 
         <h1 class="relative w-fit">

@@ -150,7 +150,7 @@
             </ul>
         </div>
 
-        <div v-else class="w-full h-screen relative">
+        <div v-else class="w-full h-[100dvh] relative">
             <monChargement/>
         </div>
     </div>
