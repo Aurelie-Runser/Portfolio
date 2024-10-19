@@ -4,8 +4,8 @@
 
     <Radar class="scale-90"
       id="my-chart-id"
-      :options="chartOptions"
-      :data="chartData"
+      :options="options"
+      :data="data"
     />
   </div>
 </template>
@@ -21,7 +21,7 @@ export default {
   components: { Radar },
   data() {
     return {
-      chartData: {
+      data: {
         labels: [
           "Développement",
           "Café",
@@ -33,17 +33,18 @@ export default {
         datasets: [{
           data: [5, 4, 5, 2, 3],
           label: "Passions", 
-          borderColor: '#d946ef',
-          pointBackgroundColor: '#d946ef',
+          backgroundColor: 'rgba(34, 211, 238, 0.3)',
+          borderColor: '#22d3ee',
+          pointBackgroundColor: '#22d3ee',
           pointBorderColor: '#ffedd5',
           pointHoverBackgroundColor: '#ffedd5',
-          pointHoverBorderColor: '#d946ef',
+          pointHoverBorderColor: '#22d3ee',
           pointHoverRadius: "5",
           pointHoverBorderWidth: "2"
         }]
       },
 
-      chartOptions: {
+      options: {
         responsive: true,
 
         scales: {

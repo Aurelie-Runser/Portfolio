@@ -50,12 +50,13 @@
     position: absolute;
     top: 0;
     left: 0;
-    transition: all .1s 0s linear;
+    transition: all .1s 0s linear, opacity 0s .25s;
 }
 
 .card:hover .card_img{
     animation: cardGlitchAnim .2s 0s linear;
     transform: skewX(-90deg);
+    opacity: 0;
 }
 
 @keyframes cardGlitchAnim{
@@ -80,13 +81,13 @@
     top: 0;
     left: 0;
     transform: translate(-3px, -3px);
-    background-color: #22d3ee;
+    background-color: #d946ef;
     transition: all 200ms;
 }
 
 .card_bouton::after{
     transform: translate(3px, 3px);
-    background-color: #d946ef;
+    background-color: #22d3ee;
 }
 
 .card_bouton:hover p {

@@ -1,11 +1,11 @@
 <template>
-  <div class="w-full max-w-md h-auto overflow-visible">
+  <div class="w-full max-w-md h-auto">
     <h3 class="px-7 md:px-10">Soft Skills</h3>
 
     <Radar
       id="my-chart-id"
-      :options="chartOptions"
-      :data="chartData"
+      :options="options"
+      :data="data"
     />
   </div>
 </template>
@@ -21,7 +21,7 @@ export default {
   components: { Radar },
   data() {
     return {
-      chartData: {
+      data: {
         labels: [
           "Esprit d'apprentissage",
           "Minutieuse",
@@ -33,17 +33,18 @@ export default {
         datasets: [{
           data: [4, 6, 4, 5, 4],
           label: "Soft Skills", 
-          borderColor: '#22d3ee',
-          pointBackgroundColor: '#22d3ee',
+          backgroundColor: 'rgba(217, 70, 239, 0.3)',
+          borderColor: '#d946ef',
+          pointBackgroundColor: '#d946ef',
           pointBorderColor: '#ffedd5',
           pointHoverBackgroundColor: '#ffedd5',
-          pointHoverBorderColor: '#22d3ee',
+          pointHoverBorderColor: '#d946ef',
           pointHoverRadius: "5",
           pointHoverBorderWidth: "2"
         }]
       },
 
-      chartOptions: {
+      options: {
         responsive: true,
 
         scales: {
