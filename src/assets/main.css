@@ -56,9 +56,9 @@ a:hover{
 }
 
 @keyframes underline_color {
-    0%{text-decoration-color: #d946ef;}
-    50%{text-decoration-color: #22d3ee;}
-    100%{text-decoration-color: #d946ef;}
+    0%{text-decoration-color: #22d3ee;}
+    50%{text-decoration-color: #d946ef;}
+    100%{text-decoration-color: #22d3ee;}
 }
 
 @property --angle-border{
@@ -82,11 +82,11 @@ a:hover{
 /* animation pour les techno */
 .technoAnim:hover{
     animation: smallGlitchAnim .1s 0s linear;
-    text-shadow: -1.2px -1.2px #22d3ee, 1.2px 1.2px #d946ef;
+    text-shadow: -1.2px -1.2px #d946ef, 1.2px 1.2px #22d3ee;
 }
 
 .technoAnim:hover img{
-    filter: drop-shadow(-1.5px -1.5px #22d3ee) drop-shadow(1.5px 1.5px #d946ef);
+    filter: drop-shadow(-1.5px -1.5px #d946ef) drop-shadow(1.5px 1.5px #22d3ee);
 }
 
 /* animation pour les h1 */

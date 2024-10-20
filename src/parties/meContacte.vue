@@ -13,7 +13,7 @@
                         @mouseleave="liHover = false">
                     <linkedinIcon :hover="liHover" class="inline-block w-7 h-7 md:w-10 md:h-10"/>
                     <p class="sr-only">Mon compte Linkedin : </p>
-                    <p class="contact_link inline-block ml-3 w-auto font-darker-grotesque font-bold text-base md:text-lg text-orange-100 underline decoration-fuchsia-500">
+                    <p class="contact_link inline-block ml-3 w-auto font-darker-grotesque font-bold text-base md:text-lg text-orange-100 underline decoration-cyan-400">
                         in/aurélie-runser
                     </p>
                 </a>
@@ -23,7 +23,7 @@
                         @mouseleave="gitHover = false">
                     <githubIcon :hover="gitHover" class="inline-block w-7 h-7 md:w-10 md:h-10"/>
                     <p class="sr-only">Mon compte Github : </p>
-                    <p class="contact_link inline-block ml-3 w-auto font-darker-grotesque font-bold text-base md:text-lg text-orange-100 underline decoration-fuchsia-500">
+                    <p class="contact_link inline-block ml-3 w-auto font-darker-grotesque font-bold text-base md:text-lg text-orange-100 underline decoration-cyan-400">
                         Aurelie-Runser
                     </p>
                 </a>
@@ -33,7 +33,7 @@
                         @mouseleave="instaHover = false">
                     <instagramIcon :hover="instaHover" class="inline-block w-7 h-7 md:w-10 md:h-10"/>
                     <p class="sr-only">Mon compte Instagram : </p>
-                    <p class="contact_link inline-block ml-3 w-auto font-darker-grotesque font-bold text-base md:text-lg text-orange-100 underline decoration-fuchsia-500">
+                    <p class="contact_link inline-block ml-3 w-auto font-darker-grotesque font-bold text-base md:text-lg text-orange-100 underline decoration-cyan-400">
                         @aurelie.runser_pro
                     </p>
                 </a>
@@ -43,7 +43,7 @@
                         @mouseleave="mailHover = false">
                     <mailIcon :hover="mailHover" class="inline-block w-9 h-9 md:w-12 md:h-12"/>
                     <p class="sr-only">Mon Adresse Mail : </p>
-                    <p class="contact_link inline-block ml-3 w-auto font-darker-grotesque font-bold text-base md:text-lg text-orange-100 underline decoration-fuchsia-500">
+                    <p class="contact_link inline-block ml-3 w-auto font-darker-grotesque font-bold text-base md:text-lg text-orange-100 underline decoration-cyan-400">
                         aurelie.runser25@gmail.com
                     </p>
                 </a>
@@ -155,7 +155,7 @@
                             J'accepte que ces données personnelles soient collectées et utilisées par Aurélie Runser dans le but de répondre à mon message.
                             <br/>Pour en savoir plus sur les conditions d'utilisation de mes données,
                             <button @click="RGPD = true"
-                                    class="contact_link inline-block font-darker-grotesque text-sm md:text-base text-orange-100 underline decoration-fuchsia-500">
+                                    class="contact_link inline-block font-darker-grotesque text-sm md:text-base text-orange-100 underline decoration-cyan-400">
                                 cliquez ici</button>&nbsp;.
                         </label>
 
@@ -220,7 +220,6 @@ a:hover .contact_link,
 /* style lorsque le texte mobile se déplace sur portable */
 :is(input, textarea):is(:focus, :not(:placeholder-shown)) + .form_text{
     top: 0;
-    /* translate: 0 -25%; */
     font-size: 1rem;
     padding: 0 0.5rem;
     transition: all 0.1s ease-in-out;

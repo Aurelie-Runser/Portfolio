@@ -9,7 +9,7 @@ defineProps({
     hover: Boolean
 })
 </script>
-  
+
 <style scoped>
 svg:hover,
 .isHover{
@@ -17,9 +17,9 @@ svg:hover,
 }
   
 @keyframes colorGitAnim {
-    0%{fill: #d946ef;}
-    50%{fill: #22d3ee;}
-    100%{fill: #d946ef;}
+    0%{fill: #22d3ee;}
+    50%{fill: #d946ef;}
+    100%{fill: #22d3ee;}
 }
 
 </style>

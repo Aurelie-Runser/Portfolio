@@ -3,11 +3,11 @@
                 w-full h-auto p-7 bg-neutral-800">
 
         <RouterLink to="/"
-            class="footer_link font-darker-grotesque font-bold text-sm md:text-base text-neutral-400 underline decoration-fuchsia-500">
+            class="footer_link font-darker-grotesque font-bold text-sm md:text-base text-neutral-400 underline decoration-cyan-400">
             Hello World
         </RouterLink>
 
-        <RouterLink :to="{ path: '/', hash: '#id_contact' }" class="footer_link font-darker-grotesque font-bold text-sm md:text-base text-neutral-400 underline decoration-fuchsia-500">
+        <RouterLink :to="{ path: '/', hash: '#id_contact' }" class="footer_link font-darker-grotesque font-bold text-sm md:text-base text-neutral-400 underline decoration-cyan-400">
             Contact
         </RouterLink>
 
@@ -30,7 +30,7 @@
 
         <a href="mailto:aurelie.runser25@gmail.com">
             <p class="sr-only">Mon Adresse Mail : </p>
-            <p class="footer_link inline-block ml-3 w-auto font-darker-grotesque font-bold text-sm md:text-base text-neutral-400 underline decoration-fuchsia-500">
+            <p class="footer_link inline-block ml-3 w-auto font-darker-grotesque font-bold text-sm md:text-base text-neutral-400 underline decoration-cyan-400">
                 aurelie.runser25@gmail.com
             </p>
         </a>
@@ -43,12 +43,6 @@
 /* animation du underline des liens */
 .footer_link:hover{
     animation: underline_color 1s linear infinite;
-}
-
-@keyframes underline_color {
-    0%{text-decoration-color: #d946ef;}
-    50%{text-decoration-color: #22d3ee;}
-    100%{text-decoration-color: #d946ef;}
 }
 </style>
 

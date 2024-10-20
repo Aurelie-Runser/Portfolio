@@ -12,16 +12,16 @@ defineProps({
 })
 </script>
 
-<style scoped> 
+<style scoped>
 svg:hover,
 .isHover{
-    animation: colorLinkAnim 1s linear infinite;
+    animation: colorLinkedinAnim 1s linear infinite;
 }
   
-@keyframes colorLinkAnim {
-    0%{fill: #d946ef;}
-    50%{fill: #22d3ee;}
-    100%{fill: #d946ef;}
+@keyframes colorLinkedinAnim {
+    0%{fill: #22d3ee;}
+    50%{fill: #d946ef;}
+    100%{fill: #22d3ee;}
 }
 
 </style>
