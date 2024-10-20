@@ -1,6 +1,6 @@
 <template>
-    <header class="fixed top-0 right-0 w-content h-[100dvh] translate-x-full bg-mon-black z-40 duration-150 menu_border"
-        :class="{ 'translate-x-0': menuOuvert }"
+    <header class="fixed top-0 right-0 w-content h-[100dvh] bg-mon-black z-40 duration-150 menu_border"
+        :class="{ 'translate-x-full': !menuOuvert }"
         @mouseover="menuOuvert = true" @mouseleave="menuOuvert = false">
 
         <!-- bouton Menu-->
