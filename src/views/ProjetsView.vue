@@ -40,7 +40,7 @@
         </ul>
 
         <div v-else-if="projetsSelect.length == 0 && (genreSelect != '' || catSelect != '')" class="px-4 sm:px-20">
-            <p class="big-title-glitch title-glitch tg relative block w-fit mx-auto text-center text-xl" data-text="Aucun projet ne correspond à votre recherche." >Aucun projet ne correspond à votre recherche.</p>
+            <p class="big-title-glitch title-glitch tg relative block w-fit mx-auto text-center text-lg md:text-2xl" data-text="Aucun projet ne correspond à votre recherche." >Aucun projet ne correspond à votre recherche.</p>
         </div>
 
         <div v-else class="w-full h-[100dvh] relative">
@@ -106,9 +106,9 @@
     display: block;
     position: absolute;
     top: 0;
-    left: -1px;
+    left: -0.5px;
     color: #ffedd5;
-    text-shadow: -3px 0 #d946ef;
+    text-shadow: -1.5px 0 #d946ef;
     background: #1f1f1f;
     overflow: hidden;
 }
@@ -120,10 +120,10 @@
     top: 0;
     left: 0px;
     color: #ffedd5;
-    text-shadow: -3px 0 #22d3ee;
+    text-shadow: 1.5px 0 #22d3ee;
     background: #1f1f1f;
     overflow: hidden;
-    clip-path: inset(61% 0% 0% 0%);
+    clip-path: inset(62% 0% 0% 0%);
 }
 </style>
 

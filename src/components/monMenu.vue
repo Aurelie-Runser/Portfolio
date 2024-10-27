@@ -23,7 +23,7 @@
         
 
         <!--les liens-->
-        <nav class="relative w-full h-full flex flex-col justify-end gap-y-7 sm:justify-evenly sm:gap-y-2 items-right px-[10vw] pb-[10vh] md:px-[5vw] md:pb-0
+        <nav class="relative w-full h-full flex flex-col justify-end gap-y-7 sm:justify-evenly sm:gap-y-2 items-end px-[10vw] pb-[10vh] md:px-[5vw] md:pb-0
             text-right font-oswald font-semibold italic text-lg sm:text-xl md:text-3xl">
 
             <RouterLink @click="menuOuvert = false" to="/">
@@ -87,7 +87,10 @@
     100%{border-color: #22d3ee;}
 }
 
-
+.menu_item{
+    display: block;
+    width: fit-content;
+}
 
 /* animation des liens */
 .menu_item::after{
@@ -98,7 +101,7 @@
     left: 0;
     width: 100%;
     color: #ffedd5;
-    text-shadow: 1.5px 0 #22d3ee;
+    text-shadow: 1.75px 0 #22d3ee;
     background: #1f1f1f;
     clip-path: inset(60% 0% 0% 0%);
 }
@@ -114,7 +117,7 @@
     left: -0.5px;
     width: 100%;
     color: #ffedd5;
-    text-shadow: -1.5px 0 #d946ef;
+    text-shadow: -1.75px 0 #d946ef;
 }
 
 .item_acc,
