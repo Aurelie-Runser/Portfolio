@@ -28,7 +28,7 @@
                     </p>
                 </a>
         
-                <a target="_blank" href="https://www.instagram.com/aurelie.runser_pro/" rel="noopener noreferrer" class="block w-max"
+                <!-- <a target="_blank" href="https://www.instagram.com/aurelie.runser_pro/" rel="noopener noreferrer" class="block w-max"
                         @mouseover="instaHover = true" 
                         @mouseleave="instaHover = false">
                     <instagramIcon :hover="instaHover" class="inline-block w-7 h-7 md:w-10 md:h-10"/>
@@ -36,7 +36,7 @@
                     <p class="contact_link inline-block ml-3 w-auto font-darker-grotesque font-bold text-base md:text-lg text-orange-100 underline decoration-cyan-400">
                         @aurelie.runser_pro
                     </p>
-                </a>
+                </a> -->
 
                 <a href="mailto:aurelie.runser25@gmail.com" class="block w-max"
                         @mouseover="mailHover = true" 
