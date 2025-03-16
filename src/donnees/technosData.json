@@ -1,0 +1,259 @@
+[
+  {
+    "id": "AdonisJs",
+    "nom": "Adonis.js",
+    "svg": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/technos/AdonisJs.svg"
+  },
+  {
+    "id": "Axios",
+    "nom": "Axios",
+    "svg": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/technos/Axios.svg"
+  },
+  {
+    "id": "Blender",
+    "nom": "Blender",
+    "svg": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/technos/Blender.svg"
+  },
+  {
+    "id": "CSS",
+    "svg": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/technos/CSS.svg",
+    "nom": "CSS 3",
+    "niv": 1
+  },
+  {
+    "id": "Csharp",
+    "svg": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/technos/Csharp.svg",
+    "nom": "C#",
+    "niv": 3
+  },
+  {
+    "id": "Challonge",
+    "nom": "Challonge",
+    "svg": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/technos/Challonge.svg"
+  },
+  {
+    "id": "ChartJs",
+    "nom": "Chart.js",
+    "svg": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/technos/ChartJs.svg"
+  },
+  {
+    "id": "ConditionalMenus",
+    "nom": "Conditional Menus",
+    "svg": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/technos/ConditionalMenus.svg"
+  },
+  {
+    "id": "Docker",
+    "svg": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/technos/Docker.svg",
+    "nom": "Docker",
+    "niv": 3
+  },
+  {
+    "id": "Elementor",
+    "nom": "Elementor",
+    "svg": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/technos/Elementor.svg"
+  },
+  {
+    "id": "Express",
+    "svg": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/technos/Express.svg",
+    "nom": "Express.js"
+  },
+  {
+    "id": "Figma",
+    "svg": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/technos/Figma.svg",
+    "nom": "Figma"
+  },
+  {
+    "id": "FireBase",
+    "svg": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/technos/Firebase.svg",
+    "nom": "FireBase"
+  },
+  {
+    "id": "FormKit",
+    "svg": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/technos/FormKit.svg",
+    "nom": "FormKit"
+  },
+  {
+    "id": "GitHub",
+    "svg": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/technos/GitHub.svg",
+    "nom": "GitHub",
+    "niv": 3
+  },
+  {
+    "id": "GitLab",
+    "nom": "GitLab",
+    "niv": 4,
+    "svg": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/technos/GitLab.svg"
+  },
+  {
+    "id": "HTML",
+    "nom": "HTML 5",
+    "niv": 1,
+    "svg": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/technos/HTML.svg"
+  },
+  {
+    "id": "HubSpot",
+    "nom": "HubSpot",
+    "svg": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/technos/HubSpot.svg"
+  },
+  {
+    "id": "Illustrator",
+    "svg": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/technos/Illustrator.svg",
+    "nom": "Illustrator"
+  },
+  {
+    "id": "JavaScript",
+    "nom": "JavaScript",
+    "niv": 1,
+    "svg": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/technos/JavaScript.svg"
+  },
+  {
+    "id": "MSSQL",
+    "svg": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/technos/MSSQL.svg",
+    "nom": "MSSQL"
+  },
+  {
+    "id": "MySQL",
+    "niv": 2,
+    "svg": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/technos/MySQL.svg",
+    "nom": "MySQL"
+  },
+  {
+    "id": "NodeJs",
+    "nom": "Node.js",
+    "niv": 2,
+    "svg": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/technos/NodeJs.svg"
+  },
+  {
+    "id": "NuxtJs",
+    "nom": "Nuxt.js",
+    "svg": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/technos/Nuxt.svg",
+    "niv": 1
+  },
+  {
+    "id": "OpenStreetMap",
+    "nom": "Open Street Map",
+    "svg": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/technos/OpenStreetMap.svg"
+  },
+  {
+    "id": "OpenWeatherMap",
+    "nom": "OpenWeatherMap",
+    "svg": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/technos/OpenWeatherMap.svg"
+  },
+  {
+    "id": "PHP",
+    "nom": "PHP",
+    "svg": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/technos/PHP.svg",
+    "niv": 4
+  },
+  {
+    "id": "Pinia",
+    "svg": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/technos/Pinia.svg",
+    "niv": 2,
+    "nom": "Pinia"
+  },
+  {
+    "id": "Postman",
+    "nom": "Postman",
+    "svg": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/technos/Postman.svg",
+    "niv": 4
+  },
+  {
+    "id": "PostgreSQL",
+    "nom": "PostgreSQL",
+    "svg": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/technos/PostgreSQL.svg"
+  },
+  {
+    "id": "Prismic",
+    "svg": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/technos/Prismic.svg",
+    "nom": "Prismic"
+  },
+  {
+    "id": "QuasarJs",
+    "nom": "Quasar.js",
+    "svg": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/technos/Quasar.svg"
+  },
+  {
+    "id": "React",
+    "niv": 4,
+    "svg": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/technos/React.svg",
+    "nom": "React"
+  },
+  {
+    "id": "SQL",
+    "nom": "SQL",
+    "svg": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/technos/SQL.svg"
+  },
+  {
+    "id": "SQLite",
+    "niv": 2,
+    "nom": "SQLite",
+    "svg": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/technos/SQLite.svg"
+  },
+  {
+    "id": "Sass",
+    "nom": "Scss",
+    "niv": 1,
+    "svg": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/technos/Sass.svg"
+  },
+  {
+    "id": "Supabase",
+    "nom": "Supabase",
+    "svg": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/technos/Supabase.svg"
+  },
+  {
+    "id": "Swiper",
+    "nom": "Swiper",
+    "svg": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/technos/Swiper.svg"
+  },
+  {
+    "id": "Symfony",
+    "niv": 4,
+    "svg": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/technos/Symfony.svg",
+    "nom": "Symfony"
+  },
+  {
+    "id": "Tailwind",
+    "nom": "Tailwind",
+    "niv": 2,
+    "svg": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/technos/Tailwind.svg"
+  },
+  {
+    "id": "ThreeJs",
+    "nom": "Three.js",
+    "niv": 4,
+    "svg": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/technos/ThreeJs.svg"
+  },
+  {
+    "id": "TypeScript",
+    "svg": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/technos/TypeScript.svg",
+    "nom": "TypeScript",
+    "niv": 3
+  },
+  {
+    "id": "VueJs",
+    "svg": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/technos/VueJs.svg",
+    "nom": "Vue.js",
+    "niv": 1
+  },
+  {
+    "id": "WPJobManager",
+    "svg": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/technos/WPJobManager.svg",
+    "nom": "WP Job Manager"
+  },
+  {
+    "id": "Web3Form",
+    "svg": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/technos/Web3Form.svg",
+    "nom": "Web3Form"
+  },
+  {
+    "id": "WordPress",
+    "svg": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/technos/WordPress.svg",
+    "niv": 4,
+    "nom": "WordPress"
+  },
+  {
+    "id": "YoastSEO",
+    "svg": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/technos/YoastSEO.svg",
+    "nom": "Yoast SEO"
+  }
+]

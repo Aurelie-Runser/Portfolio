@@ -44,13 +44,13 @@ function projetsScreenFunction(){
 
     if (screenWidth <= 767) {
         // Mobile view
-        store.projetsScreen = store.orderByDate.slice(0, 3);
+        store.projetsScreen = store.listeProjet.slice(0, 3);
     } else {
         // Desktop view
         // Calculer le nombre de cartes qui peuvent tenir dans une ligne
         cardsPerRow = Math.floor((screenWidth + gap) / (minCardWidth + gap));
         // Limiter le nombre de cartes à 2 lignes
-        store.projetsScreen = store.orderByDate.slice(0, cardsPerRow * 2);
+        store.projetsScreen = store.listeProjet.slice(0, cardsPerRow * 2);
     }
     return store.projetsScreen;
 }

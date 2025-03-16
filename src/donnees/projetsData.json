@@ -1,0 +1,554 @@
+[
+  {
+    "id": "RestaurantFOODReact",
+    "genre": "perso",
+    "contexte_resume": "projet personnel pour apprendre les bases de React",
+    "outils": ["React", "TypeScript", "CSS 3"],
+    "lien": "https://restaurant-react.aurelierunser.fr",
+    "github": "https://github.com/Aurelie-Runser/Restaurant-FOOD--React",
+    "image_rect": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/projets/RestaurantReact/RestaurantReact_rect.webp",
+    "annee_resume": 2024,
+    "annee": "Septembe 2024",
+    "type": "site vitrine",
+    "titre": "Restaurant FOOD - React",
+    "categorie": "fe",
+    "contexte_all_2": [
+      "Dans l'objectif de faire mes 1ᵉʳˢ pas en React, j'ai choisi d'intégrer un ancien projet avec ce framework, me concentrant à 100% sur le développement.",
+      "Je me suis appuyé sur une série de tutos sur YouTube afin de prendre connaissance des différentes bonnes pratiques de React, notamment des Hooks.",
+      "J'ai essayé d'en utiliser un maximum dans des contextes adaptés : useState, useEffect, useCallback, useContext, useReducer, lazy et Suspense.",
+      "Pour savoir pour quelle fonctionnalité chacun de ces hooks ont été utilisés, vous pouvez consulter le dépôt GitHub de ce projet et son Readme."
+    ],
+    "image_card": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/projets/RestaurantReact/RestaurantReact_card.webp",
+    "video": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/projets/RestaurantReact/RestaurantReact_video.mp4"
+  },
+  {
+    "id": "Cryptides",
+    "image_rect": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/projets/Cryptides/Cryptides_rect.webp",
+    "genre": "perso",
+    "titre": "Cryptides",
+    "github": "https://github.com/Aurelie-Runser/Cryptides",
+    "image_card": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/projets/Cryptides/Cryptides_card.webp",
+    "type": "site web",
+    "categorie": "fs",
+    "annee_resume": 2024,
+    "lien": "https://cryptides.aurelierunser.fr",
+    "contexte_all_2": [
+      "Ceci est une refonte de mon tout premier site web qui avait pour thème les cryptides, des animaux dont l’existence n’a pas été prouvée scientifiquement, mais de nombreux témoignages de leur rencontre ont été racontés.",
+      "Il s’agit également de mes premiers pas avec Symfony, me faisant comprendre les bases, la structure et l’utilité de ce framework.",
+      "Pour créer et remplir ma base de données, j'ai mis en place des formulaires pour pouvoir ajouter et modifier tous les éléments que je voulais."
+    ],
+    "contexte_resume": "projet personnel pour apprendre Symfony",
+    "outils": ["Symfony", "CSS 3", "MySQL", "Figma"],
+    "annee": "Juillet 2024",
+    "video": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/projets/Cryptides/Cryptides_video.mp4"
+  },
+  {
+    "id": "Visibase",
+    "contexte_all_2": [
+      "- Un système de filtre sur les tableaux",
+      "- Établir un lien avec l’API d’HubSpot de zéro",
+      "- Générer de nouvelles données à partir d’anciennes",
+      "- Mettre en place un système de synchronisation manuel entre la base de données locale et celle sur HubSpot à travers une interface simple et ergonomique",
+      "- Modifier l'existant pour que le système de droit soit réellement fonctionnel",
+      "L’ensemble de mes réalisations sont détaillées dans mon rapport de stage, disponible en cliquant sur « Lire le Rapport ». En plus de différents ajouts, j’ai également corrigé divers bugs, effectué un travail d’UX sur quelques éléments et pages, ainsi que proposé de rédiger une documentation.",
+      "Durant ce stage, je me suis perfectionnée en JavaScript/TypeScript et j’ai appris à collaborer et à comprendre le code des autres développeurs."
+    ],
+    "video": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/projets/Visibase/Visibase_video.mp4",
+    "contexte_all": [
+      "Pour la fin de ma troisième et dernière année de BUT MMI, j’ai effectué un stage de 16 semaines à l’agence web Première Place. J’ai grandement contribué au développement de leur logiciel de gestion interne, un outil qui centralise tout leur processus de vente et leurs données.",
+      "Une bonne base était déjà présente, me permettant d’immédiatement commencer l’implémentation de fonctionnalités complexes comme :"
+    ],
+    "titre": "Visibase",
+    "type": "application web",
+    "rapport": "https://drive.google.com/file/d/1ae8I0uPHgonwX0OfN5aOIUur6PBc-QdT/view?usp=sharing",
+    "contexte_resume": "stage de fin de BUT (bac+3)",
+    "categorie": "fs",
+    "image_rect": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/projets/Visibase/Visibase_rect.webp",
+    "outils": [
+      "Quasar.js",
+      "Scss",
+      "Pinia",
+      "Adonis.js",
+      "MSSQL",
+      "Docker",
+      "HubSpot",
+      "GitLab",
+      "Postman"
+    ],
+    "annee_resume": 2024,
+    "image_card": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/projets/Visibase/Visibase_card.webp",
+    "genre": "pro",
+    "annee": "Fevrier - Juin 2024"
+  },
+  {
+    "id": "HowToMeetAliens",
+    "annee": "Janvier 2024",
+    "titre": "How To Meet Aliens ?",
+    "image_card": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/projets/HowToMeetAliens/HTMA_card.webp",
+    "categorie": "fs",
+    "type": "jeu narratif textuel",
+    "contexte_resume": "projet de fin de BUT (bac+3)",
+    "github": "https://github.com/Aurelie-Runser/How-To-Meet-Aliens",
+    "image_rect": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/projets/HowToMeetAliens/HTMA_rect.webp",
+    "lien": "https://how-to-meet-aliens.aurelierunser.fr",
+    "annee_resume": 2024,
+    "genre": "scolaire",
+    "video": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/projets/HowToMeetAliens/HTMA_video.mp4",
+    "contexte_all": [
+      "Durant les 4 dernières semaines en 3ème et dernière année au BUT MMI de Montbéliard, nous devions réaliser un projet web innovant sur le thème de « l’altérité, l’autre ».",
+      "J’ai choisi de créer un jeu narratif textuel où l’utilisateur doit conseiller un astronaute lors du premier contact entre les humains et les extraterrestres.",
+      "J’ai essayé de reproduire une interface semblable à un vieux PC avec un affichage lent, notamment sur la page d’accueil avec l’animation d’ouverture et l’effet « machine à écrire » sur le texte."
+    ],
+    "outils": [
+      "Nuxt.js",
+      "Scss",
+      "Pinia",
+      "Axios",
+      "Node.js",
+      "Express.js",
+      "SQLite",
+      "Postman",
+      "Figma"
+    ],
+    "contexte_all_2": [
+      "Comme tout ordinateur, il y a un bureau, des paramètres…",
+      "En ayant assez avancé dans le jeu, l’utilisateur peut aussi personnaliser l’interface, comme certain titre et la couleur du site.",
+      "22 fins sont disponibles, et certaines permettent de gagner des médailles, des success.",
+      "Et bien sûr, l’utilisateur a un historique pour relire ses anciennes parties et savoir quel chemin il a déjà parcouru.",
+      "La base de données où sont stockés les utilisateurs, les textes du jeu, l’historique de chaque joueur… a été développée entièrement par moi également, grâce à SQLite et Node.js. Les données sont récupérées sur le site grâce à JavaScript et Axios.",
+      "Afin de pouvoir utiliser certaines de ces données sur l’ensemble du site, par exemple pour permettre la connexion, j’ai utilisé la bibliothèque Pinia.",
+      "En raison de l'utilisation d'un hébergeur gratuit, la connexion/inscription peut prendre jusqu'à une minute."
+    ]
+  },
+  {
+    "id": "TikTak2",
+    "video": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/projets/TikTak2/TikTak2_video.mp4",
+    "annee_resume": 2024,
+    "annee": "Janvier 2024",
+    "outils": [
+      "Nuxt.js",
+      "Scss",
+      "Pinia",
+      "Node.js",
+      "Express.js",
+      "SQLite",
+      "Three.js",
+      "Postman"
+    ],
+    "type": "site web & serveur",
+    "contexte_all": [
+      "Sujet d’un examen de début de 3ème et dernière année de BUT MMI à Montbéliard d’une durée de 5 jours.",
+      "Nous devions créer un serveur Node.js et une base de données SQL, ainsi qu’un site web grâce au framework Nuxt.js pour permettre aux utilisateurs de créer des montres personnalisées en 3D."
+    ],
+    "genre": "scolaire",
+    "categorie": "fs, 3d",
+    "image_card": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/projets/TikTak2/TikTak2_card.webp",
+    "titre": "Tik●Tak 2",
+    "image_rect": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/projets/TikTak2/TikTak2_rect.webp",
+    "contexte_resume": "épreuve de développement de milieu de 3ème année de BUT",
+    "github": "https://github.com/Aurelie-Runser/Tik-Tak-2",
+    "lien": "https://tiktak2.aurelierunser.fr",
+    "contexte_all_2": [
+      "J’ai commencé par développer le serveur Node.js avec SQLite pour interagir avec la base de données et Express, puis testé les méthodes de requête HTTP, pour voir les données des montres, en ajouter, modifier et supprimer, avec Postman.",
+      "Puis vint l’intégration avec Nuxt.js, et mettre en place le lien entre le site et le serveur. Il était également demandé par nos professeurs d’intégrer une scène 3Ds de montre (model fourni) qui se modifie en temps réel lorsque les utilisateurs créent et modifient une montre. ",
+      "Un système d’inscription et de connexion a également pu être implémenté, grâce au serveur et au storage, permettant aux utilisateurs d’avoir leur propre panier et simuler un achat.",
+      "La liste des montres et l’inscription/connexion peuvent être longues à se charger en raison de la plateforme d’hébergement du serveur qui met du temps à démarrer.",
+      "En raison de l'utilisation d'un hébergeur gratuit, le chargement des montres et l'inscription/connexion peut prendre jusqu'à une minute."
+    ]
+  },
+  {
+    "id": "SmashArenaEventTournois",
+    "annee": "Novembre – Decembre 2023",
+    "type": "site d’inscription à un évènement",
+    "annee_resume": 2023,
+    "contexte_all_2": [
+      "Le site des tournois, qui recense l’ensemble des évènements organisés par notre association et permet aux utilisateurs de s’inscrire à nos tournois, a été réalisé entièrement par moi.",
+      "Pour certains contenus textuels pouvant être amenés à changer rapidement, comme les règles et la FAQ, nous nous sommes servis du CMS Primsic.",
+      "Pour la gestion des tournois et des inscrits, j’ai utilisé l’API de Challonge, un site de gestion de tournois e-sport. J’ai fait appel aux fonctionnalités pour s’inscrire comme joueur, pour afficher la liste de nos tournois et l’arbre des manches.",
+      "Afin de faire le lien entre l’API de Challonge et notre site, j’ai dû développer un serveur Node.js.",
+      "L’affichage des pages de chaque tournoi varie en fonction de son statut. Si le tournoi est bientôt, un bouton pour s’inscrire est présent, s’il est en cours, l’arbre des manches est affiché en 1er car c’est l’élément le plus important au moment où le tournoi se déroule.",
+      "En raison de l'utilisation d'un hébergeur gratuit, le chargement de la liste des tournois peut prendre jusqu'à une minute."
+    ],
+    "contexte_all": [
+      "Comme 1er projet semestriel de 3ème année en MMI, nous avons dû réaliser par groupe de 5, un grand projet web. Il y avait 1 communicante, 2 designers et 2 développeurs.",
+      "Notre projet était d’organiser le 1er tournoi e-sport sur le jeu Super Smash Bros Ultimate de l’IUT de Nord-Franche Comté.",
+      "Pour le faire connaitre, nous avons, entre autres, réalisé un site vitrine et un site d’inscription en 1 mois et demi, ainsi que créé une association pour pouvoir emprunter des locaux et du matériel."
+    ],
+    "github": "https://github.com/Aurelie-Runser/Smash-Arena-Event-Tournois",
+    "image_rect": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/projets/SmashArenaEventTournois/SAET_rect.webp",
+    "titre": "Smash Arena Event – Site des Tournois",
+    "genre": "scolaire",
+    "outils": [
+      "Nuxt.js",
+      "Scss",
+      "Axios",
+      "Node.js",
+      "Express.js",
+      "Challonge",
+      "Prismic",
+      "Web3Form",
+      "GitHub",
+      "Postman",
+      "Figma"
+    ],
+    "contexte_resume": "projet de semestre en groupe de 3ème année de BUT",
+    "video": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/projets/SmashArenaEventTournois/SAET_video.mp4",
+    "image_card": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/projets/SmashArenaEventTournois/SAET_card.webp",
+    "lien": "https://tournois-smash-arena-event.onrender.com",
+    "categorie": "fs"
+  },
+  {
+    "id": "SmashArenaEventVitrine",
+    "genre": "scolaire",
+    "image_rect": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/projets/SmashArenaEventVitrine/SAEV_rect.webp",
+    "annee": "Novembre - Décembre 2023",
+    "outils": [
+      "Nuxt.js",
+      "Scss",
+      "Swiper",
+      "Prismic",
+      "Web3Form",
+      "GitHub",
+      "Figma"
+    ],
+    "lien": "https://edition2024.smash-arena-event.fr",
+    "type": "site vitrine",
+    "contexte_resume": "projet de semestre en groupe de 3ème année de BUT",
+    "categorie": "fe",
+    "contexte_all": [
+      "Comme 1er projet semestriel de 3ème année en MMI, nous avons dû réaliser par groupe de 5, un grand projet web. Il y avait 1 communicante, 2 designers et 2 développeurs.",
+      "Notre projet était d’organiser le 1er tournoi e-sport sur le jeu Super Smash Bros Ultimate de l’IUT de Nord-Franche Comté.",
+      "Pour le faire connaitre, nous avons, entre autres, réalisé un site vitrine et un site d’inscription en 1 mois et demi, ainsi que créé une association pour pouvoir emprunter des locaux et du matériel."
+    ],
+    "contexte_all_2": [
+      "Le site vitrine a été réalisé conjointement par moi-même et l’autre développeur, Valentin Saraiva, aussi président de l’association.",
+      "Je me suis chargée de réaliser le carrousel grâce à la bibliothèque Swiper.js, la section et la page des règles, de la FAQ, des Sponsors, d’Inscription et la partie À Propos.",
+      "Pour certains contenus textuels pouvant être amenés à changer rapidement, comme les règles, la FAQ, le carrousel ou les sponsors, nous nous sommes servis du CMS Primsic.",
+      "Afin de personnaliser un peu l’expérience utilisateur, les personnages affichés à l’arrivée sur le site sont différents à chaque fois. Comme cela, chaque joueur peut y voir son personnage préféré mis à l’honneur."
+    ],
+    "image_card": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/projets/SmashArenaEventVitrine/SAEV_card.webp",
+    "video": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/projets/SmashArenaEventVitrine/SAEV_video.mp4",
+    "titre": "Smash Arena Event – Site Vitrine",
+    "annee_resume": 2023
+  },
+  {
+    "id": "MaisonEnLegos",
+    "genre": "scolaire",
+    "annee_resume": 2023,
+    "categorie": "3d",
+    "image_rect": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/projets/MaisonLego/MaisonLego_rect.webp",
+    "titre": "Maison en Legos",
+    "type": "3D pour le web",
+    "github": "https://github.com/Aurelie-Runser/Maison-Lego",
+    "outils": ["HTML 5", "Three.js"],
+    "contexte_all": [
+      "En 3ème année de BUT MMI, nous avons approfondi nos compétences en 3D pour le web.",
+      "Pour cela, nous avons appris à mettre en forme une maison en legos, brique par brique. De plus, elle est personnalisable par l’utilisateur grâce à différents algorithmes rédigés par nos soins.",
+      "Voici les fonctionnalités que j’ai pu implémenter :"
+    ],
+    "annee": "Decembre 2023",
+    "contexte_all_2": [
+      "-\tConstruction du sol en fonction des dimensions choisis par l’utilisateur",
+      "-\tConstruction d’une barrière de hauteur choisis avec une porte",
+      "-\tAdaptation des murs de la maison en fonction de la position de la porte et des fenêtres",
+      "-\tAjout automatique de fenêtre sur le mur arrière en fonction de la taille de la maison",
+      "-\tPositionnement aléatoire de fleurs",
+      "-\tGénération d’un chemin entre la porte de la barrière et la porte de la maison",
+      "-\tAnimation d’ouverture de la porte lors d’un clique",
+      "-\tChangement de couleur de divers éléments en fonction des choix de l’utilisateur",
+      "-\tAnimation d’ouverture de la porte lors d’un clique",
+      "Bien que beaucoup d’éléments aient été implémentés, je n’ai pas pu finaliser certains détails en raison de la date de rendu.",
+      "Le code est entièrement disponible sur mon compte GitHub."
+    ],
+    "lien": "https://maison-lego.aurelierunser.fr",
+    "image_card": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/projets/MaisonLego/MaisonLego_card.webp",
+    "contexte_resume": "exercice de 3D de 3ème année de BUT",
+    "video": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/projets/MaisonLego/MaisonLego_video.mp4"
+  },
+  {
+    "id": "RestaurantFOOD",
+    "image_rect": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/projets/Restaurant/Restaurant_rect.webp",
+    "github": "https://github.com/Aurelie-Runser/FOOD-Restaurant",
+    "lien": "https://restaurant.aurelierunser.fr",
+    "titre": "Restaurant FOOD",
+    "type": "site web & serveur",
+    "genre": "scolaire",
+    "annee": "Septembre - Octobre 2023",
+    "categorie": "fs",
+    "contexte_resume": "intégration et serveur en 3ème année de BUT",
+    "contexte_all": [
+      "Durant le mois de septembre, j’ai réalisé mon 1er serveur Node.js, ainsi qu’Express et SQL pour la base de données. Ce projet m’a permis d’apprendre les bases de ce logiciel."
+    ],
+    "annee_resume": 2023,
+    "contexte_all_2": [
+      "Le design est basé sur une maquette fournie par nos intervenants, et il fallait l’intégrer le plus fidèlement possible, en y mettant le maximum de données dynamiques (via notre serveur et Prismic).",
+      "Pendant octobre, j’ai appris à utiliser le framework Nuxt.js ainsi que Sass et la méthode BEM (dont j’avais déjà eu une première expérience personnelle). J’ai également dû relier ce site à mon serveur, en utilisant quelques requêtes fetch.",
+      "Les intervenants nous ont aussi enseigné Pinia pour réaliser une fonctionnalité de panier. Pour que les contenus textuels soient dynamiques, nous avons utilisé le CMS Prismic, qui permet de renseigner tous les contenus textuels et visuels d’une page via une interface et de récupérer ces informations sur un projet Nuxt.js.",
+      "Le design est basé sur une maquette fournie par nos intervenants, et il fallait l’intégrer le plus fidèlement possible, en y mettant le maximum de données dynamiques (via notre serveur et Prismic)."
+    ],
+    "video": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/projets/Restaurant/Restaurant_video.mp4",
+    "outils": [
+      "Nuxt.js",
+      "Scss",
+      "Pinia",
+      "Node.js",
+      "Express.js",
+      "SQLite",
+      "Prismic",
+      "Postman"
+    ],
+    "image_card": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/projets/Restaurant/Restaurant_card.webp"
+  },
+  {
+    "id": "BoulangerieRunser",
+    "image_card": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/projets/Boulangerie/Boulangerie_card.webp",
+    "lien": "https://boulangerie-runser.fr",
+    "image_rect": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/projets/Boulangerie/Boulangerie_rect.webp",
+    "video": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/projets/Boulangerie/Boulangerie_video.mp4",
+    "outils": [
+      "Vue.js",
+      "Scss",
+      "JavaScript",
+      "FireBase",
+      "Open Street Map",
+      "Web3Form",
+      "Figma"
+    ],
+    "genre": "pro",
+    "titre": "Site vitrine de la Boulangerie Runser",
+    "type": "site vitrine avec un back-office",
+    "annee": "Août 2023",
+    "contexte_all_2": [
+      "Lors de mon été entre ma 2ème et ma 3ème année de BUT MMI, j’ai dû réaliser le site vitrine de la Boulangerie Pâtisserie Runser.",
+      "J’ai déterminé les sections, les informations importantes à afficher en me demandant ce dont l’utilisateur a besoin, ce qu’il pourrait rechercher sur le site d’une boulangerie.",
+      "Une attention particulière a été portée sur le responsive, pour que le site soit toujours parfaitement accessible sur tous les supports.",
+      "Afin de toujours être à jour, j’ai créé un back-office, une interface privée pour que les gérants puissent mettre à jour leurs produits, leurs services et leurs horaires."
+    ],
+    "categorie": "fs",
+    "contexte_resume": "site vitrine réalisé en travail d’été",
+    "annee_resume": 2023
+  },
+  {
+    "id": "Meteo",
+    "genre": "perso",
+    "annee_resume": 2023,
+    "categorie": "fe",
+    "image_rect": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/projets/Meteo/Meteo_rect.webp",
+    "titre": "Météo",
+    "type": "site PHP",
+    "github": "https://github.com/Aurelie-Runser/Site-de-meteo",
+    "outils": ["PHP", "Scss", "OpenWeatherMap", "Figma"],
+    "contexte_all": [
+      "Il s’agit d’un projet personnel réalisé en autonomie qui présente la météo et diverses informations.",
+      "J’ai utilisé le service en ligne OpenWeatherMap, un service qui fournit des données météorologiques mondiales actuelles, des prévisions et historiques pour n'importe quel emplacement géographique.",
+      "Toutes les informations visibles sur le site viennent donc de ce service."
+    ],
+    "annee": "Juin 2023",
+    "contexte_all_2": [
+      "Ce que j’ai travaillé et appris avec ce projet sont les langages PHP, qui sert à récupérer et traiter les données, ainsi que Sass pour mettre en forme la page.",
+      "Disposant de beaucoup de données, j’ai dû réaliser un travail d’UI (User Interface) pour les rendre toutes cohérentes, faciles à comprendre pour l’utilisateur et rendre la page agréable à consulter.",
+      "Ce projet m’a permis de faire mes premiers pas en PHP et Sass.",
+      "Grâce à cela, j’ai pu personnaliser l’affichage en fonction des données collectées."
+    ],
+    "lien": "https://meteo.aurelierunser.fr",
+    "image_card": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/projets/Meteo/Meteo_card.webp",
+    "contexte_resume": "projet personnel pour apprendre PHP",
+    "video": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/projets/Meteo/Meteo_video.mp4"
+  },
+  {
+    "id": "Dynaxis",
+    "annee": "Mars - Juin 2023",
+    "outils": [
+      "WordPress",
+      "Elementor",
+      "WP Job Manager",
+      "Conditional Menus",
+      "Yoast SEO",
+      "Figma"
+    ],
+    "contexte_resume": "site réalisé pour mon stage de fin de 2ème année en BUT",
+    "image_card": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/projets/Dynaxis/Dynaxis_card.webp",
+    "rapport": "https://drive.google.com/file/d/1oMgcygj9O0VqIk5h9-4MOp4dYa3fk1r3/view?usp=sharing",
+    "image_rect2": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/projets/Dynaxis/Dynaxis_rect2.webp",
+    "contexte_all_2": [
+      "Pour mettre en forme le site, j’ai utilisé le plugin Elementor, très simple d’utilisation pour travailler efficacement le design d’un site grâce à un système de glisser/déposer.",
+      "Pour intégrer le jobboard voulut par le commanditaire, je me suis servi du plugin WP Job Manager, qui permet aux employés de Dynaxis d’ajouter et gérer des offres d’emploi eux-même, gérer les candidatures à chaque poste.",
+      "Le plugin permet également aux utilisateurs inscrit de créer des CV en ligne pour faciliter leurs candidatures et d’établir des alertes pour les nouvelles offres d’emplois postées sur le site.",
+      "Pour garantir la maintenance du site et sa bonne utilisation, j’ai dû rédiger un document de maintenance, où l’utilisation et paramètres des fonctionnalités du site y sont entièrement expliqués."
+    ],
+    "image_rect": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/projets/Dynaxis/Dynaxis_rect.webp",
+    "lien": "https://dynaxis.net",
+    "annee_resume": 2023,
+    "genre": "pro",
+    "categorie": "fe",
+    "titre": "Dynaxis",
+    "type": "site WordPress",
+    "contexte_all": [
+      "Durant 10 semaines, en fin de 2ème année en BUT MMI à Montbéliard, nous avons dû réaliser un stage dans une entreprise professionnelle. Je l’ai effectué chez Dynaxis, une entreprise de conseil en management.",
+      "J’ai dû y réaliser une refonte complète du site vitrine de Dynaxis et y ajouter un jobboard, un moyen d’afficher des offres d’emploi auxquelles les utilisateurs peuvent candidater.",
+      "Afin de répondre aux exigences de mon commanditaire, et lui permettre une mainmise complète sur son site, pour qu’il puisse le modifier lui-même, j’ai utilisé le système de gestion de contenu WordPress."
+    ]
+  },
+  {
+    "id": "PaintersRoom",
+    "contexte_all_2": [
+      "N’ayant pas rédigé nous-même tout le code, voici ce que nous avons réalisé :",
+      "- Ouverture d’une trappe cachée",
+      "- Les interrupteurs (lumières éteintes/allumés)",
+      "- Affichage du code secret en fonction de l’environnement",
+      "- Ouverture du coffre avec un code à rentrer",
+      "- Sorti de la page une fois le jeu terminé",
+      "Pour l’épreuve nous avions juste à intégrer l’espace en 3D. Plus tard, j’ai ajouté personnellement une page d’accueil et une page de fin de jeu afin d’offrir une meilleure expérience de ce travail qui m’a permis de comprendre les bases de la 3D pour le web."
+    ],
+    "github": "https://github.com/Aurelie-Runser/Painter-s-Room",
+    "titre": "Painter's Room",
+    "contexte_resume": "épreuve de fin de 2ème année de BUT",
+    "image_rect": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/projets/PaintersRoom/PaintersRoom_rect.webp",
+    "video": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/projets/PaintersRoom/PaintersRoom_video.mp4",
+    "contexte_all": [
+      "Sujet d’un examen de fin de 2ème année de BUT MMI à Montbéliard d’une durée de 2 jours consacrés à l’intégration d’objet 3D sur une page web.",
+      "Notre professeur nous a fourni le fichier HTML d’une pièce vide en 3D, avec juste un coffre et une porte ainsi que son fichier 3ds Max. Nous devions créer un scénario, des objets 3Ds et des interactions afin de créer une pièce d’escape game.",
+      "Mes camarades Mélina Bouchelleghem et David Sarkissian ont modélisé les objets nécessaires sur Blender, et je me suis chargée de les ajouter dans la pièce et de créer tout le code pour chaque interaction avec l’aire de David pour certains points."
+    ],
+    "image_card": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/projets/PaintersRoom/PaintersRoom_card.webp",
+    "annee": "Mars 2023",
+    "genre": "scolaire",
+    "lien": "https://painters-room.aurelierunser.fr",
+    "categorie": "3d",
+    "type": "escape game en 3D",
+    "outils": [
+      "HTML 5",
+      "JavaScript",
+      "Three.js",
+      "CSS 3",
+      "Blender",
+      "GitHub"
+    ],
+    "annee_resume": 2023
+  },
+  {
+    "id": "UnCoindesRuesdeShinjuku",
+    "outils": ["Blender"],
+    "type": "objet blender animé",
+    "categorie": "3d",
+    "contexte_all_2": [
+      "En vue des maigres connaissances que nous avons pu accumuler avant de rendre ce projet, je me suis orientée vers un style de modélisation qui demande peu de définition, dit \"lowpoly\", beaucoup plus accessible pour moi à ce moment-là qu’un décor réaliste.",
+      "Afin de dynamiser mon objet 3D, j’ai fait en sorte que les panneaux soient lumineux, donnant un style ville futuriste à mon décor.",
+      "Après avoir rendu ce projet, j’ai continué de l’améliorer, ajoutant des animations de changement de lumière, quelques détails comme la radio ainsi que des images que j'ai retravaillées dans Photoshop.",
+      "Les images ne m’appartient pas.",
+      "Le logo de l’araignée vient du manga Hunter X Hunter de Yoshihiro Togashi et la double page de manga vient de Ashita no Joe écrit par Asao Takamori et dessiné par Tetsuya Chiba."
+    ],
+    "image_rect": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/projets/UCDRDS/UCDRDS_rect.webp",
+    "genre": "scolaire",
+    "titre": "Un Coin des Rues de Shinjuku",
+    "video": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/projets/UCDRDS/UCDRDS_video.mp4",
+    "contexte_all": [
+      "Au cours de ma 2ème année en BUT MMI à l’IUT de Montbéliard, nous devions pour une matière créer un objet blender quelconque du début à la fin. Pour cela nous disposions d’un mois.",
+      "Réaliser une scène me donnait plus envie qu’un objet à proprement parler. J’ai alors eu l’idée d’un coin de trottoir avec divers éléments, des panneaux de rues, une poubelle…"
+    ],
+    "lien": "https://www.instagram.com/p/CrksHpStbTs/?utm_source=ig_web_copy_link",
+    "annee_resume": 2023,
+    "image_card": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/projets/UCDRDS/UCDRDS_card.webp",
+    "annee": "Mars 2023",
+    "contexte_resume": "objet blender pour une ressource du BUT"
+  },
+  {
+    "id": "Dataviz",
+    "genre": "scolaire",
+    "image_rect": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/projets/DataAnalyse/Datanalyse_rect.webp",
+    "github": "https://github.com/Aurelie-Runser/Data-Analyse",
+    "annee": "Novembre 2022",
+    "outils": [
+      "Vue.js",
+      "Tailwind",
+      "JavaScript",
+      "Chart.js",
+      "Open Street Map"
+    ],
+    "lien": "https://datanalyse.aurelierunser.fr",
+    "type": "site web, dataviz",
+    "contexte_resume": "épreuve de développement de début de 2ème année de BUT",
+    "categorie": "dv",
+    "contexte_all": [
+      "Sujet d’un examen de début de 2ème année de BUT MMI à Montbéliard d’une durée de 3 jours.",
+      "Nous avions pour objectif de faire une data analyse à partir de bases de données accessibles gratuitement depuis agenceore.fr."
+    ],
+    "contexte_all_2": [
+      "Parmi les thématiques mises à notre disposition, j’ai choisi de traiter le sujet de l’énergie, celui qui me paraissait le plus fourni, me permettant d’être plus libre sur le choix de ma problématique et de mon cheminement pour y répondre de manière logique et pertinente.",
+      "J’ai alors choisi mes données et réfléchit aux meilleurs moyens de les mettre en forme. Cela m’a demandé beaucoup de réflexion afin de choisir les meilleurs graphiques pour faire ressortir au mieux les informations que les données nous fournissaient. Pour que tout le monde puisse les comprendre en un clin d’œil.",
+      "Afin d’intégrer de mettre en forme les données de agenceore avec des graphiques, des tableaux et maps interactifs, nous devions utiliser Chart.js, une librairie JavaScript, et une API OpenStreetMap, une base de données géographiques libre (équivalent de Google Map)."
+    ],
+    "image_card": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/projets/DataAnalyse/Datanalyse_card.webp",
+    "titre": "Dataviz : D'où vient l'énergie ?",
+    "video": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/projets/DataAnalyse/Datanalyse_video.mp4",
+    "annee_resume": 2022
+  },
+  {
+    "id": "TikTak",
+    "lien": "https://tiktak.aurelierunser.fr",
+    "image_rect": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/projets/TikTak/TikTak_rect.webp",
+    "image_card": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/projets/TikTak/TikTak_card.webp",
+    "contexte_all_2": [
+      "Dès que j'ai entendu les caractéristiques que devait avoir cette marque, j'ai voulu m'inspirer des montres de luxes, telles que Rolex, Patek Philippe, Omega pour définir mon ambiance graphique. De plus, cela est un concept original d'avoir des montres connectées avec un style mécanique.",
+      "Au niveau de la partie développement, je me suis appliquée à rendre mon site le plus responsif possible, qui s'adapte les mieux aux écrans. Nous avions également quelques contraintes techniques :",
+      "- La possibilité de se connecter au site avec un compte Google ou Facebook",
+      "- Restreindre l’accès au formulaire seulement aux utilisateurs connectés",
+      "- La possibilité de choisir les couleurs d'une montre grâce à un formulaire et une image SVG fournie par les professeurs",
+      "- Afficher la liste des montres créée par l’utilisateur",
+      "- Être Responsif",
+      "Pour que l’utilisateur soit plus à l’aise lors de la création de sa montre, j’ai jugé qu’il était pertinent de fixer la montre pour qu’il y ai toujours le résultat de ce qu’il choisit à l’écran.",
+      "J’ai également pu implémenter un mode jour/nuit suivant le thème du navigateur."
+    ],
+    "annee": "Octobre 2022",
+    "genre": "scolaire",
+    "contexte_all": [
+      "Sujet d’un examen de début de 2ème année de BUT MMI à Montbéliard d’une durée de 4 jours, dont 2 consacrés au développement.",
+      "Nous avions pour objectif de déterminer des points-clés de communication, le design et le développement de la marque fictive Tik●Tak, une marque de montre connectée “raffiné, minimaliste et épuré”."
+    ],
+    "categorie": "fs",
+    "type": "site web",
+    "contexte_resume": "épreuve de développement de début de 2ème année de BUT",
+    "github": "https://github.com/Aurelie-Runser/Tik-Tak",
+    "annee_resume": "2022",
+    "video": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/projets/TikTak/TikTak_video.mp4",
+    "titre": "Tik●Tak",
+    "outils": [
+      "Vue.js",
+      "Tailwind",
+      "JavaScript",
+      "FormKit",
+      "Supabase",
+      "SQL",
+      "Figma"
+    ]
+  },
+  {
+    "id": "RockEnStras",
+    "type": "site vitrine",
+    "genre": "scolaire",
+    "contexte_resume": "épreuve de développement de fin de 1ère année de BUT",
+    "annee": "Juin 2022",
+    "github": "https://github.com/Aurelie-Runser/Rock-en-Stras",
+    "video": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/projets/RockEnStras/RockEnStras_video.mp4",
+    "lien": "https://rockenstras.aurelierunser.fr",
+    "image_card": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/projets/RockEnStras/RockEnStras_card.webp",
+    "image_rect": "https://raw.githubusercontent.com/Aurelie-Runser/PortfolioMedias/refs/heads/main/projets/RockEnStras/RockEnStras_rect.webp",
+    "categorie": "fs",
+    "titre": "Rock en Stras'",
+    "outils": ["Vue.js", "Tailwind", "FireBase", "Illustrator", "Figma"],
+    "contexte_all": [
+      "Sujet d’un examen de fin de 1ère année de BUT MMI à Montbéliard d’une durée de 5 jours consacrés au développement.",
+      "Nous avions pour objectif d’intégrer le site web d’une maquette que nous avions réalisée ultérieurement. Cette maquette devait présenter un festival fictif, où nous devions déterminer le style musical, le lieu, le style graphique du site et dessiner le logo du festival et ses déclinaisons entre autres."
+    ],
+    "annee_resume": 2022,
+    "contexte_all_2": [
+      "Ce que nous devions réaliser en 5 jours était donc d’intégrer cette maquette avec les fonctionnalités suivantes :",
+      "- La possibilité d’ajouter, modifier et supprimer des donnés simples (un champ texte disponible sur la page Programmation -> Voir la programmation du jour)",
+      "- La possibilité d’ajouter, modifier et supprimer des donnés complexes (textes et images disponible sur la page Artistes)",
+      "- Créer une barre de recherche",
+      "- Avoir un mode jour/nuit (partiellement implémenté par manque de temps)",
+      "- Être Responsif",
+      "Bien que des pages Contact et Compte soient disponible sur le site, ces dernières ne sont pas fonctionnelles, n’ayant pas encore appris comment permettre l’inscription et connexion à un site web ou d’envoyer des messages."
+    ]
+  }
+]

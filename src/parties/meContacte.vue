@@ -38,7 +38,7 @@
                     </p>
                 </a> -->
 
-                <a href="mailto:aurelie.runser25@gmail.com" class="block w-max"
+                <!-- <a href="mailto:aurelie.runser25@gmail.com" class="block w-max"
                         @mouseover="mailHover = true" 
                         @mouseleave="mailHover = false">
                     <mailIcon :hover="mailHover" class="inline-block w-9 h-9 md:w-12 md:h-12"/>
@@ -46,7 +46,7 @@
                     <p class="contact_link inline-block ml-3 w-auto font-darker-grotesque font-bold text-base md:text-lg text-orange-100 underline decoration-cyan-400">
                         aurelie.runser25@gmail.com
                     </p>
-                </a>
+                </a> -->
             </div>
 
             <!-- formulaire-->

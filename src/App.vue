@@ -4,21 +4,11 @@ import monFooter from "./components/monFooter.vue";
 
 import { onMounted } from "vue";
 import { RouterView } from "vue-router";
-import { useProjetsStore } from "@/stores/projetsStore.js";
 import { useCompetencesStore } from "@/stores/competencesStore.js";
 
-const projetsStore = useProjetsStore();
 const competencesStore = useCompetencesStore();
 
 onMounted(() => {
-    projetsStore.getProjetsListe()
-        .then(() => {
-            return
-        })
-        .catch(error => {
-            console.error("Erreur lors du chargement des projets :", error);
-        });
-
     competencesStore.getCompetencesListe()
         .then(() => {
             return

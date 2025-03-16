@@ -146,57 +146,57 @@ function machineEcrireHero(contenu){
 }
 
 function ajoutStyleHero(){
-    setTimeout(() => {
-        document.getElementById("nom").classList.add("italic");
-    }, 500)
+    // setTimeout(() => {
+    //     document.getElementById("nom").classList.add("italic");
+    // }, 500)
     
-    setTimeout(() => {
-        document.getElementById("nom").classList.remove("italic");
-        document.getElementById("nom").classList.add("font-semilbold");
-    }, 600)
+    // setTimeout(() => {
+    //     document.getElementById("nom").classList.remove("italic");
+    //     document.getElementById("nom").classList.add("font-semilbold");
+    // }, 600)
     
-    setTimeout(() => {
-        document.getElementById("nom").classList.remove("font-semilbold");
-        document.getElementById("nom").classList.add("italic", "uppercase", 'font-thin');
-    }, 700)
+    // setTimeout(() => {
+    //     document.getElementById("nom").classList.remove("font-semilbold");
+    //     document.getElementById("nom").classList.add("italic", "uppercase", 'font-thin');
+    // }, 700)
     
-    setTimeout(() => {
-        document.getElementById("nom").classList.remove("italic", "font-thin");
-        document.getElementById("nom").classList.add("italic", "lowercase", "font-bold");
-    }, 800)
+    // setTimeout(() => {
+    //     document.getElementById("nom").classList.remove("italic", "font-thin");
+    //     document.getElementById("nom").classList.add("italic", "lowercase", "font-bold");
+    // }, 800)
     
-    setTimeout(() => {
-        document.getElementById("nom").classList.remove("italic", "lowercase", "font-bold");
-        document.getElementById("nom").classList.add("uppercase", 'font-medium');
-    }, 900)
+    // setTimeout(() => {
+    //     document.getElementById("nom").classList.remove("italic", "lowercase", "font-bold");
+    //     document.getElementById("nom").classList.add("uppercase", 'font-medium');
+    // }, 900)
     
-    setTimeout(() => {
-        document.getElementById("title").classList.remove("absolute", "top-1/2", "-translate-y-1/2");
-        document.getElementById("title").classList.add("flex", "flex-col", "justify-around", "h-full");
+    // setTimeout(() => {
+    //     document.getElementById("title").classList.remove("absolute", "top-1/2", "-translate-y-1/2");
+    //     document.getElementById("title").classList.add("flex", "flex-col", "justify-around", "h-full");
         
-        document.getElementById("nom").classList.remove("uppercase", 'font-medium');
-        document.getElementById("nom").classList.add("big-title-glitch", "btg-anim");
+    //     document.getElementById("nom").classList.remove("uppercase", 'font-medium');
+    //     document.getElementById("nom").classList.add("big-title-glitch", "btg-anim");
         
-        document.getElementById("juniordev").classList.add("self-end", "flex", "flex-wrap", "justify-end", "items-end", "text-right", "gap-x-[1rem]", "mr-5", "mb-8", "sm:mr-0", "sm:mb-0");
-    }, 1200)
+    //     document.getElementById("juniordev").classList.add("self-end", "flex", "flex-wrap", "justify-end", "items-end", "text-right", "gap-x-[1rem]", "mr-5", "mb-8", "sm:mr-0", "sm:mb-0");
+    // }, 1200)
 
-    setTimeout(() => {
-        document.getElementById("dev").classList.add("italic");
-    }, 2000)
+    // setTimeout(() => {
+    //     document.getElementById("dev").classList.add("italic");
+    // }, 2000)
 
-    setTimeout(() => {
-        document.getElementById("dev").classList.remove("italic");
-        document.getElementById("dev").classList.add("font-semibold");
-    }, 2100)
+    // setTimeout(() => {
+    //     document.getElementById("dev").classList.remove("italic");
+    //     document.getElementById("dev").classList.add("font-semibold");
+    // }, 2100)
 
-    setTimeout(() => {
-        document.getElementById("dev").classList.remove('font-semibold');
-        document.getElementById("dev").classList.add("big-title-glitch", "title-glitch", "tg-anim");
-    }, 2400)
+    // setTimeout(() => {
+    //     document.getElementById("dev").classList.remove('font-semibold');
+    //     document.getElementById("dev").classList.add("big-title-glitch", "title-glitch", "tg-anim");
+    // }, 2400)
 
-    setTimeout(() => {
-        document.getElementById("cube").classList.add("mon-cube");
-    }, 3000)
+    // setTimeout(() => {
+    //     document.getElementById("cube").classList.add("mon-cube");
+    // }, 3000)
 }
 
 onMounted(() => {

@@ -1,57 +1,32 @@
-import { defineStore } from 'pinia';
-import { 
-    getFirestore, 
-    collection, 
-    onSnapshot, 
-    getStorage, 
-    ref, 
-    getDownloadURL 
-} from '@/stores/firebase.js';
+import { defineStore } from "pinia";
+import technosData from "@/donnees/technosData.json";
 
-export const useCompetencesStore = defineStore('competencesStore', {
-    state: () => ({ 
-        listeCompetence: [], // liste de toutes les compétences
-        listeCompetenceGroup: [
-            {titre: 'Très bonne maîtrise', techno: [], niv: 1},
-            {titre: 'Bonne maîtrise', techno: [], niv: 2},
-            {titre: 'Maîtrise partielle', techno: [], niv: 3},
-            {titre: 'Les Bases', techno: [], niv: 4},
-        ], //liste de compétences par groupe de niveau de maîtrise
-    }),
-    actions: {
-        async getCompetencesListe() {
-            const firestore = getFirestore();
-            const dbCompetence = collection(firestore, "competences");
+export const useCompetencesStore = defineStore("competencesStore", {
+  state: () => ({
+    listeCompetence: technosData,
+    listeCompetenceGroup: [
+      { titre: "Très bonne maîtrise", techno: [], niv: 1 },
+      { titre: "Bonne maîtrise", techno: [], niv: 2 },
+      { titre: "Maîtrise partielle", techno: [], niv: 3 },
+      { titre: "Les Bases", techno: [], niv: 4 },
+    ],
+  }),
+  actions: {
+    async getCompetencesListe() {
 
-            // Création d'une promesse pour surveiller la fin du chargement des données
-            return new Promise((resolve, reject) => {
-                onSnapshot(dbCompetence, async (snapshot) => {
+      try {
+        this.listeCompetence.forEach((comp) => {
+          if (comp.niv)
+            this.listeCompetenceGroup[comp.niv - 1].techno.push(comp);
+        });
 
-                    this.listeCompetence = snapshot.docs.map((doc) => (
-                        { id: doc.id, ...doc.data() }
-                    ));
-
-                    const storage = getStorage();
-
-                    // Charger tous les SVGs avant de résoudre la promesse
-                    try {
-                        const svgPromises = this.listeCompetence.map(async (c) => {
-                            const svgRef = ref(storage, `icons/${c.svg}.svg`);
-                            c.svg = await getDownloadURL(svgRef);
-                        });
-
-                        this.listeCompetence.forEach(comp => {
-                            if (comp.niv) this.listeCompetenceGroup[comp.niv-1].techno.push(comp);
-                        });
-
-                        await Promise.all(svgPromises);
-                        resolve();
-                    } catch (error) {
-                        console.log("Erreur lors du chargement des logos depuis Firebase", error);
-                        reject(error);
-                    }
-                });
-            });
-        },
+      } catch (error) {
+        console.log(
+          "Erreur lors du chargement des logos",
+          error
+        );
+        reject(error);
+      }
     },
+  },
 });
