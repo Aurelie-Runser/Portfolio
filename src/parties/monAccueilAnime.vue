@@ -1,26 +1,26 @@
 <template>
     <section class="ma-section my-0 h-[100dvh] grid relative">
         <div class="self-center h-[100dvh] max-h-[900px]">
-            <h1 id="title" class="w-full mx-auto mon-title absolute top-1/2 -translate-y-1/2">
-                <span id="hello" class="">{{ heroTexte[0] }} <br/> {{ heroTexte[1] }}</span>
+            <h1 ref="title" class="w-full mx-auto mon-title absolute top-1/2 -translate-y-1/2">
+                <span ref="hello" class="">{{ heroTexte[0] }} <br/> {{ heroTexte[1] }}</span>
 
-                <span id="nom" 
+                <span ref="nom" 
                         class="relative selft-center text-center w-fit mx-auto overflow-hidden"
                         :data-text=heroTexte[2]>
                         {{heroTexte[2]}}
                     </span>
 
-                <span id="juniordev" class="">
-                    <span id="junior" class="w-fit h-fit">{{heroTexte[3]}}</span>
+                <span ref="juniordev" class="">
+                    <span ref="junior" class="w-fit h-fit">{{heroTexte[3]}}</span>
         
                     <span class="relative">
-                        <span id="dev" class="" :data-text=heroTexte[4]>{{heroTexte[4]}}</span>
+                        <span ref="dev" class="" :data-text=heroTexte[4]>{{heroTexte[4]}}</span>
                     </span>
                 </span>
             </h1>
         </div>
 
-        <div id="cube" class="absolute left-1 md:left-10 -bottom-16 w-5 h-5 md:w-7 md:h-7"></div>
+        <div ref="cube" class="absolute left-1 md:left-10 -bottom-16 w-5 h-5 md:w-7 md:h-7"></div>
     </section>
 </template>
 
@@ -106,7 +106,7 @@
 </style>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import { useTemplateRef, ref, onMounted } from 'vue';
 
 const heroTexte = ref(["", "", "", "", ""]);
 
@@ -117,6 +117,13 @@ const contenu = [
     " a junior ",
     "Web Developer"
 ];
+
+const title = useTemplateRef('title')
+const nom = useTemplateRef('nom')
+const juniordev = useTemplateRef('juniordev')
+const junior = useTemplateRef('junior')
+const dev = useTemplateRef('dev')
+const cube = useTemplateRef('cube')
 
 const vitesse = 50;
 const isTexteComplet = ref(false)
@@ -146,57 +153,57 @@ function machineEcrireHero(contenu){
 }
 
 function ajoutStyleHero(){
-    // setTimeout(() => {
-    //     document.getElementById("nom").classList.add("italic");
-    // }, 500)
+    setTimeout(() => {
+        nom.value.classList.add("italic");
+    }, 500)
     
-    // setTimeout(() => {
-    //     document.getElementById("nom").classList.remove("italic");
-    //     document.getElementById("nom").classList.add("font-semilbold");
-    // }, 600)
+    setTimeout(() => {
+        nom.value.classList.remove("italic");
+        nom.value.classList.add("font-semilbold");
+    }, 600)
     
-    // setTimeout(() => {
-    //     document.getElementById("nom").classList.remove("font-semilbold");
-    //     document.getElementById("nom").classList.add("italic", "uppercase", 'font-thin');
-    // }, 700)
+    setTimeout(() => {
+        nom.value.classList.remove("font-semilbold");
+        nom.value.classList.add("italic", "uppercase", 'font-thin');
+    }, 700)
     
-    // setTimeout(() => {
-    //     document.getElementById("nom").classList.remove("italic", "font-thin");
-    //     document.getElementById("nom").classList.add("italic", "lowercase", "font-bold");
-    // }, 800)
+    setTimeout(() => {
+        nom.value.classList.remove("italic", "font-thin");
+        nom.value.classList.add("italic", "lowercase", "font-bold");
+    }, 800)
     
-    // setTimeout(() => {
-    //     document.getElementById("nom").classList.remove("italic", "lowercase", "font-bold");
-    //     document.getElementById("nom").classList.add("uppercase", 'font-medium');
-    // }, 900)
+    setTimeout(() => {
+        nom.value.classList.remove("italic", "lowercase", "font-bold");
+        nom.value.classList.add("uppercase", 'font-medium');
+    }, 900)
     
-    // setTimeout(() => {
-    //     document.getElementById("title").classList.remove("absolute", "top-1/2", "-translate-y-1/2");
-    //     document.getElementById("title").classList.add("flex", "flex-col", "justify-around", "h-full");
+    setTimeout(() => {
+        title.value.classList.remove("absolute", "top-1/2", "-translate-y-1/2");
+        title.value.classList.add("flex", "flex-col", "justify-around", "h-full");
         
-    //     document.getElementById("nom").classList.remove("uppercase", 'font-medium');
-    //     document.getElementById("nom").classList.add("big-title-glitch", "btg-anim");
+        nom.value.classList.remove("uppercase", 'font-medium');
+        nom.value.classList.add("big-title-glitch", "btg-anim");
         
-    //     document.getElementById("juniordev").classList.add("self-end", "flex", "flex-wrap", "justify-end", "items-end", "text-right", "gap-x-[1rem]", "mr-5", "mb-8", "sm:mr-0", "sm:mb-0");
-    // }, 1200)
+        juniordev.value.classList.add("self-end", "flex", "flex-wrap", "justify-end", "items-end", "text-right", "gap-x-[1rem]", "mr-5", "mb-8", "sm:mr-0", "sm:mb-0");
+    }, 1200)
 
-    // setTimeout(() => {
-    //     document.getElementById("dev").classList.add("italic");
-    // }, 2000)
+    setTimeout(() => {
+        dev.value.classList.add("italic");
+    }, 2000)
 
-    // setTimeout(() => {
-    //     document.getElementById("dev").classList.remove("italic");
-    //     document.getElementById("dev").classList.add("font-semibold");
-    // }, 2100)
+    setTimeout(() => {
+        dev.value.classList.remove("italic");
+        dev.value.classList.add("font-semibold");
+    }, 2100)
 
-    // setTimeout(() => {
-    //     document.getElementById("dev").classList.remove('font-semibold');
-    //     document.getElementById("dev").classList.add("big-title-glitch", "title-glitch", "tg-anim");
-    // }, 2400)
+    setTimeout(() => {
+        dev.value.classList.remove('font-semibold');
+        dev.value.classList.add("big-title-glitch", "title-glitch", "tg-anim");
+    }, 2400)
 
-    // setTimeout(() => {
-    //     document.getElementById("cube").classList.add("mon-cube");
-    // }, 3000)
+    setTimeout(() => {
+        cube.value.classList.add("mon-cube");
+    }, 3000)
 }
 
 onMounted(() => {
