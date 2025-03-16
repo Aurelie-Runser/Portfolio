@@ -28,12 +28,12 @@
             </a> -->
         </div>
 
-        <a href="mailto:aurelie.runser25@gmail.com">
+        <!-- <a href="mailto:aurelie.runser25@gmail.com">
             <p class="sr-only">Mon Adresse Mail : </p>
             <p class="footer_link inline-block ml-3 w-auto font-darker-grotesque font-bold text-sm md:text-base text-neutral-400 underline decoration-cyan-400">
                 aurelie.runser25@gmail.com
             </p>
-        </a>
+        </a> -->
         
         <p class="w-full mt-3 text-center font-darker-grotesque font-bold text-sm md:text-base text-neutral-400">© {{annee}} Aurélie Runser</p>
     </footer>
