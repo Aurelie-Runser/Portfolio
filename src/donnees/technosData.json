@@ -2,79 +2,79 @@
   {
     "id": "AdonisJs",
     "nom": "Adonis.js",
-    "svg": "./technos/AdonisJs.svg"
+    "svg": "/technos/AdonisJs.svg"
   },
   {
     "id": "Axios",
     "nom": "Axios",
-    "svg": "./technos/Axios.svg"
+    "svg": "/technos/Axios.svg"
   },
   {
     "id": "Blender",
     "nom": "Blender",
-    "svg": "./technos/Blender.svg"
+    "svg": "/technos/Blender.svg"
   },
   {
     "id": "CSS",
-    "svg": "./technos/CSS.svg",
+    "svg": "/technos/CSS.svg",
     "nom": "CSS 3",
     "niv": 1
   },
   {
     "id": "Csharp",
-    "svg": "./technos/Csharp.svg",
+    "svg": "/technos/Csharp.svg",
     "nom": "C#",
     "niv": 3
   },
   {
     "id": "Challonge",
     "nom": "Challonge",
-    "svg": "./technos/Challonge.svg"
+    "svg": "/technos/Challonge.svg"
   },
   {
     "id": "ChartJs",
     "nom": "Chart.js",
-    "svg": "./technos/ChartJs.svg"
+    "svg": "/technos/ChartJs.svg"
   },
   {
     "id": "ConditionalMenus",
     "nom": "Conditional Menus",
-    "svg": "./technos/ConditionalMenus.svg"
+    "svg": "/technos/ConditionalMenus.svg"
   },
   {
     "id": "Docker",
-    "svg": "./technos/Docker.svg",
+    "svg": "/technos/Docker.svg",
     "nom": "Docker",
     "niv": 3
   },
   {
     "id": "Elementor",
     "nom": "Elementor",
-    "svg": "./technos/Elementor.svg"
+    "svg": "/technos/Elementor.svg"
   },
   {
     "id": "Express",
-    "svg": "./technos/Express.svg",
+    "svg": "/technos/Express.svg",
     "nom": "Express.js"
   },
   {
     "id": "Figma",
-    "svg": "./technos/Figma.svg",
+    "svg": "/technos/Figma.svg",
     "nom": "Figma"
   },
   {
     "id": "FireBase",
-    "svg": "./technos/Firebase.svg",
+    "svg": "/technos/Firebase.svg",
     "nom": "FireBase"
   },
   {
     "id": "FormKit",
-    "svg": "./technos/FormKit.svg",
+    "svg": "/technos/FormKit.svg",
     "nom": "FormKit"
   },
   {
     "id": "GitHub",
-    "svg": "./technos/GitHub.svg",
+    "svg": "/technos/GitHub.svg",
     "nom": "GitHub",
     "niv": 3
   },
@@ -82,178 +82,178 @@
     "id": "GitLab",
     "nom": "GitLab",
     "niv": 4,
-    "svg": "./technos/GitLab.svg"
+    "svg": "/technos/GitLab.svg"
   },
   {
     "id": "HTML",
     "nom": "HTML 5",
     "niv": 1,
-    "svg": "./technos/HTML.svg"
+    "svg": "/technos/HTML.svg"
   },
   {
     "id": "HubSpot",
     "nom": "HubSpot",
-    "svg": "./technos/HubSpot.svg"
+    "svg": "/technos/HubSpot.svg"
   },
   {
     "id": "Illustrator",
-    "svg": "./technos/Illustrator.svg",
+    "svg": "/technos/Illustrator.svg",
     "nom": "Illustrator"
   },
   {
     "id": "JavaScript",
     "nom": "JavaScript",
     "niv": 1,
-    "svg": "./technos/JavaScript.svg"
+    "svg": "/technos/JavaScript.svg"
   },
   {
     "id": "MSSQL",
-    "svg": "./technos/MSSQL.svg",
+    "svg": "/technos/MSSQL.svg",
     "nom": "MSSQL"
   },
   {
     "id": "MySQL",
     "niv": 2,
-    "svg": "./technos/MySQL.svg",
+    "svg": "/technos/MySQL.svg",
     "nom": "MySQL"
   },
   {
     "id": "NodeJs",
     "nom": "Node.js",
     "niv": 2,
-    "svg": "./technos/NodeJs.svg"
+    "svg": "/technos/NodeJs.svg"
   },
   {
     "id": "NuxtJs",
     "nom": "Nuxt.js",
-    "svg": "./technos/Nuxt.svg",
+    "svg": "/technos/Nuxt.svg",
     "niv": 1
   },
   {
     "id": "OpenStreetMap",
     "nom": "Open Street Map",
-    "svg": "./technos/OpenStreetMap.svg"
+    "svg": "/technos/OpenStreetMap.svg"
   },
   {
     "id": "OpenWeatherMap",
     "nom": "OpenWeatherMap",
-    "svg": "./technos/OpenWeatherMap.svg"
+    "svg": "/technos/OpenWeatherMap.svg"
   },
   {
     "id": "PHP",
     "nom": "PHP",
-    "svg": "./technos/PHP.svg",
+    "svg": "/technos/PHP.svg",
     "niv": 4
   },
   {
     "id": "Pinia",
-    "svg": "./technos/Pinia.svg",
+    "svg": "/technos/Pinia.svg",
     "niv": 2,
     "nom": "Pinia"
   },
   {
     "id": "Postman",
     "nom": "Postman",
-    "svg": "./technos/Postman.svg",
+    "svg": "/technos/Postman.svg",
     "niv": 4
   },
   {
     "id": "PostgreSQL",
     "nom": "PostgreSQL",
-    "svg": "./technos/PostgreSQL.svg"
+    "svg": "/technos/PostgreSQL.svg"
   },
   {
     "id": "Prismic",
-    "svg": "./technos/Prismic.svg",
+    "svg": "/technos/Prismic.svg",
     "nom": "Prismic"
   },
   {
     "id": "QuasarJs",
     "nom": "Quasar.js",
-    "svg": "./technos/Quasar.svg"
+    "svg": "/technos/Quasar.svg"
   },
   {
     "id": "React",
     "niv": 4,
-    "svg": "./technos/React.svg",
+    "svg": "/technos/React.svg",
     "nom": "React"
   },
   {
     "id": "SQL",
     "nom": "SQL",
-    "svg": "./technos/SQL.svg"
+    "svg": "/technos/SQL.svg"
   },
   {
     "id": "SQLite",
     "niv": 2,
     "nom": "SQLite",
-    "svg": "./technos/SQLite.svg"
+    "svg": "/technos/SQLite.svg"
   },
   {
     "id": "Sass",
     "nom": "Scss",
     "niv": 1,
-    "svg": "./technos/Sass.svg"
+    "svg": "/technos/Sass.svg"
   },
   {
     "id": "Supabase",
     "nom": "Supabase",
-    "svg": "./technos/Supabase.svg"
+    "svg": "/technos/Supabase.svg"
   },
   {
     "id": "Swiper",
     "nom": "Swiper",
-    "svg": "./technos/Swiper.svg"
+    "svg": "/technos/Swiper.svg"
   },
   {
     "id": "Symfony",
     "niv": 4,
-    "svg": "./technos/Symfony.svg",
+    "svg": "/technos/Symfony.svg",
     "nom": "Symfony"
   },
   {
     "id": "Tailwind",
     "nom": "Tailwind",
     "niv": 2,
-    "svg": "./technos/Tailwind.svg"
+    "svg": "/technos/Tailwind.svg"
   },
   {
     "id": "ThreeJs",
     "nom": "Three.js",
     "niv": 4,
-    "svg": "./technos/ThreeJs.svg"
+    "svg": "/technos/ThreeJs.svg"
   },
   {
     "id": "TypeScript",
-    "svg": "./technos/TypeScript.svg",
+    "svg": "/technos/TypeScript.svg",
     "nom": "TypeScript",
     "niv": 3
   },
   {
     "id": "VueJs",
-    "svg": "./technos/VueJs.svg",
+    "svg": "/technos/VueJs.svg",
     "nom": "Vue.js",
     "niv": 1
   },
   {
     "id": "WPJobManager",
-    "svg": "./technos/WPJobManager.svg",
+    "svg": "/technos/WPJobManager.svg",
     "nom": "WP Job Manager"
   },
   {
     "id": "Web3Form",
-    "svg": "./technos/Web3Form.svg",
+    "svg": "/technos/Web3Form.svg",
     "nom": "Web3Form"
   },
   {
     "id": "WordPress",
-    "svg": "./technos/WordPress.svg",
+    "svg": "/technos/WordPress.svg",
     "niv": 4,
     "nom": "WordPress"
   },
   {
     "id": "YoastSEO",
-    "svg": "./technos/YoastSEO.svg",
+    "svg": "/technos/YoastSEO.svg",
     "nom": "Yoast SEO"
   }
 ]

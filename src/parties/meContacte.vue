@@ -28,25 +28,6 @@
                     </p>
                 </a>
         
-                <!-- <a target="_blank" href="https://www.instagram.com/aurelie.runser_pro/" rel="noopener noreferrer" class="block w-max"
-                        @mouseover="instaHover = true" 
-                        @mouseleave="instaHover = false">
-                    <instagramIcon :hover="instaHover" class="inline-block w-7 h-7 md:w-10 md:h-10"/>
-                    <p class="sr-only">Mon compte Instagram : </p>
-                    <p class="contact_link inline-block ml-3 w-auto font-darker-grotesque font-bold text-base md:text-lg text-orange-100 underline decoration-cyan-400">
-                        @aurelie.runser_pro
-                    </p>
-                </a> -->
-
-                <!-- <a href="mailto:aurelie.runser25@gmail.com" class="block w-max"
-                        @mouseover="mailHover = true" 
-                        @mouseleave="mailHover = false">
-                    <mailIcon :hover="mailHover" class="inline-block w-9 h-9 md:w-12 md:h-12"/>
-                    <p class="sr-only">Mon Adresse Mail : </p>
-                    <p class="contact_link inline-block ml-3 w-auto font-darker-grotesque font-bold text-base md:text-lg text-orange-100 underline decoration-cyan-400">
-                        aurelie.runser25@gmail.com
-                    </p>
-                </a> -->
             </div>
 
             <!-- formulaire-->
@@ -181,7 +162,7 @@
                          <p class="mx-auto w-fit font-darker-grotesque text-base xl:text-lg text-stone-300">
                              En soumettant ce formulaire, vous consentez à ce que vos données personnelles, telles que votre prénom, votre nom, votre adresse e-mail et le contenu de votre message, soient collectées et utilisées par Aurélie Runser dans le but de répondre à votre demande de contact. Ces informations seront stockées en toute sécurité et ne seront pas partagées avec des tiers sans votre consentement préalable.
          
-                             <br/>Vous pouvez à tout moment me demander de supprimer vos données personnelles de mes archives en m'envoyant un e-mail à aurelie.runser25@gmail.com.
+                             <br/>Vous pouvez à tout moment me demander de supprimer vos données personnelles de mes archives en m'envoyant un e-mail à via le formulaire de contact.
          
                              <br/>En soumettant ce formulaire, vous donnez votre consentement libre, spécifique, éclairé et univoque au traitement de vos données personnelles conformément aux dispositions du Règlement Général sur la Protection des Données (RGPD).
                          </p>   

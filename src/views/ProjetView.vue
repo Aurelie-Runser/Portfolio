@@ -99,7 +99,6 @@
                     {{ text }}
                 </p>
             </div>
-    
 
             <div class="py-10 md:py-16 flex flex-wrap gap-10 justify-center items-center">
                 <a v-if="projet.lien" target="_blank" :href="projet.lien" rel="noopener noreferrer">
@@ -211,11 +210,6 @@ const verifProjetExiste = () => {
 
     if (!projet.value) router.push('/');
     else {
-        // meta description de la page
-        document.title = `Aurélie Runser - ${projet.value.titre}`;
-        const description = `${projet.value.titre}, projet web réalisé en ${projet.value.annee_resume} par Aurélie Runser.`;
-        document.querySelector('meta[name="description"]')?.setAttribute("content", description);
-
         projet.value.technos = [];
         projet.value.outils.forEach(techno => {
             projet.value.technos.push(storeCompetence.listeCompetence.find((comp) => techno == comp.nom));

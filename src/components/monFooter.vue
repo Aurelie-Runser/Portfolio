@@ -22,18 +22,7 @@
                 <p class="sr-only">Lien vers mon compte Github</p>
             </a>
 
-            <!-- <a target="_blank" href="https://www.instagram.com/aurelie.runser_pro/" rel="noopener noreferrer">
-                <instagramIcon class="inline-block w-5 h-5 md:w-8 md:h-8"/>
-                <p class="sr-only">Lien vers mon compte Instagram</p>
-            </a> -->
         </div>
-
-        <!-- <a href="mailto:aurelie.runser25@gmail.com">
-            <p class="sr-only">Mon Adresse Mail : </p>
-            <p class="footer_link inline-block ml-3 w-auto font-darker-grotesque font-bold text-sm md:text-base text-neutral-400 underline decoration-cyan-400">
-                aurelie.runser25@gmail.com
-            </p>
-        </a> -->
         
         <p class="w-full mt-3 text-center font-darker-grotesque font-bold text-sm md:text-base text-neutral-400">© {{annee}} Aurélie Runser</p>
     </footer>
